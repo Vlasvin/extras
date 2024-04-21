@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header";
 import { theme } from "./redux/ThemeManager";
 
+const HomePage = React.lazy(() => import("./pages/HomePage"));
 const VisasPage = React.lazy(() => import("./pages/VisasPage"));
 const TranslationsPage = React.lazy(() => import("./pages/TranslationsPage"));
 const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
@@ -19,6 +20,7 @@ const App = () => {
         <Header onRegisterClick={handleRegisterClick} />
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
+            <Route path="/" element={<HomePage />} />
             <Route path="/visas" element={<VisasPage />} />
             <Route path="/translations" element={<TranslationsPage />} />
             <Route path="/services" element={<ServicesPage />} />
