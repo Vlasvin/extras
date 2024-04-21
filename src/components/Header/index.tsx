@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../../redux/ThemeManager";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -18,6 +19,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const { t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -48,6 +50,21 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           {t("appTitle")}
         </Typography>
         <div>
+          <Button color="inherit" component={Link} to="/visas">
+            {t("visas")}
+          </Button>
+          <Button color="inherit" component={Link} to="/translations">
+            {t("translations")}
+          </Button>
+          <Button color="inherit" component={Link} to="/services">
+            {t("services")}
+          </Button>
+          <Button color="inherit" component={Link} to="/about us">
+            {t("about us")}
+          </Button>
+          <Button color="inherit" onClick={toggleTheme}>
+            {theme === "light" ? "Dark Theme" : "Light Theme"}
+          </Button>
           <IconButton
             size="large"
             aria-label="select language"
@@ -69,18 +86,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
             <MenuItem onClick={handleLanguageMenuClose}>Українська</MenuItem>
             <MenuItem onClick={handleLanguageMenuClose}>Deutsch</MenuItem>
           </Menu>
-          <Button color="inherit" component={Link} to="/page1">
-            {t("page1")}
-          </Button>
-          <Button color="inherit" component={Link} to="/page2">
-            {t("page2")}
-          </Button>
-          <Button color="inherit" component={Link} to="/page3">
-            {t("page3")}
-          </Button>
-          <Button color="inherit" component={Link} to="/page4">
-            {t("page4")}
-          </Button>
+
           <Button color="inherit" onClick={handleRegisterButtonClick}>
             {t("register")}
           </Button>
