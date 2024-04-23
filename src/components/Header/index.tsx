@@ -8,6 +8,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  Box,
 } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
 import { ThemeContext } from "../../redux/ThemeContext";
@@ -23,11 +24,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const [openMenu, setOpenMenu] = useState<boolean>(false);
-  const { themeMode, switchThemeMode } = useContext(
-    ThemeContext
-  ) as IThemeContext;
+  const { themeMode } = useContext(ThemeContext) as IThemeContext;
 
   const handleLanguageMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -41,82 +38,71 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
     onRegisterClick();
   };
 
-  // const handleSwitchTheme = (mode: IThemeMode) => {
-  //   switchThemeMode(mode);
-  //   handleThemeMenuClose();
-  // };
-
-  const handleSwitchTheme = (event: React.ChangeEvent<HTMLInputElement>) => {
-    switchThemeMode(event.target.checked ? IThemeMode.DARK : IThemeMode.LIGHT);
-  };
+  const iconColor = themeMode === IThemeMode.DARK ? "primary" : "inherit";
+  const textColor = themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
 
   return (
-    <Toolbar>
+    <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
         <Link to="/">
           <img
             src="https://extras.com.ua/wp-content/themes/slick-red/images/red/logo.gif"
             alt="extras.com.ua"
-            style={{ height: 30, marginRight: 10 }}
+            style={{ height: 40, marginRight: 10 }}
           />
         </Link>
       </Typography>
-      <div>
-        <Button color="inherit" component={Link} to="/visas">
+
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Button
+          color="inherit"
+          component={Link}
+          to="/visas"
+          sx={{ color: textColor }}
+        >
           {t("visas")}
         </Button>
-        <Button color="inherit" component={Link} to="/translations">
+        <Button
+          color="inherit"
+          component={Link}
+          to="/translations"
+          sx={{ color: textColor }}
+        >
           {t("translations")}
         </Button>
-        <Button color="inherit" component={Link} to="/services">
+        <Button
+          color="inherit"
+          component={Link}
+          to="/services"
+          sx={{ color: textColor }}
+        >
           {t("services")}
         </Button>
-        <Button color="inherit" component={Link} to="/about-us">
+        <Button
+          color="inherit"
+          component={Link}
+          to="/about-us"
+          sx={{ color: textColor }}
+        >
           {t("about us")}
         </Button>
+      </Box>
+      <div>
         <ThemeSwitch />
-
-        {/* <Button
-          variant="contained"
-          onClick={handleThemeMenuOpen}
-          startIcon={<PaletteIcon />}
-          ref={buttonRef}
-        >
-          Switch Theme
-        </Button>
-        <Menu
-          open={openMenu}
-          anchorEl={buttonRef.current}
-          onClose={handleThemeMenuClose}
-        >
-          <MenuItem
-            onClick={() => handleSwitchTheme(IThemeMode.LIGHT)}
-            selected={themeMode === IThemeMode.LIGHT}
-          >
-            Light
-          </MenuItem>
-          <MenuItem
-            onClick={() => handleSwitchTheme(IThemeMode.DARK)}
-            selected={themeMode === IThemeMode.DARK}
-          >
-            Dark
-          </MenuItem>
-          <MenuItem
-            onClick={() => handleSwitchTheme(IThemeMode.SYSTEM)}
-            selected={themeMode === IThemeMode.SYSTEM}
-          >
-            System
-          </MenuItem>
-        </Menu> */}
         <IconButton
           size="large"
           aria-label="select language"
           aria-controls="language-menu"
           aria-haspopup="true"
           onClick={handleLanguageMenuOpen}
-          color="inherit"
         >
-          <LanguageIcon />
+          <LanguageIcon color="inherit" />
         </IconButton>
         <Menu
           id="language-menu"
@@ -124,6 +110,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           open={open}
           onClose={handleLanguageMenuClose}
           onClick={handleLanguageMenuClose}
+          color={iconColor}
         >
           <MenuItem onClick={handleLanguageMenuClose}>English</MenuItem>
           <MenuItem onClick={handleLanguageMenuClose}>Українська</MenuItem>
