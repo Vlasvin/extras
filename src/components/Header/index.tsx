@@ -1,9 +1,8 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   Toolbar,
-  Typography,
   Button,
   IconButton,
   Menu,
@@ -11,6 +10,8 @@ import {
   Box,
 } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
+import i18next from "i18next";
+
 import { ThemeContext } from "../../redux/ThemeContext";
 import { IThemeContext, IThemeMode } from "../../redux/ThemeContext/types";
 import ThemeSwitch from "./ThemeSwitch";
@@ -36,6 +37,11 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
 
   const handleRegisterButtonClick = () => {
     onRegisterClick();
+  };
+
+  const handleLanguageChange = async (lang: string) => {
+    await i18next.changeLanguage(lang);
+    handleLanguageMenuClose();
   };
 
   const iconColor = themeMode === IThemeMode.DARK ? "primary" : "inherit";
@@ -66,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           to="/visas"
           sx={{ color: textColor }}
         >
-          {t("Візи")}
+          {t("visas")}
         </Button>
         <Button
           color="inherit"
@@ -74,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           to="/translations"
           sx={{ color: textColor }}
         >
-          {t("Переклади")}
+          {t("translations")}
         </Button>
         <Button
           color="inherit"
@@ -82,7 +88,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           to="/services"
           sx={{ color: textColor }}
         >
-          {t("Послуги")}
+          {t("services")}
         </Button>
         <Button
           color="inherit"
@@ -90,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           to="/about-us"
           sx={{ color: textColor }}
         >
-          {t("Про нас")}
+          {t("about us")}
         </Button>
       </Box>
       <div>
@@ -112,9 +118,15 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           onClick={handleLanguageMenuClose}
           color={iconColor}
         >
-          <MenuItem onClick={handleLanguageMenuClose}>English</MenuItem>
-          <MenuItem onClick={handleLanguageMenuClose}>Українська</MenuItem>
-          <MenuItem onClick={handleLanguageMenuClose}>Deutsch</MenuItem>
+          <MenuItem onClick={() => handleLanguageChange("en")}>
+            English
+          </MenuItem>
+          <MenuItem onClick={() => handleLanguageChange("uk")}>
+            Українська
+          </MenuItem>
+          <MenuItem onClick={() => handleLanguageChange("ru")}>
+            Русский
+          </MenuItem>
         </Menu>
 
         <Button color="inherit" onClick={handleRegisterButtonClick}>

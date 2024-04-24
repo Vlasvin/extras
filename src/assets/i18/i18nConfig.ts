@@ -1,28 +1,32 @@
-import i18n from "i18next";
+import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-const language = navigator.language.split("-")[0];
+import ukTranslation from "./locales/uk.json";
+import ruTranslation from "./locales/ru.json";
+import enTranslation from "./locales/en.json";
 
-i18n.use(initReactI18next).init({
-  resources: {
-    [language]: {
-      translation: {},
-    },
-    uk: {
-      translation: {},
-    },
-    ru: {
-      translation: {},
-    },
-    en: {
-      translation: {},
-    },
+const resources = {
+  uk: {
+    translation: ukTranslation,
   },
-  lng: language,
-  fallbackLng: "uk",
-  interpolation: {
-    escapeValue: false,
+  ru: {
+    translation: ruTranslation,
   },
-});
+  en: {
+    translation: enTranslation,
+  },
+};
 
-export default i18n;
+i18next
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    resources,
+    fallbackLng: "uk",
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+
+export default i18next;
