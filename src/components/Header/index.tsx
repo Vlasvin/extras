@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
 
   return (
     <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+      <Box sx={{ display: "flex", alignItems: "center" }}>
         <Link to="/">
           <img
             src="https://extras.com.ua/wp-content/themes/slick-red/images/red/logo.gif"
@@ -51,11 +51,11 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
             style={{ height: 40, marginRight: 10 }}
           />
         </Link>
-      </Typography>
-
+      </Box>
       <Box
         sx={{
           display: "flex",
+          gap: 4,
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -66,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           to="/visas"
           sx={{ color: textColor }}
         >
-          {t("visas")}
+          {t("Візи")}
         </Button>
         <Button
           color="inherit"
@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           to="/translations"
           sx={{ color: textColor }}
         >
-          {t("translations")}
+          {t("Переклади")}
         </Button>
         <Button
           color="inherit"
@@ -82,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           to="/services"
           sx={{ color: textColor }}
         >
-          {t("services")}
+          {t("Послуги")}
         </Button>
         <Button
           color="inherit"
@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           to="/about-us"
           sx={{ color: textColor }}
         >
-          {t("about us")}
+          {t("Про нас")}
         </Button>
       </Box>
       <div>
