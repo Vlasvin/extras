@@ -12,6 +12,7 @@ import {
   CssBaseline,
   useTheme,
   Collapse,
+  ListItemIcon,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -78,6 +79,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
             justifyContent: "right",
             alignItems: "center",
             padding: "16px",
+            borderBottom: "1px solid #ddd",
           }}
         >
           <ThemeSwitch />
@@ -90,19 +92,28 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
           </IconButton>
         </Box>
         <Collapse in={isOpen} timeout={drawerTransition.duration}>
-          <List>
-            {menuItems.map((item, index) => (
-              <ListItem
-                button
-                key={index}
-                component={Link}
-                to={item.link}
-                onClick={toggleDrawer(false)}
-              >
-                <ListItemText primary={t(item.label)} />
-              </ListItem>
-            ))}
-          </List>
+          <Box
+            sx={{
+              display: "flex",
+              marginTop: 10,
+              marginLeft: 5,
+            }}
+          >
+            <List>
+              {menuItems.map((item, index) => (
+                <ListItem
+                  button
+                  key={index}
+                  component={Link}
+                  to={item.link}
+                  onClick={toggleDrawer(false)}
+                >
+                  <ListItemText primary={t(item.label)} />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+          <Box sx={{ marginTop: 10, borderTop: "1px solid #ddd" }} />
           <SocialMediaIcons />
         </Collapse>
       </Drawer>
