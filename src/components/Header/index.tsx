@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Toolbar, Button, Box, IconButton } from "@mui/material";
+import { Toolbar, Button, Box, IconButton, useMediaQuery } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 
-import BurgerMenu from "./BurgerMenu";
 import { ThemeContext } from "../../redux/ThemeContext";
 import { IThemeContext, IThemeMode } from "../../redux/ThemeContext/types";
 import ThemeSwitch from "./ThemeSwitch";
+import LanguageSelector from "./LanguageSelector";
+import BurgerMenu from "./BurgerMenu";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -16,6 +17,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const { t } = useTranslation();
   const { themeMode } = useContext(ThemeContext) as IThemeContext;
+  const isMobile = useMediaQuery("(max-width:900px)");
 
   const handleRegisterButtonClick = () => {
     onRegisterClick();
@@ -62,13 +64,19 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           </Button>
         ))}
       </Box>
-      <div>
-        <ThemeSwitch />
-        <IconButton onClick={handleRegisterButtonClick} aria-label="account">
-          <PersonIcon />
-        </IconButton>
-      </div>
-      <BurgerMenu menuItems={menuItems} />
+      {!isMobile && (
+        <Box>
+          <ThemeSwitch />
+          <LanguageSelector iconColor="primary" />
+          <IconButton onClick={handleRegisterButtonClick} aria-label="account">
+            <PersonIcon />
+          </IconButton>
+        </Box>
+      )}
+      <BurgerMenu
+        menuItems={menuItems}
+        handleRegisterButtonClick={handleRegisterButtonClick}
+      />
     </Toolbar>
   );
 };

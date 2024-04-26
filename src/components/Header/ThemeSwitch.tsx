@@ -8,7 +8,7 @@ import { IThemeContext, IThemeMode } from "../../redux/ThemeContext/types";
 const StyledSwitch = styled(Switch)(({ theme }) => ({
   width: 60,
   height: 34,
-  padding: "7px 10px ",
+  padding: "8px 10px 6px 12px",
 
   "& .MuiSwitch-switchBase": {
     margin: 1,
@@ -32,7 +32,7 @@ const StyledSwitch = styled(Switch)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#001e3c",
     width: 22,
     height: 22,
-    margin: "5px",
+    margin: "6px",
     "&::before": {
       content: "''",
       position: "absolute",

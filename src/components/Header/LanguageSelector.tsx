@@ -4,7 +4,11 @@ import { IconButton, Menu, MenuItem } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
 import i18next from "i18next";
 
-const LanguageSelector: React.FC = () => {
+interface LanguageSelectorProps {
+  iconColor: string;
+}
+
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({ iconColor }) => {
   const { i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
@@ -29,7 +33,7 @@ const LanguageSelector: React.FC = () => {
         aria-controls="language-menu"
         aria-haspopup="true"
         onClick={handleMenuOpen}
-        color="inherit"
+        color={iconColor === "primary" ? "primary" : "inherit"}
       >
         <LanguageIcon />
       </IconButton>
