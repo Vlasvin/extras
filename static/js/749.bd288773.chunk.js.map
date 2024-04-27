@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/749.bd288773.chunk.js","mappings":"kJAEA,MAIA,EAJ4BA,KACnBC,EAAAA,EAAAA,KAAA,S","sources":["pages/VisasPage/index.tsx"],"sourcesContent":["import React from \"react\";\n\nconst VisasPage: React.FC = () => {\n  return <div>{/* Add content for the Visas page */}</div>;\n};\n\nexport default VisasPage;\n"],"names":["VisasPage","_jsx"],"sourceRoot":""}
