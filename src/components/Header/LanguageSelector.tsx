@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
 import i18next from "i18next";
@@ -9,7 +8,6 @@ interface LanguageSelectorProps {
 }
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ iconColor }) => {
-  const { i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
 

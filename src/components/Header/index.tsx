@@ -23,7 +23,6 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
     onRegisterClick();
   };
 
-  const iconColor = themeMode === IThemeMode.DARK ? "primary" : "inherit";
   const textColor = themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
 
   const menuItems = [

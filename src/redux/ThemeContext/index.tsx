@@ -22,7 +22,7 @@ export const ThemeContextProvider: React.FunctionComponent<
   useEffect(() => {
     const themeModeFromPref = getThemeModeFromPref();
     setThemeMode(themeModeFromPref);
-  });
+  }, [setThemeMode]);
 
   useEffect(() => {
     switch (themeMode) {
