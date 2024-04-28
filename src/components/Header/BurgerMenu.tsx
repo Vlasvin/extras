@@ -96,6 +96,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
               display: "flex",
               marginTop: 10,
               marginLeft: 5,
+              flexDirection: "column",
             }}
           >
             <List>
@@ -112,7 +113,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
               ))}
             </List>
           </Box>
-          <Box sx={{ marginTop: 10, borderTop: "1px solid #ddd" }} />
+          <Box sx={{ marginBottom: 40, borderTop: "1px solid #ddd" }} />
           <SocialMediaIcons />
         </Collapse>
       </Drawer>

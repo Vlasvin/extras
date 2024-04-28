@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Toolbar, Button, Box, IconButton, useMediaQuery } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
@@ -18,6 +18,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const { t } = useTranslation();
   const { themeMode } = useContext(ThemeContext) as IThemeContext;
   const isMobile = useMediaQuery("(max-width:900px)");
+  const location = useLocation();
 
   const handleRegisterButtonClick = () => {
     onRegisterClick();
@@ -54,10 +55,15 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
         {menuItems.map((item, index) => (
           <Button
             key={index}
-            color="inherit"
+            color={"inherit"}
             component={Link}
             to={item.link}
-            sx={{ color: textColor, textTransform: "none", fontSize: 18 }}
+            sx={{
+              color: { textColor },
+              fontWeight: location.pathname === item.link ? "bold" : "normal",
+              textTransform: "none",
+              fontSize: 18,
+            }}
           >
             {item.label}
           </Button>

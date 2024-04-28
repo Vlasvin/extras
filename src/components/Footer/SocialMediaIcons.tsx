@@ -5,26 +5,49 @@ import telegramIcon from "../../assets/pictures/svg/telegram.svg";
 import emailIcon from "../../assets/pictures/svg/email.svg";
 import phoneIcon from "../../assets/pictures/svg/phone.svg";
 import viberIcon from "../../assets/pictures/svg/viber.svg";
+import whatsappIcon from "../../assets/pictures/svg/whatsapp.svg";
 
 const SocialMediaIcons = () => {
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", padding: "16px" }}>
-      <ListItemButton href="tel:+380632715551">
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        padding: "4px 4px 4px 28px ",
+        maxWidth: 500,
+      }}
+    >
+      <ListItemButton href="tel:+380632715551" sx={{ padding: 0 }}>
         <ListItemIcon>
           <img src={phoneIcon} alt="Phone Icon" />
         </ListItemIcon>
       </ListItemButton>
-      <ListItemButton href="viber://chat?number=+380632715551">
+      <ListItemButton
+        href="viber://chat?number=+380632715551"
+        sx={{ padding: 0 }}
+      >
         <ListItemIcon>
           <img src={viberIcon} alt="Viber Icon" />
         </ListItemIcon>
       </ListItemButton>
-      <ListItemButton href="https://telegram.me/Ksumudrenok">
+      <ListItemButton
+        href="https://telegram.me/Ksumudrenok"
+        sx={{ padding: 0 }}
+      >
         <ListItemIcon>
           <img src={telegramIcon} alt="Telegram Icon" />
         </ListItemIcon>
       </ListItemButton>
-      <ListItemButton href="mailto:info@extras.com.ua">
+      <ListItemButton
+        href="https://wa.me/380632715551"
+        target="_blank"
+        sx={{ padding: 0, width: 24, height: 24 }}
+      >
+        <ListItemIcon>
+          <img src={whatsappIcon} alt="WhatsApp Icon" />
+        </ListItemIcon>
+      </ListItemButton>
+      <ListItemButton href="mailto:info@extras.com.ua" sx={{ padding: 0 }}>
         <ListItemIcon>
           <img src={emailIcon} alt="Email Icon" />
         </ListItemIcon>
@@ -32,6 +55,7 @@ const SocialMediaIcons = () => {
       <ListItemButton
         href="https://instagram.com/extra_executive_services?igshid=OGQ5ZDc2ODk2ZA=="
         target="_blank"
+        sx={{ padding: 0 }}
       >
         <ListItemIcon>
           <img src={instagramIcon} alt="Instagram Icon" />
@@ -40,6 +64,7 @@ const SocialMediaIcons = () => {
       <ListItemButton
         href="https://www.facebook.com/extrasukraine"
         target="_blank"
+        sx={{ padding: 0 }}
       >
         <ListItemIcon>
           <img src={facebookIcon} alt="Facebook Icon" />
