@@ -58,9 +58,26 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ iconColor }) => {
         open={open}
         onClose={handleMenuClose}
       >
-        <MenuItem onClick={() => changeLanguage("en")}>English</MenuItem>
-        <MenuItem onClick={() => changeLanguage("uk")}>Українська</MenuItem>
-        <MenuItem onClick={() => changeLanguage("ru")}>Русский</MenuItem>
+        <MenuItem onClick={() => changeLanguage("en")}>
+          <img src={usaIcon} alt="English Flag" style={{ marginRight: 10 }} />
+          English
+        </MenuItem>
+        <MenuItem onClick={() => changeLanguage("uk")}>
+          <img
+            src={ukraineIcon}
+            alt="Ukrainian Flag"
+            style={{ marginRight: 10 }}
+          />
+          Українська
+        </MenuItem>
+        <MenuItem onClick={() => changeLanguage("ru")}>
+          <img
+            src={russiaIcon}
+            alt="Russian Flag"
+            style={{ marginRight: 10 }}
+          />
+          Русский
+        </MenuItem>
       </Menu>
     </>
   );
