@@ -30,6 +30,7 @@ const SocialMediaIcons = () => {
           <img src={viberIcon} alt="Viber Icon" />
         </ListItemIcon>
       </ListItemButton>
+
       <ListItemButton
         href="https://telegram.me/Ksumudrenok"
         sx={{ padding: 0 }}
@@ -38,15 +39,17 @@ const SocialMediaIcons = () => {
           <img src={telegramIcon} alt="Telegram Icon" />
         </ListItemIcon>
       </ListItemButton>
+
       <ListItemButton
         href="https://wa.me/380632715551"
         target="_blank"
-        sx={{ padding: 0, width: 24, height: 24 }}
+        sx={{ padding: 0 }}
       >
         <ListItemIcon>
           <img src={whatsappIcon} alt="WhatsApp Icon" />
         </ListItemIcon>
       </ListItemButton>
+
       <ListItemButton href="mailto:info@extras.com.ua" sx={{ padding: 0 }}>
         <ListItemIcon>
           <img src={emailIcon} alt="Email Icon" />
