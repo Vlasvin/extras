@@ -13,8 +13,7 @@ const SocialMediaIcons = () => {
       sx={{
         display: "flex",
         justifyContent: "center",
-        padding: "4px 4px 4px 28px ",
-        maxWidth: 500,
+        paddingTop: 2,
       }}
     >
       <ListItemButton href="tel:+380632715551" sx={{ padding: 0 }}>

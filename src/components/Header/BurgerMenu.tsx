@@ -72,32 +72,36 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
         onClose={toggleDrawer(false)}
         sx={drawerStyles}
       >
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "right",
-            alignItems: "center",
-            padding: "16px",
-            borderBottom: "1px solid #ddd",
-          }}
-        >
-          <ThemeSwitch />
-          <LanguageSelector iconColor="primary" />
-          <IconButton onClick={handleRegisterButtonClick} aria-label="account">
-            <PersonIcon />
-          </IconButton>
-          <IconButton onClick={toggleDrawer(false)} aria-label="close">
-            <CloseIcon />
-          </IconButton>
-        </Box>
         <Collapse in={isOpen} timeout={drawerTransition.duration}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "right",
+              alignItems: "center",
+              padding: "16px",
+              borderBottom: "1px solid #ddd",
+            }}
+          >
+            <ThemeSwitch />
+            <LanguageSelector iconColor="primary" />
+            <IconButton
+              onClick={handleRegisterButtonClick}
+              aria-label="account"
+            >
+              <PersonIcon />
+            </IconButton>
+            <IconButton onClick={toggleDrawer(false)} aria-label="close">
+              <CloseIcon />
+            </IconButton>
+          </Box>
+
           <Box
             sx={{
               display: "flex",
               padding: "20px 0",
               marginLeft: 5,
               flexDirection: "column",
-              height: "100%",
+              height: "140%",
             }}
           >
             <List sx={{ flex: 1 }}>
@@ -116,9 +120,10 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
           </Box>
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "center",
               borderTop: "1px solid #ddd",
+              maxWidth: 320,
+              paddingLeft: "16px",
+              margin: "0 auto",
             }}
           >
             <SocialMediaIcons />

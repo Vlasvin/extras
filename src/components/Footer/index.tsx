@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Box, Button, Grid, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import SocialMediaIcons from "./SocialMediaIcons";
 import { useTranslation } from "react-i18next";
 
@@ -73,13 +73,18 @@ const Footer = () => {
         </Grid>
         <Box
           sx={{
-            marginTop: 2,
             borderBottom: "1px solid #ddd",
-            paddingBottom: 2,
+            paddingBottom: 1,
+            marginBottom: 1,
+            paddingLeft: isMobile ? "14px" : "28px",
+            maxWidth: isMobile ? 300 : 500,
           }}
         >
           <SocialMediaIcons />
         </Box>
+        <Typography variant="body2" color="#ddd">
+          {t("developed_by")}
+        </Typography>
       </Box>
     </Box>
   );
