@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
-import SocialMediaIcons from "./SocialMediaIcons";
 import { useTranslation } from "react-i18next";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
+
+import SocialMediaIcons from "./SocialMediaIcons";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -49,7 +50,7 @@ const Footer = () => {
           spacing={0.1}
           sx={{
             alignItems: "center",
-            maxWidth: isMobile ? 400 : 500,
+            maxWidth: isMobile ? 400 : 550,
             marginBottom: 4,
           }}
         >

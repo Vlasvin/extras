@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { IconButton, Menu, MenuItem } from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
 import i18next from "i18next";
+
+import ukraineIcon from "../../assets/pictures/svg/ukraine.svg";
+import russiaIcon from "../../assets/pictures/svg/russia.svg";
+import usaIcon from "../../assets/pictures/svg/usa.svg";
 
 interface LanguageSelectorProps {
   iconColor: string;
@@ -24,6 +27,20 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ iconColor }) => {
     handleMenuClose();
   };
 
+  const getIcon = () => {
+    const currentLanguage = i18next.language;
+    switch (currentLanguage) {
+      case "en":
+        return usaIcon;
+      case "uk":
+        return ukraineIcon;
+      case "ru":
+        return russiaIcon;
+      default:
+        return usaIcon;
+    }
+  };
+
   return (
     <>
       <IconButton
@@ -33,7 +50,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ iconColor }) => {
         onClick={handleMenuOpen}
         color={iconColor === "primary" ? "primary" : "inherit"}
       >
-        <LanguageIcon />
+        <img src={getIcon()} alt="Language Flag" />
       </IconButton>
       <Menu
         id="language-menu"
