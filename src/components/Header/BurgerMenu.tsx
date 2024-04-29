@@ -94,12 +94,13 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
           <Box
             sx={{
               display: "flex",
-              marginTop: 10,
+              padding: "20px 0",
               marginLeft: 5,
               flexDirection: "column",
+              height: "100%",
             }}
           >
-            <List>
+            <List sx={{ flex: 1 }}>
               {menuItems.map((item, index) => (
                 <ListItem
                   button
@@ -113,8 +114,15 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
               ))}
             </List>
           </Box>
-          <Box sx={{ marginBottom: 40, borderTop: "1px solid #ddd" }} />
-          <SocialMediaIcons />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              borderTop: "1px solid #ddd",
+            }}
+          >
+            <SocialMediaIcons />
+          </Box>
         </Collapse>
       </Drawer>
     </>
