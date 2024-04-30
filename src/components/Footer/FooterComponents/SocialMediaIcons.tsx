@@ -1,11 +1,11 @@
 import { Box, ListItemButton, ListItemIcon } from "@mui/material";
-import instagramIcon from "../../assets/pictures/svg/instagram.svg";
-import facebookIcon from "../../assets/pictures/svg/facebook.svg";
-import telegramIcon from "../../assets/pictures/svg/telegram.svg";
-import emailIcon from "../../assets/pictures/svg/email.svg";
-import phoneIcon from "../../assets/pictures/svg/phone.svg";
-import viberIcon from "../../assets/pictures/svg/viber.svg";
-import whatsappIcon from "../../assets/pictures/svg/whatsapp.svg";
+import instagramIcon from "assets/pictures/svg/instagram.svg";
+import facebookIcon from "assets/pictures/svg/facebook.svg";
+import telegramIcon from "assets/pictures/svg/telegram.svg";
+import whatsappIcon from "assets/pictures/svg/whatsapp.svg";
+import emailIcon from "assets/pictures/svg/email.svg";
+import phoneIcon from "assets/pictures/svg/phone.svg";
+import viberIcon from "assets/pictures/svg/viber.svg";
 
 const SocialMediaIcons = () => {
   return (

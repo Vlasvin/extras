@@ -17,7 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import PersonIcon from "@mui/icons-material/Person";
 
-import SocialMediaIcons from "../Footer/SocialMediaIcons";
+import SocialMediaIcons from "components/Footer/FooterComponents/SocialMediaIcons";
 import ThemeSwitch from "./ThemeSwitch";
 import LanguageSelector from "./LanguageSelector";
 

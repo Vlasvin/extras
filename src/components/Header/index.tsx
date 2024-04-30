@@ -13,11 +13,12 @@ import {
 import PersonIcon from "@mui/icons-material/Person";
 import DownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-import { ThemeContext } from "../../redux/ThemeContext";
-import { IThemeContext, IThemeMode } from "../../redux/ThemeContext/types";
-import ThemeSwitch from "./ThemeSwitch";
-import LanguageSelector from "./LanguageSelector";
-import BurgerMenu from "./BurgerMenu";
+import { ThemeContext } from "redux/ThemeContext";
+import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
+import ThemeSwitch from "components/Header/HeaderComponents/ThemeSwitch";
+import LanguageSelector from "components/Header/HeaderComponents/LanguageSelector";
+import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
+import { headerStyles } from "./HeaderStyles";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -31,17 +32,22 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const [isMenuOpening, setIsMenuOpening] = useState(false);
 
   const handleRegisterButtonClick = () => {
     onRegisterClick();
   };
 
   const handleVisasMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setIsMenuOpening(true);
     setAnchorEl(event.currentTarget);
   };
 
   const handleVisasMenuClose = () => {
-    setAnchorEl(null);
+    if (!isMenuOpening) {
+      setAnchorEl(null);
+    }
+    setIsMenuOpening(false);
   };
 
   const textColor = themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
@@ -54,19 +60,14 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   ];
 
   const visaMenuItems = [
+    { label: t("visas"), link: "/visas" },
     { label: t("visa to usa"), link: "/visas/usa" },
     { label: t("visa to canada"), link: "/visas/canada" },
     { label: t("visa to australia"), link: "/visas/australia" },
   ];
 
   return (
-    <Toolbar
-      sx={{
-        justifyContent: "space-between",
-        alignItems: "center",
-        borderBottom: "1px solid #ddd",
-      }}
-    >
+    <Toolbar sx={headerStyles.toolbar}>
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Link to="/">
           <img
@@ -76,32 +77,28 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           />
         </Link>
       </Box>
-      <Box
-        sx={{
-          display: { xs: "none", md: "flex" },
-          gap: 4,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <Box sx={headerStyles.box}>
         {menuItems.map((item, index) => (
           <Button
+            id="demo-positioned-button"
+            aria-controls={open ? "demo-positioned-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
             key={index}
             color={"inherit"}
             component={Link}
             to={item.link}
-            onMouseEnter={
-              item.label === t("visas") ? handleVisasMenuOpen : undefined
-            }
+            onMouseEnter={(event) => {
+              event.preventDefault();
+              if (item.label === t("visas")) {
+                handleVisasMenuOpen(event);
+              }
+            }}
             onMouseLeave={handleVisasMenuClose}
             sx={{
+              ...headerStyles.button,
               color: { textColor },
               fontWeight: location.pathname === item.link ? "bold" : "normal",
-              textTransform: "none",
-              fontSize: 18,
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
             }}
           >
             {item.label}
@@ -109,21 +106,21 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           </Button>
         ))}
         <Menu
-          id="visas-menu"
+          id="demo-positioned-menu"
+          aria-labelledby="demo-positioned-button"
           anchorEl={anchorEl}
           open={open}
           onClose={handleVisasMenuClose}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "left",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "left",
-          }}
+          onMouseLeave={handleVisasMenuClose}
+          sx={headerStyles.menu}
         >
           {visaMenuItems.map((menuItem) => (
-            <MenuItem key={menuItem.label} component={Link} to={menuItem.link}>
+            <MenuItem
+              key={menuItem.label}
+              component={Link}
+              to={menuItem.link}
+              onClick={handleVisasMenuClose}
+            >
               {menuItem.label}
             </MenuItem>
           ))}

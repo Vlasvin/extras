@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 
-import { ThemeContext } from "../../redux/ThemeContext";
-import { IThemeContext, IThemeMode } from "../../redux/ThemeContext/types";
+import { ThemeContext } from "../../../redux/ThemeContext";
+import { IThemeContext, IThemeMode } from "../../../redux/ThemeContext/types";
 
 const StyledSwitch = styled(Switch)(({ theme }) => ({
   width: 60,

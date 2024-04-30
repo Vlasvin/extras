@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 
-import SocialMediaIcons from "./SocialMediaIcons";
+import SocialMediaIcons from "components/Footer/FooterComponents/SocialMediaIcons";
 
 const Footer = () => {
   const { t } = useTranslation();

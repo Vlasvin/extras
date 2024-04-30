@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import i18next from "i18next";
 
-import ukraineIcon from "../../assets/pictures/svg/ukraine.svg";
-import russiaIcon from "../../assets/pictures/svg/russia.svg";
-import usaIcon from "../../assets/pictures/svg/usa.svg";
+import ukraineIcon from "assets/pictures/svg/ukraine.svg";
+import russiaIcon from "assets/pictures/svg/russia.svg";
+import usaIcon from "assets/pictures/svg/usa.svg";
 
 interface LanguageSelectorProps {
   iconColor: string;
