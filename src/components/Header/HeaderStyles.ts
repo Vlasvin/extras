@@ -18,14 +18,4 @@ export const headerStyles = {
     display: "flex",
     alignItems: "center",
   },
-  menu: {
-    anchorOrigin: {
-      vertical: "bottom",
-      horizontal: "center",
-    },
-    transformOrigin: {
-      vertical: "top",
-      horizontal: "center",
-    },
-  },
 };

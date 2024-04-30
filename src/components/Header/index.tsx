@@ -78,33 +78,34 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
         </Link>
       </Box>
       <Box sx={headerStyles.box}>
-        {menuItems.map((item, index) => (
-          <Button
-            id="demo-positioned-button"
-            aria-controls={open ? "demo-positioned-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            key={index}
-            color={"inherit"}
-            component={Link}
-            to={item.link}
-            onMouseEnter={(event) => {
-              event.preventDefault();
-              if (item.label === t("visas")) {
-                handleVisasMenuOpen(event);
-              }
-            }}
-            onMouseLeave={handleVisasMenuClose}
-            sx={{
-              ...headerStyles.button,
-              color: { textColor },
-              fontWeight: location.pathname === item.link ? "bold" : "normal",
-            }}
-          >
-            {item.label}
-            {item.label === t("visas") && <DownIcon sx={{ ml: 1 }} />}
-          </Button>
-        ))}
+        {!isMobile &&
+          menuItems.map((item, index) => (
+            <Button
+              id="demo-positioned-button"
+              aria-controls={open ? "demo-positioned-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              key={index}
+              color={"inherit"}
+              component={Link}
+              to={item.link}
+              onMouseEnter={(event) => {
+                event.preventDefault();
+                if (item.label === t("visas")) {
+                  handleVisasMenuOpen(event);
+                }
+              }}
+              onMouseLeave={handleVisasMenuClose}
+              sx={{
+                ...headerStyles.button,
+                color: { textColor },
+                fontWeight: location.pathname === item.link ? "bold" : "normal",
+              }}
+            >
+              {item.label}
+              {item.label === t("visas") && <DownIcon sx={{ ml: 1 }} />}
+            </Button>
+          ))}
         <Menu
           id="demo-positioned-menu"
           aria-labelledby="demo-positioned-button"
@@ -112,7 +113,14 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           open={open}
           onClose={handleVisasMenuClose}
           onMouseLeave={handleVisasMenuClose}
-          sx={headerStyles.menu}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
         >
           {visaMenuItems.map((menuItem) => (
             <MenuItem

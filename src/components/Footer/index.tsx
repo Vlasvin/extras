@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 
 import SocialMediaIcons from "components/Footer/FooterComponents/SocialMediaIcons";
+import { footerStyles } from "./FooterStyles";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -20,9 +21,7 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "rgb(56, 54, 56)",
-        padding: 4,
-        display: "flex",
+        ...footerStyles.box,
         flexDirection: isMobile ? "column" : "row",
       }}
     >
@@ -37,22 +36,15 @@ const Footer = () => {
       </Box>
       <Box
         sx={{
-          flexGrow: 1,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          order: isMobile ? 1 : undefined,
+          ...footerStyles.contentContainer,
+          ...(isMobile && { order: 1 }),
           marginTop: isMobile ? 2 : 0,
         }}
       >
         <Grid
           container
           spacing={0.1}
-          sx={{
-            alignItems: "center",
-            maxWidth: isMobile ? 400 : 550,
-            marginBottom: 4,
-          }}
+          sx={{ ...footerStyles.linkGrid, maxWidth: isMobile ? 400 : 550 }}
         >
           {linkItems.map((item, index) => (
             <Grid item xs={isMobile ? 6 : 4} key={index}>
@@ -60,12 +52,7 @@ const Footer = () => {
                 color={"inherit"}
                 component={Link}
                 to={item.link}
-                sx={{
-                  color: "#FFFFFF",
-                  textTransform: "none",
-                  fontSize: 18,
-                  textAlign: "left",
-                }}
+                sx={footerStyles.button}
               >
                 {item.label}
               </Button>
@@ -74,9 +61,7 @@ const Footer = () => {
         </Grid>
         <Box
           sx={{
-            borderBottom: "1px solid #ddd",
-            paddingBottom: 1,
-            marginBottom: 1,
+            ...footerStyles.socialMediaBox,
             paddingLeft: isMobile ? "14px" : "28px",
             maxWidth: isMobile ? 300 : 500,
           }}
