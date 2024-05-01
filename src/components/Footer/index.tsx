@@ -42,16 +42,18 @@ const Footer = () => {
         flexDirection: isMobile ? "column" : "row",
       }}
     >
-      <Box sx={{ maxWidth: "150px", order: isMobile ? -1 : 0 }}>
-        <Link to="/">
-          <img
-            src="https://extras.com.ua/wp-content/themes/slick-red/images/red/logo.gif"
-            alt="Company logo"
-            title="Logo"
-            style={{ height: 70, marginRight: 30 }}
-          />
-        </Link>
-      </Box>
+      {!isMobile && (
+        <Box sx={{ maxWidth: "150px" }}>
+          <Link to="/">
+            <img
+              src="https://extras.com.ua/wp-content/themes/slick-red/images/red/logo.gif"
+              alt="Company logo"
+              title="Logo"
+              style={{ height: 70, marginRight: 30 }}
+            />
+          </Link>
+        </Box>
+      )}
       <Box
         sx={{
           ...footerStyles.contentContainer,
@@ -75,7 +77,7 @@ const Footer = () => {
                 color={"inherit"}
                 component={Link}
                 to={item.link}
-                sx={footerStyles.button}
+                sx={{ ...footerStyles.button, fontSize: isMobile ? 16 : 18 }}
               >
                 {item.icon}
                 {item.label}

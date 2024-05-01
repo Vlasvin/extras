@@ -1,7 +1,7 @@
 export const footerStyles = {
   box: {
     backgroundColor: "rgb(56, 54, 56)",
-    padding: 2,
+    padding: 1,
     display: "flex",
     flexDirection: "row",
   },
