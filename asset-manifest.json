@@ -1,12 +1,15 @@
 {
   "files": {
     "main.css": "/extras/static/css/main.e6c13ad2.css",
-    "main.js": "/extras/static/js/main.05b129d2.js",
+    "main.js": "/extras/static/js/main.04e78274.js",
     "static/js/176.4ca24000.chunk.js": "/extras/static/js/176.4ca24000.chunk.js",
     "static/js/749.bd288773.chunk.js": "/extras/static/js/749.bd288773.chunk.js",
     "static/js/555.0449a9b4.chunk.js": "/extras/static/js/555.0449a9b4.chunk.js",
     "static/js/707.c6463025.chunk.js": "/extras/static/js/707.c6463025.chunk.js",
     "static/js/212.59b0192c.chunk.js": "/extras/static/js/212.59b0192c.chunk.js",
+    "static/media/canada.svg": "/extras/static/media/canada.1ecdb0bb0d8889993e5b5e0e7a6883d7.svg",
+    "static/media/usa-map.svg": "/extras/static/media/usa-map.3b4b4be93c41998484485faa609817c4.svg",
+    "static/media/australia.svg": "/extras/static/media/australia.3677e2c55b1e05e00e4d2d36e653fd42.svg",
     "static/media/viber.svg": "/extras/static/media/viber.f71dd157402b7e45858f4019c4781ca9.svg",
     "static/media/instagram.svg": "/extras/static/media/instagram.72634fba9e964938677e57cead11e4a9.svg",
     "static/media/usa.svg": "/extras/static/media/usa.b755e2f098ad391d4f0206b633057c3a.svg",
@@ -19,7 +22,7 @@
     "static/media/ukraine.svg": "/extras/static/media/ukraine.273ac29c147bd003bd53e287271fb204.svg",
     "index.html": "/extras/index.html",
     "main.e6c13ad2.css.map": "/extras/static/css/main.e6c13ad2.css.map",
-    "main.05b129d2.js.map": "/extras/static/js/main.05b129d2.js.map",
+    "main.04e78274.js.map": "/extras/static/js/main.04e78274.js.map",
     "176.4ca24000.chunk.js.map": "/extras/static/js/176.4ca24000.chunk.js.map",
     "749.bd288773.chunk.js.map": "/extras/static/js/749.bd288773.chunk.js.map",
     "555.0449a9b4.chunk.js.map": "/extras/static/js/555.0449a9b4.chunk.js.map",
@@ -28,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.05b129d2.js"
+    "static/js/main.04e78274.js"
   ]
 }
