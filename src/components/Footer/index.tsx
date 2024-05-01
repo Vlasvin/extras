@@ -4,15 +4,32 @@ import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 
 import SocialMediaIcons from "components/Footer/FooterComponents/SocialMediaIcons";
 import { footerStyles } from "./FooterStyles";
+import USAIcon from "assets/pictures/svg/usa-map.svg";
+import CanadaIcon from "assets/pictures/svg/canada.svg";
+import AustraliaIcon from "assets/pictures/svg/australia.svg";
 
 const Footer = () => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width: 900px)");
 
   const linkItems = [
-    { label: t("visa to usa"), link: "/visas/usa" },
-    { label: t("visa to canada"), link: "/visas/canada" },
-    { label: t("visa to australia"), link: "/visas/australia" },
+    {
+      label: t("visa to usa"),
+      link: "/visas/usa",
+      icon: <img src={USAIcon} alt="USA Icon" width="24" height="24" />,
+    },
+    {
+      label: t("visa to canada"),
+      link: "/visas/canada",
+      icon: <img src={CanadaIcon} alt="Canada Icon" width="24" height="24" />,
+    },
+    {
+      label: t("visa to australia"),
+      link: "/visas/australia",
+      icon: (
+        <img src={AustraliaIcon} alt="Australia Icon" width="24" height="24" />
+      ),
+    },
     { label: t("translations"), link: "/translations" },
     { label: t("services"), link: "/services" },
     { label: t("about us"), link: "/about-us" },
@@ -30,6 +47,7 @@ const Footer = () => {
           <img
             src="https://extras.com.ua/wp-content/themes/slick-red/images/red/logo.gif"
             alt="Company logo"
+            title="Logo"
             style={{ height: 70, marginRight: 30 }}
           />
         </Link>
@@ -44,16 +62,22 @@ const Footer = () => {
         <Grid
           container
           spacing={0.1}
-          sx={{ ...footerStyles.linkGrid, maxWidth: isMobile ? 400 : 550 }}
+          sx={{ ...footerStyles.linkGrid, maxWidth: isMobile ? 420 : 800 }}
         >
           {linkItems.map((item, index) => (
-            <Grid item xs={isMobile ? 6 : 4} key={index}>
+            <Grid
+              item
+              xs={isMobile ? 6 : 4}
+              key={index}
+              sx={{ width: "100px !important" }}
+            >
               <Button
                 color={"inherit"}
                 component={Link}
                 to={item.link}
                 sx={footerStyles.button}
               >
+                {item.icon}
                 {item.label}
               </Button>
             </Grid>

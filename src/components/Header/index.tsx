@@ -18,8 +18,8 @@ import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
 import ThemeSwitch from "components/Header/HeaderComponents/ThemeSwitch";
 import LanguageSelector from "components/Header/HeaderComponents/LanguageSelector";
 import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
-import { headerStyles } from "./HeaderStyles";
 
+import { headerStyles } from "./HeaderStyles";
 interface HeaderProps {
   onRegisterClick: () => void;
 }

@@ -1,7 +1,7 @@
 export const footerStyles = {
   box: {
     backgroundColor: "rgb(56, 54, 56)",
-    padding: 4,
+    padding: 2,
     display: "flex",
     flexDirection: "row",
   },
@@ -13,7 +13,6 @@ export const footerStyles = {
   },
   linkGrid: {
     alignItems: "center",
-    maxWidth: 550,
     marginBottom: 4,
   },
   button: {
@@ -21,6 +20,9 @@ export const footerStyles = {
     textTransform: "none",
     fontSize: 18,
     textAlign: "left",
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
   },
   socialMediaBox: {
     borderBottom: "1px solid #ddd",
