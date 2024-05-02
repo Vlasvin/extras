@@ -31,7 +31,7 @@ const App = () => {
               <Route path="/about-us" element={<AboutUsPage />} />
             </Routes>
           </Suspense>
-          <Box sx={{ position: "absolute", bottom: 0, width: "100%" }}>
+          <Box sx={{ position: "relative", bottom: 0, width: "100%" }}>
             <Footer />
           </Box>
         </div>
