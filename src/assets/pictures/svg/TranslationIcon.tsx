@@ -1,11 +1,12 @@
 import React from "react";
 
-const TranslationIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+const TranslationIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({ fill }) => (
   <svg
     width="80px"
     height="80px"
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"
+    fill={fill}
   >
     <rect x="0" fill="none" width="20" height="20" />
 

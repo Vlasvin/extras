@@ -12,7 +12,10 @@ export const aboutUsStyles = {
     lineHeight: 1.6,
   },
   section: {
+    background: "transparent",
     marginBottom: 20,
+    borderRadius: 20,
+    boxShadow: "0px 8px 24px 0px rgba(0, 0, 0, 0.05)",
     animation: `fadeIn 1s ease-in-out forwards`,
   },
   "@keyframes fadeIn": {
@@ -30,12 +33,13 @@ export const aboutUsStyles = {
     flexDirection: "column",
     alignItems: "center",
     marginBottom: 16,
+    borderRadius: 24,
     padding: 18,
     height: "340px",
   },
   serviceIcon: {
-    marginRight: 16,
-    marginBottom: 8,
+    marginTop: "8px",
+    marginBottom: "24px",
   },
   serviceTitle: {
     fontWeight: "bold",

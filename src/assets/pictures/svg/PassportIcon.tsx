@@ -1,8 +1,8 @@
 import React from "react";
 
-const PassportIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+const PassportIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({ fill }) => (
   <svg
-    fill="#000000"
+    fill={fill}
     version="1.1"
     id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"

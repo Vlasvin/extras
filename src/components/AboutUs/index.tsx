@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Typography, Grid, Container, Paper } from "@mui/material";
 
 import AnimatedServiceItem from "./AboutUsComponents/ServiceItem";
@@ -8,6 +8,8 @@ import TranslationIcon from "assets/pictures/svg/TranslationIcon";
 import ServicesIcon from "assets/pictures/svg/ServicesIcon";
 import { aboutUsStyles } from "./AboutUsStyles";
 import { useSpring, animated } from "@react-spring/web";
+import { ThemeContext } from "redux/ThemeContext";
+import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
 
 interface Service {
   title: string;
@@ -19,6 +21,12 @@ interface Service {
 const AboutUs: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
+  const { themeMode } = useContext(ThemeContext) as IThemeContext;
+  console.log(themeMode);
+
+  const getIconColor = () => {
+    return themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
+  };
 
   useEffect(() => {
     setTimeout(() => setIsSectionsLoaded(true), 300);
@@ -29,7 +37,7 @@ const AboutUs: React.FC = () => {
       title: "Бюро перекладів",
       description:
         "Професійний переклад будь-яких документів: юридичні, медичні, технічні, особисті тощо.",
-      icon: <TranslationIcon />,
+      icon: <TranslationIcon fill={getIconColor()} />,
     },
     {
       title: "Допомога в оформленні віз",
@@ -38,7 +46,7 @@ const AboutUs: React.FC = () => {
         "Підготовка документів",
         "Супровід у візових центрах",
       ],
-      icon: <PassportIcon />,
+      icon: <PassportIcon fill={getIconColor()} />,
     },
 
     {
@@ -49,13 +57,13 @@ const AboutUs: React.FC = () => {
         "Легалізація",
         "Лексикографічні дослідження",
       ],
-      icon: <ServicesIcon />,
+      icon: <ServicesIcon fill={getIconColor()} />,
     },
   ];
 
   const springConfig = {
-    delay: 0.2,
-    duration: 0.8,
+    delay: 2,
+    duration: 2,
     from: { opacity: 0, transform: "translateY(20px)" },
     to: { opacity: 1, transform: "translateY(0)" },
   };
@@ -64,14 +72,14 @@ const AboutUs: React.FC = () => {
 
   return (
     <Container style={aboutUsStyles.root}>
-      <Typography variant="h1" style={(aboutUsStyles.root, aboutUsStyles.h1)}>
+      <Typography variant="h1" style={aboutUsStyles.h1}>
         Про нас
       </Typography>
 
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="body1" style={aboutUsStyles.content}>
+            <Typography variant="body1" style={{ ...aboutUsStyles.content }}>
               Extras - приватна українська компанія, що спеціалізується на
               послугах з перекладу та оформленні віз.
             </Typography>
@@ -80,7 +88,12 @@ const AboutUs: React.FC = () => {
         <Grid container spacing={2} direction="row">
           {services.map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Paper style={aboutUsStyles.section}>
+              <Paper
+                style={{
+                  ...aboutUsStyles.section,
+                  background: "rgb(11, 15, 21);",
+                }}
+              >
                 <animated.div style={{ ...animation }}>
                   <AnimatedServiceItem service={service} />
                 </animated.div>
@@ -116,15 +129,6 @@ const AboutUs: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">Реквізити</Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              - Рахунок IBAN: UA433052990000026009033605744 - Одержувач: ФОП
-              Мудренок Оксана Анатоліївна - ЄДРПОУ: 3087023062
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
             <Typography variant="h6">Наше портфоліо</Typography>
             <Typography variant="body1" style={aboutUsStyles.content}>
               - Тисячі перекладених документів - Понад 10 років досвіду -
@@ -139,6 +143,15 @@ const AboutUs: React.FC = () => {
             <Typography variant="body1" style={aboutUsStyles.content}>
               "[Відгук клієнта 1]" - [Ім'я клієнта 1] "[Відгук клієнта 2]" -
               [Ім'я клієнта 2] "[Відгук клієнта 3]" - [Ім'я клієнта 3]
+            </Typography>
+          </Paper>
+        </Grid>{" "}
+        <Grid item xs={12}>
+          <Paper style={aboutUsStyles.section}>
+            <Typography variant="h6">Реквізити</Typography>
+            <Typography variant="body1" style={aboutUsStyles.content}>
+              - Рахунок IBAN: UA433052990000026009033605744 - Одержувач: ФОП
+              Мудренок Оксана Анатоліївна - ЄДРПОУ: 3087023062
             </Typography>
           </Paper>
         </Grid>

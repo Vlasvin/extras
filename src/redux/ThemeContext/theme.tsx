@@ -32,7 +32,7 @@ export const AppDarkTheme: Theme = createTheme({
     mode: "dark",
     background: {
       default: "rgb(14, 14, 14)",
-      paper: "rgb(41,44,49)",
+      paper: "rgb(11, 15, 21)",
     },
     text: {
       primary: "rgb(226, 226, 226);",

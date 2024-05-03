@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 
-import { aboutUsStyles } from "../AboutUsStyles";
+import { aboutUsStyles } from "components/AboutUs/AboutUsStyles";
 
 interface ServiceItemProps {
   service: {
@@ -15,7 +15,7 @@ interface ServiceItemProps {
 const AnimatedServiceItem: React.FC<ServiceItemProps> = ({ service }) => {
   return (
     <div style={{ ...aboutUsStyles.serviceItem, flexDirection: "column" }}>
-      <div style={{ textAlign: "center", marginBottom: "10px" }}>
+      <div style={{ textAlign: "center", ...aboutUsStyles.serviceIcon }}>
         {service.icon}
       </div>
       <div>
