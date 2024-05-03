@@ -21,7 +21,9 @@ const App = () => {
     <ThemeContextProvider>
       <I18nextProvider i18n={i18next}>
         <div className="App">
-          <Header onRegisterClick={handleRegisterClick} />
+          <Box sx={{ position: "fixed", top: 0, width: "100%" }}>
+            <Header onRegisterClick={handleRegisterClick} />
+          </Box>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/" element={<HomePage />} />

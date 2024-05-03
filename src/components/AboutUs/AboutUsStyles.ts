@@ -1,5 +1,6 @@
 export const aboutUsStyles = {
   root: {
+    marginTop: 70,
     padding: 20,
   },
   title: {
@@ -30,7 +31,7 @@ export const aboutUsStyles = {
     alignItems: "center",
     marginBottom: 16,
     padding: 18,
-    height: "300px",
+    height: "340px",
   },
   serviceIcon: {
     marginRight: 16,
@@ -38,9 +39,22 @@ export const aboutUsStyles = {
   },
   serviceTitle: {
     fontWeight: "bold",
-    fontSize: 20,
+    paddingLeft: "22px",
   },
   serviceDescription: {
+    margin: "16px 22px",
+  },
+
+  h1: {
+    fontFamily: "Nunito",
+    fontSize: "64px",
+    fontWeight: 800,
+    lineHeight: "87px",
+    letterSpacing: "1%",
+  },
+  li: {
+    fontFamily: "Quicksand, sans-serif",
     fontSize: 20,
+    fontWeightRegular: 400,
   },
 };

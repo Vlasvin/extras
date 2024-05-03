@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Grid, Container, Paper } from "@mui/material";
 
-// import AnimatedServiceItem from "./AboutUsComponents/ServiceItem";
+import AnimatedServiceItem from "./AboutUsComponents/ServiceItem";
 
 import PassportIcon from "assets/pictures/svg/PassportIcon";
 import TranslationIcon from "assets/pictures/svg/TranslationIcon";
 import ServicesIcon from "assets/pictures/svg/ServicesIcon";
 import { aboutUsStyles } from "./AboutUsStyles";
+import { useSpring, animated } from "@react-spring/web";
+
+interface Service {
+  title: string;
+  description?: string;
+  points?: string[];
+  icon: JSX.Element;
+}
 
 const AboutUs: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setIsSectionsLoaded(true), 300);
   }, []);
 
-  const services = [
+  const services: Service[] = [
     {
       title: "Бюро перекладів",
       description:
@@ -24,22 +33,38 @@ const AboutUs: React.FC = () => {
     },
     {
       title: "Допомога в оформленні віз",
-      description:
-        "Консультації, підготовка документів, супровід у візових центрах.",
+      points: [
+        "Консультації",
+        "Підготовка документів",
+        "Супровід у візових центрах",
+      ],
       icon: <PassportIcon />,
     },
 
     {
       title: "Супутні послуги",
-      description:
-        "Нотаризація документів, апостиль, легалізація, лексикографічні дослідження.",
+      points: [
+        "Нотаризація документів",
+        "Aпостиль",
+        "Легалізація",
+        "Лексикографічні дослідження",
+      ],
       icon: <ServicesIcon />,
     },
   ];
 
+  const springConfig = {
+    delay: 0.2,
+    duration: 0.8,
+    from: { opacity: 0, transform: "translateY(20px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+  };
+
+  const animation = useSpring(springConfig);
+
   return (
     <Container style={aboutUsStyles.root}>
-      <Typography variant="h1" style={aboutUsStyles.root}>
+      <Typography variant="h1" style={(aboutUsStyles.root, aboutUsStyles.h1)}>
         Про нас
       </Typography>
 
@@ -54,27 +79,11 @@ const AboutUs: React.FC = () => {
         </Grid>
         <Grid container spacing={2} direction="row">
           {services.map((service, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <Paper style={aboutUsStyles.section}>
-                <div
-                  style={{
-                    ...aboutUsStyles.serviceItem,
-                    flexDirection: "column",
-                  }}
-                >
-                  <div style={aboutUsStyles.serviceIcon}>{service.icon}</div>
-                  <div>
-                    <Typography variant="h6" style={aboutUsStyles.serviceTitle}>
-                      {service.title}
-                    </Typography>
-                    <Typography
-                      variant="body1"
-                      style={aboutUsStyles.serviceDescription}
-                    >
-                      {service.description}
-                    </Typography>
-                  </div>
-                </div>
+                <animated.div style={{ ...animation }}>
+                  <AnimatedServiceItem service={service} />
+                </animated.div>
               </Paper>
             </Grid>
           ))}

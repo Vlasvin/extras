@@ -15,6 +15,15 @@ export const AppLightTheme: Theme = createTheme({
         },
       },
     },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Quicksand, sans-serif",
+          fontSize: 20,
+          fontWeightRegular: 400,
+        },
+      },
+    },
   },
 });
 
@@ -41,6 +50,9 @@ export const AppDarkTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           color: "rgb(226, 226, 226)",
+          fontFamily: "Quicksand, sans-serif",
+          fontSize: 20,
+          fontWeightRegular: 400,
         },
       },
     },
