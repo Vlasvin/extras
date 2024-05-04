@@ -21,7 +21,7 @@ const App = () => {
     <ThemeContextProvider>
       <I18nextProvider i18n={i18next}>
         <div className="App">
-          <Box sx={{ position: "fixed", top: 0, width: "100%" }}>
+          <Box sx={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}>
             <Header onRegisterClick={handleRegisterClick} />
           </Box>
           <Suspense fallback={<div>Loading...</div>}>

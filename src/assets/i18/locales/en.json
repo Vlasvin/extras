@@ -7,5 +7,32 @@
   "services": "Services",
   "about us": "About Us",
   "register": "Register",
-  "developed_by": "© 2024 All rights reserved. Developed:"
+  "developed_by": "© 2024 All rights reserved. Developed:",
+
+  "aboutUs": {
+    "title": "About us",
+    "company_desc": "Extras is a private Ukrainian company specializing in translation and visa processing services.",
+    "bureau": "Translation Bureau",
+    "bureau_description": "Professional translation of any documents: legal, medical, technical, personal, etc.",
+    "visa_assistance": "Visa Assistance",
+    "consultation": "Consultations",
+    "document_preparation": "Document Preparation",
+    "center_accompaniment": "Center Accompaniment",
+    "related_services": "Related Services",
+    "document_notarization": "Document Notarization",
+    "apostille": "Apostille",
+    "legalization": "Legalization",
+    "lexicographic_research": "Lexicographic Research",
+    "motto": "Our motto",
+    "motto_description": "An approach tailored just for you.",
+    "values": "Our values",
+    "values_description": "Honesty, quality, and respect for all.",
+    "company": "About the company",
+    "company_description": "The company was registered in 2008 in Kyiv. We are not limited to an office or address. Our services are available to Ukrainians at home and abroad. Founder and CEO Oksana Mudrenok",
+    "portfolio": "Our portfolio",
+    "portfolio_description": "- Thousands of translated documents - Over 10 years of experience - Professional team of translators - Confidentiality and security - Affordable prices",
+    "customer_reviews": "Customer reviews",
+    "props": "Props",
+    "contacts": "Contact us"
+  }
 }

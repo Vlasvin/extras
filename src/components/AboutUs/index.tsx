@@ -10,6 +10,7 @@ import { aboutUsStyles } from "./AboutUsStyles";
 import { useSpring, animated } from "@react-spring/web";
 import { ThemeContext } from "redux/ThemeContext";
 import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
+import { useTranslation } from "react-i18next";
 
 interface Service {
   title: string;
@@ -19,10 +20,10 @@ interface Service {
 }
 
 const AboutUs: React.FC = () => {
+  const { t } = useTranslation();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
   const { themeMode } = useContext(ThemeContext) as IThemeContext;
-  console.log(themeMode);
 
   const getIconColor = () => {
     return themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
@@ -34,28 +35,26 @@ const AboutUs: React.FC = () => {
 
   const services: Service[] = [
     {
-      title: "Бюро перекладів",
-      description:
-        "Професійний переклад будь-яких документів: юридичні, медичні, технічні, особисті тощо.",
+      title: t("aboutUs.bureau"),
+      description: t("aboutUs.bureau_description"),
+
       icon: <TranslationIcon fill={getIconColor()} />,
     },
     {
-      title: "Допомога в оформленні віз",
+      title: t("aboutUs.visa_assistance"),
       points: [
-        "Консультації",
-        "Підготовка документів",
-        "Супровід у візових центрах",
+        t("aboutUs.consultation"),
+        t("aboutUs.document_preparation"),
+        t("aboutUs.center_accompaniment"),
       ],
       icon: <PassportIcon fill={getIconColor()} />,
     },
-
     {
-      title: "Супутні послуги",
+      title: t("services"),
       points: [
-        "Нотаризація документів",
-        "Aпостиль",
-        "Легалізація",
-        "Лексикографічні дослідження",
+        t("aboutUs.document_notarization"),
+        t("aboutUs.apostille"),
+        t("aboutUs.legalization"),
       ],
       icon: <ServicesIcon fill={getIconColor()} />,
     },
@@ -71,17 +70,19 @@ const AboutUs: React.FC = () => {
   const animation = useSpring(springConfig);
 
   return (
-    <Container style={aboutUsStyles.root}>
+    <Container style={{ ...aboutUsStyles.root, margin: "70px 25px" }}>
       <Typography variant="h1" style={aboutUsStyles.h1}>
-        Про нас
+        {t("aboutUs.title")}
       </Typography>
 
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="body1" style={{ ...aboutUsStyles.content }}>
-              Extras - приватна українська компанія, що спеціалізується на
-              послугах з перекладу та оформленні віз.
+            <Typography
+              variant="body1"
+              style={{ ...aboutUsStyles.content, fontSize: 28 }}
+            >
+              {t("aboutUs.company_desc")}
             </Typography>
           </Paper>
         </Grid>
@@ -91,6 +92,7 @@ const AboutUs: React.FC = () => {
               <Paper
                 style={{
                   ...aboutUsStyles.section,
+                  margin: "10px",
                   background: "rgb(11, 15, 21);",
                 }}
               >
@@ -103,52 +105,50 @@ const AboutUs: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">Наш девіз</Typography>
+            <Typography variant="h6">{t("aboutUs.motto")}</Typography>
             <Typography variant="body1" style={aboutUsStyles.content}>
-              Підхід, «закроєний» саме для Вас.
+              {t("aboutUs.motto_description")}
             </Typography>
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">Наші цінності</Typography>
+            <Typography variant="h6"> {t("aboutUs.values")}</Typography>
             <Typography variant="body1" style={aboutUsStyles.content}>
-              Чесність, якість та повага до кожного.
+              {t("aboutUs.values_description")}
             </Typography>
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">Про компанію</Typography>
+            <Typography variant="h6"> {t("aboutUs.company")}</Typography>
             <Typography variant="body1" style={aboutUsStyles.content}>
-              Компанія зареєстрована в 2008 році у м. Києві. Ми не обмежуємося
-              офісом чи адресою. Наші послуги доступні для українців вдома та
-              закордоном. Засновник та керівник Оксана Мудренок
+              {t("aboutUs.company_description")}
             </Typography>
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">Наше портфоліо</Typography>
+            <Typography variant="h6">{t("aboutUs.portfolio")}</Typography>
             <Typography variant="body1" style={aboutUsStyles.content}>
-              - Тисячі перекладених документів - Понад 10 років досвіду -
-              Професійна команда перекладачів - Конфіденційність та безпека -
-              Доступні ціни
+              {t("aboutUs.portfolio_description")}
             </Typography>
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">Відгуки клієнтів</Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              "[Відгук клієнта 1]" - [Ім'я клієнта 1] "[Відгук клієнта 2]" -
-              [Ім'я клієнта 2] "[Відгук клієнта 3]" - [Ім'я клієнта 3]
+            <Typography variant="h6">
+              {t("aboutUs.customer_reviews")}
             </Typography>
+            <Typography
+              variant="body1"
+              style={aboutUsStyles.content}
+            ></Typography>
           </Paper>
         </Grid>{" "}
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">Реквізити</Typography>
+            <Typography variant="h6">{t("aboutUs.props")}</Typography>
             <Typography variant="body1" style={aboutUsStyles.content}>
               - Рахунок IBAN: UA433052990000026009033605744 - Одержувач: ФОП
               Мудренок Оксана Анатоліївна - ЄДРПОУ: 3087023062
@@ -157,9 +157,9 @@ const AboutUs: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">Зв'язатися з нами</Typography>
+            <Typography variant="h6">{t("aboutUs.contacts")}</Typography>
             <Typography variant="body1" style={aboutUsStyles.content}>
-              - Телефон: +380 (44) 234-56-78 - Email: info@extras.com.ua -
+              - Телефон: +380 (44) 234-56-78 - Email: info@extras.com.ua
             </Typography>
           </Paper>
         </Grid>{" "}

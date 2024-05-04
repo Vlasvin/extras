@@ -1,7 +1,9 @@
 export const aboutUsStyles = {
   root: {
-    marginTop: 70,
-    padding: 20,
+    margin: "70px 100px",
+    "@media (max-width: 900px)": {
+      margin: "70px 25px",
+    },
   },
   title: {
     fontWeight: "bold",
@@ -35,7 +37,7 @@ export const aboutUsStyles = {
     marginBottom: 16,
     borderRadius: 24,
     padding: 18,
-    height: "340px",
+    height: "400px",
   },
   serviceIcon: {
     marginTop: "8px",
@@ -55,6 +57,7 @@ export const aboutUsStyles = {
     fontWeight: 800,
     lineHeight: "87px",
     letterSpacing: "1%",
+    marginBottom: 30,
   },
   li: {
     fontFamily: "Quicksand, sans-serif",
