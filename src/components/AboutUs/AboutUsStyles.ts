@@ -1,10 +1,5 @@
 export const aboutUsStyles = {
-  root: {
-    margin: "70px 100px",
-    "@media (max-width: 900px)": {
-      margin: "70px 25px",
-    },
-  },
+  root: { paddingRight: 0 },
   title: {
     fontWeight: "bold",
     fontSize: 36,
@@ -37,7 +32,7 @@ export const aboutUsStyles = {
     marginBottom: 16,
     borderRadius: 24,
     padding: 18,
-    height: "400px",
+    height: "360px",
   },
   serviceIcon: {
     marginTop: "8px",

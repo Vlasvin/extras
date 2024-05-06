@@ -94,7 +94,7 @@ const Footer = () => {
         >
           <SocialMediaIcons />
         </Box>
-        <Typography variant="body2" color="#ddd">
+        <Typography variant="body2" sx={footerStyles.developedBox}>
           {t("developed_by")}
         </Typography>
       </Box>

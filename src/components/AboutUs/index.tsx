@@ -70,21 +70,19 @@ const AboutUs: React.FC = () => {
   const animation = useSpring(springConfig);
 
   return (
-    <Container style={{ ...aboutUsStyles.root, margin: "70px 25px" }}>
+    <Container style={aboutUsStyles.root}>
       <Typography variant="h1" style={aboutUsStyles.h1}>
         {t("aboutUs.title")}
       </Typography>
 
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
-            <Typography
-              variant="body1"
-              style={{ ...aboutUsStyles.content, fontSize: 28 }}
-            >
-              {t("aboutUs.company_desc")}
-            </Typography>
-          </Paper>
+          <Typography
+            variant="body1"
+            style={{ ...aboutUsStyles.content, fontSize: 28, marginBottom: 16 }}
+          >
+            {t("aboutUs.company_desc")}
+          </Typography>
         </Grid>
         <Grid container spacing={2} direction="row">
           {services.map((service, index) => (
@@ -137,17 +135,6 @@ const AboutUs: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">
-              {t("aboutUs.customer_reviews")}
-            </Typography>
-            <Typography
-              variant="body1"
-              style={aboutUsStyles.content}
-            ></Typography>
-          </Paper>
-        </Grid>{" "}
-        <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
             <Typography variant="h6">{t("aboutUs.props")}</Typography>
             <Typography variant="body1" style={aboutUsStyles.content}>
               - Рахунок IBAN: UA433052990000026009033605744 - Одержувач: ФОП
@@ -162,7 +149,14 @@ const AboutUs: React.FC = () => {
               - Телефон: +380 (44) 234-56-78 - Email: info@extras.com.ua
             </Typography>
           </Paper>
-        </Grid>{" "}
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6">{t("aboutUs.customer_reviews")}</Typography>
+          <Typography
+            variant="body1"
+            style={aboutUsStyles.content}
+          ></Typography>
+        </Grid>
       </Grid>
     </Container>
   );
