@@ -31,5 +31,5 @@ export const footerStyles = {
     paddingLeft: "28px",
     maxWidth: 500,
   },
-  developedBox: { textAlign: "center", color: "#ddd" },
+  developedBox: { textAlign: "center", color: "#ddd", fontSize: 14 },
 };

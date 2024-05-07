@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Typography, Grid, Container, Paper } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { Typography, Grid, Container, Paper, Box } from "@mui/material";
+import { useSpring, animated } from "@react-spring/web";
 
 import AnimatedServiceItem from "./AboutUsComponents/ServiceItem";
+import { ThemeContext } from "redux/ThemeContext";
+import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
 
 import PassportIcon from "assets/pictures/svg/PassportIcon";
 import TranslationIcon from "assets/pictures/svg/TranslationIcon";
 import ServicesIcon from "assets/pictures/svg/ServicesIcon";
+import CheckIcon from "assets/pictures/svg/CheckIcon";
 import { aboutUsStyles } from "./AboutUsStyles";
-import { useSpring, animated } from "@react-spring/web";
-import { ThemeContext } from "redux/ThemeContext";
-import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
-import { useTranslation } from "react-i18next";
 
 interface Service {
   title: string;
@@ -26,7 +27,7 @@ const AboutUs: React.FC = () => {
   const { themeMode } = useContext(ThemeContext) as IThemeContext;
 
   const getIconColor = () => {
-    return themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
+    return themeMode === IThemeMode.DARK ? "#FFFFFF" : "#000000dd";
   };
 
   useEffect(() => {
@@ -59,6 +60,24 @@ const AboutUs: React.FC = () => {
       icon: <ServicesIcon fill={getIconColor()} />,
     },
   ];
+  const sections = [
+    {
+      title: t("aboutUs.company"),
+      description: t("aboutUs.company_description"),
+    },
+    {
+      title: t("aboutUs.portfolio"),
+      description: t("aboutUs.portfolio_description"),
+    },
+    {
+      title: t("aboutUs.motto"),
+      description: t("aboutUs.motto_description"),
+    },
+    {
+      title: t("aboutUs.values"),
+      description: t("aboutUs.values_description"),
+    },
+  ];
 
   const springConfig = {
     delay: 2,
@@ -71,7 +90,10 @@ const AboutUs: React.FC = () => {
 
   return (
     <Container style={aboutUsStyles.root}>
-      <Typography variant="h1" style={aboutUsStyles.h1}>
+      <Typography
+        variant="h1"
+        style={{ ...aboutUsStyles.h1, textTransform: "uppercase" }}
+      >
         {t("aboutUs.title")}
       </Typography>
 
@@ -79,7 +101,7 @@ const AboutUs: React.FC = () => {
         <Grid item xs={12}>
           <Typography
             variant="body1"
-            style={{ ...aboutUsStyles.content, fontSize: 28, marginBottom: 16 }}
+            style={{ ...aboutUsStyles.content, fontSize: 28, marginBottom: 48 }}
           >
             {t("aboutUs.company_desc")}
           </Typography>
@@ -101,54 +123,53 @@ const AboutUs: React.FC = () => {
             </Grid>
           ))}
         </Grid>
+        <Typography
+          variant="h2"
+          style={{ ...aboutUsStyles.h2, textTransform: "uppercase" }}
+        >
+          {t("aboutUs.why_us")}
+        </Typography>
+        <Grid container spacing={2}>
+          {sections.map((section, index) => (
+            <Grid item xs={12} sm={6} key={index} marginBottom={4}>
+              <Box
+                style={aboutUsStyles.root}
+                display="flex"
+                alignItems="center"
+              >
+                <CheckIcon fill={getIconColor()} />
+                <Typography
+                  variant="h6"
+                  style={{
+                    ...aboutUsStyles.titleWhyUs,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {section.title}
+                </Typography>
+              </Box>
+              <Typography
+                variant="body1"
+                style={{ ...aboutUsStyles.content, maxWidth: "480px" }}
+              >
+                {section.description}
+              </Typography>
+            </Grid>
+          ))}
+        </Grid>
+
         <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">{t("aboutUs.motto")}</Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              {t("aboutUs.motto_description")}
-            </Typography>
-          </Paper>
+          <Typography variant="h6">{t("aboutUs.props")}</Typography>
+          <Typography variant="body1" style={aboutUsStyles.content}>
+            - Рахунок IBAN: UA433052990000026009033605744 - Одержувач: ФОП
+            Мудренок Оксана Анатоліївна - ЄДРПОУ: 3087023062
+          </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6"> {t("aboutUs.values")}</Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              {t("aboutUs.values_description")}
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6"> {t("aboutUs.company")}</Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              {t("aboutUs.company_description")}
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">{t("aboutUs.portfolio")}</Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              {t("aboutUs.portfolio_description")}
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">{t("aboutUs.props")}</Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              - Рахунок IBAN: UA433052990000026009033605744 - Одержувач: ФОП
-              Мудренок Оксана Анатоліївна - ЄДРПОУ: 3087023062
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper style={aboutUsStyles.section}>
-            <Typography variant="h6">{t("aboutUs.contacts")}</Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              - Телефон: +380 (44) 234-56-78 - Email: info@extras.com.ua
-            </Typography>
-          </Paper>
+          <Typography variant="h6">{t("aboutUs.contacts")}</Typography>
+          <Typography variant="body1" style={aboutUsStyles.content}>
+            - Телефон: +380 (44) 234-56-78 - Email: info@extras.com.ua
+          </Typography>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h6">{t("aboutUs.customer_reviews")}</Typography>

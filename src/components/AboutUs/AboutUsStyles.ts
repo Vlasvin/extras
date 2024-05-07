@@ -12,7 +12,7 @@ export const aboutUsStyles = {
     background: "transparent",
     marginBottom: 20,
     borderRadius: 20,
-    boxShadow: "0px 8px 24px 0px rgba(0, 0, 0, 0.05)",
+    boxShadow: "0px 8px 24px 0px rgba(0, 0, 0, 0.2)",
     animation: `fadeIn 1s ease-in-out forwards`,
   },
   "@keyframes fadeIn": {
@@ -32,7 +32,7 @@ export const aboutUsStyles = {
     marginBottom: 16,
     borderRadius: 24,
     padding: 18,
-    height: "360px",
+    height: "400px",
   },
   serviceIcon: {
     marginTop: "8px",
@@ -47,16 +47,35 @@ export const aboutUsStyles = {
   },
 
   h1: {
-    fontFamily: "Nunito",
-    fontSize: "64px",
+    fontFamily: " GT America LC Compressed",
+    fontSize: 54,
     fontWeight: 800,
-    lineHeight: "87px",
-    letterSpacing: "1%",
-    marginBottom: 30,
+    lineHeight: 1.25,
+    letterSpacing: ".01em",
+    marginBottom: 48,
   },
   li: {
     fontFamily: "Quicksand, sans-serif",
     fontSize: 20,
     fontWeightRegular: 400,
+  },
+
+  boxWhyUs: { marginBottom: 8 },
+
+  h2: {
+    margin: "48px 0",
+    fontSize: 54,
+    lineHeight: 1.25,
+    fontFamily: " GT America LC Compressed",
+    fontWeight: 800,
+    letterSpacing: ".01em",
+  },
+  titleWhyUs: {
+    fontSize: 42,
+    lineHeight: 1.08,
+    fontFamily: " GT America LC Compressed",
+    fontWeight: 500,
+    letterSpacing: ".01em",
+    marginLeft: 24,
   },
 };

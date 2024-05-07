@@ -2,6 +2,7 @@ import { Theme, createTheme } from "@mui/material";
 
 export const AppLightTheme: Theme = createTheme({
   palette: {
+    mode: "light",
     background: {
       default: "rgb(253, 255, 255))",
       paper: "rgb(255,255,255)",
@@ -60,6 +61,9 @@ export const AppDarkTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           color: "rgb(226, 226, 226)",
+          fontFamily: "Quicksand, sans-serif",
+          fontSize: 20,
+          fontWeightRegular: 400,
         },
       },
     },
