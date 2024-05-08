@@ -4,7 +4,7 @@ export const AppLightTheme: Theme = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "rgb(253, 255, 255))",
+      default: "rgb(253, 255, 255)",
       paper: "rgb(255,255,255)",
     },
   },
@@ -12,10 +12,11 @@ export const AppLightTheme: Theme = createTheme({
     MuiToolbar: {
       styleOverrides: {
         root: {
-          backgroundColor: "rgb(253, 255, 255))",
+          backgroundColor: "rgb(253, 255, 255)",
         },
       },
     },
+
     MuiTypography: {
       styleOverrides: {
         root: {

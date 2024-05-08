@@ -7,7 +7,7 @@ import { ThemeContextProvider } from "./redux/ThemeContext";
 import i18next from "./assets/i18/i18nConfig";
 import Footer from "components/Footer";
 import { Box } from "@mui/material";
-import { AppContainer } from "AppStyles";
+import { AppContainer, appStyles } from "AppStyles";
 
 const HomePage = React.lazy(() => import("./pages/HomePage"));
 const VisasPage = React.lazy(() => import("./pages/VisasPage"));
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <ThemeContextProvider>
       <I18nextProvider i18n={i18next}>
-        <Box sx={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}>
+        <Box sx={appStyles.boxHeader}>
           <Header onRegisterClick={handleRegisterClick} />
         </Box>
         <AppContainer>
@@ -35,7 +35,7 @@ const App = () => {
             </Routes>
           </Suspense>
         </AppContainer>
-        <Box sx={{ position: "relative", bottom: 0, width: "100%" }}>
+        <Box sx={appStyles.boxFooter}>
           <Footer />
         </Box>
       </I18nextProvider>
