@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Typography, Grid, Container, Paper, Box } from "@mui/material";
+import { Typography, Grid, Container, Paper, Box, Button } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 
 import AnimatedServiceItem from "./AboutUsComponents/ServiceItem";
+import { GetSections } from "services/servicesData";
 import { ThemeContext } from "redux/ThemeContext";
 import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
 
@@ -24,11 +25,21 @@ const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   const { themeMode } = useContext(ThemeContext) as IThemeContext;
+  const sections = GetSections();
 
   const getIconColor = () => {
     return themeMode === IThemeMode.DARK ? "#FFFFFF" : "#000000dd";
   };
+
+  // const handleModalOpen = () => {
+  //   setIsModalOpen(true);
+  // };
+
+  // const handleModalClose = () => {
+  //   setIsModalOpen(false);
+  // };
 
   useEffect(() => {
     setTimeout(() => setIsSectionsLoaded(true), 300);
@@ -58,24 +69,6 @@ const AboutUs: React.FC = () => {
         t("aboutUs.legalization"),
       ],
       icon: <ServicesIcon fill={getIconColor()} />,
-    },
-  ];
-  const sections = [
-    {
-      title: t("aboutUs.company"),
-      description: t("aboutUs.company_description"),
-    },
-    {
-      title: t("aboutUs.portfolio"),
-      description: t("aboutUs.portfolio_description"),
-    },
-    {
-      title: t("aboutUs.motto"),
-      description: t("aboutUs.motto_description"),
-    },
-    {
-      title: t("aboutUs.values"),
-      description: t("aboutUs.values_description"),
     },
   ];
 
@@ -172,11 +165,9 @@ const AboutUs: React.FC = () => {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6">{t("aboutUs.customer_reviews")}</Typography>
-          <Typography
-            variant="body1"
-            style={aboutUsStyles.content}
-          ></Typography>
+          <Button variant="outlined" color="primary">
+            {t("aboutUs.leave_review")}
+          </Button>
         </Grid>
       </Grid>
     </Container>

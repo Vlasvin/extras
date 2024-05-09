@@ -36,8 +36,9 @@ export const AppDarkTheme: Theme = createTheme({
       default: "rgb(14, 14, 14)",
       paper: "rgb(11, 15, 21)",
     },
+
     text: {
-      primary: "rgb(226, 226, 226);",
+      primary: "rgb(226, 226, 226)",
     },
   },
   components: {
@@ -45,6 +46,14 @@ export const AppDarkTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "rgb(14, 14, 14)",
+        },
+      },
+    },
+
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "rgb(16, 16, 16)",
         },
       },
     },
