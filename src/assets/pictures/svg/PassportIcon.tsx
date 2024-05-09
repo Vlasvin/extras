@@ -1,6 +1,10 @@
 import React from "react";
+interface IconProps {
+  fill: string;
+  size: number;
+}
 
-const PassportIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({ fill }) => (
+const PassportIcon: React.FC<IconProps> = ({ fill }) => (
   <svg
     fill={fill}
     version="1.1"

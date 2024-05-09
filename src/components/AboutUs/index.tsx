@@ -10,7 +10,7 @@ import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
 
 import PassportIcon from "assets/pictures/svg/PassportIcon";
 import TranslationIcon from "assets/pictures/svg/TranslationIcon";
-import ServicesIcon from "assets/pictures/svg/ServicesIcon";
+import DocIcon from "assets/pictures/svg/DocIcon";
 import CheckIcon from "assets/pictures/svg/CheckIcon";
 import { aboutUsStyles } from "./AboutUsStyles";
 
@@ -19,20 +19,20 @@ interface Service {
   description?: string;
   points?: string[];
   icon: JSX.Element;
+  size?: number;
 }
 
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
   const { themeMode } = useContext(ThemeContext) as IThemeContext;
   const sections = GetSections();
 
   const getIconColor = () => {
     return themeMode === IThemeMode.DARK ? "#FFFFFF" : "#000000dd";
   };
-
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   // const handleModalOpen = () => {
   //   setIsModalOpen(true);
   // };
@@ -45,12 +45,14 @@ const AboutUs: React.FC = () => {
     setTimeout(() => setIsSectionsLoaded(true), 300);
   }, []);
 
+  const iconSize = 80;
+
   const services: Service[] = [
     {
       title: t("aboutUs.bureau"),
       description: t("aboutUs.bureau_description"),
 
-      icon: <TranslationIcon fill={getIconColor()} />,
+      icon: <TranslationIcon fill={getIconColor()} size={iconSize} />,
     },
     {
       title: t("aboutUs.visa_assistance"),
@@ -59,7 +61,7 @@ const AboutUs: React.FC = () => {
         t("aboutUs.document_preparation"),
         t("aboutUs.center_accompaniment"),
       ],
-      icon: <PassportIcon fill={getIconColor()} />,
+      icon: <PassportIcon fill={getIconColor()} size={iconSize} />,
     },
     {
       title: t("services"),
@@ -68,7 +70,7 @@ const AboutUs: React.FC = () => {
         t("aboutUs.apostille"),
         t("aboutUs.legalization"),
       ],
-      icon: <ServicesIcon fill={getIconColor()} />,
+      icon: <DocIcon fill={getIconColor()} size={iconSize} />,
     },
   ];
 
@@ -94,7 +96,11 @@ const AboutUs: React.FC = () => {
         <Grid item xs={12}>
           <Typography
             variant="body1"
-            style={{ ...aboutUsStyles.content, fontSize: 28, marginBottom: 48 }}
+            style={{
+              ...aboutUsStyles.content,
+              fontSize: "clamp(20px,5.55vw,28px)",
+              marginBottom: 48,
+            }}
           >
             {t("aboutUs.company_desc")}
           </Typography>

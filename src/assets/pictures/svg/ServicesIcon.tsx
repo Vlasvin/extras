@@ -1,9 +1,13 @@
 import React from "react";
+interface IconProps {
+  fill: string;
+  size: number;
+}
 
-const ServicesIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({ fill }) => (
+const ServicesIcon: React.FC<IconProps> = ({ fill, size }) => (
   <svg
-    width="80px"
-    height="80px"
+    width={size}
+    height={size}
     viewBox="0 0 64 64"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"

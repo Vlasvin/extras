@@ -48,7 +48,7 @@ export const aboutUsStyles = {
 
   h1: {
     fontFamily: " GT America LC Compressed",
-    fontSize: 54,
+    fontSize: "clamp(30px,5.55vw,54px)",
     fontWeight: 800,
     lineHeight: 1.25,
     letterSpacing: ".01em",
@@ -64,14 +64,14 @@ export const aboutUsStyles = {
 
   h2: {
     margin: "48px 0",
-    fontSize: 54,
+    fontSize: "clamp(30px,5.55vw,54px)",
     lineHeight: 1.25,
     fontFamily: " GT America LC Compressed",
     fontWeight: 800,
     letterSpacing: ".01em",
   },
   titleWhyUs: {
-    fontSize: 42,
+    fontSize: "clamp(26px,5.55vw,42px)",
     lineHeight: 1.08,
     fontFamily: " GT America LC Compressed",
     fontWeight: 500,

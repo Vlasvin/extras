@@ -3,14 +3,20 @@ import { useTranslation } from "react-i18next";
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 
 import SocialMediaIcons from "components/Footer/FooterComponents/SocialMediaIcons";
-import { footerStyles } from "./FooterStyles";
+
 import USAIcon from "assets/pictures/svg/usa-map.svg";
 import CanadaIcon from "assets/pictures/svg/canada.svg";
 import AustraliaIcon from "assets/pictures/svg/australia.svg";
+import DocIcon from "assets/pictures/svg/DocIcon";
+import ServicesIcon from "assets/pictures/svg/ServicesIcon";
+import TranslationIcon from "assets/pictures/svg/TranslationIcon";
+import { footerStyles } from "./FooterStyles";
 
 const Footer = () => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width: 900px)");
+
+  const iconSize = 20;
 
   const linkItems = [
     {
@@ -30,9 +36,21 @@ const Footer = () => {
         <img src={AustraliaIcon} alt="Australia Icon" width="24" height="24" />
       ),
     },
-    { label: t("translations"), link: "/translations" },
-    { label: t("services"), link: "/services" },
-    { label: t("about us"), link: "/about-us" },
+    {
+      label: t("translations"),
+      link: "/translations",
+      icon: <TranslationIcon fill="#FFFFFF" size={24} />,
+    },
+    {
+      label: t("services"),
+      link: "/services",
+      icon: <DocIcon fill="#FFFFFF" size={iconSize} />,
+    },
+    {
+      label: t("about us"),
+      link: "/about-us",
+      icon: <ServicesIcon fill="#FFFFFF" size={iconSize} />,
+    },
   ];
 
   return (

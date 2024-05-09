@@ -21,7 +21,7 @@ export const AppLightTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: "Quicksand, sans-serif",
-          fontSize: 20,
+          fontSize: "clamp(16px,5.55vw,20px)",
           fontWeightRegular: 400,
         },
       },
@@ -62,7 +62,7 @@ export const AppDarkTheme: Theme = createTheme({
         root: {
           color: "rgb(226, 226, 226)",
           fontFamily: "Quicksand, sans-serif",
-          fontSize: 20,
+          fontSize: "clamp(16px,5.55vw,20px)",
           fontWeightRegular: 400,
         },
       },
@@ -72,7 +72,7 @@ export const AppDarkTheme: Theme = createTheme({
         root: {
           color: "rgb(226, 226, 226)",
           fontFamily: "Quicksand, sans-serif",
-          fontSize: 20,
+          fontSize: "clamp(16px,5.55vw,20px)",
           fontWeightRegular: 400,
         },
       },
