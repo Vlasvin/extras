@@ -4,6 +4,7 @@ import facebookIcon from "assets/pictures/svg/facebook.svg";
 import telegramIcon from "assets/pictures/svg/telegram.svg";
 import whatsappIcon from "assets/pictures/svg/whatsapp.svg";
 import emailIcon from "assets/pictures/svg/email.svg";
+import emailIconBlue from "assets/pictures/svg/emailBlue.svg";
 import phoneIcon from "assets/pictures/svg/phone.svg";
 import phoneIconWhite from "assets/pictures/svg/phoneWhite.svg";
 import phoneIconBlack from "assets/pictures/svg/phoneBlack.svg";
@@ -63,6 +64,11 @@ const SocialMediaIcons = () => {
       <ListItemButton href="mailto:info@extras.com.ua" sx={{ padding: 0 }}>
         <ListItemIcon>
           <img src={emailIcon} alt="Email Icon" />
+        </ListItemIcon>
+      </ListItemButton>
+      <ListItemButton href="mailto:info@extras.com.ua" sx={{ padding: 0 }}>
+        <ListItemIcon>
+          <img src={emailIconBlue} alt="Email Icon" />
         </ListItemIcon>
       </ListItemButton>
       <ListItemButton
