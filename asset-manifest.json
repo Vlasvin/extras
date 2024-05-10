@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/extras/static/css/main.e6c13ad2.css",
-    "main.js": "/extras/static/js/main.bae10549.js",
+    "main.js": "/extras/static/js/main.e717fb3c.js",
     "static/js/176.4ca24000.chunk.js": "/extras/static/js/176.4ca24000.chunk.js",
     "static/js/749.bd288773.chunk.js": "/extras/static/js/749.bd288773.chunk.js",
     "static/js/555.0449a9b4.chunk.js": "/extras/static/js/555.0449a9b4.chunk.js",
@@ -14,16 +14,18 @@
     "static/media/viber.svg": "/extras/static/media/viber.f71dd157402b7e45858f4019c4781ca9.svg",
     "static/media/instagram.svg": "/extras/static/media/instagram.72634fba9e964938677e57cead11e4a9.svg",
     "static/media/usa.svg": "/extras/static/media/usa.b755e2f098ad391d4f0206b633057c3a.svg",
-    "static/media/email.svg": "/extras/static/media/email.4b6a9cb3a5448de33d34606681e5a3c2.svg",
     "static/media/facebook.svg": "/extras/static/media/facebook.ae74b61b00a8984592d33a89968fa741.svg",
     "static/media/whatsapp.svg": "/extras/static/media/whatsapp.2103aec334389d3798f0cdf046951c16.svg",
     "static/media/telegram.svg": "/extras/static/media/telegram.8c080152857c5618aa03be0818118623.svg",
-    "static/media/phone.svg": "/extras/static/media/phone.46f155054bf9ecec3d9a3054bc0c73ad.svg",
+    "static/media/phoneWhite.svg": "/extras/static/media/phoneWhite.99cf98706ffa9b835b114b2b380b4675.svg",
     "static/media/russia.svg": "/extras/static/media/russia.ae9e65c93452902dcb4fc369974e3c63.svg",
+    "static/media/phoneBlack.svg": "/extras/static/media/phoneBlack.5adc3eb430431fe3f06f4cac64aa70c9.svg",
+    "static/media/phone.svg": "/extras/static/media/phone.90770cf2d94d1afc005f3bb2e09a0a43.svg",
     "static/media/ukraine.svg": "/extras/static/media/ukraine.273ac29c147bd003bd53e287271fb204.svg",
     "index.html": "/extras/index.html",
+    "static/media/email.svg": "/extras/static/media/email.e31662930af764f0aa76792a58911340.svg",
     "main.e6c13ad2.css.map": "/extras/static/css/main.e6c13ad2.css.map",
-    "main.bae10549.js.map": "/extras/static/js/main.bae10549.js.map",
+    "main.e717fb3c.js.map": "/extras/static/js/main.e717fb3c.js.map",
     "176.4ca24000.chunk.js.map": "/extras/static/js/176.4ca24000.chunk.js.map",
     "749.bd288773.chunk.js.map": "/extras/static/js/749.bd288773.chunk.js.map",
     "555.0449a9b4.chunk.js.map": "/extras/static/js/555.0449a9b4.chunk.js.map",
@@ -33,6 +35,6 @@
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.bae10549.js"
+    "static/js/main.e717fb3c.js"
   ]
 }
