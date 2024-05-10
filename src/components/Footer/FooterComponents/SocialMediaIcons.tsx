@@ -5,6 +5,8 @@ import telegramIcon from "assets/pictures/svg/telegram.svg";
 import whatsappIcon from "assets/pictures/svg/whatsapp.svg";
 import emailIcon from "assets/pictures/svg/email.svg";
 import phoneIcon from "assets/pictures/svg/phone.svg";
+import phoneIconWhite from "assets/pictures/svg/phoneWhite.svg";
+import phoneIconBlack from "assets/pictures/svg/phoneBlack.svg";
 import viberIcon from "assets/pictures/svg/viber.svg";
 
 const SocialMediaIcons = () => {
@@ -18,6 +20,16 @@ const SocialMediaIcons = () => {
       <ListItemButton href="tel:+380632715551" sx={{ padding: 0 }}>
         <ListItemIcon>
           <img src={phoneIcon} alt="Phone Icon" />
+        </ListItemIcon>
+      </ListItemButton>
+      <ListItemButton href="tel:+380632715551" sx={{ padding: 0 }}>
+        <ListItemIcon>
+          <img src={phoneIconWhite} alt="Phone Icon" />
+        </ListItemIcon>
+      </ListItemButton>
+      <ListItemButton href="tel:+380632715551" sx={{ padding: 0 }}>
+        <ListItemIcon>
+          <img src={phoneIconBlack} alt="Phone Icon" />
         </ListItemIcon>
       </ListItemButton>
       <ListItemButton
