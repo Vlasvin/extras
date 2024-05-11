@@ -1,7 +1,7 @@
 export const footerStyles = {
   box: {
     backgroundColor: "rgb(56, 54, 56)",
-    padding: 1,
+    padding: "16px 8px",
     display: "flex",
     flexDirection: "row",
   },
@@ -26,7 +26,7 @@ export const footerStyles = {
   },
   socialMediaBox: {
     borderBottom: "1px solid #ddd",
-    paddingBottom: 1,
+    paddingBottom: "8px",
     marginBottom: 1,
     paddingLeft: "28px",
     maxWidth: 500,

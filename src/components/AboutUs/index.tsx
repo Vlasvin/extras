@@ -172,9 +172,27 @@ const AboutUs: React.FC = () => {
             <Typography variant="h6" style={aboutUsStyles.h6}>
               {t("aboutUs.contacts")}
             </Typography>
-            <Typography variant="body1" style={aboutUsStyles.content}>
-              {t("aboutUs.phone")}: +380 (44) 234-56-78
-              <br /> {t("aboutUs.email")}: info@extras.com.ua
+            <Typography
+              variant="body1"
+              style={{
+                ...aboutUsStyles.content,
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              <a
+                href="tel:+380442345678"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                {t("aboutUs.phone")}: +380 (44) 234-56-78
+              </a>
+              <br />
+              <a
+                href="mailto:info@extras.com.ua"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                {t("aboutUs.email")}: info@extras.com.ua
+              </a>
             </Typography>
           </Grid>
         </Grid>

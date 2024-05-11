@@ -82,8 +82,8 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
               borderBottom: "1px solid #ddd",
             }}
           >
-            <ThemeSwitch />
             <LanguageSelector iconColor="primary" />
+            <ThemeSwitch />
             <IconButton
               onClick={handleRegisterButtonClick}
               aria-label="account"
