@@ -152,6 +152,7 @@ const AboutUs: React.FC = () => {
                 style={{ ...aboutUsStyles.content, maxWidth: "480px" }}
               >
                 {section.description}
+                {section.component && section.component}
               </Typography>
             </Grid>
           ))}

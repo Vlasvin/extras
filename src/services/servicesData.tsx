@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
+import PortfolioDescription from "components/AboutUs/AboutUsComponents/PortfolioDescription";
 
 export const GetSections = () => {
   const { t } = useTranslation();
-
   return [
     {
       title: t("aboutUs.company"),
@@ -10,7 +10,17 @@ export const GetSections = () => {
     },
     {
       title: t("aboutUs.portfolio"),
-      description: t("aboutUs.portfolio_description"),
+      component: (
+        <PortfolioDescription
+          description={[
+            t("aboutUs.portfolio_description"),
+            t("aboutUs.portfolio_description_1"),
+            t("aboutUs.portfolio_description_2"),
+            t("aboutUs.portfolio_description_3"),
+            t("aboutUs.portfolio_description_4"),
+          ]}
+        />
+      ),
     },
     {
       title: t("aboutUs.motto"),

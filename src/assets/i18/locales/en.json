@@ -31,8 +31,12 @@
     "company": "About the company",
     "company_description": "The company was registered in 2008 in Kyiv. We are not limited to an office or address. Our services are available to Ukrainians at home and abroad. Founder and CEO Oksana Mudrenok",
     "portfolio": "Our portfolio",
-    "portfolio_description": "- Thousands of translated documents - Over 10 years of experience - Professional team of translators - Confidentiality and security - Affordable prices",
-    "leave_review": "Leave review",
+    "portfolio_description": " Thousands of translated documents",
+    "portfolio_description_1": " Over 10 years of experience",
+    "portfolio_description_2": " Professional team of translators",
+    "portfolio_description_3": " Confidentiality and security",
+    "portfolio_description_4": " Affordable prices",
+    "leave_review": "Feedback",
     "props": "Props",
     "contacts": "Contact us"
   }
