@@ -20,11 +20,6 @@ const Footer = () => {
 
   const linkItems = [
     {
-      label: t("visa to usa"),
-      link: "/visas/usa",
-      icon: <img src={USAIcon} alt="USA Icon" width="24" height="24" />,
-    },
-    {
       label: t("visa to canada"),
       link: "/visas/canada",
       icon: <img src={CanadaIcon} alt="Canada Icon" width="24" height="24" />,
@@ -35,6 +30,11 @@ const Footer = () => {
       icon: (
         <img src={AustraliaIcon} alt="Australia Icon" width="24" height="24" />
       ),
+    },
+    {
+      label: t("visa to usa"),
+      link: "/visas/usa",
+      icon: <img src={USAIcon} alt="USA Icon" width="24" height="24" />,
     },
     {
       label: t("translations"),

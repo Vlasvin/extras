@@ -8,7 +8,7 @@ const PortfolioDescription: React.FC<PortfolioDescriptionProps> = ({
   description,
 }) => {
   return (
-    <ul>
+    <ul style={{ listStyleType: "none", padding: 0 }}>
       {description.map((item, index) => (
         <li key={index}>{item}</li>
       ))}

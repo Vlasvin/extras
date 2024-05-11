@@ -128,7 +128,7 @@ const AboutUs: React.FC = () => {
         >
           {t("aboutUs.why_us")}
         </Typography>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} style={{ marginBottom: "48px" }}>
           {sections.map((section, index) => (
             <Grid item xs={12} sm={6} key={index} marginBottom={4}>
               <Box
@@ -157,20 +157,28 @@ const AboutUs: React.FC = () => {
             </Grid>
           ))}
         </Grid>
+        <Grid container spacing={2} style={{ marginBottom: "48px" }}>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="h6" style={aboutUsStyles.h6}>
+              {t("aboutUs.props")}
+            </Typography>
+            <Typography variant="body1" style={aboutUsStyles.content}>
+              {t("aboutUs.iban")}: UA433052990000026009033605744
+              <br /> {t("aboutUs.receiver")}: {t("aboutUs.receiver_name")}
+              <br /> {t("aboutUs.edrpou")}: 3087023062
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="h6" style={aboutUsStyles.h6}>
+              {t("aboutUs.contacts")}
+            </Typography>
+            <Typography variant="body1" style={aboutUsStyles.content}>
+              {t("aboutUs.phone")}: +380 (44) 234-56-78
+              <br /> {t("aboutUs.email")}: info@extras.com.ua
+            </Typography>
+          </Grid>
+        </Grid>
 
-        <Grid item xs={12}>
-          <Typography variant="h6">{t("aboutUs.props")}</Typography>
-          <Typography variant="body1" style={aboutUsStyles.content}>
-            - Рахунок IBAN: UA433052990000026009033605744 - Одержувач: ФОП
-            Мудренок Оксана Анатоліївна - ЄДРПОУ: 3087023062
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography variant="h6">{t("aboutUs.contacts")}</Typography>
-          <Typography variant="body1" style={aboutUsStyles.content}>
-            - Телефон: +380 (44) 234-56-78 - Email: info@extras.com.ua
-          </Typography>
-        </Grid>
         <Grid item xs={12}>
           <Button variant="outlined" color="primary">
             {t("aboutUs.leave_review")}

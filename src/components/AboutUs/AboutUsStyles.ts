@@ -70,6 +70,11 @@ export const aboutUsStyles = {
     fontWeight: 800,
     letterSpacing: ".01em",
   },
+  h6: {
+    fontSize: "clamp(24px,5.55vw,28px)",
+    marginBottom: 10,
+  },
+
   titleWhyUs: {
     fontSize: "clamp(26px,5.55vw,42px)",
     lineHeight: 1.08,
