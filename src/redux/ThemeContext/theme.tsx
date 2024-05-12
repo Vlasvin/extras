@@ -26,6 +26,15 @@ export const AppLightTheme: Theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Montserrat, sans-serif",
+          fontSize: "clamp(14px,3.75vw,20px)",
+          fontWeightRegular: 400,
+        },
+      },
+    },
   },
 });
 
