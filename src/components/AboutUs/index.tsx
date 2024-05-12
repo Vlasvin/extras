@@ -182,14 +182,14 @@ const AboutUs: React.FC = () => {
             >
               <a
                 href="tel:+380442345678"
-                style={{ color: "inherit", textDecoration: "none" }}
+                style={{ color: "#1976d2", textDecoration: "none" }}
               >
                 {t("aboutUs.phone")}: +380 (44) 234-56-78
               </a>
               <br />
               <a
                 href="mailto:info@extras.com.ua"
-                style={{ color: "inherit", textDecoration: "none" }}
+                style={{ color: "#1976d2", textDecoration: "none" }}
               >
                 {t("aboutUs.email")}: info@extras.com.ua
               </a>
