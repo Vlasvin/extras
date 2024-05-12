@@ -32,7 +32,7 @@ export const aboutUsStyles = {
     marginBottom: 16,
     borderRadius: 24,
     padding: 18,
-    height: "400px",
+    height: "390px",
   },
   serviceIcon: {
     marginTop: "8px",
@@ -47,7 +47,6 @@ export const aboutUsStyles = {
   },
 
   h1: {
-    fontFamily: " GT America LC Compressed",
     fontSize: "clamp(34px,5.55vw,54px)",
     fontWeight: 800,
     lineHeight: 1.25,
@@ -55,8 +54,8 @@ export const aboutUsStyles = {
     marginBottom: 48,
   },
   li: {
-    fontFamily: "Quicksand, sans-serif",
-    fontSize: 20,
+    fontSize: "clamp(18px,4.375vw,20px)",
+    fontFamily: "Montserrat, sans-serif",
     fontWeightRegular: 400,
   },
 
@@ -66,7 +65,6 @@ export const aboutUsStyles = {
     margin: "48px 0",
     fontSize: "clamp(34px,5.55vw,54px)",
     lineHeight: 1.25,
-    fontFamily: " GT America LC Compressed",
     fontWeight: 800,
     letterSpacing: ".01em",
   },
@@ -78,7 +76,6 @@ export const aboutUsStyles = {
   titleWhyUs: {
     fontSize: "clamp(26px,5.55vw,42px)",
     lineHeight: 1.08,
-    fontFamily: " GT America LC Compressed",
     fontWeight: 500,
     letterSpacing: ".01em",
     marginLeft: 24,
