@@ -1,14 +1,17 @@
 {
   "files": {
     "main.css": "/extras/static/css/main.608d510f.css",
-    "main.js": "/extras/static/js/main.31b20e0e.js",
-    "static/js/838.d1b4e055.chunk.js": "/extras/static/js/838.d1b4e055.chunk.js",
+    "main.js": "/extras/static/js/main.c260ad77.js",
+    "static/js/299.263648c5.chunk.js": "/extras/static/js/299.263648c5.chunk.js",
     "static/js/749.bd288773.chunk.js": "/extras/static/js/749.bd288773.chunk.js",
     "static/js/555.0449a9b4.chunk.js": "/extras/static/js/555.0449a9b4.chunk.js",
     "static/js/707.c6463025.chunk.js": "/extras/static/js/707.c6463025.chunk.js",
     "static/js/86.e2bb23ea.chunk.js": "/extras/static/js/86.e2bb23ea.chunk.js",
-    "static/js/530.1fb8ff9b.chunk.js": "/extras/static/js/530.1fb8ff9b.chunk.js",
+    "static/js/530.33933240.chunk.js": "/extras/static/js/530.33933240.chunk.js",
+    "static/media/australia-sidney.jpg": "/extras/static/media/australia-sidney.dba2e8cbac0da3fbd950.jpg",
+    "static/media/golden-gate-bridge.jpg": "/extras/static/media/golden-gate-bridge.2f84eb1e9c5ae9dd50d2.jpg",
     "static/media/Montserrat-VariableFont_wght.ttf": "/extras/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
+    "static/media/canada_toronto.jpg": "/extras/static/media/canada_toronto.1fcbf580abb9d8ba9c0e.jpg",
     "static/media/canada.svg": "/extras/static/media/canada.1ecdb0bb0d8889993e5b5e0e7a6883d7.svg",
     "static/media/usa-map.svg": "/extras/static/media/usa-map.3a4548855c0b92dc53241a1b2a55c94f.svg",
     "static/media/australia.svg": "/extras/static/media/australia.3677e2c55b1e05e00e4d2d36e653fd42.svg",
@@ -24,16 +27,16 @@
     "static/media/email.svg": "/extras/static/media/email.c4c850e0720323e5e470293df82f4987.svg",
     "index.html": "/extras/index.html",
     "main.608d510f.css.map": "/extras/static/css/main.608d510f.css.map",
-    "main.31b20e0e.js.map": "/extras/static/js/main.31b20e0e.js.map",
-    "838.d1b4e055.chunk.js.map": "/extras/static/js/838.d1b4e055.chunk.js.map",
+    "main.c260ad77.js.map": "/extras/static/js/main.c260ad77.js.map",
+    "299.263648c5.chunk.js.map": "/extras/static/js/299.263648c5.chunk.js.map",
     "749.bd288773.chunk.js.map": "/extras/static/js/749.bd288773.chunk.js.map",
     "555.0449a9b4.chunk.js.map": "/extras/static/js/555.0449a9b4.chunk.js.map",
     "707.c6463025.chunk.js.map": "/extras/static/js/707.c6463025.chunk.js.map",
     "86.e2bb23ea.chunk.js.map": "/extras/static/js/86.e2bb23ea.chunk.js.map",
-    "530.1fb8ff9b.chunk.js.map": "/extras/static/js/530.1fb8ff9b.chunk.js.map"
+    "530.33933240.chunk.js.map": "/extras/static/js/530.33933240.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.608d510f.css",
-    "static/js/main.31b20e0e.js"
+    "static/js/main.c260ad77.js"
   ]
 }
