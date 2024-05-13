@@ -11,6 +11,7 @@ export const headerStyles = {
     justifyContent: "center",
   },
   button: {
+    fontFamily: "Montserrat, sans-serif",
     fontSize: 18,
     fontWeight: "normal",
     textTransform: "none",

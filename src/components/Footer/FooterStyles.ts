@@ -18,7 +18,6 @@ export const footerStyles = {
   button: {
     color: "#FFFFFF",
     textTransform: "none",
-    fontSize: 18,
     textAlign: "left",
     display: "flex",
     alignItems: "center",

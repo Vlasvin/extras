@@ -95,7 +95,7 @@ const Footer = () => {
                 color={"inherit"}
                 component={Link}
                 to={item.link}
-                sx={{ ...footerStyles.button, fontSize: isMobile ? 16 : 18 }}
+                sx={footerStyles.button}
               >
                 {item.icon}
                 {item.label}

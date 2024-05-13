@@ -20,8 +20,17 @@ export const AppLightTheme: Theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         root: {
-          fontFamily: "Quicksand, sans-serif",
-          fontSize: "clamp(16px,5.55vw,20px)",
+          fontFamily: "Montserrat, sans-serif",
+          fontSize: "clamp(18px,4.375vw,20px)",
+          fontWeightRegular: 400,
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Montserrat, sans-serif",
+          fontSize: "clamp(14px,3.75vw,20px)",
           fontWeightRegular: 400,
         },
       },
@@ -61,8 +70,8 @@ export const AppDarkTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           color: "rgb(226, 226, 226)",
-          fontFamily: "Quicksand, sans-serif",
-          fontSize: "clamp(16px,5.55vw,20px)",
+          fontFamily: "Montserrat, sans-serif",
+          fontSize: "clamp(18px,4.375vw,20px)",
           fontWeightRegular: 400,
         },
       },
@@ -71,8 +80,8 @@ export const AppDarkTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           color: "rgb(226, 226, 226)",
-          fontFamily: "Quicksand, sans-serif",
-          fontSize: "clamp(16px,5.55vw,20px)",
+          fontFamily: "Montserrat, sans-serif",
+          fontSize: "clamp(14px,3.75vw,20px)",
           fontWeightRegular: 400,
         },
       },
