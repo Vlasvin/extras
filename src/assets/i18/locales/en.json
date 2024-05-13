@@ -45,5 +45,24 @@
     "contacts": "Contacts",
     "phone": "• Phone",
     "email": "• Email"
+  },
+
+  "home": {
+    "visa_usa": {
+      "title": "USA Visa",
+      "description": "The USA is a federal state in North America. It ranks 4th in the world in terms of area and 3rd in terms of population. The USA is one of the leading countries in economics, politics, and mass culture. <br /> To travel to the USA, Ukrainian citizens need to obtain a visa. Unfortunately, it is currently impossible to pass an interview for an American visa in Ukraine. To schedule an interview, you can contact the US Embassy in other countries, such as Poland, Germany, Slovakia, Romania, Moldova. To assess your chances of obtaining a visa, order a free consultation.",
+      "joke": "-How much I want to go back to New York! <br /> -Have you been there? <br /> -No, I wanted once and want again 😁<br />To make sure this joke is not about you, order visa services from me :)",
+      "details": "Details"
+    },
+    "visa_canada": {
+      "title": "Canada Visa",
+      "description": "Canada is a huge northern country popular with both tourists and immigrants. It is not surprising, as the Canadian government has issued many laws aimed at attracting skilled professionals to the country, which has a positive impact on the local economy. Canada is home to national parks that are larger than some countries in the world. <br />There are about 31,750 lakes in Canada with an area of over 3 km2.<br /> To travel to Canada, Ukrainian citizens need to obtain a temporary resident visa. The document submission process does not require an interview at the embassy. To assess your chances of obtaining a visa, order a free consultation.",
+      "details": "Details"
+    },
+    "visa_australia": {
+      "title": "Australia Visa",
+      "description": "Mysterious country where there are more kangaroos than people. Australia is the smallest and least populated continent on our planet with unique flora and fauna. Australia has countless things that can truly interest you. <br />Australia is a country of 'opposites' Because Australia is located in the southern hemisphere, summer here lasts from December to February, and winter, respectively, from June to August. But that's not all. All stars, moon, and sun move in the opposite direction for us. <br />To travel to Australia, Ukrainian citizens need to obtain a tourist, guest, or business visa. The document submission process does not require an interview at the embassy. To assess your chances of obtaining a visa, order a free consultation.",
+      "details": "Details"
+    }
   }
 }
