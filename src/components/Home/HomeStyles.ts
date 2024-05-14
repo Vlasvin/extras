@@ -7,13 +7,13 @@ export const homeStyles = {
     borderRadius: "10px",
   },
   title: {
-    marginBottom: "30px",
+    margin: "30px 0",
     paddingLeft: "40px",
     fontSize: "clamp(24px,5.5vw,28px)",
   },
   img: {
     borderRadius: "20px",
-    width: "420px",
+    width: "clamp(340px,100%,420px)",
     height: "420px",
     marginBottom: "48px",
   },
