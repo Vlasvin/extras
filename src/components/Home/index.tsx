@@ -5,9 +5,11 @@ import { homeStyles } from "./HomeStyles";
 import goldenGate from "assets/pictures/jpg/golden-gate-bridge.jpg";
 import canadaToronto from "assets/pictures/jpg/canada_toronto.jpg";
 import australiaSydney from "assets/pictures/jpg/australia-sidney.jpg";
+import USAMapIcon from "assets/pictures/svg/UsaMap";
 
 const Home = () => {
   const { t } = useTranslation();
+  const iconSize = 100;
 
   return (
     <div>
@@ -16,7 +18,12 @@ const Home = () => {
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
-          <img src={goldenGate} alt="USA" style={homeStyles.img} />
+          <div style={{ position: "relative" }}>
+            <img src={goldenGate} alt="USA" style={homeStyles.img} />
+            <div style={homeStyles.svg}>
+              <USAMapIcon size={iconSize} />
+            </div>
+          </div>
         </Grid>
         <Grid item xs={12} md={8} style={{ paddingLeft: "32px" }}>
           <Typography
@@ -25,6 +32,7 @@ const Home = () => {
           />
           <Typography
             variant="body1"
+            style={{ marginBottom: "16px" }}
             dangerouslySetInnerHTML={{ __html: t("home.visa_usa.joke") }}
           />
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
@@ -51,6 +59,7 @@ const Home = () => {
         <Grid item xs={12} md={8} style={{ paddingLeft: "32px" }}>
           <Typography
             variant="body1"
+            style={{ marginBottom: "16px" }}
             dangerouslySetInnerHTML={{
               __html: t("home.visa_canada.description"),
             }}
@@ -79,6 +88,7 @@ const Home = () => {
         <Grid item xs={12} md={8} style={{ paddingLeft: "32px" }}>
           <Typography
             variant="body1"
+            style={{ marginBottom: "16px" }}
             dangerouslySetInnerHTML={{
               __html: t("home.visa_australia.description"),
             }}

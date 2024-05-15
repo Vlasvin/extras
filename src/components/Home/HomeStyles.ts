@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export const homeStyles = {
   button: {
     fontFamily: "Montserrat, sans-serif",
@@ -17,4 +19,5 @@ export const homeStyles = {
     height: "420px",
     marginBottom: "48px",
   },
+  svg: { position: "absolute", right: 16, bottom: 54 } as CSSProperties,
 };
