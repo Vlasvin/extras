@@ -19,5 +19,6 @@ export const homeStyles = {
     height: "420px",
     marginBottom: "48px",
   },
-  svg: { position: "absolute", right: 16, bottom: 54 } as CSSProperties,
+  svgUsa: { position: "absolute", right: 16, bottom: 54 } as CSSProperties,
+  svgCanada: { position: "absolute", right: 0, bottom: 54 } as CSSProperties,
 };

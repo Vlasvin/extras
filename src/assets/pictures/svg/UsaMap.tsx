@@ -8,7 +8,7 @@ const USAMapIcon: React.FC<IconProps> = ({ size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width={`${size}px`}
+    width={`${size / 1.2}px`}
     height={`${size * 0.5875}px`}
     viewBox="0 0 80 47"
     version="1.1"

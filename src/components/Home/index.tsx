@@ -2,110 +2,68 @@ import { Typography, Grid, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { homeStyles } from "./HomeStyles";
-import goldenGate from "assets/pictures/jpg/golden-gate-bridge.jpg";
-import canadaToronto from "assets/pictures/jpg/canada_toronto.jpg";
-import australiaSydney from "assets/pictures/jpg/australia-sidney.jpg";
+import { useState } from "react";
+import homeData from "services/homeData";
+
 import USAMapIcon from "assets/pictures/svg/UsaMap";
+import CanadaMapIcon from "assets/pictures/svg/CanadaMap";
+import AustraliaMapIcon from "assets/pictures/svg/AustraliaMap";
 
 const Home = () => {
   const { t } = useTranslation();
+  const [visas] = useState(homeData);
+
   const iconSize = 100;
 
   return (
     <div>
-      <Typography variant="h1" style={homeStyles.title}>
-        {t("home.visa_usa.title")}
-      </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <div style={{ position: "relative" }}>
-            <img src={goldenGate} alt="USA" style={homeStyles.img} />
-            <div style={homeStyles.svg}>
-              <USAMapIcon size={iconSize} />
-            </div>
-          </div>
-        </Grid>
-        <Grid item xs={12} md={8} style={{ paddingLeft: "32px" }}>
-          <Typography
-            variant="body1"
-            dangerouslySetInnerHTML={{ __html: t("home.visa_usa.description") }}
-          />
-          <Typography
-            variant="body1"
-            style={{ marginBottom: "16px" }}
-            dangerouslySetInnerHTML={{ __html: t("home.visa_usa.joke") }}
-          />
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <Button
-              variant="outlined"
-              color="primary"
-              component={Link}
-              to="/visas/usa"
-              style={homeStyles.button}
-            >
-              {t("home.visa_usa.details")}
-            </Button>
-          </div>
-        </Grid>
-      </Grid>
-
-      <Typography variant="h1" style={homeStyles.title}>
-        {t("home.visa_canada.title")}
-      </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <img src={canadaToronto} alt="Canada" style={homeStyles.img} />
-        </Grid>
-        <Grid item xs={12} md={8} style={{ paddingLeft: "32px" }}>
-          <Typography
-            variant="body1"
-            style={{ marginBottom: "16px" }}
-            dangerouslySetInnerHTML={{
-              __html: t("home.visa_canada.description"),
-            }}
-          ></Typography>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <Button
-              variant="outlined"
-              color="primary"
-              component={Link}
-              to="/visas/canada"
-              style={homeStyles.button}
-            >
-              {t("home.visa_canada.details")}
-            </Button>
-          </div>
-        </Grid>
-      </Grid>
-
-      <Typography variant="h1" style={homeStyles.title}>
-        {t("home.visa_australia.title")}
-      </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <img src={australiaSydney} alt="Australia" style={homeStyles.img} />
-        </Grid>
-        <Grid item xs={12} md={8} style={{ paddingLeft: "32px" }}>
-          <Typography
-            variant="body1"
-            style={{ marginBottom: "16px" }}
-            dangerouslySetInnerHTML={{
-              __html: t("home.visa_australia.description"),
-            }}
-          />
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <Button
-              variant="outlined"
-              color="primary"
-              component={Link}
-              to="/visas/australia"
-              style={homeStyles.button}
-            >
-              {t("home.visa_australia.details")}
-            </Button>
-          </div>
-        </Grid>
-      </Grid>
+      {visas.map((visa, index) => (
+        <div key={index}>
+          <Typography variant="h1" style={homeStyles.title}>
+            {t(visa.title)}
+          </Typography>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4}>
+              <div style={{ position: "relative" }}>
+                <img src={visa.image} alt={visa.title} style={homeStyles.img} />
+                <div
+                  style={
+                    visa.country === "USA"
+                      ? homeStyles.svgUsa
+                      : homeStyles.svgCanada
+                  }
+                >
+                  {visa.country === "USA" && <USAMapIcon size={iconSize} />}
+                  {visa.country === "Canada" && (
+                    <CanadaMapIcon size={iconSize} />
+                  )}
+                  {visa.country === "Australia" && (
+                    <AustraliaMapIcon size={iconSize} />
+                  )}
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={8} style={{ paddingLeft: "32px" }}>
+              <Typography
+                variant="body1"
+                style={{ marginBottom: "16px" }}
+                dangerouslySetInnerHTML={{ __html: t(visa.description) }}
+              />
+              <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  component={Link}
+                  to={`/visas/${visa.country.toLowerCase()}`}
+                  style={homeStyles.button}
+                >
+                  {t(visa.details)}
+                </Button>
+              </div>
+            </Grid>
+          </Grid>
+        </div>
+      ))}
     </div>
   );
 };
