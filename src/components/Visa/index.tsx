@@ -29,7 +29,7 @@ import {
 
 const Visa: React.FC = () => {
   const { t } = useTranslation();
-  const iconSize = window.innerWidth <= 600 ? 240 : 400;
+  const iconSize = window.innerWidth <= 900 ? 240 : 400;
   const iconColor = useIconColor();
 
   const handleCountryClick = (country: string) => {

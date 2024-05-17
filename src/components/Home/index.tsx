@@ -1,4 +1,4 @@
-import { Typography, Grid, Button } from "@mui/material";
+import { Typography, Grid, Button, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { homeStyles } from "./HomeStyles";
@@ -16,7 +16,7 @@ const Home = () => {
   const iconSize = 100;
 
   return (
-    <div>
+    <Container style={{ padding: 0 }}>
       {visas.map((visa, index) => (
         <div key={index}>
           <Typography variant="h1" style={homeStyles.title}>
@@ -69,7 +69,7 @@ const Home = () => {
           </Grid>
         </div>
       ))}
-    </div>
+    </Container>
   );
 };
 

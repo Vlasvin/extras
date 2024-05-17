@@ -7,6 +7,9 @@ import {
   List,
   ListItem,
   ListItemText,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   useMediaQuery,
   Box,
   CssBaseline,
@@ -16,10 +19,12 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import PersonIcon from "@mui/icons-material/Person";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import SocialMediaIcons from "components/Footer/FooterComponents/SocialMediaIcons";
 import ThemeSwitch from "./ThemeSwitch";
 import LanguageSelector from "./LanguageSelector";
+import { getVisaMenuItems } from "services/menuData";
 
 interface BurgerMenuProps {
   menuItems: { label: string; link: string }[];
@@ -34,6 +39,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width:1024px)");
   const theme = useTheme();
+  const visaSubItems = getVisaMenuItems();
 
   const toggleDrawer = (open: boolean) => () => {
     setIsOpen(open);
@@ -106,15 +112,49 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
           >
             <List sx={{ flex: 1 }}>
               {menuItems.map((item, index) => (
-                <ListItem
-                  button
-                  key={index}
-                  component={Link}
-                  to={item.link}
-                  onClick={toggleDrawer(false)}
-                >
-                  <ListItemText primary={t(item.label)} />
-                </ListItem>
+                <React.Fragment key={index}>
+                  {item.label === t("visas") ? (
+                    <Accordion
+                      sx={{
+                        backgroundColor: "transparent",
+                        boxShadow: "none",
+                        backgroundImage: "none",
+                      }}
+                    >
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="visas-menu-content"
+                        id="visas-menu-header"
+                      >
+                        <ListItemText primary={t("visas")} />
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <List>
+                          {visaSubItems.map((subItem, subIndex) => (
+                            <ListItem
+                              button
+                              key={subIndex}
+                              component={Link}
+                              to={subItem.link}
+                              onClick={toggleDrawer(false)}
+                            >
+                              <ListItemText primary={t(subItem.label)} />
+                            </ListItem>
+                          ))}
+                        </List>
+                      </AccordionDetails>
+                    </Accordion>
+                  ) : (
+                    <ListItem
+                      button
+                      component={Link}
+                      to={item.link}
+                      onClick={toggleDrawer(false)}
+                    >
+                      <ListItemText primary={t(item.label)} />
+                    </ListItem>
+                  )}
+                </React.Fragment>
               ))}
             </List>
           </Box>

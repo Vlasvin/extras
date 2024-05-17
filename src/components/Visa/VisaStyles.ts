@@ -1,8 +1,8 @@
 import { styled } from "@mui/system";
-import { Box, ListItem, Typography } from "@mui/material";
+import { Box, Container, ListItem, Typography } from "@mui/material";
 
-export const VisaContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(2),
+export const VisaContainer = styled(Container)(({ theme }) => ({
+  padding: 0,
 }));
 
 export const VisaTitle = styled(Typography)(({ theme }) => ({
@@ -13,6 +13,7 @@ export const VisaTitle = styled(Typography)(({ theme }) => ({
   marginBottom: 48,
   [theme.breakpoints.down("sm")]: {
     fontSize: "2rem",
+    marginBottom: "24px",
   },
 }));
 
@@ -21,6 +22,7 @@ export const VisaBanner = styled("img")(({ theme }) => ({
   borderRadius: "20px",
   marginBottom: 48,
   marginTop: 0,
+  [theme.breakpoints.down("sm")]: { marginBottom: "24px" },
 }));
 
 export const VisaTitleList = styled(Typography)(({ theme }) => ({
@@ -31,6 +33,7 @@ export const VisaTitleList = styled(Typography)(({ theme }) => ({
   letterSpacing: ".01em",
   [theme.breakpoints.down("sm")]: {
     fontSize: "1.5rem",
+    marginBottom: "24px",
   },
 }));
 

@@ -20,6 +20,7 @@ import LanguageSelector from "components/Header/HeaderComponents/LanguageSelecto
 import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
 
 import { headerStyles } from "./HeaderStyles";
+import { getMenuItems, getVisaMenuItems } from "services/menuData";
 interface HeaderProps {
   onRegisterClick: () => void;
 }
@@ -33,6 +34,8 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const [isMenuOpening, setIsMenuOpening] = useState(false);
+  const menuItems = getMenuItems();
+  const visaMenuItems = getVisaMenuItems();
 
   const handleRegisterButtonClick = () => {
     onRegisterClick();
@@ -51,20 +54,6 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   };
 
   const textColor = themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
-
-  const menuItems = [
-    { label: t("visas"), link: "/visas" },
-    { label: t("translations"), link: "/translations" },
-    { label: t("services"), link: "/services" },
-    { label: t("about us"), link: "/about-us" },
-  ];
-
-  const visaMenuItems = [
-    { label: t("visas"), link: "/visas" },
-    { label: t("visa to usa"), link: "/visas/usa" },
-    { label: t("visa to canada"), link: "/visas/canada" },
-    { label: t("visa to australia"), link: "/visas/australia" },
-  ];
 
   return (
     <Toolbar sx={headerStyles.toolbar}>
