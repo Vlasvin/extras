@@ -65,7 +65,7 @@
     }
   },
   "visa": {
-    "visa_title": "Visas",
+    "visa_title": "VISA",
     "visa_description": "&emsp;A visa is a special permit (document) that allows you to cross the border of a specific country. In other words, having a visa gives you the right to visit another country. A visa is usually issued with a valid passport. Many countries require a passport to be valid for at least 6 months and have one or two blank pages. Visa application documents are submitted at the embassy or consulate of the country you wish to enter.",
     "documents_required": "&emsp;Documents required for visa application:",
     "document_list": {

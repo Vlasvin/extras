@@ -12,10 +12,18 @@ import { useSpring, animated } from "@react-spring/web";
 import useIconColor from "hooks/useIconColor";
 
 import PassportIcon from "assets/pictures/svg/PassportIcon";
+import AccountBoxIcon from "@mui/icons-material/ContentCopy";
+import WorkIcon from "@mui/icons-material/Work";
+import NotInterestedIcon from "@mui/icons-material/NotInterested";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import DescriptionIcon from "@mui/icons-material/Description";
+import PhotoIcon from "@mui/icons-material/Photo";
+
 import USAMapIcon from "assets/pictures/svg/UsaMap";
 import CanadaMapIcon from "assets/pictures/svg/CanadaMap";
 import AustraliaMapIcon from "assets/pictures/svg/AustraliaMap";
 import VisaBanner from "assets/pictures/jpg/travel.jpg";
+import { visaStyles } from "./VisaStyles";
 
 const Visa: React.FC = () => {
   const { t } = useTranslation();
@@ -27,7 +35,7 @@ const Visa: React.FC = () => {
   };
 
   const titleSpring = useSpring({
-    from: { opacity: 0, transform: "translateY(-50px)" },
+    from: { opacity: 0, transform: "translateY(-70px)" },
     to: { opacity: 1, transform: "translateY(0)" },
   });
 
@@ -40,13 +48,33 @@ const Visa: React.FC = () => {
   const countrySpring = useSpring({
     from: { opacity: 0, transform: "scale(0.8)" },
     to: { opacity: 1, transform: "scale(1)" },
-    delay: 400,
+    delay: 600,
   });
+
+  const documentIcons = [
+    <PassportIcon fill={iconColor} size={60} />,
+    <AccountBoxIcon />,
+    <WorkIcon />,
+    <NotInterestedIcon />,
+    <AccountBalanceIcon />,
+    <DescriptionIcon />,
+    <PhotoIcon />,
+  ];
+
+  const documentKeys = [
+    "passport",
+    "id_copy",
+    "job_certificate",
+    "unemployed_certificate",
+    "bank_certificate",
+    "application_form",
+    "photos",
+  ];
 
   return (
     <Box padding={2}>
       <animated.div style={titleSpring}>
-        <Typography variant="h1" align="center">
+        <Typography variant="h1" style={visaStyles.h1} align="center">
           {t("visa.visa_title")}
         </Typography>
       </animated.div>
@@ -54,34 +82,32 @@ const Visa: React.FC = () => {
         component="img"
         src={VisaBanner}
         alt="Visa banner"
-        width="100%"
+        style={visaStyles.banner}
         marginY={2}
-        borderRadius={20}
       />
       <Typography
         paragraph
         dangerouslySetInnerHTML={{ __html: t("visa.visa_description") }}
+        marginBottom={6}
       />
       <Typography
         variant="h2"
         dangerouslySetInnerHTML={{ __html: t("visa.documents_required") }}
+        style={visaStyles.titleList}
       />
       <animated.div style={listSpring}>
-        <List>
-          {[
-            "passport",
-            "id_copy",
-            "job_certificate",
-            "unemployed_certificate",
-            "bank_certificate",
-            "application_form",
-            "photos",
-          ].map((doc, index) => (
+        <List style={{ marginBottom: 48 }}>
+          {documentKeys.map((doc, index) => (
             <ListItem key={index}>
               <ListItemIcon>
-                <PassportIcon fill={iconColor} size={60} />
+                {React.cloneElement(documentIcons[index], {
+                  style: { color: iconColor, fontSize: 60 },
+                })}
               </ListItemIcon>
-              <ListItemText primary={t(`visa.document_list.${doc}`)} />
+              <ListItemText
+                primary={t(`visa.document_list.${doc}`)}
+                style={{ marginLeft: 20 }}
+              />
             </ListItem>
           ))}
         </List>
@@ -89,6 +115,7 @@ const Visa: React.FC = () => {
       <Typography
         paragraph
         dangerouslySetInnerHTML={{ __html: t("visa.additional_info") }}
+        marginBottom={6}
       />
       <Box display="flex" justifyContent="space-around" marginTop={2}>
         <animated.div style={countrySpring}>

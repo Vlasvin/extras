@@ -11,7 +11,7 @@ const PassportIcon: React.FC<IconProps> = ({ fill, size }) => (
     id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width="80px"
+    width={size}
     height={size}
     viewBox="0 0 124.116 124.116"
     xmlSpace="preserve"
