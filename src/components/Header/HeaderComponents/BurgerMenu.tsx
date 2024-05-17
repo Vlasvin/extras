@@ -24,22 +24,22 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SocialMediaIcons from "components/Footer/FooterComponents/SocialMediaIcons";
 import ThemeSwitch from "./ThemeSwitch";
 import LanguageSelector from "./LanguageSelector";
-import { getVisaMenuItems } from "services/menuData";
+import { useMenuItems, useVisaMenuItems } from "hooks/menuHooks";
 
 interface BurgerMenuProps {
-  menuItems: { label: string; link: string }[];
+  menuItems?: { label: string; link: string }[];
   handleRegisterButtonClick: () => void;
 }
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({
-  menuItems,
   handleRegisterButtonClick,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width:1024px)");
   const theme = useTheme();
-  const visaSubItems = getVisaMenuItems();
+  const menuItems = useMenuItems();
+  const visaMenuItems = useVisaMenuItems();
 
   const toggleDrawer = (open: boolean) => () => {
     setIsOpen(open);
@@ -130,7 +130,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
                       </AccordionSummary>
                       <AccordionDetails>
                         <List>
-                          {visaSubItems.map((subItem, subIndex) => (
+                          {visaMenuItems.map((subItem, subIndex) => (
                             <ListItem
                               button
                               key={subIndex}

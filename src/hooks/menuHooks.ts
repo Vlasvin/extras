@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-export const getMenuItems = () => {
+export const useMenuItems = () => {
   const { t } = useTranslation();
 
   const menuItems = [
@@ -13,7 +13,7 @@ export const getMenuItems = () => {
   return menuItems;
 };
 
-export const getVisaMenuItems = () => {
+export const useVisaMenuItems = () => {
   const { t } = useTranslation();
 
   const visaMenuItems = [

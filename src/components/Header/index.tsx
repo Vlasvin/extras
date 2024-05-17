@@ -20,7 +20,8 @@ import LanguageSelector from "components/Header/HeaderComponents/LanguageSelecto
 import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
 
 import { headerStyles } from "./HeaderStyles";
-import { getMenuItems, getVisaMenuItems } from "services/menuData";
+import { useMenuItems, useVisaMenuItems } from "hooks/menuHooks";
+
 interface HeaderProps {
   onRegisterClick: () => void;
 }
@@ -34,8 +35,8 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const [isMenuOpening, setIsMenuOpening] = useState(false);
-  const menuItems = getMenuItems();
-  const visaMenuItems = getVisaMenuItems();
+  const menuItems = useMenuItems();
+  const visaMenuItems = useVisaMenuItems();
 
   const handleRegisterButtonClick = () => {
     onRegisterClick();
@@ -132,10 +133,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           </IconButton>
         </Box>
       )}
-      <BurgerMenu
-        menuItems={menuItems}
-        handleRegisterButtonClick={handleRegisterButtonClick}
-      />
+      <BurgerMenu handleRegisterButtonClick={handleRegisterButtonClick} />
     </Toolbar>
   );
 };

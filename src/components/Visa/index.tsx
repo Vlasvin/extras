@@ -82,7 +82,7 @@ const Visa: React.FC = () => {
   ];
 
   return (
-    <VisaContainer>
+    <VisaContainer style={{ padding: 0 }}>
       <animated.div style={titleSpring}>
         <VisaTitle align="center">{t("visa.visa_title")}</VisaTitle>
       </animated.div>

@@ -14,6 +14,11 @@ const VisasPage = React.lazy(() => import("./pages/VisasPage"));
 const TranslationsPage = React.lazy(() => import("./pages/TranslationsPage"));
 const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
 const AboutUsPage = React.lazy(() => import("./pages/AboutUsPage"));
+const VisasUSAPage = React.lazy(() => import("./pages/VisasUSAPage"));
+const VisasCanadaPage = React.lazy(() => import("./pages/VisasCanadaPage"));
+const VisasAustraliaPage = React.lazy(
+  () => import("./pages/VisasAustraliaPage")
+);
 
 const App = () => {
   const handleRegisterClick = () => {};
@@ -29,6 +34,9 @@ const App = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/visas" element={<VisasPage />} />
+              <Route path="/visas/usa" element={<VisasUSAPage />} />
+              <Route path="/visas/canada" element={<VisasCanadaPage />} />
+              <Route path="/visas/australia" element={<VisasAustraliaPage />} />
               <Route path="/translations" element={<TranslationsPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/about-us" element={<AboutUsPage />} />
