@@ -9,10 +9,11 @@ import {
   ListItemText,
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
+import { useInView } from "react-intersection-observer";
 import useIconColor from "hooks/useIconColor";
 
 import PassportIcon from "assets/pictures/svg/PassportIcon";
-import AccountBoxIcon from "@mui/icons-material/ContentCopy";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import WorkIcon from "@mui/icons-material/Work";
 import NotInterestedIcon from "@mui/icons-material/NotInterested";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
@@ -45,20 +46,28 @@ const Visa: React.FC = () => {
     delay: 200,
   });
 
+  const { ref: countryRef, inView: countryInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const countrySpring = useSpring({
     from: { opacity: 0, transform: "scale(0.8)" },
-    to: { opacity: 1, transform: "scale(1)" },
-    delay: 600,
+    to: {
+      opacity: countryInView ? 1 : 0,
+      transform: countryInView ? "scale(1)" : "scale(0.8)",
+    },
+    delay: 400,
   });
 
   const documentIcons = [
     <PassportIcon fill={iconColor} size={60} />,
-    <AccountBoxIcon />,
-    <WorkIcon />,
-    <NotInterestedIcon />,
-    <AccountBalanceIcon />,
-    <DescriptionIcon />,
-    <PhotoIcon />,
+    <AccountBoxIcon style={{ color: iconColor, fontSize: 60 }} />,
+    <WorkIcon style={{ color: iconColor, fontSize: 60 }} />,
+    <NotInterestedIcon style={{ color: iconColor, fontSize: 60 }} />,
+    <AccountBalanceIcon style={{ color: iconColor, fontSize: 60 }} />,
+    <DescriptionIcon style={{ color: iconColor, fontSize: 60 }} />,
+    <PhotoIcon style={{ color: iconColor, fontSize: 60 }} />,
   ];
 
   const documentKeys = [
@@ -99,15 +108,8 @@ const Visa: React.FC = () => {
         <List style={{ marginBottom: 48 }}>
           {documentKeys.map((doc, index) => (
             <ListItem key={index}>
-              <ListItemIcon>
-                {React.cloneElement(documentIcons[index], {
-                  style: { color: iconColor, fontSize: 60 },
-                })}
-              </ListItemIcon>
-              <ListItemText
-                primary={t(`visa.document_list.${doc}`)}
-                style={{ marginLeft: 20 }}
-              />
+              <ListItemIcon>{documentIcons[index]}</ListItemIcon>
+              <ListItemText primary={t(`visa.document_list.${doc}`)} />
             </ListItem>
           ))}
         </List>
@@ -117,7 +119,12 @@ const Visa: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: t("visa.additional_info") }}
         marginBottom={6}
       />
-      <Box display="flex" justifyContent="space-around" marginTop={2}>
+      <Box
+        display="flex"
+        justifyContent="space-around"
+        marginTop={2}
+        ref={countryRef}
+      >
         <animated.div style={countrySpring}>
           <Box
             textAlign="center"
