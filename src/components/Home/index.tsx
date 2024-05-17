@@ -49,7 +49,12 @@ const Home = () => {
                 style={{ marginBottom: "16px" }}
                 dangerouslySetInnerHTML={{ __html: t(visa.description) }}
               />
-              <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                }}
+              >
                 <Button
                   variant="outlined"
                   color="primary"
