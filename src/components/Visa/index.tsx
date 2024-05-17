@@ -1,13 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import {
-  Box,
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
+import { List, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
 import useIconColor from "hooks/useIconColor";
@@ -24,11 +17,19 @@ import USAMapIcon from "assets/pictures/svg/UsaMap";
 import CanadaMapIcon from "assets/pictures/svg/CanadaMap";
 import AustraliaMapIcon from "assets/pictures/svg/AustraliaMap";
 import VisaBanner from "assets/pictures/jpg/travel.jpg";
-import { visaStyles } from "./VisaStyles";
+import {
+  VisaContainer,
+  VisaTitle,
+  VisaBanner as StyledVisaBanner,
+  VisaTitleList,
+  CountryContainer,
+  CountryBox,
+  VisaListItem,
+} from "./VisaStyles";
 
 const Visa: React.FC = () => {
   const { t } = useTranslation();
-  const sizeIcon = 400;
+  const iconSize = window.innerWidth <= 600 ? 240 : 400;
   const iconColor = useIconColor();
 
   const handleCountryClick = (country: string) => {
@@ -57,17 +58,17 @@ const Visa: React.FC = () => {
       opacity: countryInView ? 1 : 0,
       transform: countryInView ? "scale(1)" : "scale(0.8)",
     },
-    delay: 400,
+    delay: 600,
   });
 
   const documentIcons = [
     <PassportIcon fill={iconColor} size={60} />,
-    <AccountBoxIcon style={{ color: iconColor, fontSize: 60 }} />,
-    <WorkIcon style={{ color: iconColor, fontSize: 60 }} />,
-    <NotInterestedIcon style={{ color: iconColor, fontSize: 60 }} />,
-    <AccountBalanceIcon style={{ color: iconColor, fontSize: 60 }} />,
-    <DescriptionIcon style={{ color: iconColor, fontSize: 60 }} />,
-    <PhotoIcon style={{ color: iconColor, fontSize: 60 }} />,
+    <AccountBoxIcon />,
+    <WorkIcon />,
+    <NotInterestedIcon />,
+    <AccountBalanceIcon />,
+    <DescriptionIcon />,
+    <PhotoIcon />,
   ];
 
   const documentKeys = [
@@ -81,36 +82,33 @@ const Visa: React.FC = () => {
   ];
 
   return (
-    <Box padding={2}>
+    <VisaContainer>
       <animated.div style={titleSpring}>
-        <Typography variant="h1" style={visaStyles.h1} align="center">
-          {t("visa.visa_title")}
-        </Typography>
+        <VisaTitle align="center">{t("visa.visa_title")}</VisaTitle>
       </animated.div>
-      <Box
-        component="img"
-        src={VisaBanner}
-        alt="Visa banner"
-        style={visaStyles.banner}
-        marginY={2}
-      />
+      <StyledVisaBanner src={VisaBanner} alt="Visa banner" />
       <Typography
         paragraph
         dangerouslySetInnerHTML={{ __html: t("visa.visa_description") }}
         marginBottom={6}
       />
-      <Typography
-        variant="h2"
+      <VisaTitleList
         dangerouslySetInnerHTML={{ __html: t("visa.documents_required") }}
-        style={visaStyles.titleList}
       />
       <animated.div style={listSpring}>
         <List style={{ marginBottom: 48 }}>
           {documentKeys.map((doc, index) => (
-            <ListItem key={index}>
-              <ListItemIcon>{documentIcons[index]}</ListItemIcon>
-              <ListItemText primary={t(`visa.document_list.${doc}`)} />
-            </ListItem>
+            <VisaListItem key={index}>
+              <ListItemIcon>
+                {React.cloneElement(documentIcons[index], {
+                  style: { color: iconColor, fontSize: 60 },
+                })}
+              </ListItemIcon>
+              <ListItemText
+                primary={t(`visa.document_list.${doc}`)}
+                style={{ marginLeft: 20 }}
+              />
+            </VisaListItem>
           ))}
         </List>
       </animated.div>
@@ -119,44 +117,27 @@ const Visa: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: t("visa.additional_info") }}
         marginBottom={6}
       />
-      <Box
-        display="flex"
-        justifyContent="space-around"
-        marginTop={2}
-        ref={countryRef}
-      >
+      <CountryContainer ref={countryRef}>
         <animated.div style={countrySpring}>
-          <Box
-            textAlign="center"
-            onClick={() => handleCountryClick("usa")}
-            style={{ cursor: "pointer" }}
-          >
-            <USAMapIcon size={sizeIcon} />
+          <CountryBox onClick={() => handleCountryClick("usa")}>
+            <USAMapIcon size={iconSize} />
             <Typography>{t("visa.countries.country1")}</Typography>
-          </Box>
+          </CountryBox>
         </animated.div>
         <animated.div style={countrySpring}>
-          <Box
-            textAlign="center"
-            onClick={() => handleCountryClick("canada")}
-            style={{ cursor: "pointer" }}
-          >
-            <CanadaMapIcon size={sizeIcon} />
+          <CountryBox onClick={() => handleCountryClick("canada")}>
+            <CanadaMapIcon size={iconSize} />
             <Typography>{t("visa.countries.country2")}</Typography>
-          </Box>
+          </CountryBox>
         </animated.div>
         <animated.div style={countrySpring}>
-          <Box
-            textAlign="center"
-            onClick={() => handleCountryClick("australia")}
-            style={{ cursor: "pointer" }}
-          >
-            <AustraliaMapIcon size={sizeIcon} />
+          <CountryBox onClick={() => handleCountryClick("australia")}>
+            <AustraliaMapIcon size={iconSize} />
             <Typography>{t("visa.countries.country3")}</Typography>
-          </Box>
+          </CountryBox>
         </animated.div>
-      </Box>
-    </Box>
+      </CountryContainer>
+    </VisaContainer>
   );
 };
 
