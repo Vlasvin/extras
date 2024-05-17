@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Typography, Grid, Container, Paper, Box, Button } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 
 import AnimatedServiceItem from "./AboutUsComponents/ServiceItem";
 import { GetSections } from "services/servicesData";
-import { ThemeContext } from "redux/ThemeContext";
-import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
+import useIconColor from "hooks/useIconColor";
 
 import PassportIcon from "assets/pictures/svg/PassportIcon";
 import TranslationIcon from "assets/pictures/svg/TranslationIcon";
@@ -26,12 +25,9 @@ const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
-  const { themeMode } = useContext(ThemeContext) as IThemeContext;
   const sections = GetSections();
+  const iconColor = useIconColor();
 
-  const getIconColor = () => {
-    return themeMode === IThemeMode.DARK ? "#FFFFFF" : "#000000dd";
-  };
   // const [isModalOpen, setIsModalOpen] = useState(false);
   // const handleModalOpen = () => {
   //   setIsModalOpen(true);
@@ -52,7 +48,7 @@ const AboutUs: React.FC = () => {
       title: t("aboutUs.bureau"),
       description: t("aboutUs.bureau_description"),
 
-      icon: <TranslationIcon fill={getIconColor()} size={iconSize} />,
+      icon: <TranslationIcon fill={iconColor} size={iconSize} />,
     },
     {
       title: t("aboutUs.visa_assistance"),
@@ -61,7 +57,7 @@ const AboutUs: React.FC = () => {
         t("aboutUs.document_preparation"),
         t("aboutUs.center_accompaniment"),
       ],
-      icon: <PassportIcon fill={getIconColor()} size={iconSize} />,
+      icon: <PassportIcon fill={iconColor} size={iconSize} />,
     },
     {
       title: t("services"),
@@ -70,7 +66,7 @@ const AboutUs: React.FC = () => {
         t("aboutUs.apostille"),
         t("aboutUs.legalization"),
       ],
-      icon: <DocIcon fill={getIconColor()} size={iconSize} />,
+      icon: <DocIcon fill={useIconColor()} size={iconSize} />,
     },
   ];
 
@@ -136,7 +132,7 @@ const AboutUs: React.FC = () => {
                 display="flex"
                 alignItems="center"
               >
-                <CheckIcon fill={getIconColor()} />
+                <CheckIcon fill={iconColor} />
                 <Typography
                   variant="h6"
                   style={{

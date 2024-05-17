@@ -4,7 +4,7 @@ interface IconProps {
   size: number;
 }
 
-const PassportIcon: React.FC<IconProps> = ({ fill }) => (
+const PassportIcon: React.FC<IconProps> = ({ fill, size }) => (
   <svg
     fill={fill}
     version="1.1"
@@ -12,7 +12,7 @@ const PassportIcon: React.FC<IconProps> = ({ fill }) => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     width="80px"
-    height="80px"
+    height={size}
     viewBox="0 0 124.116 124.116"
     xmlSpace="preserve"
   >

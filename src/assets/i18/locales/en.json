@@ -63,5 +63,25 @@
       "description": "&emsp;Mysterious country where there are more kangaroos than people. Australia is the smallest and least populated continent on our planet with unique flora and fauna. Australia has countless things that can truly interest you. <br />&emsp;Australia is a country of 'opposites' Because Australia is located in the southern hemisphere, summer here lasts from December to February, and winter, respectively, from June to August. But that's not all. All stars, moon, and sun move in the opposite direction for us. <br />&emsp;To travel to Australia, Ukrainian citizens need to obtain a tourist, guest, or business visa. The document submission process does not require an interview at the embassy. To assess your chances of obtaining a visa, order a free consultation.",
       "details": "Details"
     }
+  },
+  "visa": {
+    "visa_title": "Visas",
+    "visa_description": "&emsp;A visa is a special permit (document) that allows you to cross the border of a specific country. In other words, having a visa gives you the right to visit another country. A visa is usually issued with a valid passport. Many countries require a passport to be valid for at least 6 months and have one or two blank pages. Visa application documents are submitted at the embassy or consulate of the country you wish to enter.",
+    "documents_required": "&emsp;Documents required for visa application:",
+    "document_list": {
+      "passport": "Passport",
+      "id_copy": "Copy of all pages of the internal passport and identification code",
+      "job_certificate": "For employed people: certificate from the workplace and salary (position, salary)",
+      "unemployed_certificate": "For unemployed: confirmation letter from the guarantor, a copy of their internal passport, certificate from the workplace and bank about the availability of funds. The guarantor can be a relative.",
+      "bank_certificate": "Bank certificate of availability of funds: in the account or card (the amount may vary for each country)",
+      "application_form": "Completed application form: each embassy has its own requirements and form",
+      "photos": "Photos: the number and size are determined by the embassy of the country you are entering (the photo must be taken no later than six months before submitting the documents)."
+    },
+    "additional_info": "&emsp;Depending on the type of visa being issued, additional documents may be required. Each embassy or consulate has the right to request additional documents, as different countries have different visa regimes. The validity period of visas may be limited by time or by the number of visits to the country. The necessary documents and their processing in each case are individual, and therefore the likelihood of refusal is quite high. The main reason is errors in filling out the application form, as well as ignorance of all the nuances when collecting documents. To avoid refusal, entrust us to collect and submit documents for a visa to the country you need. The visa will be issued as soon as possible.",
+    "countries": {
+      "country1": "USA",
+      "country2": "Canada",
+      "country3": "Australia"
+    }
   }
 }

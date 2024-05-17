@@ -1,7 +1,12 @@
+import Visa from "components/Visa";
 import React from "react";
 
 const VisasPage: React.FC = () => {
-  return <div>{/* Add content for the Visas page */}</div>;
+  return (
+    <div>
+      <Visa />
+    </div>
+  );
 };
 
 export default VisasPage;
