@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/extras/static/css/main.608d510f.css",
-    "main.js": "/extras/static/js/main.2f586ee3.js",
+    "main.js": "/extras/static/js/main.b27fd8cc.js",
     "static/js/537.1b3a376a.chunk.js": "/extras/static/js/537.1b3a376a.chunk.js",
-    "static/js/374.001a76e3.chunk.js": "/extras/static/js/374.001a76e3.chunk.js",
+    "static/js/766.f12467ae.chunk.js": "/extras/static/js/766.f12467ae.chunk.js",
     "static/js/555.0449a9b4.chunk.js": "/extras/static/js/555.0449a9b4.chunk.js",
     "static/js/707.c6463025.chunk.js": "/extras/static/js/707.c6463025.chunk.js",
-    "static/js/609.60b6c4a1.chunk.js": "/extras/static/js/609.60b6c4a1.chunk.js",
+    "static/js/609.5368dc30.chunk.js": "/extras/static/js/609.5368dc30.chunk.js",
     "static/js/654.56a81322.chunk.js": "/extras/static/js/654.56a81322.chunk.js",
     "static/js/178.2aaef4bb.chunk.js": "/extras/static/js/178.2aaef4bb.chunk.js",
     "static/media/australia-sidney.jpg": "/extras/static/media/australia-sidney.dba2e8cbac0da3fbd950.jpg",
@@ -29,17 +29,17 @@
     "static/media/email.svg": "/extras/static/media/email.c4c850e0720323e5e470293df82f4987.svg",
     "index.html": "/extras/index.html",
     "main.608d510f.css.map": "/extras/static/css/main.608d510f.css.map",
-    "main.2f586ee3.js.map": "/extras/static/js/main.2f586ee3.js.map",
+    "main.b27fd8cc.js.map": "/extras/static/js/main.b27fd8cc.js.map",
     "537.1b3a376a.chunk.js.map": "/extras/static/js/537.1b3a376a.chunk.js.map",
-    "374.001a76e3.chunk.js.map": "/extras/static/js/374.001a76e3.chunk.js.map",
+    "766.f12467ae.chunk.js.map": "/extras/static/js/766.f12467ae.chunk.js.map",
     "555.0449a9b4.chunk.js.map": "/extras/static/js/555.0449a9b4.chunk.js.map",
     "707.c6463025.chunk.js.map": "/extras/static/js/707.c6463025.chunk.js.map",
-    "609.60b6c4a1.chunk.js.map": "/extras/static/js/609.60b6c4a1.chunk.js.map",
+    "609.5368dc30.chunk.js.map": "/extras/static/js/609.5368dc30.chunk.js.map",
     "654.56a81322.chunk.js.map": "/extras/static/js/654.56a81322.chunk.js.map",
     "178.2aaef4bb.chunk.js.map": "/extras/static/js/178.2aaef4bb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.608d510f.css",
-    "static/js/main.2f586ee3.js"
+    "static/js/main.b27fd8cc.js"
   ]
 }
