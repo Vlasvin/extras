@@ -60,7 +60,7 @@ const Footer = () => {
         flexDirection: isMobile ? "column" : "row",
       }}
     >
-      {!isMobile && (
+      {/* {!isMobile && (
         <Box sx={{ maxWidth: "150px" }}>
           <Link to="/">
             <img
@@ -71,7 +71,7 @@ const Footer = () => {
             />
           </Link>
         </Box>
-      )}
+      )} */}
       <Box
         sx={{
           ...footerStyles.contentContainer,
