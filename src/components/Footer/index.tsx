@@ -95,7 +95,10 @@ const Footer = () => {
                 color={"inherit"}
                 component={Link}
                 to={item.link}
-                sx={footerStyles.button}
+                sx={{
+                  ...footerStyles.button,
+                  justifyContent: isMobile ? "flex-start" : "center",
+                }}
               >
                 {item.icon}
                 {item.label}
