@@ -64,6 +64,7 @@
       "details": "Details"
     }
   },
+
   "visa": {
     "visa_title": "VISA",
     "visa_description": "&emsp;&emsp;A visa is a special permit (document) that allows you to cross the border of a specific country. In other words, having a visa gives you the right to visit another country. A visa is usually issued with a valid passport. Many countries require a passport to be valid for at least 6 months and have one or two blank pages. Visa application documents are submitted at the embassy or consulate of the country you wish to enter.",
@@ -84,5 +85,36 @@
       "country2": "Canada",
       "country3": "Australia"
     }
+  },
+  "visa_usa": {
+    "title": "Visa to the USA",
+    "description": "To visit the United States of America, Ukrainians need to obtain a visa. Documents for its issuance must be submitted no later than three months before the planned trip.",
+    "steps_title": "STEPS",
+    "step_number": "Step",
+    "steps": [
+      "Fill out the DS-160 form online! (also known as the nonimmigrant visa application)",
+      "Find the nearest embassy to you!",
+      "Pay the application fee",
+      "Schedule a visa interview",
+      "Personally attend the visa interview",
+      "Receive your passport with the visa within 2-7 working days"
+    ],
+    "cost_title": "Cost",
+    "costs": [
+      "Visa fee \n from 185 USD",
+      "Interpreter \n from 90 USD",
+      "Visa support services \n 200 USD"
+    ],
+    "documents_title": "Documents for obtaining a visa to the USA",
+    "documents": [
+      "scan of the passport;",
+      "scan of the previous/second passport, if any;",
+      "invitation letter or hotel reservation;",
+      "financial documents;",
+      "copy of marriage/birth certificates;",
+      "questionnaire data;",
+      "digital photo."
+    ],
+    "apply_button": "Fill out the form"
   }
 }
