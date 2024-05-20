@@ -180,7 +180,7 @@ const AboutUs: React.FC = () => {
                 href="tel:+380442345678"
                 style={{ color: "#1976d2", textDecoration: "none" }}
               >
-                {t("aboutUs.phone")}: +380 (44) 234-56-78
+                {t("aboutUs.phone")}: +380632715551
               </a>
               <br />
               <a
