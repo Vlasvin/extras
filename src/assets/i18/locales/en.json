@@ -107,13 +107,13 @@
     ],
     "documents_title": "Documents for obtaining a visa to the USA",
     "documents": [
-      "scan of the passport;",
-      "scan of the previous/second passport, if any;",
-      "invitation letter or hotel reservation;",
-      "financial documents;",
-      "copy of marriage/birth certificates;",
-      "questionnaire data;",
-      "digital photo."
+      "• scan of the passport;",
+      "• scan of the previous/second passport, if any;",
+      "• invitation letter or hotel reservation;",
+      "• financial documents;",
+      "• copy of marriage/birth certificates;",
+      "• questionnaire data;",
+      "• digital photo."
     ],
     "apply_button": "Fill out the form"
   }
