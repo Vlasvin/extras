@@ -25,13 +25,12 @@ import Hawaii from "assets/pictures/jpg/hawaii.jpg";
 import MiamiBeach from "assets/pictures/jpg/miami-beach.jpg";
 import {
   USATitle,
-  CenteredCard,
   CenteredCostCard,
   CustomBox,
-  CustomDivider,
   CustomTypography,
   CostsTitle,
 } from "./VisaUSAStyles";
+import FlippingCard from "./VisaUSAComponents/FlippingCard";
 
 const images = [
   Liberty,
@@ -75,9 +74,9 @@ const VisaUsa = () => {
     }));
   }, [index, api]);
 
-  const steps = t("visa_usa.steps", { returnObjects: true });
-  const costs = t("visa_usa.costs", { returnObjects: true });
-  const documents = t("visa_usa.documents", { returnObjects: true });
+  const steps: string[] = t("visa_usa.steps", { returnObjects: true });
+  const costs: string[] = t("visa_usa.costs", { returnObjects: true });
+  const documents: string[] = t("visa_usa.documents", { returnObjects: true });
 
   return (
     <Box sx={{ p: 3 }}>
@@ -122,25 +121,9 @@ const VisaUsa = () => {
         direction={isMobile ? "column" : "row"}
       >
         {steps.map((step, index) => (
-          <React.Fragment key={index}>
-            <Grid item xs={12} sm={3}>
-              <CenteredCard>
-                <CardContent>
-                  <Typography variant="h6">{`${t("visa_usa.step_number")} ${
-                    index + 1
-                  }`}</Typography>
-                  <Typography variant="body2">{step}</Typography>
-                </CardContent>
-              </CenteredCard>
-            </Grid>
-            {index < steps.length - 1 && (
-              <CustomDivider
-                key={`divider-${index}`}
-                orientation={isMobile ? "horizontal" : "vertical"}
-                flexItem
-              />
-            )}
-          </React.Fragment>
+          <Grid item xs={12} sm={4} key={index}>
+            <FlippingCard stepNumber={index + 1} stepDescription={step} />
+          </Grid>
         ))}
       </Grid>
 
