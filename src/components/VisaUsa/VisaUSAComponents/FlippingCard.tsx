@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { animated, useSpring } from "@react-spring/web";
-import { Card, CardContent, Typography } from "@mui/material";
+import { CardContent, Typography } from "@mui/material";
 import { CenteredCard } from "../VisaUSAStyles";
 
 interface FlippingCardProps {
