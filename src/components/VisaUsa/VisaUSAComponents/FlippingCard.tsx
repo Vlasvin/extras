@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { animated, useSpring } from "@react-spring/web";
 import { CardContent, Typography } from "@mui/material";
-import { CenteredCard } from "../VisaUSAStyles";
+import { CardWrap, CenteredCard } from "../VisaUSAStyles";
 
 interface FlippingCardProps {
   stepNumber: number;
@@ -27,15 +27,7 @@ const FlippingCard: React.FC<FlippingCardProps> = ({
   };
 
   return (
-    <div
-      onClick={handleCardClick}
-      style={{
-        width: 300,
-        height: 240,
-        cursor: "pointer",
-        position: "relative",
-      }}
-    >
+    <CardWrap onClick={handleCardClick}>
       <animated.div
         style={{
           width: "100%",
@@ -76,7 +68,7 @@ const FlippingCard: React.FC<FlippingCardProps> = ({
           </CardContent>
         </CenteredCard>
       </animated.div>
-    </div>
+    </CardWrap>
   );
 };
 

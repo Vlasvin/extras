@@ -9,6 +9,7 @@ import {
   ListItem,
   ListItemText,
   Box,
+  Container,
 } from "@mui/material";
 import { useSprings, animated, config, useSpring } from "@react-spring/web";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -79,7 +80,7 @@ const VisaUsa = () => {
   const documents: string[] = t("visa_usa.documents", { returnObjects: true });
 
   return (
-    <Box sx={{ p: 3 }}>
+    <Container style={{ padding: 0 }}>
       <animated.div style={titleSpring}>
         <USATitle align="center">{t("visa_usa.title")}</USATitle>
       </animated.div>
@@ -174,7 +175,7 @@ const VisaUsa = () => {
       >
         {t("visa_usa.apply_button")}
       </Button>
-    </Box>
+    </Container>
   );
 };
 
