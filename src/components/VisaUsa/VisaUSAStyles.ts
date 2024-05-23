@@ -30,6 +30,7 @@ export const CenteredCard = styled(Card)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   textAlign: "center",
+  boxShadow: "0px 8px 24px 0px rgba(0, 0, 0, 0.2)",
   marginBottom: 48,
 }));
 
@@ -56,7 +57,7 @@ export const CenteredCostCard = styled(Card)(({ theme }) => ({
 export const CustomBox = styled(Box)(({ theme }) => ({
   position: "relative",
   width: "100%",
-  height: "640px",
+  height: "clamp(340px, 50vw, 640px)",
   overflow: "hidden",
   borderRadius: "20px",
   marginBottom: "48px",
@@ -69,7 +70,7 @@ export const CustomDivider = styled(Divider)(({ theme }) => ({
 
 export const CardWrap = styled(Box)(({ theme }) => ({
   width: "clamp(300px, 50vw, 380px)",
-  height: 240,
+  height: 200,
   cursor: "pointer",
   position: "relative",
   marginTop: "24px",

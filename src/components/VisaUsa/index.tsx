@@ -14,16 +14,6 @@ import {
 import { useSprings, animated, config, useSpring } from "@react-spring/web";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import Liberty from "assets/pictures/jpg/statue-of-liberty.jpg";
-import GrandCanyon from "assets/pictures/jpg/grand-canyon.jpg";
-import NY from "assets/pictures/jpg/new-york.jpg";
-import PrismaticSpring from "assets/pictures/jpg/grand-prismatic-spring.jpg";
-import Miami from "assets/pictures/jpg/miami.jpg";
-import LasVegas from "assets/pictures/jpg/las-vegas.jpg";
-import Church from "assets/pictures/jpg/church.jpg";
-import Jeep from "assets/pictures/jpg/jeep.jpg";
-import Hawaii from "assets/pictures/jpg/hawaii.jpg";
-import MiamiBeach from "assets/pictures/jpg/miami-beach.jpg";
 import {
   USATitle,
   CenteredCostCard,
@@ -32,25 +22,14 @@ import {
   CostsTitle,
 } from "./VisaUSAStyles";
 import FlippingCard from "./VisaUSAComponents/FlippingCard";
-
-const images = [
-  Liberty,
-  GrandCanyon,
-  NY,
-  PrismaticSpring,
-  Miami,
-  LasVegas,
-  Church,
-  Jeep,
-  Hawaii,
-  MiamiBeach,
-];
+import { imagesUSA } from "services/images";
 
 const VisaUsa = () => {
   const { t } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [index, setIndex] = useState(0);
+  const images = imagesUSA;
 
   const [springs, api] = useSprings(images.length, (i) => ({
     opacity: i === index ? 1 : 0,
@@ -67,7 +46,7 @@ const VisaUsa = () => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   useEffect(() => {
     api.start((i) => ({
@@ -105,7 +84,7 @@ const VisaUsa = () => {
         <Typography
           variant="body1"
           gutterBottom
-          style={{ marginBottom: "48px" }}
+          style={{ marginBottom: "48px", textIndent: "1em" }}
         >
           {t("visa_usa.description")}
         </Typography>
@@ -136,6 +115,7 @@ const VisaUsa = () => {
           display: "flex",
           flexDirection: isMobile ? "column" : "row",
           justifyContent: "center",
+          alignItems: "center",
           gap: 3,
         }}
       >
