@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[439],{7439:(a,s,e)=>{e.r(s),e.d(s,{default:()=>c});e(5043);var p=e(579);const c=()=>(0,p.jsx)("div",{children:(0,p.jsx)("h1",{children:"Visa to Canada"})})}}]);
-//# sourceMappingURL=439.8e237182.chunk.js.map
