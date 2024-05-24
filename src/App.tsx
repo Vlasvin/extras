@@ -14,10 +14,10 @@ const VisasPage = React.lazy(() => import("./pages/VisasPage"));
 const TranslationsPage = React.lazy(() => import("./pages/TranslationsPage"));
 const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
 const AboutUsPage = React.lazy(() => import("./pages/AboutUsPage"));
-const VisasUSAPage = React.lazy(() => import("./pages/VisasUSAPage"));
-const VisasCanadaPage = React.lazy(() => import("./pages/VisasCanadaPage"));
+const VisasUSAPage = React.lazy(() => import("./pages/VisaUSAPage"));
+const VisasCanadaPage = React.lazy(() => import("./pages/VisaCanadaPage"));
 const VisasAustraliaPage = React.lazy(
-  () => import("./pages/VisasAustraliaPage")
+  () => import("./pages/VisaAustraliaPage")
 );
 
 const App = () => {

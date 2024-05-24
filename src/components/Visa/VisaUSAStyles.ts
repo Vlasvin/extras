@@ -45,7 +45,7 @@ export const CostsTitle = styled(Typography)(({ theme }) => ({
 
 export const CenteredCostCard = styled(Card)(({ theme }) => ({
   width: "clamp(300px, 50vw, 380px)",
-  height: 120,
+  height: 160,
   borderRadius: "20px",
   display: "flex",
   alignItems: "center",

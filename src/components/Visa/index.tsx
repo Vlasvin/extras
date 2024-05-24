@@ -1,143 +1,189 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { List, ListItemIcon, ListItemText, Typography } from "@mui/material";
-import { useSpring, animated } from "@react-spring/web";
-import { useInView } from "react-intersection-observer";
-import useIconColor from "hooks/useIconColor";
-
-import PassportIcon from "assets/pictures/svg/PassportIcon";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import WorkIcon from "@mui/icons-material/Work";
-import NotInterestedIcon from "@mui/icons-material/NotInterested";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import DescriptionIcon from "@mui/icons-material/Description";
-import PhotoIcon from "@mui/icons-material/Photo";
-
-import USAMapIcon from "assets/pictures/svg/UsaMap";
-import CanadaMapIcon from "assets/pictures/svg/CanadaMap";
-import AustraliaMapIcon from "assets/pictures/svg/AustraliaMap";
-import VisaBanner from "assets/pictures/jpg/travel.jpg";
 import {
-  VisaContainer,
-  VisaTitle,
-  VisaBanner as StyledVisaBanner,
-  VisaTitleList,
-  CountryContainer,
-  CountryBox,
-  VisaListItem,
-} from "./VisaStyles";
+  Typography,
+  CardContent,
+  Button,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Box,
+  Container,
+} from "@mui/material";
+import { useSprings, animated, config, useSpring } from "@react-spring/web";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
-const Visa: React.FC = () => {
+import FlippingCard from "./VisaComponents/FlippingCard";
+import {
+  USATitle,
+  CenteredCostCard,
+  CustomBox,
+  CustomTypography,
+  CostsTitle,
+} from "./VisaUSAStyles";
+
+interface VisaProps {
+  titleKey: string;
+  images: string[];
+  stepsKey: string;
+  costsKey: string;
+  costTitleKey: string;
+  documentsKey: string;
+  applyButtonKey: string;
+  descriptionKey: string;
+}
+
+const Visa: React.FC<VisaProps> = ({
+  titleKey,
+  images,
+  stepsKey,
+  costsKey,
+  costTitleKey,
+  documentsKey,
+  applyButtonKey,
+  descriptionKey,
+}) => {
   const { t } = useTranslation();
-  const iconSize = window.innerWidth <= 900 ? 240 : 400;
-  const iconColor = useIconColor();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [index, setIndex] = useState(0);
 
-  const handleCountryClick = (country: string) => {
-    window.location.href = `/extras/visas/${country}`;
-  };
+  const [springs, api] = useSprings(images.length, (i) => ({
+    opacity: i === index ? 1 : 0,
+    config: config.molasses,
+  }));
 
   const titleSpring = useSpring({
     from: { opacity: 0, transform: "translateY(-70px)" },
     to: { opacity: 1, transform: "translateY(0)" },
   });
 
-  const listSpring = useSpring({
-    from: { opacity: 0, transform: "translateX(-50px)" },
-    to: { opacity: 1, transform: "translateX(0)" },
-    delay: 200,
-  });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
-  const { ref: countryRef, inView: countryInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  useEffect(() => {
+    api.start((i) => ({
+      opacity: i === index ? 1 : 0,
+    }));
+  }, [index, api]);
 
-  const countrySpring = useSpring({
-    from: { opacity: 0, transform: "scale(0.8)" },
-    to: {
-      opacity: countryInView ? 1 : 0,
-      transform: countryInView ? "scale(1)" : "scale(0.8)",
-    },
-    delay: 600,
-  });
-
-  const documentIcons = [
-    <PassportIcon fill={iconColor} size={60} />,
-    <AccountBoxIcon />,
-    <WorkIcon />,
-    <NotInterestedIcon />,
-    <AccountBalanceIcon />,
-    <DescriptionIcon />,
-    <PhotoIcon />,
-  ];
-
-  const documentKeys = [
-    "passport",
-    "id_copy",
-    "job_certificate",
-    "unemployed_certificate",
-    "bank_certificate",
-    "application_form",
-    "photos",
-  ];
+  const steps: string[] = t(stepsKey, { returnObjects: true });
+  const costs: string[] = t(costsKey, { returnObjects: true });
+  const documents: string[] = t(documentsKey, { returnObjects: true });
+  const costTitle = t(costTitleKey);
+  const description = t(descriptionKey)
+    .split("\n")
+    .map((line, idx) => (
+      <React.Fragment key={idx}>
+        &emsp;{line}
+        <br />
+      </React.Fragment>
+    ));
 
   return (
-    <VisaContainer style={{ padding: 0 }}>
+    <Container style={{ padding: 0 }}>
       <animated.div style={titleSpring}>
-        <VisaTitle align="center">{t("visa.visa_title")}</VisaTitle>
+        <USATitle align="center">{t(titleKey)}</USATitle>
       </animated.div>
-      <StyledVisaBanner src={VisaBanner} alt="Visa banner" />
-      <Typography
-        paragraph
-        dangerouslySetInnerHTML={{ __html: t("visa.visa_description") }}
-        marginBottom={6}
-      />
-      <VisaTitleList
-        dangerouslySetInnerHTML={{ __html: t("visa.documents_required") }}
-      />
-      <animated.div style={listSpring}>
-        <List style={{ marginBottom: 48 }}>
-          {documentKeys.map((doc, index) => (
-            <VisaListItem key={index}>
-              <ListItemIcon>
-                {React.cloneElement(documentIcons[index], {
-                  style: { color: iconColor, fontSize: 60 },
-                })}
-              </ListItemIcon>
-              <ListItemText
-                primary={t(`visa.document_list.${doc}`)}
-                style={{ marginLeft: 20 }}
-              />
-            </VisaListItem>
-          ))}
-        </List>
-      </animated.div>
-      <Typography
-        paragraph
-        dangerouslySetInnerHTML={{ __html: t("visa.additional_info") }}
-        marginBottom={6}
-      />
-      <CountryContainer ref={countryRef}>
-        <animated.div style={countrySpring}>
-          <CountryBox onClick={() => handleCountryClick("usa")}>
-            <USAMapIcon size={iconSize} />
-            <Typography>{t("visa.countries.country1")}</Typography>
-          </CountryBox>
-        </animated.div>
-        <animated.div style={countrySpring}>
-          <CountryBox onClick={() => handleCountryClick("canada")}>
-            <CanadaMapIcon size={iconSize} />
-            <Typography>{t("visa.countries.country2")}</Typography>
-          </CountryBox>
-        </animated.div>
-        <animated.div style={countrySpring}>
-          <CountryBox onClick={() => handleCountryClick("australia")}>
-            <AustraliaMapIcon size={iconSize} />
-            <Typography>{t("visa.countries.country3")}</Typography>
-          </CountryBox>
-        </animated.div>
-      </CountryContainer>
-    </VisaContainer>
+
+      <CustomBox>
+        {springs.map((style, i) => (
+          <animated.img
+            key={i}
+            src={images[i]}
+            style={{
+              ...style,
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        ))}
+      </CustomBox>
+
+      <CardContent>
+        <Typography
+          variant="body1"
+          gutterBottom
+          style={{ marginBottom: "48px", textIndent: "1em" }}
+        >
+          {description}
+        </Typography>
+      </CardContent>
+
+      <CustomTypography variant="h4" gutterBottom>
+        {t(stepsKey + "_title")}
+      </CustomTypography>
+      <Grid
+        container
+        spacing={2}
+        alignItems="center"
+        justifyContent="center"
+        direction={isMobile ? "column" : "row"}
+      >
+        {steps.map((step, index) => (
+          <Grid item xs={12} sm={4} key={index}>
+            <FlippingCard stepNumber={index + 1} stepDescription={step} />
+          </Grid>
+        ))}
+      </Grid>
+
+      <CostsTitle variant="h4" gutterBottom sx={{ mt: 4 }}>
+        {t(costTitle)}
+      </CostsTitle>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 3,
+        }}
+      >
+        {costs.map((cost, index) => (
+          <CenteredCostCard key={index}>
+            <CardContent>
+              <Typography variant="body1">
+                {cost.split("\n").map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
+              </Typography>
+            </CardContent>
+          </CenteredCostCard>
+        ))}
+      </Box>
+
+      <Typography variant="h4" gutterBottom sx={{ mt: 4 }}>
+        {t(documentsKey + "_title")}
+      </Typography>
+      <List>
+        {documents.map((doc, index) => (
+          <ListItem key={index}>
+            <ListItemText primary={doc} />
+          </ListItem>
+        ))}
+      </List>
+      <Button
+        variant="outlined"
+        color="primary"
+        sx={{ mt: 2 }}
+        onClick={() => {
+          window.location.href = "/apply";
+        }}
+      >
+        {t(applyButtonKey)}
+      </Button>
+    </Container>
   );
 };
 

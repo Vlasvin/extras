@@ -1,4 +1,4 @@
-import Visa from "components/Visa";
+import Visa from "components/Visas";
 import React from "react";
 
 const VisasPage: React.FC = () => {

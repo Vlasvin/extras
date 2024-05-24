@@ -21,3 +21,27 @@ export const imagesUSA = [
   Hawaii,
   MiamiBeach,
 ];
+export const imagesCanada = [
+  Liberty,
+  GrandCanyon,
+  NY,
+  PrismaticSpring,
+  Miami,
+  LasVegas,
+  Church,
+  Jeep,
+  Hawaii,
+  MiamiBeach,
+];
+export const imagesAustralia = [
+  Liberty,
+  GrandCanyon,
+  NY,
+  PrismaticSpring,
+  Miami,
+  LasVegas,
+  Church,
+  Jeep,
+  Hawaii,
+  MiamiBeach,
+];

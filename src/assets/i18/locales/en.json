@@ -116,5 +116,74 @@
       "• digital photo."
     ],
     "apply_button": "Fill out the form"
+  },
+
+  "visa_canada": {
+    "title": "Visa to Canada",
+    "description": "To travel to Canada, you need to apply for a tourist, business, or guest visa (Temporary Visitor visa). For a Canadian visa, you need to submit documents online. Personal presence is required to submit biometric data at the visa center.",
+    "steps_title": "Steps",
+    "step_number": "Step",
+    "steps": [
+      "Fill out the visa application",
+      "Prepare supporting documents with translation",
+      "Pay the visa fee",
+      "Submit biometric data at the visa center",
+      "Leave your passport at the visa center for visa insertion",
+      "Receive your passport with the visa after review"
+    ],
+    "cost_title": "Cost",
+    "costs": [
+      "Visa fee \n 100 CAD",
+      "Biometric data fee \n 85 CAD",
+      "Visa support services \n 200 USD",
+      "Translation of documents \n 300 UAH per page/certificate"
+    ],
+    "documents_title": "Documents for obtaining a visa to Canada",
+    "documents": [
+      "• Scan of passport",
+      "• Scan of previous/second passport",
+      "• Scan of employment certificate",
+      "• Scan of bank statement and transactions for the last 6 months",
+      "• Scan of marriage/birth certificates",
+      "• Scan of property documents (apartment, car, land)",
+      "• Invitation letter from Canada - optional",
+      "• Application data"
+    ],
+    "apply_button": "Fill out the application"
+  },
+
+  "visa_australia": {
+    "title": "Visa to Australia",
+    "description": "To enter Australia, you need to apply for a standard tourist, business, or guest visa (subclass 600). Factors affecting the chances of getting a visa:\n⁃ A job with good income, funds in accounts.\n⁃ Travel history abroad, visas to the USA, Canada, the UK\n⁃ Relatives or friends in Australia who have either citizenship or are well-off.\nThere are no special “refuge” programs in the country! But it is possible to apply for asylum in Australia once you are there.",
+    "steps_title": "Steps",
+    "step_number": "Step",
+    "steps": [
+      "Fill out the visa application online",
+      "Prepare supporting documents with translation",
+      "Pay the visa fee",
+      "Wait for processing",
+      "Receive the electronic visa via email"
+    ],
+    "cost_title": "Cost",
+    "costs": [
+      "Visa fee (visa subclass 600) \n 190 AUD",
+      "Visa support services \n 200$",
+      "Additionally, licensed document translation \n 300 UAH per page"
+    ],
+    "documents_title": "Document list",
+    "documents": [
+      "• Scan of passport",
+      "• Scan of previous/second passport, if any",
+      "• Application data",
+      "• Employment certificate/entrepreneur statement",
+      "• Bank statement and transactions for the last 6 months",
+      "• Scan of marriage/divorce/birth certificates",
+      "• Scan of property documents (apartment, car, land)",
+      "• Flight booking",
+      "• Hotel booking",
+      "• Invitation letter",
+      "• Documents confirming the purpose of the trip"
+    ],
+    "apply_button": "Fill out the application"
   }
 }
