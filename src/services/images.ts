@@ -15,6 +15,14 @@ import Architecture from "assets/pictures/jpg/architecture.jpg";
 import Jasper from "assets/pictures/jpg/jasper.jpg";
 import Campus from "assets/pictures/jpg/campus.jpg";
 import Ashby from "assets/pictures/jpg/ashby-lake.jpg";
+import AustraliaOpera from "assets/pictures/jpg/australia-opera.jpg";
+import WesternAustralia from "assets/pictures/jpg/western-australia.jpg";
+import Milsons from "assets/pictures/jpg/milsons.jpg";
+import Uluru from "assets/pictures/jpg/uluru.jpg";
+import Sydney from "assets/pictures/jpg/sydney.jpg";
+import AustraliaBeach from "assets/pictures/jpg/australia-beach.jpg";
+import SydneyLaguna from "assets/pictures/jpg/sydney-laguna.jpg";
+import AustraliaNature from "assets/pictures/jpg/australia-nature.jpg";
 
 export const imagesUSA = [
   Liberty,
@@ -38,14 +46,12 @@ export const imagesCanada = [
   Ashby,
 ];
 export const imagesAustralia = [
-  Liberty,
-  GrandCanyon,
-  NY,
-  PrismaticSpring,
-  Miami,
-  LasVegas,
-  Church,
-  Jeep,
-  Hawaii,
-  MiamiBeach,
+  AustraliaOpera,
+  WesternAustralia,
+  Milsons,
+  Uluru,
+  Sydney,
+  AustraliaBeach,
+  SydneyLaguna,
+  AustraliaNature,
 ];
