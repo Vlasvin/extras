@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[627],{7627:(s,t,e)=>{e.r(t),e.d(t,{default:()=>p});var a=e(9622),i=e(79),u=e(579);const p=()=>(0,u.jsx)(a.A,{titleKey:"visa_usa.title",images:i.kW,stepsKey:"visa_usa.steps",costTitleKey:"visa_usa.cost_title",costsKey:"visa_usa.costs",documentsKey:"visa_usa.documents",applyButtonKey:"visa_usa.apply_button",descriptionKey:"visa_usa.description"})}}]);
+//# sourceMappingURL=627.db89eb6e.chunk.js.map
