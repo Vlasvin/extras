@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/555.0449a9b4.chunk.js","mappings":"kJAEA,MAIA,EAJmCA,KAC1BC,EAAAA,EAAAA,KAAA,S","sources":["pages/TranslationsPage/index.tsx"],"sourcesContent":["import React from \"react\";\n\nconst TranslationsPage: React.FC = () => {\n  return <div></div>;\n};\n\nexport default TranslationsPage;\n"],"names":["TranslationsPage","_jsx"],"sourceRoot":""}
