@@ -80,4 +80,10 @@ export const aboutUsStyles = {
     letterSpacing: ".01em",
     marginLeft: 24,
   },
+  headerImg: {
+    maxWidth: "clamp(300px, 50vw, 360px)",
+    maxHeight: "100%",
+    marginBottom: "48px",
+    borderRadius: "20px",
+  },
 };

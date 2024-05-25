@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { animated, useSpring } from "@react-spring/web";
 import { CardContent, Typography } from "@mui/material";
-import { CardWrap, CenteredCard } from "../VisaUSAStyles";
+import { CardWrap, CenteredCard } from "../VisaStyles";
 
 interface FlippingCardProps {
   stepNumber: number;

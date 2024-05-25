@@ -22,7 +22,7 @@ import {
   CustomBox,
   CustomTypography,
   CostsTitle,
-} from "./VisaUSAStyles";
+} from "./VisaStyles";
 
 interface VisaProps {
   titleKey: string;
