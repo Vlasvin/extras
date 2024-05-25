@@ -185,5 +185,42 @@
       "• Documents confirming the purpose of the trip"
     ],
     "apply_button": "Fill out the application"
+  },
+
+  "translation": {
+    "title": "Translations",
+    "subtitle": "We offer professional translation in 30+ languages worldwide.",
+    "services": [
+      "written translation of documents, certificates, contracts",
+      "written translation of personal documents, correspondence",
+      "simultaneous interpretation (multilingual support for your activities)",
+      "consecutive interpretation for Skype/Zoom conferences",
+      "website, book, memoir translation."
+    ],
+    "writtenTranslation": {
+      "title": "Written Translation",
+      "description": "If you are looking for a reliable translator for documents, publications, or books – you have found one )",
+      "details": "Written translation is an accurate rendering in another language of the content of the foreign original. Both written and spoken texts are translated, but the result is always a paper or digital record."
+    },
+    "certificationTypes": {
+      "title": "Types of Translation Certification",
+      "agencySeal": "Certification with the translation agency's seal is performed when there is no need for notarial certification. The agency's seal confirms the official registration of the translator or company to provide written translation services.",
+      "notarySeal": "Notary seal certification. Some translations require notarial certification. Notarial translation of a document is a translation with simultaneous certification of the authenticity of the translator's signature by a notary. The translator must be present during the notarial certification of the translation."
+    },
+    "oralTranslation": {
+      "title": "Interpretation",
+      "description": "Overcoming language barriers in communication! We offer interpreters with experience in various formats and topics.",
+      "services": [
+        "Consecutive interpretation at meetings and events",
+        "Simultaneous interpretation",
+        "Online interpretation",
+        "Accompaniment by a certified interpreter during notarial actions",
+        "Video translation with voice over."
+      ]
+    },
+    "voiceOver": {
+      "title": "Video Translation with Voice Over",
+      "description": "The client provides the video in the original language, and we record the translation in audio format, synchronously with the speaker's speech tempo. Technical specialists overlay the audio translation on the video."
+    }
   }
 }
