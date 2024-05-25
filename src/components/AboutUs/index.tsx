@@ -32,6 +32,7 @@ interface Service {
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
 
+  // eslint-disable-next-line
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
   const sections: Section[] = GetSections();
   const iconColor = useIconColor();
