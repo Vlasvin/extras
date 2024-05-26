@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/707.c6463025.chunk.js","mappings":"kJAEA,MAIA,EAJ+BA,KACtBC,EAAAA,EAAAA,KAAA,S","sources":["pages/ServicesPage/index.tsx"],"sourcesContent":["import React from \"react\";\n\nconst ServicesPage: React.FC = () => {\n  return <div></div>;\n};\n\nexport default ServicesPage;\n"],"names":["ServicesPage","_jsx"],"sourceRoot":""}
