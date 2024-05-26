@@ -222,5 +222,19 @@
       "title": "Video Translation with Voice Over",
       "description": "The client provides the video in the original language, and we record the translation in audio format, synchronously with the speaker's speech tempo. Technical specialists overlay the audio translation on the video."
     }
+  },
+
+  "servicesPage": {
+    "title": "Additional Services",
+    "description": "Among our additional services is the layout of documents for printing and electronic use.",
+    "items": [
+      "layout and design of magazines, newspapers, brochures, catalogs, and any other promotional products",
+      "layout and design of translation for any technical and accompanying documentation",
+      "layout and design of books, scientific papers, encyclopedias, and reference literature",
+      "layout and design according to the original or layout from scratch, creating a unique design for your project"
+    ],
+    "legalization": "Legalization",
+    "legalizationDescription": "We offer apostille services for documents.",
+    "policeClearance": "Police Clearance Certificates"
   }
 }

@@ -1,5 +1,5 @@
+import { Box, List, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import { Typography, Card, Box } from "@mui/material";
 
 export const Title = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(34px, 5.55vw, 54px)",
@@ -24,26 +24,26 @@ export const DescriptionBox = styled(Box)(({ theme }) => ({
   textIndent: "1em",
 }));
 
-export const CustomCard = styled(Card)(({ theme }) => ({
-  width: "clamp(300px, 50vw, 380px)",
-  height: "auto",
-  borderRadius: "20px",
+export const CustomList = styled(List)(({ theme }) => ({
+  marginBottom: "48px",
+}));
+
+export const IconWrapper = styled(Box)(({ theme }) => ({
+  minWidth: "40px",
+  minHeight: "40px",
   display: "flex",
+  justifyContent: "center",
   alignItems: "center",
+  marginRight: theme.spacing(2),
+  [theme.breakpoints.down("sm")]: {
+    marginRight: 0,
+    marginBottom: theme.spacing(1),
+  },
+}));
+
+export const TextWrapper = styled(Box)(({ theme }) => ({
+  display: "flex",
   justifyContent: "center",
   textAlign: "center",
-  marginBottom: "48px",
-  padding: "20px",
-}));
-
-export const CustomList = styled(Box)(({ theme }) => ({
-  marginBottom: "48px",
-}));
-
-export const CustomImage = styled("img")(({ theme }) => ({
-  height: "280px",
-  width: "clamp(300px, 50vw, 400px)",
-  objectFit: "cover",
-  borderRadius: "20px",
-  //   marginLeft: theme.spacing(2),
+  marginLeft: "16px",
 }));

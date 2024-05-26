@@ -40,11 +40,11 @@ const Translations: React.FC = () => {
       </SectionTitle>
 
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={8} style={{ maxWidth: 700 }}>
+        <Grid item xs={12} sm={8} style={{ maxWidth: 720 }}>
           <CustomList>
             {services.map((service, index) => (
               <ListItem key={index}>
-                <ListItemText primary={`- ${service}`} />
+                <ListItemText primary={`• ${service}`} />
               </ListItem>
             ))}
           </CustomList>
