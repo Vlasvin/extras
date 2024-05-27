@@ -15,6 +15,7 @@ const TranslationsPage = React.lazy(() => import("./pages/TranslationsPage"));
 const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
 const AboutUsPage = React.lazy(() => import("./pages/AboutUsPage"));
 const VisasUSAPage = React.lazy(() => import("./pages/VisaUSAPage"));
+const VisaFormPage = React.lazy(() => import("pages/VisaFormPage"));
 const VisasCanadaPage = React.lazy(() => import("./pages/VisaCanadaPage"));
 const VisasAustraliaPage = React.lazy(
   () => import("./pages/VisaAustraliaPage")
@@ -35,6 +36,7 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/visas" element={<VisasPage />} />
               <Route path="/visas/usa" element={<VisasUSAPage />} />
+              <Route path="/visas/usa/visa-form" element={<VisaFormPage />} />
               <Route path="/visas/canada" element={<VisasCanadaPage />} />
               <Route path="/visas/australia" element={<VisasAustraliaPage />} />
               <Route path="/translations" element={<TranslationsPage />} />

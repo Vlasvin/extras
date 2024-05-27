@@ -178,7 +178,7 @@ const Visa: React.FC<VisaProps> = ({
         color="primary"
         sx={{ mt: 2 }}
         onClick={() => {
-          window.location.href = "/apply";
+          window.location.href = "usa/visa-form";
         }}
       >
         {t(applyButtonKey)}
