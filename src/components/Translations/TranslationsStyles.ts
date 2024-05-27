@@ -45,5 +45,5 @@ export const CustomImage = styled("img")(({ theme }) => ({
   width: "clamp(300px, 50vw, 400px)",
   objectFit: "cover",
   borderRadius: "20px",
-  //   marginLeft: theme.spacing(2),
+  marginBottom: "24px",
 }));

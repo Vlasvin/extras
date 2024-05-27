@@ -4,6 +4,7 @@ export const aboutUsStyles = {
     fontWeight: "bold",
     fontSize: 36,
     marginBottom: 20,
+    display: "flex",
   },
   content: {
     lineHeight: 1.6,
@@ -52,6 +53,8 @@ export const aboutUsStyles = {
     lineHeight: 1.25,
     letterSpacing: ".01em",
     marginBottom: 48,
+    display: "flex",
+    justifyContent: "center",
   },
   li: {
     fontSize: "clamp(18px,4.375vw,20px)",
@@ -63,9 +66,11 @@ export const aboutUsStyles = {
 
   h2: {
     margin: "48px 0",
+    display: "flex",
+    justifyContent: "center",
     fontSize: "clamp(34px,5.55vw,54px)",
-    lineHeight: 1.25,
-    fontWeight: 800,
+    lineHeight: 1.08,
+    fontWeight: 500,
     letterSpacing: ".01em",
   },
   h6: {
