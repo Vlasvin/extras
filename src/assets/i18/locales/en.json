@@ -236,5 +236,36 @@
     "legalization": "Legalization",
     "legalizationDescription": "We offer apostille services for documents.",
     "policeClearance": "Police Clearance Certificates"
+  },
+
+  "personalInfo": {
+    "title": "Personal Information",
+    "surname": "Surname",
+    "givenName": "Given Name",
+    "patronymic": "Patronymic",
+    "birthDate": "Date of Birth",
+    "photo": "Digital photo on a white background",
+    "passportCopy": "COPY OF THE FIRST PAGE OF THE PASSPORT",
+    "passportDetails": "Surname, given name and patronymic in Ukrainian (as indicated in the internal passport)",
+    "passportOrInn": "Internal passport or TIN: series, number",
+    "otherNames": "Other surnames and names",
+    "birthPlaceAndDate": "Place and date of birth: city/village, region/district, day, month, year of birth",
+    "passportLost": "Have you ever lost your passport? Yes/No",
+    "passportLostDetails": "If «Yes», indicate: passport number, country of issue, circumstances of loss",
+    "otherCitizenship": "Have you had another citizenship?",
+    "otherPassportDetails": "If yes, indicate whether you have a valid passport from another country and its number",
+    "residenceAddress": "Actual residence address",
+    "registeredAddress": "Registered address",
+    "contactNumber": "Contact phone number",
+    "contactNumbersLast5Years": "Indicate all phone numbers used in the last 5 years",
+    "emailAddress": "Email address",
+    "emailsLast5Years": "Indicate all emails used in the last 5 years",
+    "socialMedia": "Which social networks are you registered with?",
+    "socialMediaDetails": "Indicate ID or username",
+    "otherMediaResources": "Are there any other media resources where you post information? Yes/No",
+    "otherMediaResourceDetails": "If yes, specify the site/resource"
+  },
+  "errors": {
+    "required": "is required"
   }
 }

@@ -1,4 +1,3 @@
-// components/VisaForm.tsx
 import React from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,7 +13,31 @@ const VisaForm = () => {
   const methods = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      personalInfo: {},
+      personalInfo: {
+        surname: "",
+        givenName: "",
+        patronymic: "",
+        birthDate: undefined,
+        photo: undefined,
+        passportCopy: undefined,
+        passportDetails: "",
+        passportOrInn: "",
+        otherNames: "",
+        birthPlaceAndDate: "",
+        passportLost: false,
+        passportLostDetails: "",
+        otherCitizenship: false,
+        otherPassportDetails: "",
+        residenceAddress: "",
+        registeredAddress: "",
+        contactNumber: "",
+        contactNumbersLast5Years: "",
+        emailAddress: "",
+        emailsLast5Years: "",
+        socialMedia: [],
+        otherMediaResources: false,
+        otherMediaResourceDetails: "",
+      },
       familyInfo: {},
       purposeOfTravel: {},
       travelHistory: {},
