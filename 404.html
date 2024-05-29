@@ -2,13 +2,22 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=./index.html" />
+    <meta
+      http-equiv="refresh"
+      content="0; url=/extras/index.html?redirect=/extras"
+    />
   </head>
   <body>
     <script>
+      // Redirect to the correct route
       var pathname = window.location.pathname;
-      var redirectUrl = "./index.html?redirect=" + pathname;
-      window.location.replace(redirectUrl);
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var newUrl =
+        "/extras/index.html?redirect=" +
+        pathname +
+        encodeURIComponent(search + hash);
+      window.location.replace(newUrl);
     </script>
   </body>
 </html>
