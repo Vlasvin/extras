@@ -238,6 +238,10 @@
     "policeClearance": "Police Clearance Certificates"
   },
 
+  "close": "Close",
+  "yes": "Yes",
+  "no": "No",
+
   "personalInfo": {
     "title": "Personal Information",
     "surname": "Surname",
@@ -245,19 +249,18 @@
     "patronymic": "Patronymic",
     "birthDate": "Date of Birth",
     "photo": "Add photo",
-    "photoInfo": "Click for info",
+    "pushToInfo": "Click for info",
     "photoInfoTitle": "Photo Information",
     "photoInfoText": "Please send me a digital photo on a white background\nJPEG (minimum 300 pixels)\nSize 50*50 mm, and bring one printed photo 5x5 cm to the interview",
-    "close": "Close",
     "passportCopy": "COPY OF THE FIRST PAGE OF THE PASSPORT",
     "passportDetails": "Surname, given name and patronymic in Ukrainian (as indicated in the internal passport)",
     "passportOrInn": "Internal passport or TIN: series, number",
     "otherNames": "Other surnames and names",
     "birthPlaceAndDate": "Place and date of birth: city/village, region/district, day, month, year of birth",
-    "passportLost": "Have you ever lost your passport? Yes/No",
-    "passportLostDetails": "If «Yes», indicate: passport number, country of issue, circumstances of loss",
+    "passportLost": "Have you ever lost your passport?",
+    "passportLostDetails": "Indicate: passport number, country of issue, circumstances of loss",
     "otherCitizenship": "Have you had another citizenship?",
-    "otherPassportDetails": "If yes, indicate whether you have a valid passport from another country and its number",
+    "otherPassportDetails": "Indicate whether you have a valid passport from another country and its number",
     "residenceAddress": "Actual residence address",
     "registeredAddress": "Registered address",
     "contactNumber": "Contact phone number",
@@ -267,7 +270,9 @@
     "socialMedia": "Which social networks are you registered with?",
     "socialMediaDetails": "Indicate ID or username",
     "otherMediaResources": "Are there any other media resources where you post information? Yes/No",
-    "otherMediaResourceDetails": "If yes, specify the site/resource"
+    "otherMediaResourceDetails": "If yes, specify the site/resource",
+    "otherNamesInfoTitle": "Other Names Information",
+    "otherNamesInfoText": "Maiden name, professional pseudonym, name given at the time of ordination, etc."
   },
   "errors": {
     "required": "is required"

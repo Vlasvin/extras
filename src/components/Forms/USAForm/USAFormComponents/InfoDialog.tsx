@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   Dialog,
   DialogActions,
@@ -20,18 +21,27 @@ const InfoDialog: React.FC<InfoDialogProps> = ({
   onClose,
   title,
   content,
-}) => (
-  <Dialog open={open} onClose={onClose}>
-    <DialogTitle>{title}</DialogTitle>
-    <DialogContent>
-      <DialogContentText>{content}</DialogContentText>
-    </DialogContent>
-    <DialogActions>
-      <Button onClick={onClose} color="primary">
-        Закрити
-      </Button>
-    </DialogActions>
-  </Dialog>
-);
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <Dialog open={open} onClose={onClose}>
+      <DialogTitle>{title}</DialogTitle>
+      <DialogContent>
+        <DialogContentText>{content}</DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button
+          onClick={onClose}
+          variant="outlined"
+          color="primary"
+          sx={{ fontSize: "0.8rem", padding: "2px 10px" }}
+        >
+          {t("close")}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
+};
 
 export default InfoDialog;
