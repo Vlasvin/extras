@@ -1,7 +1,7 @@
 import Visa from "components/Visa";
 import { imagesUSA } from "services/images";
 
-const VisaUSA = () => (
+const VisaUSA: React.FC = () => (
   <Visa
     titleKey="visa_usa.title"
     images={imagesUSA}

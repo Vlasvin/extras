@@ -1,8 +1,7 @@
-// pages/VisaCanada.js
 import Visa from "components/Visa";
 import { imagesCanada } from "services/images";
 
-const VisaCanada = () => (
+const VisaCanada: React.FC = () => (
   <Visa
     titleKey="visa_canada.title"
     images={imagesCanada}
