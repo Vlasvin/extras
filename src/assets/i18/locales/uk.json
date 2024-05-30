@@ -261,17 +261,23 @@
     "otherPassportDetails": "Вкажіть чи маєте дійсний паспорт з іншої країни та його номер",
     "residenceAddress": "Адреса фактичного проживання",
     "registeredAddress": "Адреса прописки",
+    "addressInfoTitle": "Інформація про адресу",
+    "actualInfoAddress": "Вкажіть: Індекс, Країну, Область, Місто, Вулицю, Номер будинку, Номер квартири.",
+    "addressInfoText": "Вкажіть: Індекс, Країну, Область, Місто, Вулицю, Номер будинку, Номер квартири. (Якщо тимчасово проживаєте за кордоном, можна вказати одну адресу українську, іншу — європейську.)",
     "contactNumber": "Контактний номер телефону",
     "contactNumbersLast5Years": "Вкажіть усі номери телефонів, які використовувалися за останні 5 років",
     "emailAddress": "Адрес електронної пошти (email)",
     "emailsLast5Years": "Вкажіть всі емейли, які використовувалися за останні 5 років",
     "socialMedia": "В яких соц. мережах ви зареєстровані?",
     "socialMediaDetails": "Вкажіть ID або ім'я користувача",
-    "otherMediaResources": "Чи є інші медіаресурси, де ви розміщуєте інформацію? Так/Ні",
-    "otherMediaResourceDetails": "Якщо так, укажіть сайт/ресурс",
+    "socialInfoTitle": "Деталі соціальних мереж",
+    "socialInfo": "Вкажіть ID або ім'я користувача, надайте посилання або скрін сторінки. \n(ASK.FM, Dooban, Facebook, Flickr, Google +, Instagram, Linkedin, Мій простір, Pinterest, Qzone (QQ), Reddit, Sina weibo, Tencent weibo, Tumblr, Twitter, TWOO, Vine, Вконтакте (ВК), Youku, Youtube)",
+    "otherMediaResources": "Чи є інші медіаресурси, де ви розміщуєте інформацію?",
+    "otherMediaResourceDetails": "Укажіть сайт/ресурс",
     "otherNamesInfoTitle": "Інформація про інші імена",
     "otherNamesInfoText": "Дівоче прізвище, професійний псевдонім, ім'я, присвоєне при присвяченні в духовний сан і т.д"
   },
+
   "errors": {
     "required": "є обов'язковим"
   }

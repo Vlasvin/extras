@@ -1,7 +1,12 @@
 import React from "react";
 import { Controller, Control, FieldErrors } from "react-hook-form";
 import { getErrorMessage } from "utils/formUtils";
-import { StyledTextField } from "../USAFormStyles";
+import {
+  StyledTextField,
+  InputWrapper,
+  InfoIconButton,
+} from "../USAFormStyles";
+import InfoIcon from "@mui/icons-material/Info";
 
 interface ControlledTextFieldProps {
   name: string;
@@ -10,6 +15,8 @@ interface ControlledTextFieldProps {
   label: string;
   type?: string;
   inputLabelProps?: object;
+  showInfoIcon?: boolean;
+  onInfoIconClick?: () => void;
 }
 
 const ControlledTextField: React.FC<ControlledTextFieldProps> = ({
@@ -19,22 +26,31 @@ const ControlledTextField: React.FC<ControlledTextFieldProps> = ({
   label,
   type = "text",
   inputLabelProps = {},
+  showInfoIcon = false,
+  onInfoIconClick,
 }) => (
-  <Controller
-    name={name}
-    control={control}
-    render={({ field }) => (
-      <StyledTextField
-        {...field}
-        label={label}
-        type={type}
-        InputLabelProps={inputLabelProps}
-        error={!!getErrorMessage(errors, name)}
-        helperText={(getErrorMessage(errors, name) as string) || ""}
-        fullWidth
-      />
+  <InputWrapper>
+    <Controller
+      name={name}
+      control={control}
+      render={({ field }) => (
+        <StyledTextField
+          {...field}
+          label={label}
+          type={type}
+          InputLabelProps={inputLabelProps}
+          error={!!getErrorMessage(errors, name)}
+          helperText={(getErrorMessage(errors, name) as string) || ""}
+          fullWidth
+        />
+      )}
+    />
+    {showInfoIcon && (
+      <InfoIconButton aria-label="info" onClick={onInfoIconClick}>
+        <InfoIcon />
+      </InfoIconButton>
     )}
-  />
+  </InputWrapper>
 );
 
 export default ControlledTextField;

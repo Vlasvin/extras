@@ -244,7 +244,7 @@
 
   "personalInfo": {
     "title": "Personal Information",
-    "surname": "Surname",
+    "surname": "Last Name",
     "givenName": "Given Name",
     "patronymic": "Patronymic",
     "birthDate": "Date of Birth",
@@ -263,17 +263,23 @@
     "otherPassportDetails": "Indicate whether you have a valid passport from another country and its number",
     "residenceAddress": "Actual residence address",
     "registeredAddress": "Registered address",
+    "addressInfoTitle": "Information about address",
+    "actualInfoAddress": "Indicate: Index, Country, Region, City, Street, House Number, Apartment Number.",
+    "addressInfoText": "Indicate: Index, Country, Region, City, Street, House Number, Apartment Number. (If you are temporarily residing abroad, you can provide one Ukrainian address and another European address.)",
     "contactNumber": "Contact phone number",
     "contactNumbersLast5Years": "Indicate all phone numbers used in the last 5 years",
     "emailAddress": "Email address",
     "emailsLast5Years": "Indicate all emails used in the last 5 years",
     "socialMedia": "Which social networks are you registered with?",
     "socialMediaDetails": "Indicate ID or username",
-    "otherMediaResources": "Are there any other media resources where you post information? Yes/No",
-    "otherMediaResourceDetails": "If yes, specify the site/resource",
+    "socialInfoTitle": "Social Media Details",
+    "socialInfo": "Please provide the ID or username, provide a link or a screenshot of the page. \n(ASK.FM, Dooban, Facebook, Flickr, Google +, Instagram, Linkedin, Мій простір, Pinterest, Qzone (QQ), Reddit, Sina weibo, Tencent weibo, Tumblr, Twitter, TWOO, Vine, Вконтакте (ВК), Youku, Youtube)",
+    "otherMediaResources": "Are there any other media resources where you post information?",
+    "otherMediaResourceDetails": "Specify the site/resource",
     "otherNamesInfoTitle": "Other Names Information",
     "otherNamesInfoText": "Maiden name, professional pseudonym, name given at the time of ordination, etc."
   },
+
   "errors": {
     "required": "is required"
   }

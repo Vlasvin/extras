@@ -1,26 +1,18 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Control, FieldErrors, useWatch } from "react-hook-form";
 import {
-  useFormContext,
-  Control,
-  FieldErrors,
-  useWatch,
-} from "react-hook-form";
-import {
-  Checkbox,
+  Box,
   FormControl,
   FormControlLabel,
-  FormGroup,
   FormLabel,
   Grid,
-  IconButton,
   Radio,
   RadioGroup,
-  Tooltip,
 } from "@mui/material";
-import InfoIcon from "@mui/icons-material/Info";
 import ControlledTextField from "./ControlledTextField";
 import InfoDialog from "./InfoDialog";
+import { CustomBox } from "../USAFormStyles";
 
 interface PersonalInfoProps {
   control: Control<any>;
@@ -29,7 +21,6 @@ interface PersonalInfoProps {
 
 const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
   const { t } = useTranslation();
-  const { getValues } = useFormContext();
   const passportLost = useWatch({
     control,
     name: "personalInfo.passportLost",
@@ -37,6 +28,10 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
   const otherCitizenship = useWatch({
     control,
     name: "personalInfo.otherCitizenship",
+  });
+  const otherMediaResources = useWatch({
+    control,
+    name: "personalInfo.otherMediaResources",
   });
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogTitle, setDialogTitle] = useState("");
@@ -58,26 +53,22 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
     <div>
       <h2>{t("personalInfo.title")}</h2>
       <Grid container spacing={2}>
-        <Grid item xs={12} style={{ position: "relative" }}>
-          <ControlledTextField
-            name="personalInfo.surname"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.surname")}
-          />
-          <Tooltip title={t("personalInfo.pushToInfo")}>
-            <IconButton
-              aria-label="info"
-              onClick={() =>
+        <Grid item xs={12}>
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.surname"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.surname")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
                 handleOpenDialog(
                   t("personalInfo.surnameInfoTitle"),
                   t("personalInfo.passportDetails")
                 )
               }
-            >
-              <InfoIcon />
-            </IconButton>
-          </Tooltip>
+            />
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
           <ControlledTextField
@@ -106,27 +97,24 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
           />
         </Grid>
         <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.photo"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.photo")}
-            type="file"
-            inputLabelProps={{ shrink: true }}
-          />
-          <Tooltip title={t("personalInfo.pushToInfo")}>
-            <IconButton
-              aria-label="info"
-              onClick={() =>
+          {" "}
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.photo"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.photo")}
+              type="file"
+              inputLabelProps={{ shrink: true }}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
                 handleOpenDialog(
                   t("personalInfo.photoInfoTitle"),
                   t("personalInfo.photoInfoText")
                 )
               }
-            >
-              <InfoIcon />
-            </IconButton>
-          </Tooltip>
+            />{" "}
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
           <ControlledTextField
@@ -146,26 +134,23 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
             label={t("personalInfo.passportOrInn")}
           />
         </Grid>
-        <Grid item xs={12} style={{ position: "relative" }}>
-          <ControlledTextField
-            name="personalInfo.otherNames"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.otherNames")}
-          />
-          <Tooltip title={t("personalInfo.pushToInfo")}>
-            <IconButton
-              aria-label="info"
-              onClick={() =>
+        <Grid item xs={12}>
+          {" "}
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.otherNames"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.otherNames")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
                 handleOpenDialog(
                   t("personalInfo.otherNamesInfoTitle"),
                   t("personalInfo.otherNamesInfoText")
                 )
               }
-            >
-              <InfoIcon />
-            </IconButton>
-          </Tooltip>
+            />{" "}
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
           <ControlledTextField
@@ -251,46 +236,40 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
           </Grid>
         )}
         <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.residenceAddress"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.residenceAddress")}
-          />
-          <Tooltip title={t("personalInfo.pushToInfo")}>
-            <IconButton
-              aria-label="info"
-              onClick={() =>
+          {" "}
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.residenceAddress"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.residenceAddress")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
                 handleOpenDialog(
-                  t("personalInfo.otherNamesInfoTitle"),
-                  t("personalInfo.otherNamesInfoText")
+                  t("personalInfo.addressInfoTitle"),
+                  t("personalInfo.actualInfoAddress")
                 )
               }
-            >
-              <InfoIcon />
-            </IconButton>
-          </Tooltip>
+            />{" "}
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.registeredAddress"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.registeredAddress")}
-          />
-          <Tooltip title={t("personalInfo.pushToInfo")}>
-            <IconButton
-              aria-label="info"
-              onClick={() =>
+          {" "}
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.registeredAddress"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.registeredAddress")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
                 handleOpenDialog(
-                  t("personalInfo.otherNamesInfoTitle"),
-                  t("personalInfo.otherNamesInfoText")
+                  t("personalInfo.addressInfoTitle"),
+                  t("personalInfo.addressInfoText")
                 )
               }
-            >
-              <InfoIcon />
-            </IconButton>
-          </Tooltip>
+            />{" "}
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
           <ControlledTextField
@@ -325,35 +304,55 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
           />
         </Grid>
         <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.socialMedia"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.socialMedia")}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.socialMediaDetails"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.socialMediaDetails")}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  {...control.register("personalInfo.otherMediaResources")}
-                  checked={getValues("personalInfo.otherMediaResources")}
-                />
+          {" "}
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.socialMedia"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.socialMedia")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
+                handleOpenDialog(
+                  t("personalInfo.socialInfoTitle"),
+                  t("personalInfo.socialInfo")
+                )
               }
-              label={t("personalInfo.otherMediaResources")}
-            />
-          </FormGroup>
+            />{" "}
+          </CustomBox>
         </Grid>
-        {getValues("personalInfo.otherMediaResources") && (
+        <Grid item xs={12}>
+          <FormControl component="fieldset">
+            <FormLabel component="legend">
+              {t("personalInfo.otherMediaResources")}
+            </FormLabel>
+            <RadioGroup
+              row
+              name="personalInfo.otherMediaResources"
+              defaultValue="no"
+            >
+              <FormControlLabel
+                value="yes"
+                control={
+                  <Radio
+                    {...control.register("personalInfo.otherMediaResources")}
+                  />
+                }
+                label={t("yes")}
+              />
+              <FormControlLabel
+                value="no"
+                control={
+                  <Radio
+                    {...control.register("personalInfo.otherMediaResources")}
+                  />
+                }
+                label={t("no")}
+              />
+            </RadioGroup>
+          </FormControl>
+        </Grid>
+        {otherMediaResources === "yes" && (
           <Grid item xs={12}>
             <ControlledTextField
               name="personalInfo.otherMediaResourceDetails"
