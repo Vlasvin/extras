@@ -1,13 +1,15 @@
 import React from "react";
 import { Controller, Control, FieldErrors } from "react-hook-form";
+import InfoIcon from "@mui/icons-material/Info";
+import Tooltip from "@mui/material/Tooltip";
+import { useTranslation } from "react-i18next";
+
 import { getErrorMessage } from "utils/formUtils";
 import {
   StyledTextField,
   InputWrapper,
   InfoIconButton,
 } from "../USAFormStyles";
-import InfoIcon from "@mui/icons-material/Info";
-
 interface ControlledTextFieldProps {
   name: string;
   control: Control<any>;
@@ -28,29 +30,35 @@ const ControlledTextField: React.FC<ControlledTextFieldProps> = ({
   inputLabelProps = {},
   showInfoIcon = false,
   onInfoIconClick,
-}) => (
-  <InputWrapper>
-    <Controller
-      name={name}
-      control={control}
-      render={({ field }) => (
-        <StyledTextField
-          {...field}
-          label={label}
-          type={type}
-          InputLabelProps={inputLabelProps}
-          error={!!getErrorMessage(errors, name)}
-          helperText={(getErrorMessage(errors, name) as string) || ""}
-          fullWidth
-        />
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <InputWrapper>
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) => (
+          <StyledTextField
+            {...field}
+            label={label}
+            type={type}
+            InputLabelProps={inputLabelProps}
+            error={!!getErrorMessage(errors, name)}
+            helperText={(getErrorMessage(errors, name) as string) || ""}
+            fullWidth
+          />
+        )}
+      />
+      {showInfoIcon && (
+        <Tooltip title={t("personalInfo.pushToInfo")}>
+          <InfoIconButton aria-label="info" onClick={onInfoIconClick}>
+            <InfoIcon />
+          </InfoIconButton>
+        </Tooltip>
       )}
-    />
-    {showInfoIcon && (
-      <InfoIconButton aria-label="info" onClick={onInfoIconClick}>
-        <InfoIcon />
-      </InfoIconButton>
-    )}
-  </InputWrapper>
-);
+    </InputWrapper>
+  );
+};
 
 export default ControlledTextField;

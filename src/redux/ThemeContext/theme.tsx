@@ -86,5 +86,14 @@ export const AppDarkTheme: Theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& input[type="date"]::-webkit-calendar-picker-indicator': {
+            filter: "invert(1)",
+          },
+        },
+      },
+    },
   },
 });

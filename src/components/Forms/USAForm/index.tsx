@@ -8,6 +8,7 @@ import FamilyInfo from "./USAFormComponents/FamilyInfo";
 import PurposeOfTravel from "./USAFormComponents/PurposeOfTravel";
 import TravelHistory from "./USAFormComponents/TravelHistory";
 import WorkAndEducation from "./USAFormComponents/WorkAndEducation";
+import { Container, FormWrapper } from "./USAFormStyles";
 
 const VisaForm = () => {
   const methods = useForm({
@@ -50,33 +51,37 @@ const VisaForm = () => {
   };
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <PersonalInfo
-          control={methods.control}
-          errors={methods.formState.errors}
-        />
-        <FamilyInfo
-          control={methods.control}
-          errors={methods.formState.errors}
-        />
-        <PurposeOfTravel
-          control={methods.control}
-          errors={methods.formState.errors}
-        />
-        <TravelHistory
-          control={methods.control}
-          errors={methods.formState.errors}
-        />
-        <WorkAndEducation
-          control={methods.control}
-          errors={methods.formState.errors}
-        />
-        <Button type="submit" variant="contained" color="primary">
-          Надіслати
-        </Button>
-      </form>
-    </FormProvider>
+    <Container>
+      <FormWrapper>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <PersonalInfo
+              control={methods.control}
+              errors={methods.formState.errors}
+            />
+            <FamilyInfo
+              control={methods.control}
+              errors={methods.formState.errors}
+            />
+            <PurposeOfTravel
+              control={methods.control}
+              errors={methods.formState.errors}
+            />
+            <TravelHistory
+              control={methods.control}
+              errors={methods.formState.errors}
+            />
+            <WorkAndEducation
+              control={methods.control}
+              errors={methods.formState.errors}
+            />
+            <Button type="submit" variant="contained" color="primary">
+              Надіслати
+            </Button>
+          </form>
+        </FormProvider>
+      </FormWrapper>
+    </Container>
   );
 };
 

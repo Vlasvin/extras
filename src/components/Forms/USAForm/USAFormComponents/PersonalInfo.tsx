@@ -134,7 +134,6 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
           />
         </Grid>
         <Grid item xs={12}>
-          {" "}
           <CustomBox>
             <ControlledTextField
               name="personalInfo.otherNames"
@@ -148,16 +147,25 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                   t("personalInfo.otherNamesInfoText")
                 )
               }
-            />{" "}
+            />
           </CustomBox>
         </Grid>
         <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.birthPlaceAndDate"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.birthPlaceAndDate")}
-          />
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.birthPlaceAndDate"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.birthPlaceAndDate")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
+                handleOpenDialog(
+                  t("personalInfo.placeAndDateInfoTitle"),
+                  t("personalInfo.placeAndDateInfoText")
+                )
+              }
+            />
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
           <FormControl component="fieldset">
