@@ -2,6 +2,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Typography } from "@mui/material";
 
+import useIconColor from "hooks/useIconColor";
+import ServiceListItem from "./ServicesComponents/ServiceListItem";
+
 import DesignIcon from "assets/pictures/svg/Design";
 import NewspaperIcon from "assets/pictures/svg/Newspaper";
 import BookIcon from "assets/pictures/svg/Book";
@@ -12,8 +15,6 @@ import {
   SectionTitle,
   Title,
 } from "./ServicesStyles";
-import useIconColor from "hooks/useIconColor";
-import ServiceListItem from "./ServicesComponents/ServiceListItem";
 
 const Services: React.FC = () => {
   const { t } = useTranslation();

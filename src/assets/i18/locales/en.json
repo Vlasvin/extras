@@ -239,47 +239,64 @@
   },
 
   "close": "Close",
+  "send": "Send",
   "yes": "Yes",
   "no": "No",
+  "pushToInfo": "Click for info",
+  "pushToUpload": "Click for download",
 
   "personalInfo": {
     "title": "Personal Information",
     "surname": "Last Name",
-    "givenName": "Given Name",
+    "givenName": "First Name",
     "patronymic": "Patronymic",
     "birthDate": "Date of Birth",
+
     "photo": "Add photo",
-    "pushToInfo": "Click for info",
     "photoInfoTitle": "Photo Information",
     "photoInfoText": "Please send me a digital photo on a white background\nJPEG (minimum 300 pixels)\nSize 50*50 mm, and bring one printed photo 5x5 cm to the interview",
+
     "passportCopy": "COPY OF THE FIRST PAGE OF THE PASSPORT",
     "passportDetails": "Surname, given name and patronymic in Ukrainian (as indicated in the internal passport)",
     "passportOrInn": "Internal passport or TIN: series, number",
+
     "otherNames": "Other surnames and names",
+    "otherNamesInfoTitle": "Other Names Information",
+    "otherNamesInfoText": "Maiden name, professional pseudonym, name given at the time of ordination, etc.",
+
     "birthPlaceAndDate": "Place and date of birth",
     "placeAndDateInfoTitle": "Details of place and date of birth",
     "placeAndDateInfoText": "Indicate: city/village, region/district, day, month, year of birth",
+
     "passportLost": "Have you ever lost your passport?",
     "passportLostDetails": "Indicate: passport number, country of issue, circumstances of loss",
+
     "otherCitizenship": "Have you had another citizenship?",
     "otherPassportDetails": "Indicate whether you have a valid passport from another country and its number",
+
     "residenceAddress": "Actual residence address",
     "registeredAddress": "Registered address",
     "addressInfoTitle": "Information about address",
     "actualInfoAddress": "Indicate: Index, Country, Region, City, Street, House Number, Apartment Number.",
     "addressInfoText": "Indicate: Index, Country, Region, City, Street, House Number, Apartment Number. (If you are temporarily residing abroad, you can provide one Ukrainian address and another European address.)",
+
     "contactNumber": "Contact phone number",
-    "contactNumbersLast5Years": "Indicate all phone numbers used in the last 5 years",
+    "contactNumbersLast5Years": "All phone numbers",
+    "numbersLast5YearsInfoTitle": "Phone numbers details",
+    "numbersLast5YearsInfoText": "Indicate all phone numbers used in the last 5 years",
+
     "emailAddress": "Email address",
-    "emailsLast5Years": "Indicate all emails used in the last 5 years",
+    "emailsLast5Years": "All emails",
+    "emailsLast5YearsInfoTitle": "Emails details",
+    "emailsLast5YearsInfoText": "Indicate all emails used in the last 5 years",
+
     "socialMedia": "Which social networks are you registered with?",
     "socialMediaDetails": "Indicate ID or username",
     "socialInfoTitle": "Social Media Details",
     "socialInfo": "Please provide the ID or username, provide a link or a screenshot of the page. \n(ASK.FM, Dooban, Facebook, Flickr, Google +, Instagram, Linkedin, Мій простір, Pinterest, Qzone (QQ), Reddit, Sina weibo, Tencent weibo, Tumblr, Twitter, TWOO, Vine, Вконтакте (ВК), Youku, Youtube)",
+
     "otherMediaResources": "Are there any other media resources where you post information?",
-    "otherMediaResourceDetails": "Specify the site/resource",
-    "otherNamesInfoTitle": "Other Names Information",
-    "otherNamesInfoText": "Maiden name, professional pseudonym, name given at the time of ordination, etc."
+    "otherMediaResourceDetails": "Specify the site/resource"
   },
 
   "errors": {

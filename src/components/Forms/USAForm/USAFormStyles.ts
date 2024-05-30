@@ -10,18 +10,17 @@ export const Container = styled.div`
 export const FormWrapper = styled.div`
   width: 100%;
   max-width: 800px;
-  padding: 100px;
+  padding: 40px 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   @media (max-width: 600px) {
-    padding: 14px;
+    padding: 0;
+    box-shadow: none;
   }
 `;
 
 export const StyledTextField = styled(TextField)`
   max-width: 600px;
-  word-wrap: break-word;
-  white-space: normal;
 `;
 
 export const InputWrapper = styled.div`
@@ -29,13 +28,21 @@ export const InputWrapper = styled.div`
   display: flex;
   align-items: center;
   border-radius: 10px;
+  margin-bottom: 16px;
 `;
 
 export const InfoIconButton = styled(IconButton)`
   position: absolute;
-  bottom: 13px;
+  top: 4%;
   right: 16px;
   transform: translate(50%, 50%);
+`;
+
+export const FileInputButton = styled(IconButton)`
+  position: absolute;
+  bottom: 70%;
+  transform: translateY(50%);
+  right: -4px;
 `;
 
 export const CustomBox = styled(Box)`

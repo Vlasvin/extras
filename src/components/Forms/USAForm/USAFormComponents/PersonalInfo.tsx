@@ -9,9 +9,11 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
+
 import ControlledTextField from "./ControlledTextField";
 import InfoDialog from "./InfoDialog";
 import { CustomBox } from "../USAFormStyles";
+import { SectionTitle } from "components/Services/ServicesStyles";
 
 interface PersonalInfoProps {
   control: Control<any>;
@@ -50,7 +52,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
 
   return (
     <div>
-      <h2>{t("personalInfo.title")}</h2>
+      <SectionTitle>{t("personalInfo.title")}</SectionTitle>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <CustomBox>
@@ -96,7 +98,6 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
           />
         </Grid>
         <Grid item xs={12}>
-          {" "}
           <CustomBox>
             <ControlledTextField
               name="personalInfo.photo"
@@ -112,7 +113,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                   t("personalInfo.photoInfoText")
                 )
               }
-            />{" "}
+            />
           </CustomBox>
         </Grid>
         <Grid item xs={12}>
@@ -243,7 +244,6 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
           </Grid>
         )}
         <Grid item xs={12}>
-          {" "}
           <CustomBox>
             <ControlledTextField
               name="personalInfo.residenceAddress"
@@ -257,11 +257,10 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                   t("personalInfo.actualInfoAddress")
                 )
               }
-            />{" "}
+            />
           </CustomBox>
         </Grid>
         <Grid item xs={12}>
-          {" "}
           <CustomBox>
             <ControlledTextField
               name="personalInfo.registeredAddress"
@@ -275,7 +274,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                   t("personalInfo.addressInfoText")
                 )
               }
-            />{" "}
+            />
           </CustomBox>
         </Grid>
         <Grid item xs={12}>
@@ -287,12 +286,21 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
           />
         </Grid>
         <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.contactNumbersLast5Years"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.contactNumbersLast5Years")}
-          />
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.contactNumbersLast5Years"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.contactNumbersLast5Years")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
+                handleOpenDialog(
+                  t("personalInfo.numbersLast5YearsInfoTitle"),
+                  t("personalInfo.numbersLast5YearsInfoText")
+                )
+              }
+            />
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
           <ControlledTextField
@@ -303,15 +311,23 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
           />
         </Grid>
         <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.emailsLast5Years"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.emailsLast5Years")}
-          />
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.emailsLast5Years"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.emailsLast5Years")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
+                handleOpenDialog(
+                  t("personalInfo.emailsLast5YearsInfoTitle"),
+                  t("personalInfo.emailsLast5YearsInfoText")
+                )
+              }
+            />
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
-          {" "}
           <CustomBox>
             <ControlledTextField
               name="personalInfo.socialMedia"
@@ -319,13 +335,14 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
               errors={errors}
               label={t("personalInfo.socialMedia")}
               showInfoIcon={true}
+              showFileUpload={true}
               onInfoIconClick={() =>
                 handleOpenDialog(
                   t("personalInfo.socialInfoTitle"),
                   t("personalInfo.socialInfo")
                 )
               }
-            />{" "}
+            />
           </CustomBox>
         </Grid>
         <Grid item xs={12}>

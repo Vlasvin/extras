@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useForm, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "@mui/material";
@@ -11,6 +12,7 @@ import WorkAndEducation from "./USAFormComponents/WorkAndEducation";
 import { Container, FormWrapper } from "./USAFormStyles";
 
 const VisaForm = () => {
+  const { t } = useTranslation();
   const methods = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
@@ -75,8 +77,8 @@ const VisaForm = () => {
               control={methods.control}
               errors={methods.formState.errors}
             />
-            <Button type="submit" variant="contained" color="primary">
-              Надіслати
+            <Button type="submit" variant="outlined" color="primary">
+              {t("send")}
             </Button>
           </form>
         </FormProvider>
