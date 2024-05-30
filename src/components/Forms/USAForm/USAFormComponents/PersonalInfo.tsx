@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Control, FieldErrors, useWatch } from "react-hook-form";
 import {
-  Box,
   FormControl,
   FormControlLabel,
   FormLabel,
