@@ -49,3 +49,7 @@ export const CustomBox = styled(Box)`
   max-width: 600px;
   width: 100%;
 `;
+
+export const Spacer = styled.div`
+  margin-bottom: 48px;
+`;

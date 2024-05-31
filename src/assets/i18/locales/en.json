@@ -319,6 +319,33 @@
     "otherMediaResourceDetails": "Specify the site/resource"
   },
 
+  "familyInfo": {
+    "title": "Family Information",
+    "fatherName": "Father's Full Name (even if he died)",
+    "fatherDOB": "Father's Date of Birth",
+    "motherName": "Mother's Full Name (even if she died)",
+    "motherDOB": "Mother's Date of Birth",
+    "parentsInUSA": "Are your parents currently in the USA?",
+    "maritalStatus": "Marital Status",
+    "spouseName": "Spouse's Full Name",
+    "spouseMaidenName": "Spouse's Maiden Name",
+    "spouseDOB": "Spouse's Date of Birth",
+    "spouseBirthPlace": "Spouse's Place of Birth",
+    "spouseNationality": "Spouse's Nationality",
+    "spouseAddress": "Spouse's Address",
+    "previousMarriages": "Number of Previous Marriages",
+    "previousSpouses": "Full Names of Previous Spouses",
+    "previousSpouseDOB": "Date of Birth of Previous Spouses",
+    "marriageStartDate": "Start Date of Marriage",
+    "marriageEndDate": "End Date of Marriage",
+    "previousSpouseBirthPlace": "Place of Birth of Previous Spouses",
+    "previousSpouseNationality": "Nationality of Previous Spouses",
+    "relativesInUSA": "Do you have close relatives in the USA?",
+    "relativeNames": "Full Names of Close Relatives",
+    "relativeStatus": "Status of Close Relatives",
+    "otherRelativesInUSA": "Do you have other relatives in the USA?"
+  },
+
   "errors": {
     "required": "is required"
   }

@@ -315,6 +315,33 @@
     "otherMediaResourceDetails": "Укажите сайт/ресурс"
   },
 
+  "familyInfo": {
+    "title": "Информация о семье",
+    "fatherName": "Полное имя отца (даже если умер)",
+    "fatherDOB": "Дата рождения отца",
+    "motherName": "Полное имя матери (даже если умерла)",
+    "motherDOB": "Дата рождения матери",
+    "parentsInUSA": "Находятся ли ваши родители в данный момент в США?",
+    "maritalStatus": "Семейное положение",
+    "spouseName": "Полное имя супруга(и)",
+    "spouseMaidenName": "Девичья фамилия супруги(а)",
+    "spouseDOB": "Дата рождения супруга(и)",
+    "spouseBirthPlace": "Место рождения супруга(и)",
+    "spouseNationality": "Национальность супруга(и)",
+    "spouseAddress": "Адрес супруга(и)",
+    "previousMarriages": "Количество предыдущих браков",
+    "previousSpouses": "Полные имена предыдущих супругов",
+    "previousSpouseDOB": "Дата рождения предыдущих супругов",
+    "marriageStartDate": "Дата начала брака",
+    "marriageEndDate": "Дата окончания брака",
+    "previousSpouseBirthPlace": "Место рождения предыдущих супругов",
+    "previousSpouseNationality": "Национальность предыдущих супругов",
+    "relativesInUSA": "Есть ли у вас близкие родственники в США?",
+    "relativeNames": "Полные имена близких родственников",
+    "relativeStatus": "Статус близких родственников",
+    "otherRelativesInUSA": "Есть ли у вас другие родственники в США?"
+  },
+
   "errors": {
     "required": "обязательно"
   }

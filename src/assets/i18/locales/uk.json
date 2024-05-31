@@ -318,6 +318,33 @@
     "otherMediaResourceDetails": "Укажіть сайт/ресурс"
   },
 
+  "familyInfo": {
+    "title": "Інформація про сім'ю",
+    "fatherName": "Повне ім'я батька (навіть якщо помер)",
+    "fatherDOB": "Дата народження батька",
+    "motherName": "Повне ім'я матері (навіть якщо померла)",
+    "motherDOB": "Дата народження матері",
+    "parentsInUSA": "Чи знаходяться ваші батьки зараз у США?",
+    "maritalStatus": "Сімейний стан",
+    "spouseName": "Повне ім'я чоловіка / дружини",
+    "spouseMaidenName": "Дівоче прізвище дружини / чоловіка",
+    "spouseDOB": "Дата народження чоловіка / дружини",
+    "spouseBirthPlace": "Місце народження чоловіка / дружини",
+    "spouseNationality": "Національність чоловіка / дружини",
+    "spouseAddress": "Адреса чоловіка / дружини",
+    "previousMarriages": "Кількість попередніх шлюбів",
+    "previousSpouses": "Повні імена колишніх чоловіків / дружин",
+    "previousSpouseDOB": "Дата народження колишніх чоловіків / дружин",
+    "marriageStartDate": "Дата початку шлюбу",
+    "marriageEndDate": "Дата завершення шлюбу",
+    "previousSpouseBirthPlace": "Місце народження колишніх чоловіків / дружин",
+    "previousSpouseNationality": "Національність колишніх чоловіків / дружин",
+    "relativesInUSA": "Чи є у вас у США близькі родичі?",
+    "relativeNames": "Повні імена близьких родичів",
+    "relativeStatus": "Статус близьких родичів",
+    "otherRelativesInUSA": "Чи маєте інших родичів в США?"
+  },
+
   "errors": {
     "required": "є обов'язковим"
   }

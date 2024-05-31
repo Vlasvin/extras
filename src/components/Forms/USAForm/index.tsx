@@ -9,7 +9,7 @@ import FamilyInfo from "./USAFormComponents/FamilyInfo";
 import PurposeOfTravel from "./USAFormComponents/PurposeOfTravel";
 import TravelHistory from "./USAFormComponents/TravelHistory";
 import WorkAndEducation from "./USAFormComponents/WorkAndEducation";
-import { Container, FormWrapper } from "./USAFormStyles";
+import { Container, FormWrapper, Spacer } from "./USAFormStyles";
 
 const VisaForm = () => {
   const { t } = useTranslation();
@@ -61,22 +61,27 @@ const VisaForm = () => {
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <FamilyInfo
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <PurposeOfTravel
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <TravelHistory
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <WorkAndEducation
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <Button type="submit" variant="outlined" color="primary">
               {t("send")}
             </Button>
