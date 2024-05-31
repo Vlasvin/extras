@@ -233,9 +233,29 @@
       "layout and design of books, scientific papers, encyclopedias, and reference literature",
       "layout and design according to the original or layout from scratch, creating a unique design for your project"
     ],
+
+    "apostille": "Apostille",
+    "apostilleDescription": [
+      "An Apostille is an official stamp placed in the country that issued the document to confirm its authenticity in another country. At first glance, the process of obtaining an apostille may seem simple, but in reality, it is complex and exhausting. Therefore, the best way to obtain an apostille on documents in Ukraine is to entrust the entire procedure to professionals.",
+      "An apostille is issued by the following state authorities of Ukraine:",
+      "• Ministry of Foreign Affairs of Ukraine (MFA)",
+      "• Ministry of Justice of Ukraine (MinJust)",
+      "• State Registration Service of Ukraine (SRS)",
+      "• Ministry of Education and Science of Ukraine",
+      "• The cost and timing of obtaining an apostille depend on the authority and type of document."
+    ],
+
     "legalization": "Legalization",
-    "legalizationDescription": "We offer apostille services for documents.",
-    "policeClearance": "Police Clearance Certificates"
+    "legalizationDescription": "When submitting documents to institutions of foreign states, you may be required to have the documents undergo an official legalization procedure in Ukraine. The cost and duration of legalization at the consulate of the respective country depend on the type of documents and the country for which legalization is being carried out.",
+
+    "policeClearance": "Police Clearance Certificates",
+    "policeClearanceDescription": [
+      "  A police clearance certificate is an important document that confirms that an individual has not been convicted of any criminal offenses and is not under investigation at the time of receiving the certificate. If you are required to provide a police clearance certificate for employment, for submission to foreign state institutions, for obtaining citizenship, for processing documents, etc., our consultant will gladly assist you in obtaining the certificate from the Ministry of Internal Affairs of Ukraine without your personal presence.",
+      "  Moreover, a police clearance certificate from Ukraine can be issued either urgently or in the standard procedure regardless of your place of registration, your location, or your citizenship.",
+      "  To obtain a police clearance certificate from the Ministry of Internal Affairs of Ukraine, you need to send the relevant documents by email or Nova Poshta:",
+      "• for Ukrainian citizens – a copy of the valid passport (pages 1 and 2 + registration);",
+      "• for foreigners – a copy of the passport, full name in Ukrainian or a translation of the passport."
+    ]
   },
 
   "close": "Close",

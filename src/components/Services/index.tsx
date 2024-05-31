@@ -27,6 +27,15 @@ const Services: React.FC = () => {
     { icon: DesignIcon, text: t("servicesPage.items.3") },
   ];
 
+  const policeClearanceDescription = t(
+    "servicesPage.policeClearanceDescription",
+    { returnObjects: true }
+  ) as string | string[];
+
+  const apostilleDescription = t("servicesPage.apostilleDescription", {
+    returnObjects: true,
+  }) as string | string[];
+
   return (
     <Container style={{ padding: 0 }}>
       <Title variant="h4" gutterBottom>
@@ -43,7 +52,20 @@ const Services: React.FC = () => {
           />
         ))}
       </CustomList>
-
+      <DescriptionBox>
+        <SectionTitle variant="h5" gutterBottom>
+          {t("servicesPage.apostille")}
+        </SectionTitle>
+        {Array.isArray(apostilleDescription) ? (
+          apostilleDescription.map((text, index) => (
+            <Typography key={index} paragraph>
+              {text}
+            </Typography>
+          ))
+        ) : (
+          <Typography paragraph>{apostilleDescription}</Typography>
+        )}
+      </DescriptionBox>
       <DescriptionBox>
         <SectionTitle variant="h5" gutterBottom>
           {t("servicesPage.legalization")}
@@ -57,6 +79,15 @@ const Services: React.FC = () => {
         <SectionTitle variant="h5" gutterBottom>
           {t("servicesPage.policeClearance")}
         </SectionTitle>
+        {Array.isArray(policeClearanceDescription) ? (
+          policeClearanceDescription.map((text, index) => (
+            <Typography key={index} paragraph>
+              {text}
+            </Typography>
+          ))
+        ) : (
+          <Typography paragraph>{policeClearanceDescription}</Typography>
+        )}
       </DescriptionBox>
     </Container>
   );
