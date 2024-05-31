@@ -17,12 +17,12 @@ const DocIcon: React.FC<IconProps> = ({ fill, size }) => (
     viewBox="0 0 321.492 321.492"
     xmlSpace="preserve"
   >
-    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
     <g
       id="SVGRepo_tracerCarrier"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
 
     <g id="SVGRepo_iconCarrier">
