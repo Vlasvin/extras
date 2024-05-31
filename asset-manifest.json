@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/extras/static/css/main.608d510f.css",
-    "main.js": "/extras/static/js/main.2ac0102f.js",
+    "main.js": "/extras/static/js/main.843d9618.js",
     "static/js/537.b381ccb4.chunk.js": "/extras/static/js/537.b381ccb4.chunk.js",
     "static/js/113.81b31094.chunk.js": "/extras/static/js/113.81b31094.chunk.js",
     "static/js/137.16af608a.chunk.js": "/extras/static/js/137.16af608a.chunk.js",
@@ -50,19 +50,19 @@
     "static/media/canada.svg": "/extras/static/media/canada.1ecdb0bb0d8889993e5b5e0e7a6883d7.svg",
     "static/media/usa-map.svg": "/extras/static/media/usa-map.28fceb565782e51bdfa0aa4a616cc158.svg",
     "static/media/australia.svg": "/extras/static/media/australia.18ee4eff3a542edeb43c2213eb14c76d.svg",
-    "static/media/viber.svg": "/extras/static/media/viber.f71dd157402b7e45858f4019c4781ca9.svg",
+    "static/media/viber.svg": "/extras/static/media/viber.3bb7409ee1ef76f64eccab049bd7a150.svg",
     "static/media/instagram.svg": "/extras/static/media/instagram.72634fba9e964938677e57cead11e4a9.svg",
     "static/media/facebook.svg": "/extras/static/media/facebook.ae74b61b00a8984592d33a89968fa741.svg",
-    "static/media/usa.svg": "/extras/static/media/usa.dbcc044f9d2be6529b8a72318c3898ef.svg",
+    "static/media/usa.svg": "/extras/static/media/usa.b42fb655e92d8e7982f05ca3d44c0184.svg",
     "static/media/whatsapp.svg": "/extras/static/media/whatsapp.2103aec334389d3798f0cdf046951c16.svg",
     "static/media/telegram.svg": "/extras/static/media/telegram.8c080152857c5618aa03be0818118623.svg",
-    "static/media/russia.svg": "/extras/static/media/russia.ae9e65c93452902dcb4fc369974e3c63.svg",
-    "static/media/phone.svg": "/extras/static/media/phone.ad881fb4e18ee081a032554c7987dffc.svg",
+    "static/media/russia.svg": "/extras/static/media/russia.624ddfd87514a7ed9482d5ea5bc8943a.svg",
+    "static/media/phone.svg": "/extras/static/media/phone.3622a0a1d59e0d3b6145b7aabcfde666.svg",
     "index.html": "/extras/index.html",
-    "static/media/ukraine.svg": "/extras/static/media/ukraine.273ac29c147bd003bd53e287271fb204.svg",
-    "static/media/email.svg": "/extras/static/media/email.c4c850e0720323e5e470293df82f4987.svg",
+    "static/media/ukraine.svg": "/extras/static/media/ukraine.35c769084edb271d77b105bed85c3c70.svg",
+    "static/media/email.svg": "/extras/static/media/email.991aed0d9e3ac7471a85f88c880e2dea.svg",
     "main.608d510f.css.map": "/extras/static/css/main.608d510f.css.map",
-    "main.2ac0102f.js.map": "/extras/static/js/main.2ac0102f.js.map",
+    "main.843d9618.js.map": "/extras/static/js/main.843d9618.js.map",
     "537.b381ccb4.chunk.js.map": "/extras/static/js/537.b381ccb4.chunk.js.map",
     "113.81b31094.chunk.js.map": "/extras/static/js/113.81b31094.chunk.js.map",
     "137.16af608a.chunk.js.map": "/extras/static/js/137.16af608a.chunk.js.map",
@@ -79,6 +79,6 @@
   },
   "entrypoints": [
     "static/css/main.608d510f.css",
-    "static/js/main.2ac0102f.js"
+    "static/js/main.843d9618.js"
   ]
 }
