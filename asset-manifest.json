@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/extras/static/css/main.608d510f.css",
-    "main.js": "/extras/static/js/main.9d22045b.js",
+    "main.js": "/extras/static/js/main.d060977d.js",
     "static/js/537.b381ccb4.chunk.js": "/extras/static/js/537.b381ccb4.chunk.js",
     "static/js/113.81b31094.chunk.js": "/extras/static/js/113.81b31094.chunk.js",
     "static/js/137.16af608a.chunk.js": "/extras/static/js/137.16af608a.chunk.js",
-    "static/js/989.feb9323f.chunk.js": "/extras/static/js/989.feb9323f.chunk.js",
+    "static/js/989.1c740e58.chunk.js": "/extras/static/js/989.1c740e58.chunk.js",
     "static/js/328.4d5e07b9.chunk.js": "/extras/static/js/328.4d5e07b9.chunk.js",
     "static/js/627.fa942683.chunk.js": "/extras/static/js/627.fa942683.chunk.js",
     "static/js/664.eaa3d552.chunk.js": "/extras/static/js/664.eaa3d552.chunk.js",
@@ -62,11 +62,11 @@
     "static/media/ukraine.svg": "/extras/static/media/ukraine.273ac29c147bd003bd53e287271fb204.svg",
     "static/media/email.svg": "/extras/static/media/email.c4c850e0720323e5e470293df82f4987.svg",
     "main.608d510f.css.map": "/extras/static/css/main.608d510f.css.map",
-    "main.9d22045b.js.map": "/extras/static/js/main.9d22045b.js.map",
+    "main.d060977d.js.map": "/extras/static/js/main.d060977d.js.map",
     "537.b381ccb4.chunk.js.map": "/extras/static/js/537.b381ccb4.chunk.js.map",
     "113.81b31094.chunk.js.map": "/extras/static/js/113.81b31094.chunk.js.map",
     "137.16af608a.chunk.js.map": "/extras/static/js/137.16af608a.chunk.js.map",
-    "989.feb9323f.chunk.js.map": "/extras/static/js/989.feb9323f.chunk.js.map",
+    "989.1c740e58.chunk.js.map": "/extras/static/js/989.1c740e58.chunk.js.map",
     "328.4d5e07b9.chunk.js.map": "/extras/static/js/328.4d5e07b9.chunk.js.map",
     "627.fa942683.chunk.js.map": "/extras/static/js/627.fa942683.chunk.js.map",
     "664.eaa3d552.chunk.js.map": "/extras/static/js/664.eaa3d552.chunk.js.map",
@@ -79,6 +79,6 @@
   },
   "entrypoints": [
     "static/css/main.608d510f.css",
-    "static/js/main.9d22045b.js"
+    "static/js/main.d060977d.js"
   ]
 }
