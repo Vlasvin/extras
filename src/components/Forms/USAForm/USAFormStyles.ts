@@ -34,7 +34,7 @@ export const InputWrapper = styled.div`
 export const InfoIconButton = styled(IconButton)`
   position: absolute;
   top: 4%;
-  right: 16px;
+  right: 13px;
   transform: translate(50%, 50%);
 `;
 
@@ -42,7 +42,7 @@ export const FileInputButton = styled(IconButton)`
   position: absolute;
   bottom: 70%;
   transform: translateY(50%);
-  right: -4px;
+  right: -7px;
 `;
 
 export const CustomBox = styled(Box)`
