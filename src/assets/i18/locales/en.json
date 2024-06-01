@@ -327,6 +327,14 @@
     "motherDOB": "Mother's Date of Birth",
     "parentsInUSA": "Are your parents currently in the USA?",
     "maritalStatus": "Marital Status",
+    "maritalInfoTitle": "Marital information",
+    "maritalInfoSubscribe": [
+      "- Married",
+      "- Single",
+      "- Widower",
+      "- Divorced",
+      "- Separated"
+    ],
     "spouseName": "Spouse's Full Name",
     "spouseMaidenName": "Spouse's Maiden Name",
     "spouseDOB": "Spouse's Date of Birth",
@@ -337,12 +345,16 @@
     "previousSpouses": "Full Names of Previous Spouses",
     "previousSpouseDOB": "Date of Birth of Previous Spouses",
     "marriageStartDate": "Start Date of Marriage",
+    "previousMarriageInfoTitle": "Previous Marriage Information",
+    "previousMarriageInfoSubscribe": "If you are currently remarried, previous divorce information does not need to be provided",
     "marriageEndDate": "End Date of Marriage",
     "previousSpouseBirthPlace": "Place of Birth of Previous Spouses",
     "previousSpouseNationality": "Nationality of Previous Spouses",
     "relativesInUSA": "Do you have close relatives in the USA?",
     "relativeNames": "Full Names of Close Relatives",
     "relativeStatus": "Status of Close Relatives",
+    "relativeStatusInfoTitle": "Relative Status",
+    "relativeStatusInfoSubscribe": "- U.S. Citizen\n- Lawful Permanent Resident (LPR)\n- Non-immigrant Visa\n- Don't know",
     "otherRelativesInUSA": "Do you have other relatives in the USA?"
   },
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Control, Controller, FieldErrors } from "react-hook-form";
 import {
@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import ControlledTextField from "./ControlledTextField";
 import { SectionTitle } from "components/Services/ServicesStyles";
+import { CustomBox } from "../USAFormStyles";
+import InfoDialog from "./InfoDialog";
 
 interface FamilyInfoProps {
   control: Control<any>;
@@ -19,6 +21,26 @@ interface FamilyInfoProps {
 
 const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
   const { t } = useTranslation();
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogTitle, setDialogTitle] = useState("");
+  const [dialogContent, setDialogContent] = useState("");
+  const [relativesInUSA, setRelativesInUSA] = useState("no");
+
+  const handleOpenDialog = (title: string, content: string) => {
+    setDialogTitle(title);
+    setDialogContent(content);
+    setDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
+    setDialogTitle("");
+    setDialogContent("");
+  };
+
+  const maritalStatusOptions = t("familyInfo.maritalInfoSubscribe", {
+    returnObjects: true,
+  }) as string[];
 
   return (
     <div>
@@ -87,12 +109,21 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
           </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <ControlledTextField
-            name="familyInfo.maritalStatus"
-            control={control}
-            errors={errors}
-            label={t("familyInfo.maritalStatus")}
-          />
+          <CustomBox>
+            <ControlledTextField
+              name="familyInfo.maritalStatus"
+              control={control}
+              errors={errors}
+              label={t("familyInfo.maritalStatus")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
+                handleOpenDialog(
+                  t("familyInfo.maritalInfoTitle"),
+                  maritalStatusOptions.join("<br/>")
+                )
+              }
+            />
+          </CustomBox>
         </Grid>
         <Grid item xs={12}>
           <ControlledTextField
@@ -144,14 +175,25 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
             label={t("familyInfo.spouseAddress")}
           />
         </Grid>
+
         <Grid item xs={12}>
-          <ControlledTextField
-            name="familyInfo.previousMarriages"
-            control={control}
-            errors={errors}
-            label={t("familyInfo.previousMarriages")}
-          />
+          <CustomBox>
+            <ControlledTextField
+              name="familyInfo.previousMarriages"
+              control={control}
+              errors={errors}
+              label={t("familyInfo.previousMarriages")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
+                handleOpenDialog(
+                  t("familyInfo.previousMarriageInfoTitle"),
+                  t("familyInfo.previousMarriageInfoSubscribe")
+                )
+              }
+            />
+          </CustomBox>
         </Grid>
+
         <Grid item xs={12}>
           <ControlledTextField
             name="familyInfo.previousSpouses"
@@ -216,7 +258,14 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
               control={control}
               defaultValue="no"
               render={({ field }) => (
-                <RadioGroup row {...field}>
+                <RadioGroup
+                  row
+                  {...field}
+                  onChange={(e) => {
+                    field.onChange(e);
+                    setRelativesInUSA(e.target.value);
+                  }}
+                >
                   <FormControlLabel
                     value="yes"
                     control={<Radio />}
@@ -232,22 +281,35 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
             />
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
-          <ControlledTextField
-            name="familyInfo.relativeNames"
-            control={control}
-            errors={errors}
-            label={t("familyInfo.relativeNames")}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <ControlledTextField
-            name="familyInfo.relativeStatus"
-            control={control}
-            errors={errors}
-            label={t("familyInfo.relativeStatus")}
-          />
-        </Grid>
+        {relativesInUSA === "yes" && (
+          <>
+            <Grid item xs={12}>
+              <ControlledTextField
+                name="familyInfo.relativeNames"
+                control={control}
+                errors={errors}
+                label={t("familyInfo.relativeNames")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <CustomBox>
+                <ControlledTextField
+                  name="familyInfo.relativeStatus"
+                  control={control}
+                  errors={errors}
+                  label={t("familyInfo.relativeStatus")}
+                  showInfoIcon={true}
+                  onInfoIconClick={() =>
+                    handleOpenDialog(
+                      t("familyInfo.relativeStatusInfoTitle"),
+                      t("familyInfo.relativeStatusInfoSubscribe")
+                    )
+                  }
+                />
+              </CustomBox>
+            </Grid>
+          </>
+        )}
         <Grid item xs={12}>
           <FormControl component="fieldset">
             <FormLabel component="legend">
@@ -274,7 +336,13 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
             />
           </FormControl>
         </Grid>
-      </Grid>
+      </Grid>{" "}
+      <InfoDialog
+        open={dialogOpen}
+        onClose={handleCloseDialog}
+        title={dialogTitle}
+        content={dialogContent}
+      />
     </div>
   );
 };
