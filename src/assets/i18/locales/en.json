@@ -358,6 +358,42 @@
     "otherRelativesInUSA": "Do you have other relatives in the USA?"
   },
 
+  "purposeOfTravel": {
+    "title": "Purpose of Travel",
+    "tripFunding": "How do you plan to finance your trip?",
+    "intentToReturn": "Do you intend to return?",
+    "travelPlans": {
+      "arrivalDate": "When do you plan to arrive in the USA?",
+      "arrivalCity": "Arrival/Departure City (optional)",
+      "placesToVisit": "Which cities/places do you plan to visit?",
+      "note": "No need to book tickets, just provide the planned travel dates"
+    },
+    "addressInUSA": "Where do you plan to stay in the USA?",
+    "invitingPartyInfo": "Information about the inviting party in the USA",
+    "invitingParty": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "relationship": "How is the inviting party related to you?",
+      "relative": "Relative",
+      "friend": "Friend",
+      "businessPartner": "Business Partner",
+      "employer": "Employer",
+      "educationalInstitution": "Educational Institution",
+      "other": "Other"
+    },
+    "durationOfStay": "How long do you plan to stay in the USA?",
+    "travelPurpose": "What is the purpose of your trip?",
+    "travelCompanions": "Who else is traveling with you?",
+    "tripSponsor": "Who intends to pay for your trip?",
+    "sponsorDetails": "If the trip sponsor is another person/company, specify:",
+    "self": "Self",
+    "otherPerson": "Another Person",
+    "organization": "Organization",
+    "child": "Child",
+    "parents": "Parents"
+  },
+
   "errors": {
     "required": "is required"
   }
