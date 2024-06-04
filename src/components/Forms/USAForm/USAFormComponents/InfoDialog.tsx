@@ -4,6 +4,7 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
+  DialogContentText,
   DialogTitle,
   Button,
 } from "@mui/material";
@@ -27,7 +28,7 @@ const InfoDialog: React.FC<InfoDialogProps> = ({
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>{title}</DialogTitle>
       <DialogContent>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <DialogContentText>{content}</DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button

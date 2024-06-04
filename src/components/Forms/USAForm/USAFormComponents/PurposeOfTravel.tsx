@@ -19,6 +19,7 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
   const [dialogOpen, setDialogOpen] = React.useState(false);
   const [dialogTitle, setDialogTitle] = React.useState("");
   const [dialogContent, setDialogContent] = React.useState("");
+  const [sponsorInfoVisible, setSponsorInfoVisible] = React.useState(false);
 
   const handleOpenDialog = (title: string, content: string) => {
     setDialogTitle(title);
@@ -30,6 +31,14 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
     setDialogOpen(false);
     setDialogTitle("");
     setDialogContent("");
+  };
+
+  const sponsorInfoOptions = t("purposeOfTravel.sponsorInfo", {
+    returnObjects: true,
+  }) as string[];
+
+  const handleSponsorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSponsorInfoVisible(event.target.value === "otherPersonOrCompany");
   };
 
   return (
@@ -188,52 +197,100 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
             label={t("purposeOfTravel.travelCompanions")}
           />
         </Grid>
-        <Grid item xs={12}>
-          <ControlledTextField
-            name="purposeOfTravel.tripSponsor"
-            control={control}
-            errors={errors}
-            label={t("purposeOfTravel.tripSponsor")}
-            showInfoIcon={true}
-            onInfoIconClick={() =>
-              handleOpenDialog(
-                t("purposeOfTravel.tripInfoSponsor"),
-                t("purposeOfTravel.sponsorInfo")
-              )
-            }
-          />
-        </Grid>
 
         <Grid item xs={12}>
+          <h3>{t("purposeOfTravel.tripSponsor")}</h3>
           <Controller
-            name="purposeOfTravel.intentToReturn"
+            name="purposeOfTravel.tripSponsor"
             control={control}
             render={({ field }) => (
-              <RadioGroup {...field}>
+              <RadioGroup
+                {...field}
+                onChange={(e) => {
+                  field.onChange(e);
+                  handleSponsorChange(e);
+                }}
+              >
                 <FormControlLabel
-                  value="yes"
+                  value="self"
                   control={<Radio />}
-                  label={t("yes")}
+                  label={t("purposeOfTravel.self")}
                 />
                 <FormControlLabel
-                  value="no"
+                  value="otherPersonOrCompany"
                   control={<Radio />}
-                  label={t("no")}
+                  label={t("purposeOfTravel.otherPersonOrCompany")}
                 />
               </RadioGroup>
             )}
           />
-          {getErrorMessage(errors, "purposeOfTravel.intentToReturn") && (
-            <p>
-              {
-                getErrorMessage(
-                  errors,
-                  "purposeOfTravel.intentToReturn"
-                ) as string
-              }
-            </p>
-          )}
         </Grid>
+
+        {sponsorInfoVisible && (
+          <>
+            <Grid item xs={12}>
+              <ControlledTextField
+                name="purposeOfTravel.surname"
+                control={control}
+                errors={errors}
+                label={t("purposeOfTravel.surname")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <ControlledTextField
+                name="purposeOfTravel.name"
+                control={control}
+                errors={errors}
+                label={t("purposeOfTravel.name")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <ControlledTextField
+                name="purposeOfTravel.address"
+                control={control}
+                errors={errors}
+                label={t("purposeOfTravel.address")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <ControlledTextField
+                name="purposeOfTravel.phone"
+                control={control}
+                errors={errors}
+                label={t("purposeOfTravel.phone")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <ControlledTextField
+                name="purposeOfTravel.email"
+                control={control}
+                errors={errors}
+                label={t("purposeOfTravel.email")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <h3>{t("purposeOfTravel.relationship.question")}</h3>
+              <Controller
+                name="purposeOfTravel.relationship"
+                control={control}
+                render={({ field }) => (
+                  <RadioGroup {...field}>
+                    <FormControlLabel
+                      value="child"
+                      control={<Radio />}
+                      label={t("purposeOfTravel.relationship.child")}
+                    />
+                    <FormControlLabel
+                      value="parent"
+                      control={<Radio />}
+                      label={t("purposeOfTravel.relationship.parent")}
+                    />
+                  </RadioGroup>
+                )}
+              />
+            </Grid>
+          </>
+        )}
       </Grid>
 
       <InfoDialog
