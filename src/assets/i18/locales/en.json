@@ -387,14 +387,6 @@
     "travelCompanions": "Who else is traveling with you?",
     "tripSponsor": "Who intends to pay for your trip?",
     "sponsorDetails": "If the trip sponsor is another person/company, specify:",
-    "tripInfoSponsor": "Information about the sponsor",
-    "sponsorInfo": [
-      "- Independently",
-      "- Other people (names, addresses and telephone)",
-      "- Organization (names, addresses and telephone)"
-    ],
-
-    "question": "If the trip sponsor is another person/company, please specify:",
     "self": "Self",
     "otherPersonOrCompany": "Other Person/Company",
     "surname": "Surname",

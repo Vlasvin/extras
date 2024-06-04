@@ -33,10 +33,6 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
     setDialogContent("");
   };
 
-  const sponsorInfoOptions = t("purposeOfTravel.sponsorInfo", {
-    returnObjects: true,
-  }) as string[];
-
   const handleSponsorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSponsorInfoVisible(event.target.value === "otherPersonOrCompany");
   };
