@@ -30,6 +30,13 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
     <div>
       <h2>{t("travelHistory.title")}</h2>
 
+      <ControlledTextField
+        name="travelHistory.countriesVisited"
+        control={control}
+        errors={errors}
+        label={t("travelHistory.countriesVisited")}
+      />
+
       <Typography variant="h6">{t("travelHistory.visitedUSA")}</Typography>
       <Controller
         name="travelHistory.visitedUSA"
@@ -238,13 +245,6 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
           label={t("travelHistory.ssnDetails")}
         />
       )}
-
-      <ControlledTextField
-        name="travelHistory.countriesVisited"
-        control={control}
-        errors={errors}
-        label={t("travelHistory.countriesVisited")}
-      />
     </div>
   );
 };

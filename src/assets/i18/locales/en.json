@@ -402,10 +402,6 @@
     }
   },
 
-  "errors": {
-    "required": "is required"
-  },
-
   "travelHistory": {
     "title": "Travel History",
     "visitedUSA": "Have you ever received a US visa?",
@@ -427,5 +423,9 @@
     "ssn": "Have you ever received a Social Security Number in the USA?",
     "ssnDetails": "If so, specify number",
     "countriesVisited": "Which countries have you visited in the last 5 years?"
+  },
+
+  "errors": {
+    "required": "is required"
   }
 }
