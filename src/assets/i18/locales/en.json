@@ -404,5 +404,28 @@
 
   "errors": {
     "required": "is required"
+  },
+
+  "travelHistory": {
+    "title": "Travel History",
+    "visitedUSA": "Have you ever received a US visa?",
+    "visitedUSA_dates": "If you answered YES, specify:",
+    "visaDates": "Date, month, year (required)",
+    "visaNumber": "Visa number (optional)",
+    "visaDenied": "Have you ever been denied a US visa?",
+    "denialDetails": "If denied, specify:",
+    "denialDate": "Date, month, year",
+    "denialPlace": "Place (city, country)",
+    "denialType": "Visa type",
+    "previousTravel": "Have you traveled to the USA before? If so, specify travel dates (max 5)",
+    "arrivalDate": "Arrival date",
+    "stayDuration": "How many days/weeks/months you stayed",
+    "immigrationPetition": "Has anyone filed an immigration petition on your behalf with USCIS?",
+    "petitionDetails": "If so, specify",
+    "driverLicense": "Have you ever received a US driver's license?",
+    "licenseDetails": "If so, specify number and state of issuance",
+    "ssn": "Have you ever received a Social Security Number in the USA?",
+    "ssnDetails": "If so, specify number",
+    "countriesVisited": "Which countries have you visited in the last 5 years?"
   }
 }
