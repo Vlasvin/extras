@@ -425,6 +425,8 @@
   "workAndEducation": {
     "title": "Робота та освіта",
     "currentEmployer": "Поточний роботодавець",
+    "infoDialogTitle": "Інформація про роботодавця",
+    "infoDialogContent": "Вказувати потрібно не більше 3 попередніх місць роботи",
     "companyName": "Назва компанії",
     "address": "Адреса",
     "phone": "Телефон",

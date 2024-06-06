@@ -18,6 +18,14 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
 }) => {
   const { t } = useTranslation();
   const [infoDialogOpen, setInfoDialogOpen] = useState(false);
+  const [dialogTitle, setDialogTitle] = React.useState("");
+  const [dialogContent, setDialogContent] = React.useState("");
+
+  const handleOpenDialog = (title: string, content: string) => {
+    setDialogTitle(title);
+    setDialogContent(content);
+    setInfoDialogOpen(true);
+  };
 
   const handleCloseDialog = () => {
     setInfoDialogOpen(false);
@@ -46,6 +54,13 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
         control={control}
         errors={errors}
         label={t("workAndEducation.companyName")}
+        showInfoIcon
+        onInfoIconClick={() =>
+          handleOpenDialog(
+            t("workAndEducation.infoDialogTitle"),
+            t("workAndEducation.infoDialogContent")
+          )
+        }
       />
       <ControlledTextField
         name="currentEmployer.address"
@@ -298,8 +313,8 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
       <InfoDialog
         open={infoDialogOpen}
         onClose={handleCloseDialog}
-        title={t("infoDialogTitle")}
-        content={t("infoDialogContent")}
+        title={dialogTitle}
+        content={dialogContent}
       />
     </div>
   );
