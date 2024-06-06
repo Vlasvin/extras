@@ -422,6 +422,32 @@
     "countriesVisited": "В яких країнах ви були за останні 5 років?"
   },
 
+  "workAndEducation": {
+    "title": "Робота та освіта",
+    "currentEmployer": "Поточний роботодавець",
+    "companyName": "Назва компанії",
+    "address": "Адреса",
+    "phone": "Телефон",
+    "startDate": "Дата початку",
+    "endDate": "Дата завершення",
+    "position": "Посада",
+    "duties": "Обов'язки",
+    "averageMonthlyIncome": "Середній місячний доход",
+    "previousEmployer": "Попередній роботодавець",
+    "highSchool": "Середня освіта",
+    "schoolName": "Назва школи",
+    "higherEducation": "Вища освіта",
+    "institutionName": "Назва закладу",
+    "faculty": "Факультет",
+    "socialOrganizations": "Чи є ви членом будь-яких соціальних організацій?",
+    "socialOrganizationsDetails": "Деталі соціальних організацій",
+    "tribe": "Чи належите ви до племені?",
+    "tribeDetails": "Деталі племені",
+    "militaryService": "Військова служба",
+    "country": "Країна",
+    "serviceType": "Тип служби"
+  },
+
   "errors": {
     "required": "є обов'язковим"
   }

@@ -422,6 +422,32 @@
     "countriesVisited": "В каких странах вы были за последние 5 лет?"
   },
 
+  "workAndEducation": {
+    "title": "Работа и Образование",
+    "currentEmployer": "Текущий Работодатель",
+    "companyName": "Название Компании",
+    "address": "Адрес",
+    "phone": "Телефон",
+    "startDate": "Дата Начала",
+    "endDate": "Дата окончания",
+    "position": "Должность",
+    "duties": "Обязанности",
+    "averageMonthlyIncome": "Среднемесячный Доход",
+    "previousEmployer": "Предыдущий Работодатель",
+    "highSchool": "Среднее образование",
+    "schoolName": "Название Школы",
+    "higherEducation": "Высшее Образование",
+    "institutionName": "Название Учреждения",
+    "faculty": "Факультет",
+    "socialOrganizations": "Вы являетесь членом каких-либо социальных организаций?",
+    "socialOrganizationsDetails": "Детали Социальных Организаций",
+    "tribe": "Вы принадлежите к племени?",
+    "tribeDetails": "Детали Племени",
+    "militaryService": "Военная Служба",
+    "country": "Страна",
+    "serviceType": "Тип Службы"
+  },
+
   "errors": {
     "required": "обязательно"
   }

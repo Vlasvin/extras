@@ -5,6 +5,7 @@ import { Grid, RadioGroup, FormControlLabel, Radio } from "@mui/material";
 import ControlledTextField from "./ControlledTextField";
 import InfoDialog from "./InfoDialog";
 import { getErrorMessage } from "utils/formUtils";
+import { SectionTitle } from "components/Services/ServicesStyles";
 
 interface PurposeOfTravelProps {
   control: Control<any>;
@@ -39,7 +40,7 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
 
   return (
     <div>
-      <h2>{t("purposeOfTravel.title")}</h2>
+      <SectionTitle>{t("purposeOfTravel.title")}</SectionTitle>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <ControlledTextField

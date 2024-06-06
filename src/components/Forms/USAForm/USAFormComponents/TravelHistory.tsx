@@ -10,6 +10,7 @@ import { RadioGroup, FormControlLabel, Radio, Typography } from "@mui/material";
 import { getErrorMessage } from "utils/formUtils";
 
 import ControlledTextField from "./ControlledTextField";
+import { SectionTitle } from "components/Services/ServicesStyles";
 interface TravelHistoryProps {
   control: Control<any>;
   errors: FieldErrors<any>;
@@ -28,7 +29,7 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
 
   return (
     <div>
-      <h2>{t("travelHistory.title")}</h2>
+      <SectionTitle>{t("travelHistory.title")}</SectionTitle>
 
       <ControlledTextField
         name="travelHistory.countriesVisited"

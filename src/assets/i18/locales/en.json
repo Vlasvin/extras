@@ -425,6 +425,32 @@
     "countriesVisited": "Which countries have you visited in the last 5 years?"
   },
 
+  "workAndEducation": {
+    "title": "Work and Education",
+    "currentEmployer": "Current Employer",
+    "companyName": "Company Name",
+    "address": "Address",
+    "phone": "Phone",
+    "startDate": "Start Date",
+    "endDate": "End date",
+    "position": "Position",
+    "duties": "Duties",
+    "averageMonthlyIncome": "Average Monthly Income",
+    "previousEmployer": "Previous Employer",
+    "highSchool": "High School",
+    "schoolName": "School Name",
+    "higherEducation": "Higher Education",
+    "institutionName": "Institution Name",
+    "faculty": "Faculty",
+    "socialOrganizations": "Are you a member of any social organizations?",
+    "socialOrganizationsDetails": "Details of Social Organizations",
+    "tribe": "Do you belong to a tribe?",
+    "tribeDetails": "Details of Tribe",
+    "militaryService": "Military Service",
+    "country": "Country",
+    "serviceType": "Service Type"
+  },
+
   "errors": {
     "required": "is required"
   }
