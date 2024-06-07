@@ -33,6 +33,7 @@ interface VisaProps {
   documentsKey: string;
   applyButtonKey: string;
   descriptionKey: string;
+  pageName: string;
 }
 
 const Visa: React.FC<VisaProps> = ({
@@ -44,6 +45,7 @@ const Visa: React.FC<VisaProps> = ({
   documentsKey,
   applyButtonKey,
   descriptionKey,
+  pageName,
 }) => {
   const { t } = useTranslation();
   const theme = useTheme();
@@ -173,16 +175,18 @@ const Visa: React.FC<VisaProps> = ({
           </ListItem>
         ))}
       </List>
-      <Button
-        variant="outlined"
-        color="primary"
-        sx={{ mt: 2 }}
-        onClick={() => {
-          window.location.href = "usa/visa-form";
-        }}
-      >
-        {t(applyButtonKey)}
-      </Button>
+      {pageName === "VisaUsa" && (
+        <Button
+          variant="outlined"
+          color="primary"
+          sx={{ mt: 2 }}
+          onClick={() => {
+            window.location.href = "usa/visa-form";
+          }}
+        >
+          {t(applyButtonKey)}
+        </Button>
+      )}
     </Container>
   );
 };

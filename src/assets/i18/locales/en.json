@@ -389,7 +389,7 @@
     "sponsorDetails": "If the trip sponsor is another person/company, specify:",
     "self": "Self",
     "otherPersonOrCompany": "Other Person/Company",
-    "surname": "Surname",
+    "surname": "",
     "name": "Name",
     "address": "Address",
     "phone": "Phone",

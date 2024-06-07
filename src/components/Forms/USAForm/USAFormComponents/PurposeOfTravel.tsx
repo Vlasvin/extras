@@ -227,7 +227,7 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
           <>
             <Grid item xs={12}>
               <ControlledTextField
-                name="purposeOfTravel.surname"
+                name="purposeOfTravel.sponsorInfo.surname"
                 control={control}
                 errors={errors}
                 label={t("purposeOfTravel.surname")}
@@ -235,7 +235,7 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
             </Grid>
             <Grid item xs={12}>
               <ControlledTextField
-                name="purposeOfTravel.name"
+                name="purposeOfTravel.sponsorInfo.name"
                 control={control}
                 errors={errors}
                 label={t("purposeOfTravel.name")}
@@ -243,7 +243,7 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
             </Grid>
             <Grid item xs={12}>
               <ControlledTextField
-                name="purposeOfTravel.address"
+                name="purposeOfTravel.sponsorInfo.address"
                 control={control}
                 errors={errors}
                 label={t("purposeOfTravel.address")}
@@ -251,7 +251,7 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
             </Grid>
             <Grid item xs={12}>
               <ControlledTextField
-                name="purposeOfTravel.phone"
+                name="purposeOfTravel.sponsorInfo.phone"
                 control={control}
                 errors={errors}
                 label={t("purposeOfTravel.phone")}
@@ -259,7 +259,7 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
             </Grid>
             <Grid item xs={12}>
               <ControlledTextField
-                name="purposeOfTravel.email"
+                name="purposeOfTravel.sponsorInfo.email"
                 control={control}
                 errors={errors}
                 label={t("purposeOfTravel.email")}
@@ -268,7 +268,7 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
             <Grid item xs={12}>
               <h3>{t("purposeOfTravel.relationship.question")}</h3>
               <Controller
-                name="purposeOfTravel.relationship"
+                name="purposeOfTravel.sponsorInfo.relationship"
                 control={control}
                 render={({ field }) => (
                   <RadioGroup {...field}>

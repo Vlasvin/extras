@@ -248,6 +248,7 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
             label={t("familyInfo.previousSpouseNationality")}
           />
         </Grid>
+
         <Grid item xs={12}>
           <FormControl component="fieldset">
             <FormLabel component="legend">
@@ -258,29 +259,25 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
               control={control}
               defaultValue="no"
               render={({ field }) => (
-                <RadioGroup
-                  row
-                  {...field}
-                  onChange={(e) => {
-                    field.onChange(e);
-                    setRelativesInUSA(e.target.value);
-                  }}
-                >
+                <RadioGroup row {...field}>
                   <FormControlLabel
                     value="yes"
                     control={<Radio />}
                     label={t("yes")}
+                    onChange={() => setRelativesInUSA("yes")}
                   />
                   <FormControlLabel
                     value="no"
                     control={<Radio />}
                     label={t("no")}
+                    onChange={() => setRelativesInUSA("no")}
                   />
                 </RadioGroup>
               )}
             />
           </FormControl>
         </Grid>
+
         {relativesInUSA === "yes" && (
           <>
             <Grid item xs={12}>
@@ -292,24 +289,16 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
               />
             </Grid>
             <Grid item xs={12}>
-              <CustomBox>
-                <ControlledTextField
-                  name="familyInfo.relativeStatus"
-                  control={control}
-                  errors={errors}
-                  label={t("familyInfo.relativeStatus")}
-                  showInfoIcon={true}
-                  onInfoIconClick={() =>
-                    handleOpenDialog(
-                      t("familyInfo.relativeStatusInfoTitle"),
-                      t("familyInfo.relativeStatusInfoSubscribe")
-                    )
-                  }
-                />
-              </CustomBox>
+              <ControlledTextField
+                name="familyInfo.relativeStatus"
+                control={control}
+                errors={errors}
+                label={t("familyInfo.relativeStatus")}
+              />
             </Grid>
           </>
         )}
+
         <Grid item xs={12}>
           <FormControl component="fieldset">
             <FormLabel component="legend">
@@ -336,7 +325,7 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
             />
           </FormControl>
         </Grid>
-      </Grid>{" "}
+      </Grid>
       <InfoDialog
         open={dialogOpen}
         onClose={handleCloseDialog}

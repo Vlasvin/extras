@@ -11,6 +11,7 @@ const VisaUSA: React.FC = () => (
     documentsKey="visa_usa.documents"
     applyButtonKey="visa_usa.apply_button"
     descriptionKey="visa_usa.description"
+    pageName="VisaUsa"
   />
 );
 

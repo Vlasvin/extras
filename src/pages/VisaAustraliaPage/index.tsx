@@ -11,6 +11,7 @@ const VisaAustralia: React.FC = () => (
     documentsKey="visa_australia.documents"
     applyButtonKey="visa_australia.apply_button"
     descriptionKey="visa_australia.description"
+    pageName="VisaAustralia"
   />
 );
 

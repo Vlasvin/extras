@@ -11,6 +11,7 @@ const VisaCanada: React.FC = () => (
     documentsKey="visa_canada.documents"
     applyButtonKey="visa_canada.apply_button"
     descriptionKey="visa_canada.description"
+    pageName="VisaCanada"
   />
 );
 
