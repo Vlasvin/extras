@@ -13,6 +13,7 @@ import { Container, FormWrapper, Spacer } from "./USAFormStyles";
 
 const VisaForm = () => {
   const { t } = useTranslation();
+
   const methods = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
@@ -44,7 +45,28 @@ const VisaForm = () => {
       familyInfo: {},
       purposeOfTravel: {},
       travelHistory: {},
-      workAndEducation: {},
+      workAndEducation: {
+        currentEmployer: {
+          companyName: "",
+          address: "",
+          phone: "",
+          startDate: undefined,
+          position: "",
+          duties: "",
+        },
+        averageMonthlyIncome: undefined,
+        previousEmployer: [],
+        highSchool: {
+          name: "",
+          address: "",
+          startDate: undefined,
+          endDate: undefined,
+        },
+        higherEducation: [],
+        socialOrganizations: undefined,
+        tribe: undefined,
+        militaryService: undefined,
+      },
     },
   });
 

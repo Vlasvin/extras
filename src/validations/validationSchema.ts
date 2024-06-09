@@ -198,7 +198,7 @@ const travelHistorySchema = yup.object().shape({
     then: (schema) => schema.required(i18next.t("errors.required")),
     otherwise: (schema) => schema.notRequired(),
   }),
-  // Repeat for arrivalDate1, stayDuration1, etc. if needed
+
   immigrationPetition: yup.string().required(i18next.t("errors.required")),
   petitionDetails: yup.string().when("immigrationPetition", {
     is: "yes",
@@ -221,50 +221,51 @@ const travelHistorySchema = yup.object().shape({
 
 const workAndEducationSchema = yup.object().shape({
   currentEmployer: yup.object().shape({
-    companyName: yup.string().required("Company Name is required"),
-    address: yup.string().required("Address is required"),
-    phone: yup.string().required("Phone is required"),
-    startDate: yup.date().required("Start Date is required"),
-    position: yup.string().required("Position is required"),
-    duties: yup.string().required("Duties are required"),
+    companyName: yup.string().required(i18next.t("errors.required")),
+    address: yup.string().required(i18next.t("errors.required")),
+    phone: yup.string().required(i18next.t("errors.required")),
+    startDate: yup.date().required(i18next.t("errors.required")),
+    position: yup.string().required(i18next.t("errors.required")),
+    duties: yup.string().required(i18next.t("errors.required")),
   }),
-  averageMonthlyIncome: yup
-    .number()
-    .required("Average Monthly Income is required"),
+  averageMonthlyIncome: yup.number().required(i18next.t("errors.required")),
   previousEmployer: yup.array().of(
     yup.object().shape({
-      companyName: yup.string().required("Company Name is required"),
-      address: yup.string().required("Address is required"),
-      phone: yup.string().required("Phone is required"),
-      startDate: yup.date().required("Start Date is required"),
-      position: yup.string().required("Position is required"),
-      duties: yup.string().required("Duties are required"),
+      companyName: yup.string().required(i18next.t("errors.required")),
+      address: yup.string().required(i18next.t("errors.required")),
+      phone: yup.string().required(i18next.t("errors.required")),
+      startDate: yup.date().required(i18next.t("errors.required")),
+      position: yup.string().required(i18next.t("errors.required")),
+      duties: yup.string().required(i18next.t("errors.required")),
     })
   ),
   highSchool: yup.object().shape({
-    name: yup.string().required("School Name is required"),
-    address: yup.string().required("Address is required"),
-    startDate: yup.date().required("Start Date is required"),
-    endDate: yup.date().required("End Date is required"),
+    name: yup.string().required(i18next.t("errors.required")),
+    address: yup.string().required(i18next.t("errors.required")),
+    startDate: yup.date().required(i18next.t("errors.required")),
+    endDate: yup.date().required(i18next.t("errors.required")),
   }),
   higherEducation: yup.array().of(
     yup.object().shape({
-      name: yup.string().required("Institution Name is required"),
-      address: yup.string().required("Address is required"),
-      startDate: yup.date().required("Start Date is required"),
-      endDate: yup.date().required("End Date is required"),
-      faculty: yup.string().required("Faculty is required"),
+      name: yup.string().required(i18next.t("errors.required")),
+      address: yup.string().required(i18next.t("errors.required")),
+      startDate: yup.date().required(i18next.t("errors.required")),
+      endDate: yup.date().required(i18next.t("errors.required")),
+      faculty: yup.string().required(i18next.t("errors.required")),
     })
   ),
   socialOrganizations: yup
     .string()
     .oneOf(["yes", "no"])
-    .required("This field is required"),
-  tribe: yup.string().oneOf(["yes", "no"]).required("This field is required"),
+    .required(i18next.t("errors.required")),
+  tribe: yup
+    .string()
+    .oneOf(["yes", "no"])
+    .required(i18next.t("errors.required")),
   militaryService: yup
     .string()
     .oneOf(["yes", "no"])
-    .required("This field is required"),
+    .required(i18next.t("errors.required")),
 });
 
 const schema = yup.object().shape({
