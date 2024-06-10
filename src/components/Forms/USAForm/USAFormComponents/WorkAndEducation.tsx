@@ -320,6 +320,34 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
             errors={errors}
             label={t("workAndEducation.serviceType")}
           />
+          <ControlledTextField
+            name="militaryService.rank"
+            control={control}
+            errors={errors}
+            label={t("workAndEducation.militaryRank")}
+          />
+          <ControlledTextField
+            name="militaryService.specialty"
+            control={control}
+            errors={errors}
+            label={t("workAndEducation.militarySpecialty")}
+          />
+          <ControlledTextField
+            name="militaryService.startDate"
+            control={control}
+            errors={errors}
+            label={t("workAndEducation.militaryStartDate")}
+            type="date"
+            inputLabelProps={{ shrink: true }}
+          />
+          <ControlledTextField
+            name="militaryService.endDate"
+            control={control}
+            errors={errors}
+            label={t("workAndEducation.militaryEndDate")}
+            type="date"
+            inputLabelProps={{ shrink: true }}
+          />
         </div>
       )}
 

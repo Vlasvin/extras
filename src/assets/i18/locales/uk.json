@@ -299,19 +299,19 @@
     "addressInfoText": "Вкажіть: Індекс, Країну, Область, Місто, Вулицю, Номер будинку, Номер квартири. (Якщо тимчасово проживаєте за кордоном, можна вказати одну адресу українську, іншу — європейську.)",
     "contactNumber": "Контактний номер телефону",
 
-    "contactNumbersLast5Years": "Усі номери телефонів",
+    "contactNumbersLast5Years": "Інші номери телефонів",
     "numbersLast5YearsInfoTitle": "Деталі телефонних номерів",
     "numbersLast5YearsInfoText": "Вкажіть усі номери телефонів, які використовувалися за останні 5 років",
 
     "emailAddress": "Адреса електронної пошти (email)",
 
-    "emailsLast5Years": "Всі адреси електронної пошти",
+    "emailsLast5Years": "Інші адреси електронної пошти",
     "emailsLast5YearsInfoTitle": "Деталі про емейли",
     "emailsLast5YearsInfoText": "Вкажіть всі адреси електронної пошти, які використовувалися за останні 5 років",
 
     "socialMedia": "В яких соц. мережах ви зареєстровані?",
     "socialMediaDetails": "Вкажіть ID або ім'я користувача",
-    "socialInfoTitle": "Деталі соціальних мереж",
+    "socialInfoTitle": "Дані соціальних мереж",
     "socialInfo": "Вкажіть ID або ім'я користувача, надайте посилання або скрін сторінки. \n(ASK.FM, Dooban, Facebook, Flickr, Google +, Instagram, Linkedin, Мій простір, Pinterest, Qzone (QQ), Reddit, Sina weibo, Tencent weibo, Tumblr, Twitter, TWOO, Vine, Вконтакте (ВК), Youku, Youtube)",
 
     "otherMediaResources": "Чи є інші медіаресурси, де ви розміщуєте інформацію?",
@@ -325,7 +325,7 @@
     "motherName": "Повне ім'я матері (навіть якщо померла)",
     "motherDOB": "Дата народження матері",
     "parentsInUSA": "Чи знаходяться ваші батьки зараз у США?",
-    "maritalStatus": "Сімейний стан",
+    "maritalStatus": "Ваш сімейний стан",
     "maritalInfoTitle": "Інформація про сімейний стан",
     "maritalInfoSubscribe": [
       "- Одружений / Одружена",
@@ -334,7 +334,7 @@
       "- Розлучений / Розлучена",
       "- Живу окремо"
     ],
-    "spouseName": "Повне ім'я чоловіка / дружини",
+    "spouseName": "Прізвище та ім’я чоловіка/дружини",
     "spouseMaidenName": "Дівоче прізвище дружини / чоловіка",
     "spouseDOB": "Дата народження чоловіка / дружини",
     "spouseBirthPlace": "Місце народження чоловіка / дружини",
@@ -343,14 +343,14 @@
     "previousMarriages": "Кількість попередніх шлюбів",
     "previousMarriageInfoTitle": "Інформація про попередні шлюби",
     "previousMarriageInfoSubscribe": "Якщо на даний момент ви повторно одружені, попередні дані про розлучення не потрібно вказувати",
-    "previousSpouses": "Повні імена колишніх чоловіків / дружин",
+    "previousSpouses": "Прізвище та ім’я колишніх чоловіка/дружини",
     "previousSpouseDOB": "Дата народження колишніх чоловіків / дружин",
     "marriageStartDate": "Дата початку шлюбу",
     "marriageEndDate": "Дата завершення шлюбу",
     "previousSpouseBirthPlace": "Місце народження колишніх чоловіків / дружин",
     "previousSpouseNationality": "Національність колишніх чоловіків / дружин",
     "relativesInUSA": "Чи є у вас у США близькі родичі?",
-    "relativeNames": "Повні імена близьких родичів",
+    "relativeNames": "Прізвище та ім’я близьких родичів",
     "relativeStatus": "Статус близьких родичів",
     "relativeStatusInfoTitle": "Статус родича",
     "relativeStatusInfoSubscribe": "- Громадянин США\n- Законний постійний житель США (LPR)\n- Неімміграційна віза\n- Не знаю",
@@ -359,7 +359,6 @@
 
   "purposeOfTravel": {
     "title": "Мета поїздки",
-    "tripFunding": "Як Ви плануєте фінансувати свою подорож?",
     "intentToReturn": "Чи маєте намір повернутися?",
     "travelPlans": {
       "arrivalDate": "Коли Ви плануєте приїхати до США?",
@@ -392,15 +391,7 @@
     "address": "Адреса",
     "phone": "Телефон",
     "email": "Емейл",
-    "relationship": {
-      "question": "Ким доводиться Вам спонсор?",
-      "child": "Дитина",
-      "parent": "Батьки",
-      "spouse": "Чоловік/Дружина",
-      "otherRelative": "Інший родич",
-      "friend": "Друг",
-      "other": "Інше"
-    }
+    "question": "Ким доводиться Вам спонсор?"
   },
 
   "travelHistory": {
@@ -438,20 +429,24 @@
     "endDate": "Дата завершення",
     "position": "Посада",
     "duties": "Обов'язки",
-    "averageMonthlyIncome": "Середній місячний доход",
+    "averageMonthlyIncome": "Середній місячний дохід",
     "previousEmployer": "Попередній роботодавець",
     "highSchool": "Середня освіта",
     "schoolName": "Назва школи",
     "higherEducation": "Вища освіта",
     "institutionName": "Назва закладу",
     "faculty": "Факультет",
-    "socialOrganizations": "Чи є ви членом будь-яких соціальних організацій?",
-    "socialOrganizationsDetails": "Деталі соціальних організацій",
+    "socialOrganizations": "Чи є ви членом будь-яких благодійних організацій?",
+    "socialOrganizationsDetails": "Назви соціальних організацій",
     "tribe": "Чи належите ви до племені?",
-    "tribeDetails": "Деталі племені",
-    "militaryService": "Військова служба",
-    "country": "Країна",
-    "serviceType": "Тип служби"
+    "tribeDetails": "Назва племені",
+    "militaryService": " Чи проходили Ви військову службу?",
+    "country": "Країна проходження",
+    "serviceType": "Тип служби",
+    "militaryRank": "Військове звання",
+    "militarySpecialty": "Військово-облікова спеціальність",
+    "militaryStartDate": "Дата початку",
+    "militaryEndDate": "Дата закінчення"
   },
 
   "errors": {

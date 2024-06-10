@@ -172,14 +172,6 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
         </Grid>
         <Grid item xs={12}>
           <ControlledTextField
-            name="purposeOfTravel.tripFunding"
-            control={control}
-            errors={errors}
-            label={t("purposeOfTravel.tripFunding")}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <ControlledTextField
             name="purposeOfTravel.travelPurpose"
             control={control}
             errors={errors}
@@ -266,44 +258,11 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
               />
             </Grid>
             <Grid item xs={12}>
-              <h3>{t("purposeOfTravel.relationship.question")}</h3>
-              <Controller
-                name="purposeOfTravel.sponsorInfo.relationship"
+              <ControlledTextField
+                name="purposeOfTravel.question"
                 control={control}
-                render={({ field }) => (
-                  <RadioGroup {...field}>
-                    <FormControlLabel
-                      value="child"
-                      control={<Radio />}
-                      label={t("purposeOfTravel.relationship.child")}
-                    />
-                    <FormControlLabel
-                      value="parent"
-                      control={<Radio />}
-                      label={t("purposeOfTravel.relationship.parent")}
-                    />
-                    <FormControlLabel
-                      value="spouse"
-                      control={<Radio />}
-                      label={t("purposeOfTravel.relationship.spouse")}
-                    />
-                    <FormControlLabel
-                      value="otherRelative"
-                      control={<Radio />}
-                      label={t("purposeOfTravel.relationship.otherRelative")}
-                    />
-                    <FormControlLabel
-                      value="friend"
-                      control={<Radio />}
-                      label={t("purposeOfTravel.relationship.friend")}
-                    />
-                    <FormControlLabel
-                      value="other"
-                      control={<Radio />}
-                      label={t("purposeOfTravel.relationship.other")}
-                    />
-                  </RadioGroup>
-                )}
+                errors={errors}
+                label={t("purposeOfTravel.question")}
               />
             </Grid>
           </>

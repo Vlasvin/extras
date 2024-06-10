@@ -281,7 +281,7 @@
     "passportOrInn": "Internal passport or TIN: series, number",
 
     "otherNames": "Other surnames and names",
-    "otherNamesInfoTitle": "Other Names Information",
+    "otherNamesInfoTitle": "Other names information",
     "otherNamesInfoText": "Maiden name, professional pseudonym, name given at the time of ordination, etc.",
 
     "birthPlaceAndDate": "Place and date of birth",
@@ -301,18 +301,18 @@
     "addressInfoText": "Indicate: Index, Country, Region, City, Street, House Number, Apartment Number. (If you are temporarily residing abroad, you can provide one Ukrainian address and another European address.)",
 
     "contactNumber": "Contact phone number",
-    "contactNumbersLast5Years": "All phone numbers",
+    "contactNumbersLast5Years": "Other phone numbers",
     "numbersLast5YearsInfoTitle": "Phone numbers details",
     "numbersLast5YearsInfoText": "Indicate all phone numbers used in the last 5 years",
 
     "emailAddress": "Email address",
-    "emailsLast5Years": "All emails",
+    "emailsLast5Years": "Other emails",
     "emailsLast5YearsInfoTitle": "Emails details",
     "emailsLast5YearsInfoText": "Indicate all emails used in the last 5 years",
 
     "socialMedia": "Which social networks are you registered with?",
     "socialMediaDetails": "Indicate ID or username",
-    "socialInfoTitle": "Social Media Details",
+    "socialInfoTitle": "Social media data",
     "socialInfo": "Please provide the ID or username, provide a link or a screenshot of the page. \n(ASK.FM, Dooban, Facebook, Flickr, Google +, Instagram, Linkedin, Мій простір, Pinterest, Qzone (QQ), Reddit, Sina weibo, Tencent weibo, Tumblr, Twitter, TWOO, Vine, Вконтакте (ВК), Youku, Youtube)",
 
     "otherMediaResources": "Are there any other media resources where you post information?",
@@ -326,7 +326,7 @@
     "motherName": "Mother's Full Name (even if she died)",
     "motherDOB": "Mother's Date of Birth",
     "parentsInUSA": "Are your parents currently in the USA?",
-    "maritalStatus": "Marital Status",
+    "maritalStatus": "Your marital status",
     "maritalInfoTitle": "Marital information",
     "maritalInfoSubscribe": [
       "- Married",
@@ -335,14 +335,14 @@
       "- Divorced",
       "- Separated"
     ],
-    "spouseName": "Spouse's Full Name",
+    "spouseName": "Last name and first name of husband/wife",
     "spouseMaidenName": "Spouse's Maiden Name",
     "spouseDOB": "Spouse's Date of Birth",
     "spouseBirthPlace": "Spouse's Place of Birth",
     "spouseNationality": "Spouse's Nationality",
     "spouseAddress": "Spouse's Address",
     "previousMarriages": "Number of Previous Marriages",
-    "previousSpouses": "Full Names of Previous Spouses",
+    "previousSpouses": "Last name and first name of ex-husband/wife",
     "previousSpouseDOB": "Date of Birth of Previous Spouses",
     "marriageStartDate": "Start Date of Marriage",
     "previousMarriageInfoTitle": "Previous Marriage Information",
@@ -352,7 +352,8 @@
     "previousSpouseNationality": "Nationality of Previous Spouses",
     "relativesInUSA": "Do you have close relatives in the USA?",
     "relativeNames": "Full Names of Close Relatives",
-    "relativeStatus": "Status of Close Relatives",
+
+    "relativeStatus": "Last name and first name of close relatives",
     "relativeStatusInfoTitle": "Relative Status",
     "relativeStatusInfoSubscribe": "- U.S. Citizen\n- Lawful Permanent Resident (LPR)\n- Non-immigrant Visa\n- Don't know",
     "otherRelativesInUSA": "Do you have other relatives in the USA?"
@@ -360,7 +361,6 @@
 
   "purposeOfTravel": {
     "title": "Purpose of Travel",
-    "tripFunding": "How do you plan to finance your trip?",
     "intentToReturn": "Do you intend to return?",
     "travelPlans": {
       "arrivalDate": "When do you plan to arrive in the USA?",
@@ -394,18 +394,7 @@
     "address": "Address",
     "phone": "Phone",
     "email": "Email",
-
-    "purposeOfTravel": {
-      "relationship": {
-        "question": "What is your relationship to the sponsor?",
-        "child": "Child",
-        "parent": "Parent",
-        "spouse": "Spouse",
-        "otherRelative": "Other Relative",
-        "friend": "Friend",
-        "other": "Other"
-      }
-    }
+    "question": "What is your relationship to the sponsor?"
   },
 
   "travelHistory": {
@@ -450,13 +439,17 @@
     "higherEducation": "Higher education",
     "institutionName": "Institution name",
     "faculty": "Faculty",
-    "socialOrganizations": "Are you a member of any social organizations?",
-    "socialOrganizationsDetails": "Details of social organizations",
+    "socialOrganizations": "Are you a member of any charitable organizations?",
+    "socialOrganizationsDetails": "Names of social organizations",
     "tribe": "Do you belong to a tribe?",
-    "tribeDetails": "Details of tribe",
-    "militaryService": "Military service",
-    "country": "Country",
-    "serviceType": "Service type"
+    "tribeDetails": "Name of tribe",
+    "militaryService": "Did you do military service?",
+    "country": "Country of passage",
+    "serviceType": "Service type",
+    "militaryRank": "Military Rank",
+    "militarySpecialty": "Military Specialty",
+    "militaryStartDate": "Start Date",
+    "militaryEndDate": "End Date"
   },
 
   "errors": {

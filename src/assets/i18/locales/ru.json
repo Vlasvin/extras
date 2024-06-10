@@ -297,18 +297,18 @@
     "addressInfoText": "Укажите: Индекс, Страну, Область, Город, Улицу, Номер дома, Номер квартиры. (Если временно проживаете за границей, можно указать один адрес украинский, другой — европейский.)",
 
     "contactNumber": "Контактный номер телефона",
-    "contactNumbersLast5Years": "Все номера телефонов",
+    "contactNumbersLast5Years": "Другие номера телефонов",
     "numbersLast5YearsInfoTitle": "Детали телефонных номеров",
     "numbersLast5YearsInfoText": "Укажите все номера телефонов, которые использовались за последние 5 лет",
     "emailAddress": "Адрес электронной почты (email)",
 
-    "emailsLast5Years": "Все адреса электронной почты",
+    "emailsLast5Years": "Другие адреса электронной почты",
     "emailsLast5YearsInfoTitle": "Детали емейлов",
     "emailsLast5YearsInfoText": "Укажите все адреса электронной почты, которые использовались за последние 5 лет",
 
     "socialMedia": "В каких соц. сетях вы зарегистрированы?",
     "socialMediaDetails": "Укажите ID или имя пользователя",
-    "socialInfoTitle": "Детали социальных сетей",
+    "socialInfoTitle": "Данные социальных сетей",
     "socialInfo": "Укажите ID или имя пользователя, предоставьте ссылку или скриншот страницы. \n(ASK.FM, Dooban, Facebook, Flickr, Google +, Instagram, Linkedin, Мій простір, Pinterest, Qzone (QQ), Reddit, Sina weibo, Tencent weibo, Tumblr, Twitter, TWOO, Vine, Вконтакте (ВК), Youku, Youtube)",
 
     "otherMediaResources": "Есть ли другие медиа ресурсы, где вы размещаете информацию?",
@@ -322,7 +322,7 @@
     "motherName": "Полное имя матери (даже если умерла)",
     "motherDOB": "Дата рождения матери",
     "parentsInUSA": "Находятся ли ваши родители в данный момент в США?",
-    "maritalStatus": "Семейное положение",
+    "maritalStatus": "Ваше семейное положение",
     "maritalInfoTitle": "Информация о семейном положении",
     "maritalInfoSubscribe": [
       "- Женат / Замужем",
@@ -331,7 +331,7 @@
       "- Разведён / Разведена",
       "- Живу отдельно"
     ],
-    "spouseName": "Полное имя супруга(и)",
+    "spouseName": "Фамилия и имя супруга/супруга(и)",
     "spouseMaidenName": "Девичья фамилия супруги(а)",
     "spouseDOB": "Дата рождения супруга(и)",
     "spouseBirthPlace": "Место рождения супруга(и)",
@@ -341,14 +341,14 @@
     "previousMarriages": "Количество предыдущих браков",
     "previousMarriageInfoTitle": "Информация о предыдущих браках",
     "previousMarriageInfoSubscribe": "Если вы в настоящее время повторно женаты, предыдущие данные о разводе не нужно указывать",
-    "previousSpouses": "Полные имена предыдущих супругов",
+    "previousSpouses": "Фамилии и имена предыдущих супругов",
     "previousSpouseDOB": "Дата рождения предыдущих супругов",
     "marriageStartDate": "Дата начала брака",
     "marriageEndDate": "Дата окончания брака",
     "previousSpouseBirthPlace": "Место рождения предыдущих супругов",
     "previousSpouseNationality": "Национальность предыдущих супругов",
     "relativesInUSA": "Есть ли у вас близкие родственники в США?",
-    "relativeNames": "Полные имена близких родственников",
+    "relativeNames": "Фамилии и имена близких родственников",
 
     "relativeStatus": "Статус близких родственников",
     "relativeStatusInfoTitle": "Статус родственника",
@@ -359,7 +359,6 @@
 
   "purposeOfTravel": {
     "title": "Цель поездки",
-    "tripFunding": "Как вы планируете финансировать свою поездку?",
     "intentToReturn": "Вы намерены вернуться?",
     "travelPlans": {
       "arrivalDate": "Когда вы планируете приехать в США?",
@@ -392,17 +391,7 @@
     "address": "Адрес",
     "phone": "Телефон",
     "email": "Эмейл",
-    "purposeOfTravel": {
-      "relationship": {
-        "question": "Кем доводится вам спонсор?",
-        "child": "Ребенок",
-        "parent": "Родитель",
-        "spouse": "Супруг/Супруга",
-        "otherRelative": "Другой родственник",
-        "friend": "Друг",
-        "other": "Другое"
-      }
-    }
+    "question": "Кем доводится вам спонсор?"
   },
 
   "travelHistory": {
@@ -447,13 +436,17 @@
     "higherEducation": "Высшее образование",
     "institutionName": "Название учреждения",
     "faculty": "Факультет",
-    "socialOrganizations": "Вы являетесь членом каких-либо социальных организаций?",
-    "socialOrganizationsDetails": "Детали социальных организаций",
+    "socialOrganizations": "Вы являетесь членом каких-либо благотворительных организаций?",
+    "socialOrganizationsDetails": "Названия социальных организаций",
     "tribe": "Вы принадлежите к племени?",
-    "tribeDetails": "Детали племени",
-    "militaryService": "Военная служба",
-    "country": "Страна",
-    "serviceType": "Тип службы"
+    "tribeDetails": "Название племени",
+    "militaryService": "Проходили ли вы военную службу?",
+    "country": "Страна прохождения",
+    "serviceType": "Тип службы",
+    "militaryRank": "Воинское звание",
+    "militarySpecialty": "Военно-учётная специальность",
+    "militaryStartDate": "Дата начала",
+    "militaryEndDate": "Дата окончания"
   },
 
   "errors": {
