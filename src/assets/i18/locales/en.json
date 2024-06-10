@@ -395,10 +395,16 @@
     "phone": "Phone",
     "email": "Email",
 
-    "relationship": {
-      "question": "Who is the sponsor to you?",
-      "child": "Child",
-      "parent": "Parent"
+    "purposeOfTravel": {
+      "relationship": {
+        "question": "What is your relationship to the sponsor?",
+        "child": "Child",
+        "parent": "Parent",
+        "spouse": "Spouse",
+        "otherRelative": "Other Relative",
+        "friend": "Friend",
+        "other": "Other"
+      }
     }
   },
 

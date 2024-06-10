@@ -12,7 +12,7 @@ import {
 
 import ControlledTextField from "./ControlledTextField";
 import InfoDialog from "./InfoDialog";
-import { CustomBox } from "../USAFormStyles";
+import { CustomBox, SmallLabel } from "../USAFormStyles";
 import { SectionTitle } from "components/Services/ServicesStyles";
 
 interface PersonalInfoProps {
@@ -179,14 +179,14 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                 control={
                   <Radio {...control.register("personalInfo.passportLost")} />
                 }
-                label={t("yes")}
+                label={<SmallLabel>{t("yes")}</SmallLabel>}
               />
               <FormControlLabel
                 value="no"
                 control={
                   <Radio {...control.register("personalInfo.passportLost")} />
                 }
-                label={t("no")}
+                label={<SmallLabel>{t("no")}</SmallLabel>}
               />
             </RadioGroup>
           </FormControl>
@@ -219,7 +219,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                     {...control.register("personalInfo.otherCitizenship")}
                   />
                 }
-                label={t("yes")}
+                label={<SmallLabel>{t("yes")}</SmallLabel>}
               />
               <FormControlLabel
                 value="no"
@@ -228,7 +228,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                     {...control.register("personalInfo.otherCitizenship")}
                   />
                 }
-                label={t("no")}
+                label={<SmallLabel>{t("no")}</SmallLabel>}
               />
             </RadioGroup>
           </FormControl>
@@ -362,7 +362,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                     {...control.register("personalInfo.otherMediaResources")}
                   />
                 }
-                label={t("yes")}
+                label={<SmallLabel>{t("yes")}</SmallLabel>}
               />
               <FormControlLabel
                 value="no"
@@ -371,7 +371,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
                     {...control.register("personalInfo.otherMediaResources")}
                   />
                 }
-                label={t("no")}
+                label={<SmallLabel>{t("no")}</SmallLabel>}
               />
             </RadioGroup>
           </FormControl>

@@ -282,6 +282,26 @@ const PurposeOfTravel: React.FC<PurposeOfTravelProps> = ({
                       control={<Radio />}
                       label={t("purposeOfTravel.relationship.parent")}
                     />
+                    <FormControlLabel
+                      value="spouse"
+                      control={<Radio />}
+                      label={t("purposeOfTravel.relationship.spouse")}
+                    />
+                    <FormControlLabel
+                      value="otherRelative"
+                      control={<Radio />}
+                      label={t("purposeOfTravel.relationship.otherRelative")}
+                    />
+                    <FormControlLabel
+                      value="friend"
+                      control={<Radio />}
+                      label={t("purposeOfTravel.relationship.friend")}
+                    />
+                    <FormControlLabel
+                      value="other"
+                      control={<Radio />}
+                      label={t("purposeOfTravel.relationship.other")}
+                    />
                   </RadioGroup>
                 )}
               />

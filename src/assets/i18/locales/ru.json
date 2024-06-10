@@ -392,10 +392,16 @@
     "address": "Адрес",
     "phone": "Телефон",
     "email": "Эмейл",
-    "relationship": {
-      "question": "Кем приходится Вам спонсор?",
-      "child": "Ребенок",
-      "parent": "Родители"
+    "purposeOfTravel": {
+      "relationship": {
+        "question": "Кем доводится вам спонсор?",
+        "child": "Ребенок",
+        "parent": "Родитель",
+        "spouse": "Супруг/Супруга",
+        "otherRelative": "Другой родственник",
+        "friend": "Друг",
+        "other": "Другое"
+      }
     }
   },
 

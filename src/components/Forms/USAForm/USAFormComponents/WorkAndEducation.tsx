@@ -7,6 +7,7 @@ import { getErrorMessage } from "utils/formUtils";
 import ControlledTextField from "./ControlledTextField";
 import InfoDialog from "./InfoDialog";
 import { SectionTitle } from "components/Services/ServicesStyles";
+import { SmallLabel } from "../USAFormStyles";
 interface WorkAndEducationProps {
   control: Control<any>;
   errors: FieldErrors<any>;
@@ -228,9 +229,13 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />
@@ -255,9 +260,13 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />
@@ -284,9 +293,13 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />

@@ -11,6 +11,7 @@ import { getErrorMessage } from "utils/formUtils";
 
 import ControlledTextField from "./ControlledTextField";
 import { SectionTitle } from "components/Services/ServicesStyles";
+import { SmallLabel } from "../USAFormStyles";
 interface TravelHistoryProps {
   control: Control<any>;
   errors: FieldErrors<any>;
@@ -47,9 +48,13 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />
@@ -82,9 +87,13 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />
@@ -123,9 +132,13 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />
@@ -166,9 +179,13 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />
@@ -200,9 +217,13 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />
@@ -229,9 +250,13 @@ const TravelHistory: React.FC<TravelHistoryProps> = ({ control, errors }) => {
             <FormControlLabel
               value="yes"
               control={<Radio />}
-              label={t("yes")}
+              label={<SmallLabel>{t("yes")}</SmallLabel>}
             />
-            <FormControlLabel value="no" control={<Radio />} label={t("no")} />
+            <FormControlLabel
+              value="no"
+              control={<Radio />}
+              label={<SmallLabel>{t("no")}</SmallLabel>}
+            />
           </RadioGroup>
         )}
       />

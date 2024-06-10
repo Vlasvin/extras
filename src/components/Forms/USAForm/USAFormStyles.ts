@@ -53,3 +53,7 @@ export const CustomBox = styled(Box)`
 export const Spacer = styled.div`
   margin-bottom: 48px;
 `;
+
+export const SmallLabel = styled.span`
+  font-size: 16px;
+`;

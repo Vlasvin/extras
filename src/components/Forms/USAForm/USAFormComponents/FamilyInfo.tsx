@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import ControlledTextField from "./ControlledTextField";
 import { SectionTitle } from "components/Services/ServicesStyles";
-import { CustomBox } from "../USAFormStyles";
+import { CustomBox, SmallLabel } from "../USAFormStyles";
 import InfoDialog from "./InfoDialog";
 
 interface FamilyInfoProps {
@@ -96,12 +96,12 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
                   <FormControlLabel
                     value="yes"
                     control={<Radio />}
-                    label={t("yes")}
+                    label={<SmallLabel>{t("yes")}</SmallLabel>}
                   />
                   <FormControlLabel
                     value="no"
                     control={<Radio />}
-                    label={t("no")}
+                    label={<SmallLabel>{t("no")}</SmallLabel>}
                   />
                 </RadioGroup>
               )}
@@ -263,13 +263,13 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
                   <FormControlLabel
                     value="yes"
                     control={<Radio />}
-                    label={t("yes")}
+                    label={<SmallLabel>{t("yes")}</SmallLabel>}
                     onChange={() => setRelativesInUSA("yes")}
                   />
                   <FormControlLabel
                     value="no"
                     control={<Radio />}
-                    label={t("no")}
+                    label={<SmallLabel>{t("no")}</SmallLabel>}
                     onChange={() => setRelativesInUSA("no")}
                   />
                 </RadioGroup>
@@ -313,12 +313,12 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
                   <FormControlLabel
                     value="yes"
                     control={<Radio />}
-                    label={t("yes")}
+                    label={<SmallLabel>{t("yes")}</SmallLabel>}
                   />
                   <FormControlLabel
                     value="no"
                     control={<Radio />}
-                    label={t("no")}
+                    label={<SmallLabel>{t("no")}</SmallLabel>}
                   />
                 </RadioGroup>
               )}
