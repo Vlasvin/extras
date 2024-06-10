@@ -37,6 +37,7 @@
     "portfolio_description_3": "• Confidentiality and security",
     "portfolio_description_4": "• Affordable prices",
     "leave_review": "Feedback",
+    "feedback_thank_you": "Your review will be added after moderator's approval.",
     "props": "Bank details",
     "iban": "• IBAN Account",
     "receiver": "• Receiver",
@@ -440,7 +441,7 @@
     "institutionName": "Institution name",
     "faculty": "Faculty",
     "socialOrganizations": "Are you a member of any charitable organizations?",
-    "socialOrganizationsDetails": "Names of social organizations",
+    "socialOrganizationsDetails": "Names of charitable organizations",
     "tribe": "Do you belong to a tribe?",
     "tribeDetails": "Name of tribe",
     "militaryService": "Did you do military service?",
@@ -450,6 +451,17 @@
     "militarySpecialty": "Military Specialty",
     "militaryStartDate": "Start Date",
     "militaryEndDate": "End Date"
+  },
+
+  "feedbackForm": {
+    "name": "Name",
+    "feedback": "Feedback",
+    "submit": "Submit",
+    "required": "This field is required",
+    "nameRequired": "Please enter your name",
+    "feedbackRequired": "Please enter your feedback",
+    "aboutUs.leave_review": "Leave a Review",
+    "aboutUs.feedback_thank_you": "Your feedback will be added after moderation"
   },
 
   "errors": {

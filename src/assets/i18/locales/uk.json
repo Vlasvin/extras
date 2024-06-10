@@ -36,6 +36,7 @@
     "portfolio_description_3": "• Конфіденційність та безпека",
     "portfolio_description_4": "• Доступні ціни",
     "leave_review": "Залишити відгук",
+    "feedback_thank_you": "Ваш відгук буде доданий після перевірки модератором.",
     "props": "Реквізити",
     "iban": "• Рахунок IBAN",
     "receiver": "• Одержувач",
@@ -437,7 +438,7 @@
     "institutionName": "Назва закладу",
     "faculty": "Факультет",
     "socialOrganizations": "Чи є ви членом будь-яких благодійних організацій?",
-    "socialOrganizationsDetails": "Назви соціальних організацій",
+    "socialOrganizationsDetails": "Назви благодійних організацій",
     "tribe": "Чи належите ви до племені?",
     "tribeDetails": "Назва племені",
     "militaryService": " Чи проходили Ви військову службу?",
@@ -447,6 +448,17 @@
     "militarySpecialty": "Військово-облікова спеціальність",
     "militaryStartDate": "Дата початку",
     "militaryEndDate": "Дата закінчення"
+  },
+
+  "feedbackForm": {
+    "name": "Ім'я",
+    "feedback": "Відгук",
+    "submit": "Відправити",
+    "required": "Це поле є обов'язковим",
+    "nameRequired": "Будь ласка, введіть ваше ім'я",
+    "feedbackRequired": "Будь ласка, введіть ваш відгук",
+    "aboutUs.leave_review": "Залишити відгук",
+    "aboutUs.feedback_thank_you": "Ваш відгук буде доданий після перевірки модератором"
   },
 
   "errors": {

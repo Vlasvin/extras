@@ -37,6 +37,7 @@
     "portfolio_description_3": "• Конфиденциальность и безопасность",
     "portfolio_description_4": "• Доступные цены",
     "leave_review": "Оставить отзыв",
+    "feedback_thank_you": "Ваш отзыв будет добавлен после проверки модератором.",
     "props": "Реквизиты",
     "iban": "• Счет IBAN",
     "receiver": "• Получатель",
@@ -437,7 +438,7 @@
     "institutionName": "Название учреждения",
     "faculty": "Факультет",
     "socialOrganizations": "Вы являетесь членом каких-либо благотворительных организаций?",
-    "socialOrganizationsDetails": "Названия социальных организаций",
+    "socialOrganizationsDetails": "Названия благотворительных организаций",
     "tribe": "Вы принадлежите к племени?",
     "tribeDetails": "Название племени",
     "militaryService": "Проходили ли вы военную службу?",
@@ -447,6 +448,17 @@
     "militarySpecialty": "Военно-учётная специальность",
     "militaryStartDate": "Дата начала",
     "militaryEndDate": "Дата окончания"
+  },
+
+  "feedbackForm": {
+    "name": "Имя",
+    "feedback": "Отзыв",
+    "submit": "Отправить",
+    "required": "Это поле обязательно",
+    "nameRequired": "Пожалуйста, введите ваше имя",
+    "feedbackRequired": "Пожалуйста, введите ваш отзыв",
+    "aboutUs.leave_review": "Оставить отзыв",
+    "aboutUs.feedback_thank_you": "Ваш отзыв будет добавлен после проверки модератором"
   },
 
   "errors": {

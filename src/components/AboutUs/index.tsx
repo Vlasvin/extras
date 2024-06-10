@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Typography, Button, Grid } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Button,
+  Grid,
+  Snackbar,
+  Alert,
+} from "@mui/material";
 import { useSpring } from "@react-spring/web";
 
 import HeaderSection from "./AboutUsComponents/HeaderSection";
@@ -15,6 +22,7 @@ import PassportIcon from "assets/pictures/svg/PassportIcon";
 import TranslationIcon from "assets/pictures/svg/TranslationIcon";
 import DocIcon from "assets/pictures/svg/DocIcon";
 import ContactsSection from "./AboutUsComponents/ContactsSection";
+import FeedbackForm from "components/Forms/FeedbackForm";
 
 interface Section {
   title: string;
@@ -31,9 +39,9 @@ interface Service {
 
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
-
-  // eslint-disable-next-line
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
+  const [isFeedbackFormOpen, setIsFeedbackFormOpen] = useState(false);
+  const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
   const sections: Section[] = GetSections();
   const iconColor = useIconColor();
 
@@ -78,6 +86,23 @@ const AboutUs: React.FC = () => {
 
   const animation = useSpring(springConfig);
 
+  const handleFeedbackFormClose = (submitted: boolean) => {
+    setIsFeedbackFormOpen(false);
+    if (submitted) {
+      setIsSnackbarOpen(true);
+    }
+  };
+
+  const handleSnackbarClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setIsSnackbarOpen(false);
+  };
+
   return (
     <Container style={aboutUsStyles.root}>
       <HeaderSection />
@@ -88,10 +113,32 @@ const AboutUs: React.FC = () => {
       <Sections sections={sections} iconColor={iconColor} />
       <ContactsSection />
       <Grid item xs={12}>
-        <Button variant="outlined" color="primary">
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => setIsFeedbackFormOpen(true)}
+        >
           {t("aboutUs.leave_review")}
         </Button>
       </Grid>
+      <FeedbackForm
+        open={isFeedbackFormOpen}
+        onClose={handleFeedbackFormClose}
+      />
+      <Snackbar
+        open={isSnackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          {t("aboutUs.feedback_thank_you")}
+        </Alert>
+      </Snackbar>
     </Container>
   );
 };
