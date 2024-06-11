@@ -20,6 +20,7 @@ const VisasCanadaPage = React.lazy(() => import("./pages/VisaCanadaPage"));
 const VisasAustraliaPage = React.lazy(
   () => import("./pages/VisaAustraliaPage")
 );
+const AuthForm = React.lazy(() => import("./components/Forms/AuthForm"));
 
 const App = () => {
   const handleRegisterClick = () => {};
@@ -42,6 +43,7 @@ const App = () => {
               <Route path="/translations" element={<TranslationsPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/about-us" element={<AboutUsPage />} />
+              <Route path="/auth" element={<AuthForm />} />
             </Routes>
           </Suspense>
         </AppContainer>

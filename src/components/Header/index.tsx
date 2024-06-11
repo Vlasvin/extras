@@ -128,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
         <Box>
           <LanguageSelector iconColor="primary" />
           <ThemeSwitch />
-          <IconButton onClick={handleRegisterButtonClick} aria-label="account">
+          <IconButton component={Link} to="/auth" aria-label="account">
             <PersonIcon />
           </IconButton>
         </Box>

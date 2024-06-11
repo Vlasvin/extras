@@ -461,6 +461,20 @@
     "aboutUs.feedback_thank_you": "Ваш отзыв будет добавлен после проверки модератором"
   },
 
+  "auth": {
+    "register": "Регистрация",
+    "login": "Войти",
+    "email": "Электронная почта",
+    "password": "Пароль",
+    "confirm_password": "Подтвердите пароль",
+    "submit": "Отправить",
+    "already_have_account": "Уже есть аккаунт? Войти",
+    "dont_have_account": "Нет аккаунта? Зарегистрируйтесь",
+    "first_name": "Имя",
+    "last_name": "Фамилия",
+    "passwords_do_not_match": "Пароли не совпадают"
+  },
+
   "errors": {
     "required": "обязательно"
   }

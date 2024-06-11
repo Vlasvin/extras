@@ -461,6 +461,20 @@
     "aboutUs.feedback_thank_you": "Ваш відгук буде доданий після перевірки модератором"
   },
 
+  "auth": {
+    "register": "Реєстрація",
+    "login": "Увійти",
+    "email": "Електронна пошта",
+    "password": "Пароль",
+    "confirm_password": "Підтвердження пароля",
+    "submit": "Відправити",
+    "already_have_account": "Вже маєте акаунт? Увійти",
+    "dont_have_account": "Не маєте акаунту? Зареєструйтесь",
+    "first_name": "Ім'я",
+    "last_name": "Прізвище",
+    "passwords_do_not_match": "Паролі не збігаються"
+  },
+
   "errors": {
     "required": "є обов'язковим"
   }
