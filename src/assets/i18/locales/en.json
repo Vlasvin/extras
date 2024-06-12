@@ -478,6 +478,19 @@
     "passwords_do_not_match": "Passwords do not match"
   },
 
+  "email": {
+    "invalid": "Invalid email address",
+    "required": "Email is required"
+  },
+  "password": {
+    "min": "Password must be at least 6 characters",
+    "required": "Password is required",
+    "confirm": "Passwords must match"
+  },
+  "firstName": "First name is required",
+  "lastName": "Last name is required",
+  "confirmPassword": "Confirm password is required",
+
   "errors": {
     "required": "is required"
   }

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useForm, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "@mui/material";
-import schema from "validations/validationSchema";
+import { schema } from "validations/validationSchema";
 import PersonalInfo from "./USAFormComponents/PersonalInfo";
 import FamilyInfo from "./USAFormComponents/FamilyInfo";
 import PurposeOfTravel from "./USAFormComponents/PurposeOfTravel";

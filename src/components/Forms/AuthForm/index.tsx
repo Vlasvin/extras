@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import {
   Container,
   TextField,
@@ -12,32 +14,32 @@ import {
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import { authFormStyles } from "./AuthFormStyles";
+import { LoginFormData, RegisterFormData } from "services/formData";
+import { loginSchema, registerSchema } from "validations/validationSchema";
+import { getErrorMessage } from "utils/formUtils";
 
 const AuthForm: React.FC = () => {
   const { t } = useTranslation();
   const [isLogin, setIsLogin] = useState(true);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormData | RegisterFormData>({
+    resolver: yupResolver(isLogin ? loginSchema : registerSchema),
+  });
+
+  const onSubmit = (data: LoginFormData | RegisterFormData) => {
+    if (isLogin) {
+      console.log("Login:", data);
+    } else {
+      console.log("Register:", data);
+    }
+  };
 
   const handleSwitch = (event: React.SyntheticEvent, newValue: number) => {
     setIsLogin(newValue === 0);
-  };
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-
-    if (isLogin) {
-      console.log("Login:", { email, password });
-    } else {
-      if (password !== confirmPassword) {
-        alert(t("auth.passwords_do_not_match"));
-        return;
-      }
-      console.log("Register:", { firstName, lastName, email, password });
-    }
   };
 
   const springConfig = {
@@ -65,58 +67,88 @@ const AuthForm: React.FC = () => {
             <Tab label={t("auth.login")} />
             <Tab label={t("auth.register")} />
           </Tabs>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Grid container spacing={2}>
               {!isLogin && (
                 <>
                   <Grid item xs={12}>
-                    <TextField
-                      label={t("auth.first_name")}
-                      fullWidth
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      required
+                    <Controller
+                      name="firstName"
+                      control={control}
+                      render={({ field }) => (
+                        <TextField
+                          label={t("auth.first_name")}
+                          fullWidth
+                          {...field}
+                          error={!!getErrorMessage(errors, "firstName")}
+                          helperText={getErrorMessage(errors, "firstName")}
+                        />
+                      )}
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <TextField
-                      label={t("auth.last_name")}
-                      fullWidth
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      required
+                    <Controller
+                      name="lastName"
+                      control={control}
+                      render={({ field }) => (
+                        <TextField
+                          label={t("auth.last_name")}
+                          fullWidth
+                          {...field}
+                          error={!!getErrorMessage(errors, "lastName")}
+                          helperText={getErrorMessage(errors, "lastName")}
+                        />
+                      )}
                     />
                   </Grid>
                 </>
               )}
               <Grid item xs={12}>
-                <TextField
-                  label={t("auth.email")}
-                  fullWidth
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
+                <Controller
+                  name="email"
+                  control={control}
+                  render={({ field }) => (
+                    <TextField
+                      label={t("auth.email")}
+                      fullWidth
+                      {...field}
+                      error={!!getErrorMessage(errors, "email")}
+                      helperText={getErrorMessage(errors, "email")}
+                    />
+                  )}
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  label={t("auth.password")}
-                  type="password"
-                  fullWidth
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
+                <Controller
+                  name="password"
+                  control={control}
+                  render={({ field }) => (
+                    <TextField
+                      label={t("auth.password")}
+                      type="password"
+                      fullWidth
+                      {...field}
+                      error={!!getErrorMessage(errors, "password")}
+                      helperText={getErrorMessage(errors, "password")}
+                    />
+                  )}
                 />
               </Grid>
               {!isLogin && (
                 <Grid item xs={12}>
-                  <TextField
-                    label={t("auth.confirm_password")}
-                    type="password"
-                    fullWidth
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
+                  <Controller
+                    name="confirmPassword"
+                    control={control}
+                    render={({ field }) => (
+                      <TextField
+                        label={t("auth.confirm_password")}
+                        type="password"
+                        fullWidth
+                        {...field}
+                        error={!!getErrorMessage(errors, "confirmPassword")}
+                        helperText={getErrorMessage(errors, "confirmPassword")}
+                      />
+                    )}
                   />
                 </Grid>
               )}

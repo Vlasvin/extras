@@ -268,11 +268,41 @@ const workAndEducationSchema = yup.object().shape({
     .required(i18next.t("errors.required")),
 });
 
+const loginSchema = yup.object({
+  email: yup
+    .string()
+    .email(i18next.t("email.invalid"))
+    .required(i18next.t("email.required")),
+  password: yup
+    .string()
+    .min(6, i18next.t("password.min"))
+    .required(i18next.t("password.required")),
+});
+
+const registerSchema = yup.object({
+  firstName: yup.string().required(i18next.t("firstName")),
+  lastName: yup.string().required(i18next.t("lastName")),
+  email: yup
+    .string()
+    .email(i18next.t("email.invalid"))
+    .required(i18next.t("email.required")),
+  password: yup
+    .string()
+    .min(6, i18next.t("password.min"))
+    .required(i18next.t("password.required")),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), undefined], i18next.t("password.confirm"))
+    .required(i18next.t("confirmPassword")),
+});
+
 const schema = yup.object().shape({
   personalInfo: personalInfoSchema,
   familyInfo: familyInfoSchema,
   purposeOfTravel: purposeOfTravelSchema,
   travelHistory: travelHistorySchema,
   workAndEducation: workAndEducationSchema,
+  loginSchema: loginSchema,
+  registerSchema: registerSchema,
 });
-export default schema;
+export { schema, loginSchema, registerSchema };
