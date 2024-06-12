@@ -275,5 +275,4 @@ const schema = yup.object().shape({
   travelHistory: travelHistorySchema,
   workAndEducation: workAndEducationSchema,
 });
-
 export default schema;

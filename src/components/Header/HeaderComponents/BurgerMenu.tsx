@@ -91,7 +91,9 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
             <LanguageSelector iconColor="primary" />
             <ThemeSwitch />
             <IconButton
-              onClick={handleRegisterButtonClick}
+              onClick={toggleDrawer(false)}
+              component={Link}
+              to="/auth"
               aria-label="account"
             >
               <PersonIcon />

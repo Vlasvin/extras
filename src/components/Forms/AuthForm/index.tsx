@@ -56,7 +56,12 @@ const AuthForm: React.FC = () => {
           <Typography variant="h4" gutterBottom>
             {isLogin ? t("auth.login") : t("auth.register")}
           </Typography>
-          <Tabs value={isLogin ? 0 : 1} onChange={handleSwitch} centered>
+          <Tabs
+            value={isLogin ? 0 : 1}
+            onChange={handleSwitch}
+            centered
+            sx={{ marginBottom: 2 }}
+          >
             <Tab label={t("auth.login")} />
             <Tab label={t("auth.register")} />
           </Tabs>
