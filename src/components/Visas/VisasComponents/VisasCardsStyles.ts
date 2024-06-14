@@ -8,7 +8,6 @@ export const visasCardsStyles = {
   },
 
   button: {
-    fontFamily: "Montserrat, sans-serif",
     backgroundColor: "transparent",
     fontSize: "smaller",
     borderRadius: "10px",

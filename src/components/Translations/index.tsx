@@ -8,7 +8,6 @@ import {
   Grid,
   Button,
   Dialog,
-  DialogTitle,
   DialogContent,
   IconButton,
   Box,
@@ -88,22 +87,27 @@ const Translations: React.FC = () => {
           </Button>
         </Box>
 
-        <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
-          <DialogTitle>
-            {t("form.calculate_title")}
-            <IconButton
-              aria-label="close"
-              onClick={handleClose}
-              sx={{
-                position: "absolute",
-                right: 8,
-                top: 8,
-                color: (theme) => theme.palette.grey[500],
-              }}
-            >
-              <CloseIcon />
-            </IconButton>
-          </DialogTitle>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          fullWidth
+          maxWidth="sm"
+          PaperProps={{
+            sx: { borderRadius: 4 },
+          }}
+        >
+          <IconButton
+            aria-label="close"
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              right: 8,
+              top: 8,
+              color: (theme) => theme.palette.grey[500],
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
           <DialogContent>
             <TranslationForm />
           </DialogContent>

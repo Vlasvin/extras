@@ -40,6 +40,15 @@ const TranslationForm: React.FC = () => {
   return (
     <Container maxWidth="sm">
       <Box sx={{ mt: 6, mb: 6 }}>
+        <Typography
+          sx={{
+            fontSize: "24px",
+            textAlign: "center",
+            marginBottom: "28px",
+          }}
+        >
+          {t("form.calculate_title")}
+        </Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
             <Grid item xs={12}>

@@ -42,8 +42,16 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
   };
 
   return (
-    <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      PaperProps={{
+        sx: { borderRadius: 4 },
+      }}
+    >
+      <DialogTitle
+        sx={{ padding: "30px", fontSize: "24px", textAlign: "center" }}
+      >
         {t("aboutUs.leave_review")}
         <IconButton
           aria-label="close"
@@ -58,7 +66,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <DialogContent>
+      <DialogContent sx={{ padding: "30px" }}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -102,7 +110,12 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
               />
             </Grid>
             <Grid item xs={12}>
-              <Button type="submit" variant="outlined" color="primary">
+              <Button
+                type="submit"
+                variant="outlined"
+                color="primary"
+                sx={{ width: "100%" }}
+              >
                 {t("feedbackForm.submit")}
               </Button>
             </Grid>
