@@ -491,6 +491,17 @@
   "lastName": "Last name is required",
   "confirmPassword": "Confirm password is required",
 
+  "form": {
+    "calculate_title": "Calculate Translation Cost",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "language": "Translation Language",
+    "message": "Message",
+    "upload_file": "Upload File",
+    "submit": "Submit"
+  },
+
   "errors": {
     "required": "is required"
   }

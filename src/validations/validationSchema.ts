@@ -296,6 +296,38 @@ const registerSchema = yup.object({
     .required(i18next.t("confirmPassword")),
 });
 
+const SUPPORTED_FORMATS = [
+  "application/pdf",
+  "text/plain",
+  "application/msword",
+];
+
+const translationSchema = yup.object().shape({
+  name: yup.string().required("Name is required"),
+  phone: yup.string().required("Phone is required"),
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  language: yup.string().required("Translation language is required"),
+  message: yup.string().required("Message is required"),
+  file: yup
+    .mixed()
+    .required("File is required")
+    .test("fileSize", "File is too large", (value) => {
+      if (!value || !(value instanceof FileList)) {
+        return false;
+      }
+      return value[0]?.size <= 10485760;
+    })
+    .test("fileType", "Unsupported File Format", (value) => {
+      if (!value || !(value instanceof FileList)) {
+        return false;
+      }
+      return SUPPORTED_FORMATS.includes(value[0]?.type);
+    }),
+});
+
 const schema = yup.object().shape({
   personalInfo: personalInfoSchema,
   familyInfo: familyInfoSchema,
@@ -305,4 +337,4 @@ const schema = yup.object().shape({
   loginSchema: loginSchema,
   registerSchema: registerSchema,
 });
-export { schema, loginSchema, registerSchema };
+export { schema, loginSchema, registerSchema, translationSchema };
