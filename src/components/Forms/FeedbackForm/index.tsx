@@ -4,11 +4,12 @@ import {
   TextField,
   Button,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogTitle,
   Grid,
+  IconButton,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "react-i18next";
 
 interface FeedbackFormInputs {
@@ -42,7 +43,21 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
 
   return (
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>{t("aboutUs.leave_review")}</DialogTitle>
+      <DialogTitle>
+        {t("aboutUs.leave_review")}
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: "absolute",
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
       <DialogContent>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
@@ -94,11 +109,6 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
           </Grid>
         </form>
       </DialogContent>
-      <DialogActions>
-        <Button onClick={handleClose} color="primary">
-          {t("close")}
-        </Button>
-      </DialogActions>
     </Dialog>
   );
 };

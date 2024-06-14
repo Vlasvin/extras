@@ -303,24 +303,24 @@ const SUPPORTED_FORMATS = [
 ];
 
 const translationSchema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  phone: yup.string().required("Phone is required"),
+  name: yup.string().required(i18next.t("form.errors.name_required")),
+  phone: yup.string().required(i18next.t("form.errors.phone_required")),
   email: yup
     .string()
-    .email("Invalid email address")
-    .required("Email is required"),
-  language: yup.string().required("Translation language is required"),
-  message: yup.string().required("Message is required"),
+    .email(i18next.t("form.errors.email_invalid"))
+    .required(i18next.t("form.errors.email_required")),
+  language: yup.string().required(i18next.t("form.errors.language_required")),
+  message: yup.string().required(i18next.t("form.errors.message_required")),
   file: yup
     .mixed()
-    .required("File is required")
-    .test("fileSize", "File is too large", (value) => {
+    .required(i18next.t("form.errors.file_required"))
+    .test("fileSize", i18next.t("form.errors.file_size"), (value) => {
       if (!value || !(value instanceof FileList)) {
         return false;
       }
       return value[0]?.size <= 10485760;
     })
-    .test("fileType", "Unsupported File Format", (value) => {
+    .test("fileType", i18next.t("form.errors.file_type"), (value) => {
       if (!value || !(value instanceof FileList)) {
         return false;
       }

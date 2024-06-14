@@ -48,6 +48,33 @@
     "email": "• Email"
   },
 
+  "homepage": {
+    "intro": "If you are looking for quality translation and visa and document processing services, you will find them at our company Extras.",
+    "services_intro": "For over 16 years, we have been providing the following services to clients from Ukraine and around the world:",
+    "translation": {
+      "title": "Translation",
+      "services": [
+        "Written translation of documents",
+        "Translation of websites, books, memoirs",
+        "Simultaneous interpretation",
+        "Consecutive interpretation for Skype/Zoom conferences",
+        "Video translation with voice over"
+      ],
+      "more": "More about translations --->"
+    },
+    "visas": {
+      "title": "Visas",
+      "description": "Obtaining a visa to the USA, Canada, or Australia is a tedious and responsible task, so we advise you to entrust the application process to our consultants. Discounts are available for corporate clients.",
+      "more": "More about visas --->"
+    },
+    "legalization": {
+      "title": "Legalization",
+      "description": "Legalization of official documents is the procedure of confirming the validity of original official documents or certifying the authenticity of signatures of officials authorized to certify signatures on documents, as well as the validity of stamps and seals affixed to the document. Legalization in the prescribed manner gives the document the right to exist in international circulation.",
+      "apostille": "An apostille is a special stamp that allows the original document to be used in all countries that have ratified the Hague Convention.",
+      "more": "More about legalization and apostille --->"
+    }
+  },
+
   "home": {
     "visa_usa": {
       "title": "USA Visa",
@@ -499,7 +526,18 @@
     "language": "Translation Language",
     "message": "Message",
     "upload_file": "Upload File",
-    "submit": "Submit"
+    "submit": "Submit",
+    "errors": {
+      "name_required": "Name is required",
+      "phone_required": "Phone is required",
+      "email_required": "Email is required",
+      "email_invalid": "Invalid email address",
+      "language_required": "Translation language is required",
+      "message_required": "Message is required",
+      "file_required": "File is required",
+      "file_size": "File is too large",
+      "file_type": "Unsupported File Format"
+    }
   },
 
   "errors": {

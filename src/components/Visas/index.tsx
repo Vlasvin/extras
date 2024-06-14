@@ -26,6 +26,7 @@ import {
   CountryBox,
   VisaListItem,
 } from "./VisasStyles";
+import VisasCards from "./VisasComponents/VisasCards";
 
 const Visas: React.FC = () => {
   const { t } = useTranslation();
@@ -117,6 +118,7 @@ const Visas: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: t("visa.additional_info") }}
         marginBottom={6}
       />
+      <VisasCards />
       <CountryContainer ref={countryRef}>
         <animated.div style={countrySpring}>
           <CountryBox onClick={() => handleCountryClick("usa")}>

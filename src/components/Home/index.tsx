@@ -1,74 +1,64 @@
-import { Typography, Grid, Button, Container } from "@mui/material";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import { homeStyles } from "./HomeStyles";
-import { useState } from "react";
-import homeData from "services/homeData";
+import {
+  Container,
+  Typography,
+  List,
+  ListItem,
+  Button,
+  Box,
+} from "@mui/material";
+import { SectionTitle } from "components/Translations/TranslationsStyles";
+import { Intro } from "./HomeStyles";
 
-import USAMapIcon from "assets/pictures/svg/UsaMap";
-import CanadaMapIcon from "assets/pictures/svg/CanadaMap";
-import AustraliaMapIcon from "assets/pictures/svg/AustraliaMap";
-
-const Home = () => {
+const Home: React.FC = () => {
   const { t } = useTranslation();
-  const [visas] = useState(homeData);
-
-  const iconSize = 100;
+  const translationServices: string[] = t("homepage.translation.services", {
+    returnObjects: true,
+  }) as string[];
+  const visaDescription: string = t("homepage.visas.description");
+  const legalizationDescription: string = t(
+    "homepage.legalization.description"
+  );
+  const legalizationApostille: string = t("homepage.legalization.apostille");
 
   return (
-    <Container style={{ padding: 0 }}>
-      {visas.map((visa, index) => (
-        <div key={index}>
-          <Typography variant="h1" style={homeStyles.title}>
-            {t(visa.title)}
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={4}>
-              <div style={{ position: "relative" }}>
-                <img src={visa.image} alt={visa.title} style={homeStyles.img} />
-                <div
-                  style={
-                    visa.country === "USA"
-                      ? homeStyles.svgUsa
-                      : homeStyles.svgCanada
-                  }
-                >
-                  {visa.country === "USA" && <USAMapIcon size={iconSize} />}
-                  {visa.country === "Canada" && (
-                    <CanadaMapIcon size={iconSize} />
-                  )}
-                  {visa.country === "Australia" && (
-                    <AustraliaMapIcon size={iconSize} />
-                  )}
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={8} style={{ paddingLeft: "32px" }}>
-              <Typography
-                variant="body1"
-                style={{ marginBottom: "16px" }}
-                dangerouslySetInnerHTML={{ __html: t(visa.description) }}
-              />
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  component={Link}
-                  to={`/visas/${visa.country.toLowerCase()}`}
-                  style={homeStyles.button}
-                >
-                  {t(visa.details)}
-                </Button>
-              </div>
-            </Grid>
-          </Grid>
-        </div>
-      ))}
+    <Container>
+      <Intro variant="h4" gutterBottom>
+        {t("homepage.intro")}
+      </Intro>
+      <Intro variant="h6" gutterBottom mb={4}>
+        {t("homepage.services_intro")}
+      </Intro>
+
+      <Box mb={4}>
+        <SectionTitle variant="h5" gutterBottom>
+          {t("homepage.translation.title")}
+        </SectionTitle>
+        <List>
+          {translationServices.map((service, index) => (
+            <ListItem key={index}>• {service}</ListItem>
+          ))}
+        </List>
+        <Button variant="outlined">{t("homepage.translation.more")}</Button>
+      </Box>
+
+      <Box mb={4}>
+        <SectionTitle variant="h5" gutterBottom>
+          {t("homepage.visas.title")}
+        </SectionTitle>
+        <Typography paragraph>{visaDescription}</Typography>
+        <Button variant="outlined">{t("homepage.visas.more")}</Button>
+      </Box>
+
+      <Box mb={4}>
+        <SectionTitle variant="h5" gutterBottom>
+          {t("homepage.legalization.title")}
+        </SectionTitle>
+        <Typography paragraph>{legalizationDescription}</Typography>
+        <Typography paragraph>{legalizationApostille}</Typography>
+        <Button variant="outlined">{t("homepage.legalization.more")}</Button>
+      </Box>
     </Container>
   );
 };

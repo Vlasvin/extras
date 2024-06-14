@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Container,
   Typography,
@@ -13,7 +14,7 @@ import {
   Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { useTranslation } from "react-i18next";
+import TranslationForm from "components/Forms/TranslateForm";
 
 import {
   SectionTitle,
@@ -23,7 +24,6 @@ import {
   Title,
 } from "./TranslationsStyles";
 import TranslationsImg from "assets/pictures/jpg/translate.jpg";
-import TranslationForm from "components/Forms/TranslateForm";
 
 const useArrayTranslation = (key: string): string[] => {
   const { t } = useTranslation();
