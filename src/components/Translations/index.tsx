@@ -7,13 +7,13 @@ import {
   ListItemText,
   Grid,
   Button,
-  Dialog,
-  DialogContent,
   IconButton,
   Box,
+  useTheme,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { useTransition, animated } from "@react-spring/web";
 import TranslationForm from "components/Forms/TranslateForm";
+import CloseIcon from "@mui/icons-material/Close";
 
 import {
   SectionTitle,
@@ -32,6 +32,7 @@ const useArrayTranslation = (key: string): string[] => {
 const Translations: React.FC = () => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
 
   const services = useArrayTranslation("translation.services");
   const oralServices = useArrayTranslation(
@@ -45,6 +46,13 @@ const Translations: React.FC = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const transitions = useTransition(open, {
+    from: { transform: "translateY(-100%)", opacity: 0 },
+    enter: { transform: "translateY(0%)", opacity: 1 },
+    leave: { transform: "translateY(-100%)", opacity: 0 },
+    config: { duration: 500 },
+  });
 
   return (
     <Container>
@@ -78,7 +86,7 @@ const Translations: React.FC = () => {
         <Typography paragraph>
           {t("translation.writtenTranslation.description")}
         </Typography>
-        <Typography paragraph>
+        <Typography paragraph mb={6}>
           {t("translation.writtenTranslation.details")}
         </Typography>
         <Box display="flex" justifyContent="center" my={2} mb={6}>
@@ -87,31 +95,55 @@ const Translations: React.FC = () => {
           </Button>
         </Box>
 
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          fullWidth
-          maxWidth="sm"
-          PaperProps={{
-            sx: { borderRadius: 4 },
-          }}
-        >
-          <IconButton
-            aria-label="close"
-            onClick={handleClose}
-            sx={{
-              position: "absolute",
-              right: 8,
-              top: 8,
-              color: (theme) => theme.palette.grey[500],
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-          <DialogContent>
-            <TranslationForm />
-          </DialogContent>
-        </Dialog>
+        {transitions(
+          (styles, item) =>
+            item && (
+              <animated.div
+                style={{
+                  ...styles,
+                  position: "fixed",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  zIndex: 1300,
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                }}
+                onClick={handleClose}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: theme.palette.background.paper,
+                    color: theme.palette.text.primary,
+                    borderRadius: 4,
+                    position: "relative",
+                    width: "100%",
+                    maxWidth: "600px",
+                    padding: "16px",
+                    boxShadow: theme.shadows[5],
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <IconButton
+                    aria-label="close"
+                    onClick={handleClose}
+                    sx={{
+                      position: "absolute",
+                      right: 8,
+                      top: 8,
+                      color: (theme) => theme.palette.grey[500],
+                    }}
+                  >
+                    <CloseIcon />
+                  </IconButton>
+                  <TranslationForm onClose={handleClose} />
+                </Box>
+              </animated.div>
+            )
+        )}
 
         <SectionTitle variant="h6" gutterBottom>
           {t("translation.certificationTypes.title")}

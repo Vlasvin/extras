@@ -8,6 +8,9 @@ import {
   Typography,
   Grid,
   Box,
+  List,
+  ListItem,
+  ListItemText,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { translationSchema } from "validations/validationSchema";
@@ -22,19 +25,27 @@ export interface IFormInput {
   file: FileList;
 }
 
-const TranslationForm: React.FC = () => {
+interface TranslationFormProps {
+  onClose: () => void;
+}
+
+const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
   const { t } = useTranslation();
   const {
     control,
     handleSubmit,
     formState: { errors },
     setValue,
+    watch,
   } = useForm<IFormInput>({
     resolver: yupResolver(translationSchema) as any,
   });
 
+  const files = watch("file");
+
   const onSubmit = (data: IFormInput) => {
     console.log("Form Data:", data);
+    onClose();
   };
 
   return (
@@ -146,6 +157,14 @@ const TranslationForm: React.FC = () => {
                   {getErrorMessage(errors, "file")}
                 </Typography>
               )}
+              <List>
+                {files &&
+                  Array.from(files).map((file, index) => (
+                    <ListItem key={index}>
+                      <ListItemText primary={file.name} />
+                    </ListItem>
+                  ))}
+              </List>
             </Grid>
             <Grid item xs={12}>
               <Button

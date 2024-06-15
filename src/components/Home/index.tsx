@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         &nbsp;&nbsp;{t("homepage.services_intro")}
       </Intro>
 
-      <Box mb={4}>
+      <Box mb={10}>
         <SectionTitle variant="h5" gutterBottom>
           {t("homepage.translation.title")}
         </SectionTitle>
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         </Link>
       </Box>
 
-      <Box mb={4}>
+      <Box mb={10}>
         <SectionTitle variant="h5" gutterBottom>
           {t("homepage.visas.title")}
         </SectionTitle>
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
         </Link>
       </Box>
 
-      <Box mb={4}>
+      <Box mb={6}>
         <SectionTitle variant="h5" gutterBottom>
           {t("homepage.legalization.title")}
         </SectionTitle>
