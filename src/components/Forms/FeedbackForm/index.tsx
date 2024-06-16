@@ -114,7 +114,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
                 type="submit"
                 variant="outlined"
                 color="primary"
-                sx={{ width: "100%" }}
+                sx={{ width: "100%", mb: 4 }}
               >
                 {t("feedbackForm.submit")}
               </Button>
