@@ -13,14 +13,13 @@ import { useSpring } from "@react-spring/web";
 import HeaderSection from "./AboutUsComponents/HeaderSection";
 import ServicesSection from "./AboutUsComponents/ServicesSection";
 import Sections from "./AboutUsComponents/Sections";
-
-import { GetSections } from "services/servicesData";
-import useIconColor from "hooks/useIconColor";
-import { aboutUsStyles } from "./AboutUsStyles";
-
 import ContactsSection from "./AboutUsComponents/ContactsSection";
 import FeedbackForm from "components/Forms/FeedbackForm";
+
 import useServicesData from "hooks/useServicesData";
+import useIconColor from "hooks/useIconColor";
+import { GetSections } from "services/servicesData";
+import { aboutUsStyles } from "./AboutUsStyles";
 
 interface Section {
   title: string;
