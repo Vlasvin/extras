@@ -106,7 +106,11 @@ const Translations: React.FC = () => {
           }}
         >
           <DialogTitle
-            sx={{ padding: "30px", fontSize: "24px", textAlign: "center" }}
+            sx={{
+              padding: "40px 30px 0",
+              fontSize: "24px",
+              textAlign: "center",
+            }}
           >
             {t("form.calculate_title")}
             <IconButton
