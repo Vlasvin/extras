@@ -4,6 +4,7 @@ export const useMenuItems = () => {
   const { t } = useTranslation();
 
   const menuItems = [
+    { label: t("homePage"), link: "/" },
     { label: t("visas"), link: "/visas" },
     { label: t("translations"), link: "/translations" },
     { label: t("services"), link: "/services" },

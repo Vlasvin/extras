@@ -50,7 +50,7 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
 
   return (
     <Container maxWidth="sm">
-      <Box sx={{ mt: 6, mb: 6 }}>
+      <Box sx={{ mt: 6, mb: 6, mr: 4 }}>
         <Typography
           sx={{
             fontSize: "24px",
