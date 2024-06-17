@@ -8,6 +8,8 @@ import {
   DialogTitle,
   Grid,
   IconButton,
+  Slide,
+  SlideProps,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "react-i18next";
@@ -21,6 +23,13 @@ interface FeedbackFormProps {
   open: boolean;
   onClose: (submitted: boolean) => void;
 }
+
+const Transition = React.forwardRef<unknown, SlideProps>(function Transition(
+  props,
+  ref
+) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 
 const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
   const { t } = useTranslation();
@@ -45,6 +54,8 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
     <Dialog
       open={open}
       onClose={handleClose}
+      TransitionComponent={Transition}
+      keepMounted
       PaperProps={{
         sx: { borderRadius: 4 },
       }}

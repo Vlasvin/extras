@@ -31,7 +31,6 @@ interface Section {
 const AboutUs: React.FC = () => {
   const services = useServicesData();
   const { t } = useTranslation();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSectionsLoaded, setIsSectionsLoaded] = useState(false);
   const [isFeedbackFormOpen, setIsFeedbackFormOpen] = useState(false);
   const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
