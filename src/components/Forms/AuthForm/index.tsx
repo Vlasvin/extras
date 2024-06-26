@@ -17,6 +17,16 @@ import { authFormStyles } from "./AuthFormStyles";
 import { LoginFormData, RegisterFormData } from "services/formData";
 import { loginSchema, registerSchema } from "validations/validationSchema";
 import { getErrorMessage } from "utils/formUtils";
+import axios from "axios";
+
+type BackendError = {
+  response?: {
+    data: {
+      message: string;
+    };
+  };
+  message: string;
+};
 
 const AuthForm: React.FC = () => {
   const { t } = useTranslation();
@@ -30,11 +40,23 @@ const AuthForm: React.FC = () => {
     resolver: yupResolver(isLogin ? loginSchema : registerSchema),
   });
 
-  const onSubmit = (data: LoginFormData | RegisterFormData) => {
-    if (isLogin) {
-      console.log("Login:", data);
-    } else {
-      console.log("Register:", data);
+  const onSubmit = async (data: LoginFormData | RegisterFormData) => {
+    try {
+      if (isLogin) {
+        const response = await axios.post("/auth/login", data);
+        console.log("Login success:", response.data);
+      } else {
+        const response = await axios.post("/auth/register", data);
+        console.log("Registration success:", response.data);
+      }
+    } catch (error) {
+      const backendError = error as BackendError;
+      console.error(
+        "Error:",
+        backendError.response
+          ? backendError.response.data.message
+          : backendError.message
+      );
     }
   };
 
