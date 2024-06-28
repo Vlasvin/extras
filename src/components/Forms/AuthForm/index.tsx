@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
@@ -17,7 +18,7 @@ import { authFormStyles } from "./AuthFormStyles";
 import { LoginFormData, RegisterFormData } from "services/formData";
 import { loginSchema, registerSchema } from "validations/validationSchema";
 import { getErrorMessage } from "utils/formUtils";
-import axios from "axios";
+import { useAuth } from "context/AuthContext";
 
 type BackendError = {
   response?: {
@@ -30,11 +31,13 @@ type BackendError = {
 
 const AuthForm: React.FC = () => {
   const { t } = useTranslation();
+  const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
 
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<LoginFormData | RegisterFormData>({
     resolver: yupResolver(isLogin ? loginSchema : registerSchema),
@@ -43,12 +46,23 @@ const AuthForm: React.FC = () => {
   const onSubmit = async (data: LoginFormData | RegisterFormData) => {
     try {
       if (isLogin) {
-        const response = await axios.post("/auth/login", data);
-        console.log("Login success:", response.data);
+        const response = await axios.post(
+          "http://localhost:3001/auth/login",
+          data
+        );
+        console.log("Login response:", response.data);
+        login(response.data.access_token);
+        reset();
       } else {
-        const response = await axios.post("/auth/register", data);
-        console.log("Registration success:", response.data);
+        const response = await axios.post(
+          "http://localhost:3001/auth/register",
+          data
+        );
+        console.log("Register response:", response.data);
+        login(response.data.access_token);
       }
+      reset();
+      setIsLogin(true);
     } catch (error) {
       const backendError = error as BackendError;
       console.error(
