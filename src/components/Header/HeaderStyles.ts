@@ -1,3 +1,6 @@
+import { Button } from "@mui/material";
+import { styled } from "@mui/system";
+
 export const headerStyles = {
   toolbar: {
     justifyContent: "space-between",
@@ -22,3 +25,10 @@ export const headerStyles = {
     height: "64px",
   },
 };
+
+export const DialogBtn = styled(Button)(({ theme }) => ({
+  backgroundColor: "transparent",
+  fontSize: "smaller",
+  borderRadius: "10px",
+  padding: "2px 10px",
+}));

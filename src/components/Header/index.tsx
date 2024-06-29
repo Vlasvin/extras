@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -25,7 +25,7 @@ import ThemeSwitch from "components/Header/HeaderComponents/ThemeSwitch";
 import LanguageSelector from "components/Header/HeaderComponents/LanguageSelector";
 import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
 
-import { headerStyles } from "./HeaderStyles";
+import { DialogBtn, headerStyles } from "./HeaderStyles";
 import { useMenuItems, useVisaMenuItems } from "hooks/menuHooks";
 import { useAuth } from "context/AuthContext";
 
@@ -41,40 +41,28 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const location = useLocation();
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const [isMenuOpening, setIsMenuOpening] = useState(false);
-  const [openLogoutDialog, setOpenLogoutDialog] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [isVisasMenuOpen, setIsVisasMenuOpen] = useState(false);
+
+  const handleDialogOpen = () => setOpenDialog(true);
+  const handleDialogClose = () => setOpenDialog(false);
+
+  const handleLogout = () => {
+    logout();
+    handleDialogClose();
+  };
 
   const menuItems = useMenuItems();
   const visaMenuItems = useVisaMenuItems();
 
-  const handleRegisterButtonClick = () => {
-    onRegisterClick();
-  };
-
   const handleVisasMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setIsMenuOpening(true);
     setAnchorEl(event.currentTarget);
+    setIsVisasMenuOpen(true);
   };
 
   const handleVisasMenuClose = () => {
-    if (!isMenuOpening) {
-      setAnchorEl(null);
-    }
-    setIsMenuOpening(false);
-  };
-
-  const handleLogoutClick = () => {
-    setOpenLogoutDialog(true);
-  };
-
-  const handleLogoutConfirm = () => {
-    setOpenLogoutDialog(false);
-    logout();
-  };
-
-  const handleLogoutCancel = () => {
-    setOpenLogoutDialog(false);
+    setAnchorEl(null);
+    setIsVisasMenuOpen(false);
   };
 
   const textColor = themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
@@ -95,23 +83,23 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           menuItems.map((item, index) => (
             <Button
               id="demo-positioned-button"
-              aria-controls={open ? "demo-positioned-menu" : undefined}
+              aria-controls={
+                isVisasMenuOpen ? "demo-positioned-menu" : undefined
+              }
               aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
+              aria-expanded={isVisasMenuOpen ? "true" : undefined}
               key={index}
               color={"inherit"}
               component={Link}
               to={item.link}
               onMouseEnter={(event) => {
-                event.preventDefault();
                 if (item.label === t("visas")) {
                   handleVisasMenuOpen(event);
                 }
               }}
-              onMouseLeave={handleVisasMenuClose}
               sx={{
                 ...headerStyles.button,
-                color: { textColor },
+                color: textColor,
                 fontWeight: location.pathname === item.link ? "bold" : "normal",
               }}
             >
@@ -123,9 +111,8 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           id="demo-positioned-menu"
           aria-labelledby="demo-positioned-button"
           anchorEl={anchorEl}
-          open={open}
+          open={isVisasMenuOpen}
           onClose={handleVisasMenuClose}
-          onMouseLeave={handleVisasMenuClose}
           anchorOrigin={{
             vertical: "bottom",
             horizontal: "center",
@@ -134,6 +121,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
             vertical: "top",
             horizontal: "center",
           }}
+          onMouseLeave={handleVisasMenuClose}
         >
           {visaMenuItems.map((menuItem) => (
             <MenuItem
@@ -152,38 +140,9 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           <LanguageSelector iconColor="primary" />
           <ThemeSwitch />
           {user ? (
-            <>
-              <IconButton onClick={handleLogoutClick} aria-label="logout">
-                <LogoutIcon />
-              </IconButton>
-              <Dialog
-                open={openLogoutDialog}
-                onClose={handleLogoutCancel}
-                aria-labelledby="logout-dialog-title"
-                aria-describedby="logout-dialog-description"
-              >
-                <DialogTitle id="logout-dialog-title">
-                  {t("auth.logout_confirm")}
-                </DialogTitle>
-                <DialogContent>
-                  <DialogContentText id="logout-dialog-description">
-                    {t("auth.logout_message")}
-                  </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleLogoutCancel} color="primary">
-                    {t("auth.cancel")}
-                  </Button>
-                  <Button
-                    onClick={handleLogoutConfirm}
-                    color="primary"
-                    autoFocus
-                  >
-                    {t("auth.logout")}
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            </>
+            <IconButton onClick={handleDialogOpen} aria-label="logout">
+              <LogoutIcon />
+            </IconButton>
           ) : (
             <IconButton component={Link} to="/auth" aria-label="account">
               <PersonIcon />
@@ -191,7 +150,43 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           )}
         </Box>
       )}
-      <BurgerMenu handleRegisterButtonClick={handleRegisterButtonClick} />
+      <BurgerMenu handleRegisterButtonClick={onRegisterClick} />
+      <Dialog
+        open={openDialog}
+        onClose={handleDialogClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        sx={{ "& .MuiPaper-root": { borderRadius: "10px" } }}
+      >
+        <DialogTitle id="alert-dialog-title" sx={{ textAlign: "center" }}>
+          {t("auth.logout_confirm")}
+        </DialogTitle>
+        <DialogContent sx={{ paddingBottom: "10px" }}>
+          <DialogContentText
+            id="alert-dialog-description"
+            sx={{ textAlign: "center" }}
+          >
+            {t("auth.logout_message")}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions sx={{ justifyContent: "center", paddingBottom: "16px" }}>
+          <DialogBtn
+            onClick={handleDialogClose}
+            variant="outlined"
+            color="primary"
+          >
+            {t("auth.cancel")}
+          </DialogBtn>
+          <DialogBtn
+            onClick={handleLogout}
+            variant="outlined"
+            color="primary"
+            autoFocus
+          >
+            {t("auth.logout")}
+          </DialogBtn>
+        </DialogActions>
+      </Dialog>
     </Toolbar>
   );
 };
