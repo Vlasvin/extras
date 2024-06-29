@@ -14,7 +14,9 @@ import {
 import { useSprings, animated, config, useSpring } from "@react-spring/web";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
+import { useAuth } from "context/AuthContext";
 import FlippingCard from "./VisaComponents/FlippingCard";
 import {
   USATitle,
@@ -50,6 +52,8 @@ const Visa: React.FC<VisaProps> = ({
   const { t } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const [index, setIndex] = useState(0);
 
   const [springs, api] = useSprings(images.length, (i) => ({
@@ -87,6 +91,14 @@ const Visa: React.FC<VisaProps> = ({
         <br />
       </React.Fragment>
     ));
+
+  const handleApplyClick = () => {
+    if (user) {
+      navigate("/visas/usa/visa-form");
+    } else {
+      navigate("/auth");
+    }
+  };
 
   return (
     <Container style={{ padding: 0 }}>
@@ -180,9 +192,7 @@ const Visa: React.FC<VisaProps> = ({
           variant="outlined"
           color="primary"
           sx={{ mt: 2 }}
-          onClick={() => {
-            window.location.href = "usa/visa-form";
-          }}
+          onClick={handleApplyClick}
         >
           {t(applyButtonKey)}
         </Button>

@@ -500,7 +500,11 @@
     "dont_have_account": "Нет аккаунта? Зарегистрируйтесь",
     "first_name": "Имя",
     "last_name": "Фамилия",
-    "passwords_do_not_match": "Пароли не совпадают"
+    "passwords_do_not_match": "Пароли не совпадают",
+    "logout_confirm": "Выход",
+    "logout_message": "Вы уверены, что хотите выйти?",
+    "cancel": "Отмена",
+    "logout": "Выйти"
   },
 
   "email": {

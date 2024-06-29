@@ -503,7 +503,11 @@
     "dont_have_account": "Don't have an account? Register",
     "first_name": "First Name",
     "last_name": "Last Name",
-    "passwords_do_not_match": "Passwords do not match"
+    "passwords_do_not_match": "Passwords do not match",
+    "logout_confirm": "Logout",
+    "logout_message": "Are you sure you want to log out?",
+    "cancel": "Cancel",
+    "logout": "Logout"
   },
 
   "email": {

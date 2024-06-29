@@ -9,8 +9,14 @@ import {
   useMediaQuery,
   MenuItem,
   Menu,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
+import LogoutIcon from "@mui/icons-material/Logout";
 import DownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import { ThemeContext } from "redux/ThemeContext";
@@ -21,6 +27,7 @@ import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
 
 import { headerStyles } from "./HeaderStyles";
 import { useMenuItems, useVisaMenuItems } from "hooks/menuHooks";
+import { useAuth } from "context/AuthContext";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -29,12 +36,15 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const { t } = useTranslation();
   const { themeMode } = useContext(ThemeContext) as IThemeContext;
+  const { user, logout } = useAuth();
   const isMobile = useMediaQuery("(max-width:900px)");
   const location = useLocation();
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const [isMenuOpening, setIsMenuOpening] = useState(false);
+  const [openLogoutDialog, setOpenLogoutDialog] = useState(false);
+
   const menuItems = useMenuItems();
   const visaMenuItems = useVisaMenuItems();
 
@@ -52,6 +62,19 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
       setAnchorEl(null);
     }
     setIsMenuOpening(false);
+  };
+
+  const handleLogoutClick = () => {
+    setOpenLogoutDialog(true);
+  };
+
+  const handleLogoutConfirm = () => {
+    setOpenLogoutDialog(false);
+    logout();
+  };
+
+  const handleLogoutCancel = () => {
+    setOpenLogoutDialog(false);
   };
 
   const textColor = themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
@@ -128,9 +151,44 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
         <Box>
           <LanguageSelector iconColor="primary" />
           <ThemeSwitch />
-          <IconButton component={Link} to="/auth" aria-label="account">
-            <PersonIcon />
-          </IconButton>
+          {user ? (
+            <>
+              <IconButton onClick={handleLogoutClick} aria-label="logout">
+                <LogoutIcon />
+              </IconButton>
+              <Dialog
+                open={openLogoutDialog}
+                onClose={handleLogoutCancel}
+                aria-labelledby="logout-dialog-title"
+                aria-describedby="logout-dialog-description"
+              >
+                <DialogTitle id="logout-dialog-title">
+                  {t("auth.logout_confirm")}
+                </DialogTitle>
+                <DialogContent>
+                  <DialogContentText id="logout-dialog-description">
+                    {t("auth.logout_message")}
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleLogoutCancel} color="primary">
+                    {t("auth.cancel")}
+                  </Button>
+                  <Button
+                    onClick={handleLogoutConfirm}
+                    color="primary"
+                    autoFocus
+                  >
+                    {t("auth.logout")}
+                  </Button>
+                </DialogActions>
+              </Dialog>
+            </>
+          ) : (
+            <IconButton component={Link} to="/auth" aria-label="account">
+              <PersonIcon />
+            </IconButton>
+          )}
         </Box>
       )}
       <BurgerMenu handleRegisterButtonClick={handleRegisterButtonClick} />

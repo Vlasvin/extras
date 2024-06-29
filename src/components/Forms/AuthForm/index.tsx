@@ -31,7 +31,7 @@ type BackendError = {
 
 const AuthForm: React.FC = () => {
   const { t } = useTranslation();
-  const { login } = useAuth();
+  const { login, register } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
 
   const {
@@ -50,16 +50,9 @@ const AuthForm: React.FC = () => {
           "http://localhost:3001/auth/login",
           data
         );
-        console.log("Login response:", response.data);
-        login(response.data.access_token);
-        reset();
+        login(response.data.token, response.data.user);
       } else {
-        const response = await axios.post(
-          "http://localhost:3001/auth/register",
-          data
-        );
-        console.log("Register response:", response.data);
-        login(response.data.access_token);
+        await register(data);
       }
       reset();
       setIsLogin(true);
