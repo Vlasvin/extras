@@ -33,6 +33,7 @@ const AuthForm: React.FC = () => {
   const { t } = useTranslation();
   const { login, register } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const {
     control,
@@ -56,19 +57,24 @@ const AuthForm: React.FC = () => {
       }
       reset();
       setIsLogin(true);
+      setErrorMessage(null);
     } catch (error) {
       const backendError = error as BackendError;
-      console.error(
-        "Error:",
-        backendError.response
-          ? backendError.response.data.message
-          : backendError.message
-      );
+      const message = backendError.response
+        ? backendError.response.data.message
+        : backendError.message;
+      if (message === "User with this email does not exist") {
+        setErrorMessage(t("auth.user_not_found"));
+      } else {
+        setErrorMessage(message);
+      }
+      console.error("Error:", message);
     }
   };
 
   const handleSwitch = (event: React.SyntheticEvent, newValue: number) => {
     setIsLogin(newValue === 0);
+    setErrorMessage(null);
   };
 
   const springConfig = {
@@ -98,6 +104,11 @@ const AuthForm: React.FC = () => {
           </Tabs>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Grid container spacing={2}>
+              {errorMessage && (
+                <Grid item xs={12}>
+                  <Typography color="error">{errorMessage}</Typography>
+                </Grid>
+              )}
               {!isLogin && (
                 <>
                   <Grid item xs={12}>

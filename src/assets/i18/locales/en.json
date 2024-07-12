@@ -507,7 +507,9 @@
     "logout_confirm": "Logout",
     "logout_message": "Are you sure you want to log out?",
     "cancel": "Cancel",
-    "logout": "Logout"
+    "logout": "Logout",
+    "email_exists": "Email already exists",
+    "user_not_found": "User with this email does not exist"
   },
 
   "email": {
