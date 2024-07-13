@@ -509,7 +509,8 @@
     "cancel": "Cancel",
     "logout": "Logout",
     "email_exists": "Email already exists",
-    "user_not_found": "User with this email does not exist"
+    "user_not_found": "User with this email does not exist",
+    "invalid_password": "Invalid password"
   },
 
   "email": {

@@ -33,7 +33,8 @@ const AuthForm: React.FC = () => {
   const { t } = useTranslation();
   const { login, register } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [passwordError, setPasswordError] = useState<string | null>(null);
 
   const {
     control,
@@ -57,16 +58,20 @@ const AuthForm: React.FC = () => {
       }
       reset();
       setIsLogin(true);
-      setErrorMessage(null);
+      setEmailError(null);
+      setPasswordError(null);
     } catch (error) {
       const backendError = error as BackendError;
       const message = backendError.response
         ? backendError.response.data.message
         : backendError.message;
       if (message === "User with this email does not exist") {
-        setErrorMessage(t("auth.user_not_found"));
+        setEmailError(t("auth.user_not_found"));
+      } else if (message === "Invalid credentials") {
+        setPasswordError(t("auth.invalid_password"));
       } else {
-        setErrorMessage(message);
+        setEmailError(null);
+        setPasswordError(null);
       }
       console.error("Error:", message);
     }
@@ -74,7 +79,8 @@ const AuthForm: React.FC = () => {
 
   const handleSwitch = (event: React.SyntheticEvent, newValue: number) => {
     setIsLogin(newValue === 0);
-    setErrorMessage(null);
+    setEmailError(null);
+    setPasswordError(null);
   };
 
   const springConfig = {
@@ -104,11 +110,6 @@ const AuthForm: React.FC = () => {
           </Tabs>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Grid container spacing={2}>
-              {errorMessage && (
-                <Grid item xs={12}>
-                  <Typography color="error">{errorMessage}</Typography>
-                </Grid>
-              )}
               {!isLogin && (
                 <>
                   <Grid item xs={12}>
@@ -152,8 +153,10 @@ const AuthForm: React.FC = () => {
                       label={t("auth.email")}
                       fullWidth
                       {...field}
-                      error={!!getErrorMessage(errors, "email")}
-                      helperText={getErrorMessage(errors, "email")}
+                      error={!!getErrorMessage(errors, "email") || !!emailError}
+                      helperText={
+                        getErrorMessage(errors, "email") || emailError
+                      }
                     />
                   )}
                 />
@@ -168,8 +171,12 @@ const AuthForm: React.FC = () => {
                       type="password"
                       fullWidth
                       {...field}
-                      error={!!getErrorMessage(errors, "password")}
-                      helperText={getErrorMessage(errors, "password")}
+                      error={
+                        !!getErrorMessage(errors, "password") || !!passwordError
+                      }
+                      helperText={
+                        getErrorMessage(errors, "password") || passwordError
+                      }
                     />
                   )}
                 />
