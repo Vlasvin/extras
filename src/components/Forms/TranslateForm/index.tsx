@@ -13,6 +13,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 import { translationSchema } from "validations/validationSchema";
 import { getErrorMessage } from "utils/formUtils";
 
@@ -43,9 +44,28 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
 
   const files = watch("file");
 
-  const onSubmit = (data: IFormInput) => {
-    console.log("Form Data:", data);
-    onClose();
+  const onSubmit = async (data: IFormInput) => {
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("phone", data.phone);
+    formData.append("email", data.email);
+    formData.append("language", data.language);
+    formData.append("message", data.message);
+    if (data.file.length > 0) {
+      formData.append("file", data.file[0]);
+    }
+
+    try {
+      await axios.post("http://localhost:3001/api/send-email", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("Form Data Sent:", data);
+      onClose();
+    } catch (error) {
+      console.error("Error sending form data:", error);
+    }
   };
 
   return (

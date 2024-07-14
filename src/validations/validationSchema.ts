@@ -300,6 +300,7 @@ const SUPPORTED_FORMATS = [
   "application/pdf",
   "text/plain",
   "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
 const translationSchema = yup.object().shape({
