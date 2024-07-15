@@ -45,23 +45,27 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
   const files = watch("file");
 
   const onSubmit = async (data: IFormInput) => {
-    const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("phone", data.phone);
-    formData.append("email", data.email);
-    formData.append("language", data.language);
-    formData.append("message", data.message);
-    if (data.file.length > 0) {
-      formData.append("file", data.file[0]);
-    }
-
     try {
-      await axios.post("http://localhost:3001/api/send-email", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      console.log("Form Data Sent:", data);
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("phone", data.phone);
+      formData.append("email", data.email);
+      formData.append("language", data.language);
+      formData.append("message", data.message);
+      if (data.file.length > 0) {
+        formData.append("file", data.file[0]);
+      }
+
+      const response = await axios.post(
+        "http://localhost:3001/api/send-email",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
       onClose();
     } catch (error) {
       console.error("Error sending form data:", error);
@@ -77,7 +81,9 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
             textAlign: "center",
             marginBottom: "28px",
           }}
-        ></Typography>
+        >
+          {t("form.title")}
+        </Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
