@@ -56,15 +56,11 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
         formData.append("file", data.file[0]);
       }
 
-      const response = await axios.post(
-        "http://localhost:3001/api/send-email",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      await axios.post("http://localhost:3001/api/send-email", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       onClose();
     } catch (error) {
