@@ -41,7 +41,11 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
   } = useForm<IFormInput>({
     resolver: yupResolver(translationSchema) as any,
   });
-  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
+
+  const apiUrl =
+    process.env.NODE_ENV === "production"
+      ? process.env.REACT_APP_API_URL_PRODUCTION
+      : process.env.REACT_APP_API_URL_LOCAL;
 
   const files = watch("file");
 
