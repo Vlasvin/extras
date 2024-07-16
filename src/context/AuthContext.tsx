@@ -17,12 +17,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
+  const apiUrl =
+    process.env.NODE_ENV === "production"
+      ? process.env.REACT_APP_API_URL_PRODUCTION
+      : process.env.REACT_APP_API_URL_LOCAL;
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       axios
-        .get("http://localhost:3001/auth/me")
+        .get(`${apiUrl}/auth/me`)
         .then((response) => setUser(response.data))
         .catch(() => setUser(null));
     }
@@ -37,15 +42,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const register = async (data: any) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3001/auth/register",
-        data,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await axios.post(`${apiUrl}/auth/register`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       login(response.data.token, response.data.user);
     } catch (error) {
       console.error("Registration failed", error);
