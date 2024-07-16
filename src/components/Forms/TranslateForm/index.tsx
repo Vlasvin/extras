@@ -82,9 +82,7 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
             textAlign: "center",
             marginBottom: "28px",
           }}
-        >
-          {t("form.title")}
-        </Typography>
+        ></Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
