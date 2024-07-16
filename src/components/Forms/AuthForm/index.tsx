@@ -35,8 +35,12 @@ const AuthForm: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
-  const apiUrl = process.env.REACT_APP_API_URL;
-  console.log(apiUrl);
+
+  const apiUrl =
+    process.env.NODE_ENV === "production"
+      ? process.env.REACT_APP_API_URL_PRODUCTION
+      : process.env.REACT_APP_API_URL_LOCAL;
+
   const {
     control,
     handleSubmit,
