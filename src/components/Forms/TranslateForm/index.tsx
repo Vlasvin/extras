@@ -47,14 +47,6 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
       ? process.env.REACT_APP_API_URL_PRODUCTION
       : process.env.REACT_APP_API_URL_LOCAL;
 
-  console.log("API URL:", apiUrl);
-  console.log("NODE_ENV:", process.env.NODE_ENV);
-  console.log(
-    "REACT_APP_API_URL_PRODUCTION:",
-    process.env.REACT_APP_API_URL_PRODUCTION
-  );
-  console.log("REACT_APP_API_URL_LOCAL:", process.env.REACT_APP_API_URL_LOCAL);
-
   const files = watch("file");
 
   const onSubmit = async (data: IFormInput) => {
