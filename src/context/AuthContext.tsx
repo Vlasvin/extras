@@ -31,7 +31,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         .then((response) => setUser(response.data))
         .catch(() => setUser(null));
     }
-  }, []);
+  }, [apiUrl]);
 
   const login = (token: string, user: any) => {
     setUser(user);
