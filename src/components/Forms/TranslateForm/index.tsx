@@ -41,6 +41,7 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
   } = useForm<IFormInput>({
     resolver: yupResolver(translationSchema) as any,
   });
+  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
   const files = watch("file");
 
@@ -56,7 +57,7 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
         formData.append("file", data.file[0]);
       }
 
-      await axios.post("http://localhost:3001/api/send-email", formData, {
+      await axios.post(`${apiUrl}/api/send-email`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

@@ -35,6 +35,7 @@ const AuthForm: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
+  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
   const {
     control,
@@ -48,10 +49,7 @@ const AuthForm: React.FC = () => {
   const onSubmit = async (data: LoginFormData | RegisterFormData) => {
     try {
       if (isLogin) {
-        const response = await axios.post(
-          "http://localhost:3001/auth/login",
-          data
-        );
+        const response = await axios.post(`${apiUrl}/auth/login`, data);
         login(response.data.token, response.data.user);
       } else {
         await register(data);
