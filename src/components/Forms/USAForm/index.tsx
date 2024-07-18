@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useForm, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,6 +10,8 @@ import PurposeOfTravel from "./USAFormComponents/PurposeOfTravel";
 import TravelHistory from "./USAFormComponents/TravelHistory";
 import WorkAndEducation from "./USAFormComponents/WorkAndEducation";
 import { Container, FormWrapper, Spacer } from "./USAFormStyles";
+
+const LOCAL_STORAGE_KEY = "visaForm";
 
 const VisaForm = () => {
   const { t } = useTranslation();
@@ -70,8 +72,24 @@ const VisaForm = () => {
     },
   });
 
+  useEffect(() => {
+    const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (savedData) {
+      methods.reset(JSON.parse(savedData));
+    }
+  }, [methods]);
+
+  useEffect(() => {
+    const subscription = methods.watch((value) => {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(value));
+    });
+    return () => subscription.unsubscribe();
+  }, [methods]);
+
   const onSubmit = (data: any) => {
     console.log(data);
+
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
   };
 
   return (

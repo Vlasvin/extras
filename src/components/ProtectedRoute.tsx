@@ -9,11 +9,7 @@ interface ProtectedRouteProps {
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ element }) => {
   const { user } = useAuth();
 
-  if (!user) {
-    return <Navigate to="/auth" replace />;
-  }
-
-  return element;
+  return user ? element : <Navigate to="/auth" />;
 };
 
 export default ProtectedRoute;

@@ -12,7 +12,10 @@ import {
   Tabs,
   Tab,
   Box,
+  IconButton,
+  InputAdornment,
 } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useSpring, animated } from "@react-spring/web";
 import { authFormStyles } from "./AuthFormStyles";
 import { LoginFormData, RegisterFormData } from "services/formData";
@@ -35,6 +38,7 @@ const AuthForm: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const apiUrl =
     process.env.NODE_ENV === "production"
@@ -83,6 +87,10 @@ const AuthForm: React.FC = () => {
     setIsLogin(newValue === 0);
     setEmailError(null);
     setPasswordError(null);
+  };
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
   };
 
   const springConfig = {
@@ -170,7 +178,7 @@ const AuthForm: React.FC = () => {
                   render={({ field }) => (
                     <TextField
                       label={t("auth.password")}
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       fullWidth
                       {...field}
                       error={
@@ -179,6 +187,22 @@ const AuthForm: React.FC = () => {
                       helperText={
                         getErrorMessage(errors, "password") || passwordError
                       }
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                              onClick={handleClickShowPassword}
+                              edge="end"
+                            >
+                              {showPassword ? (
+                                <Visibility />
+                              ) : (
+                                <VisibilityOff />
+                              )}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
                     />
                   )}
                 />
@@ -191,11 +215,27 @@ const AuthForm: React.FC = () => {
                     render={({ field }) => (
                       <TextField
                         label={t("auth.confirm_password")}
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         fullWidth
                         {...field}
                         error={!!getErrorMessage(errors, "confirmPassword")}
                         helperText={getErrorMessage(errors, "confirmPassword")}
+                        InputProps={{
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <IconButton
+                                onClick={handleClickShowPassword}
+                                edge="end"
+                              >
+                                {showPassword ? (
+                                  <Visibility />
+                                ) : (
+                                  <VisibilityOff />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                        }}
                       />
                     )}
                   />
