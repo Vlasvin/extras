@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 interface AuthContextType {
   user: any;
-  login: (token: string, user: any) => void;
+  login: (tokenObject: { access_token: string }, user: any) => void;
   register: (data: any) => Promise<void>;
   logout: () => void;
 }
@@ -14,7 +14,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   const apiUrl =
@@ -33,10 +33,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   }, [apiUrl]);
 
-  const login = (token: string, user: any) => {
+  const login = (tokenObject: { access_token: string }, user: any) => {
     setUser(user);
-    localStorage.setItem("token", token); // Зберігайте токен у вигляді рядка
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    localStorage.setItem("token", tokenObject.access_token);
+    axios.defaults.headers.common[
+      "Authorization"
+    ] = `Bearer ${tokenObject.access_token}`;
     navigate("/visas/usa/visa-form");
   };
 
@@ -47,8 +49,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
           "Content-Type": "application/json",
         },
       });
-      const { access_token } = response.data.token; // Витягуємо access_token з об'єкта
-      login(access_token, response.data.user);
+      login(response.data.token, response.data.user);
     } catch (error) {
       console.error("Registration failed", error);
       throw error;
