@@ -9,6 +9,7 @@ import Footer from "components/Footer";
 import { Box } from "@mui/material";
 import { AppContainer, appStyles } from "AppStyles";
 import ProtectedRoute from "./components/ProtectedRoute";
+import PublicRoute from "./components/PublicRoute";
 import { AuthProvider } from "context/AuthContext";
 
 const HomePage = React.lazy(() => import("./pages/HomePage"));
@@ -40,10 +41,12 @@ const App = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/visas" element={<VisasPage />} />
                 <Route path="/visas/usa" element={<VisasUSAPage />} />
-                <Route
-                  path="/visas/usa/visa-form"
-                  element={<ProtectedRoute element={<VisaFormPage />} />}
-                />
+                <Route element={<ProtectedRoute />}>
+                  <Route
+                    path="/visas/usa/visa-form"
+                    element={<VisaFormPage />}
+                  />
+                </Route>
                 <Route path="/visas/canada" element={<VisasCanadaPage />} />
                 <Route
                   path="/visas/australia"
@@ -52,14 +55,16 @@ const App = () => {
                 <Route path="/translations" element={<TranslationsPage />} />
                 <Route path="/services" element={<ServicesPage />} />
                 <Route path="/about-us" element={<AboutUsPage />} />
-                <Route path="/auth" element={<AuthForm />} />
+                <Route element={<PublicRoute />}>
+                  <Route path="/auth" element={<AuthForm />} />
+                </Route>
               </Routes>
             </Suspense>
           </AppContainer>
           <Box sx={appStyles.boxFooter}>
             <Footer />
           </Box>
-        </AuthProvider>{" "}
+        </AuthProvider>
       </I18nextProvider>
     </ThemeContextProvider>
   );
