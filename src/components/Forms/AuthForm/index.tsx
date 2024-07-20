@@ -17,11 +17,12 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useSpring, animated } from "@react-spring/web";
-import { authFormStyles } from "./AuthFormStyles";
 import { LoginFormData, RegisterFormData } from "services/formData";
 import { loginSchema, registerSchema } from "validations/validationSchema";
 import { getErrorMessage } from "utils/formUtils";
 import { useAuth } from "context/AuthContext";
+import { useLoading } from "context/LoadingContext";
+import { authFormStyles } from "./AuthFormStyles";
 
 type BackendError = {
   response?: {
@@ -35,6 +36,7 @@ type BackendError = {
 const AuthForm: React.FC = () => {
   const { t } = useTranslation();
   const { login, register } = useAuth();
+  const { setLoading } = useLoading();
   const [isLogin, setIsLogin] = useState(true);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
@@ -55,6 +57,7 @@ const AuthForm: React.FC = () => {
   });
 
   const onSubmit = async (data: LoginFormData | RegisterFormData) => {
+    setLoading(true);
     try {
       if (isLogin) {
         const response = await axios.post(`${apiUrl}/auth/login`, data);
@@ -80,6 +83,8 @@ const AuthForm: React.FC = () => {
         setPasswordError(null);
       }
       console.error("Error:", message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -195,9 +200,9 @@ const AuthForm: React.FC = () => {
                               edge="end"
                             >
                               {showPassword ? (
-                                <Visibility />
+                                <Visibility style={{ fontSize: 18 }} />
                               ) : (
-                                <VisibilityOff />
+                                <VisibilityOff style={{ fontSize: 18 }} />
                               )}
                             </IconButton>
                           </InputAdornment>
@@ -228,9 +233,9 @@ const AuthForm: React.FC = () => {
                                 edge="end"
                               >
                                 {showPassword ? (
-                                  <Visibility />
+                                  <Visibility style={{ fontSize: 18 }} />
                                 ) : (
-                                  <VisibilityOff />
+                                  <VisibilityOff style={{ fontSize: 18 }} />
                                 )}
                               </IconButton>
                             </InputAdornment>
