@@ -86,10 +86,25 @@ const VisaForm = () => {
     return () => subscription.unsubscribe();
   }, [methods]);
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async (data: any) => {
+    try {
+      const response = await fetch("/api/visa-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    localStorage.removeItem(LOCAL_STORAGE_KEY);
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
+      } else {
+        console.error("Error submitting form");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
