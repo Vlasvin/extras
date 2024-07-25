@@ -59,6 +59,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const logout = () => {
     setUser(null);
     localStorage.removeItem("token");
+    localStorage.removeItem("visaForm");
     delete axios.defaults.headers.common["Authorization"];
   };
 
