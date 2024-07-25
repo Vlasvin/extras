@@ -54,6 +54,13 @@ const AuthForm: React.FC = () => {
     formState: { errors },
   } = useForm<LoginFormData | RegisterFormData>({
     resolver: yupResolver(isLogin ? loginSchema : registerSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
   });
 
   const onSubmit = async (data: LoginFormData | RegisterFormData) => {
