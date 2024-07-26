@@ -29,6 +29,14 @@ export const InputWrapper = styled.div`
   align-items: center;
   border-radius: 10px;
   margin-bottom: 16px;
+  width: 100%;
+`;
+
+export const InputWrapperBox = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
 `;
 
 export const InfoIconButton = styled(IconButton)`
@@ -39,10 +47,10 @@ export const InfoIconButton = styled(IconButton)`
 `;
 
 export const FileInputButton = styled(IconButton)`
-  position: absolute;
-  bottom: 70%;
-  transform: translateY(50%);
-  right: -7px;
+  margin-left: 2px;
+  margin-bottom: 20px;
+  padding: 4px;
+  padding-right: 1px;
 `;
 
 export const CustomBox = styled(Box)`

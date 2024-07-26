@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
-import { useTranslation } from "react-i18next";
 import { Controller, Control, FieldErrors } from "react-hook-form";
 import InfoIcon from "@mui/icons-material/Info";
-import UploadFileIcon from "@mui/icons-material/UploadFile";
 import Tooltip from "@mui/material/Tooltip";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
 
 import { getErrorMessage } from "utils/formUtils";
 import {
@@ -12,6 +11,8 @@ import {
   InfoIconButton,
   FileInputButton,
 } from "../USAFormStyles";
+import { useTranslation } from "react-i18next";
+
 interface ControlledTextFieldProps {
   name: string;
   control: Control<any>;
@@ -38,10 +39,14 @@ const ControlledTextField: React.FC<ControlledTextFieldProps> = ({
   const { t } = useTranslation();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  const handleFileChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    onChange: (file: File | null) => void
+  ) => {
+    const file = event.target.files?.[0] || null;
     if (file) {
       console.log(`Selected file - ${file.name}`);
+      onChange(file);
     }
   };
 
@@ -51,42 +56,48 @@ const ControlledTextField: React.FC<ControlledTextFieldProps> = ({
         name={name}
         control={control}
         render={({ field }) => (
-          <StyledTextField
-            {...field}
-            label={label}
-            type={type}
-            InputLabelProps={inputLabelProps}
-            error={!!getErrorMessage(errors, name)}
-            helperText={(getErrorMessage(errors, name) as string) || ""}
-            fullWidth
-          />
+          <>
+            <StyledTextField
+              {...field}
+              label={label}
+              type={type}
+              InputLabelProps={inputLabelProps}
+              error={!!getErrorMessage(errors, name)}
+              helperText={(getErrorMessage(errors, name) as string) || ""}
+              fullWidth
+            />
+            {showInfoIcon && (
+              <Tooltip title={t("pushToInfo")}>
+                <InfoIconButton aria-label="info" onClick={onInfoIconClick}>
+                  <InfoIcon />
+                </InfoIconButton>
+              </Tooltip>
+            )}
+            {showFileUpload && (
+              <>
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  style={{ display: "none" }}
+                  onChange={(e) =>
+                    handleFileChange(e, (file) =>
+                      field.onChange({ text: field.value.text, file })
+                    )
+                  }
+                />
+                <Tooltip title={t("pushToUpload")}>
+                  <FileInputButton
+                    aria-label="upload file"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    <UploadFileIcon />
+                  </FileInputButton>
+                </Tooltip>
+              </>
+            )}
+          </>
         )}
       />
-      {showInfoIcon && (
-        <Tooltip title={t("pushToInfo")}>
-          <InfoIconButton aria-label="info" onClick={onInfoIconClick}>
-            <InfoIcon />
-          </InfoIconButton>
-        </Tooltip>
-      )}
-      {showFileUpload && (
-        <>
-          <input
-            type="file"
-            ref={fileInputRef}
-            style={{ display: "none" }}
-            onChange={handleFileChange}
-          />
-          <Tooltip title={t("pushToUpload")}>
-            <FileInputButton
-              aria-label="upload file"
-              onClick={() => fileInputRef.current?.click()}
-            >
-              <UploadFileIcon />
-            </FileInputButton>
-          </Tooltip>
-        </>
-      )}
     </InputWrapper>
   );
 };

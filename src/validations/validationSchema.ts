@@ -5,10 +5,6 @@ const personalInfoSchema = yup.object().shape({
   surname: yup.string().required(i18next.t("errors.required")),
   givenName: yup.string().required(i18next.t("errors.required")),
   patronymic: yup.string().required(i18next.t("errors.required")),
-  birthDate: yup
-    .date()
-    .typeError(i18next.t("errors.invalidDate"))
-    .required(i18next.t("errors.required")),
   photo: yup.mixed().required(i18next.t("errors.required")),
   passportCopy: yup.mixed().required(i18next.t("errors.required")),
   passportDetails: yup.string().required(i18next.t("errors.required")),
@@ -38,8 +34,8 @@ const personalInfoSchema = yup.object().shape({
   emailsLast5Years: yup.string().required(i18next.t("errors.required")),
   socialMedia: yup.array().of(
     yup.object().shape({
-      name: yup.string().required(i18next.t("errors.required")),
-      id: yup.string().required(i18next.t("errors.required")),
+      text: yup.string().required(i18next.t("errors.required")),
+      file: yup.mixed().nullable(),
     })
   ),
   otherMediaResources: yup.boolean().required(i18next.t("errors.required")),
@@ -73,23 +69,12 @@ const familyInfoSchema = yup.object().shape({
   spouseNationality: yup.string().required(i18next.t("errors.required")),
   spouseAddress: yup.string().required(i18next.t("errors.required")),
   previousMarriages: yup.string().required(i18next.t("errors.required")),
-  previousSpouses: yup.string().required(i18next.t("errors.required")),
-  previousSpouseDOB: yup
-    .date()
-    .typeError(i18next.t("errors.invalidDate"))
-    .required(i18next.t("errors.required")),
-  marriageStartDate: yup
-    .date()
-    .typeError(i18next.t("errors.invalidDate"))
-    .required(i18next.t("errors.required")),
-  marriageEndDate: yup
-    .date()
-    .typeError(i18next.t("errors.invalidDate"))
-    .required(i18next.t("errors.required")),
-  previousSpouseBirthPlace: yup.string().required(i18next.t("errors.required")),
-  previousSpouseNationality: yup
-    .string()
-    .required(i18next.t("errors.required")),
+  previousSpouses: yup.string(),
+  previousSpouseDOB: yup.date().typeError(i18next.t("errors.invalidDate")),
+  marriageStartDate: yup.date().typeError(i18next.t("errors.invalidDate")),
+  marriageEndDate: yup.date().typeError(i18next.t("errors.invalidDate")),
+  previousSpouseBirthPlace: yup.string(),
+  previousSpouseNationality: yup.string(),
   relativesInUSA: yup.string().required(i18next.t("errors.required")),
   relativeNames: yup.string().when("relativesInUSA", {
     is: "yes",
@@ -231,12 +216,12 @@ const workAndEducationSchema = yup.object().shape({
   averageMonthlyIncome: yup.number().required(i18next.t("errors.required")),
   previousEmployer: yup.array().of(
     yup.object().shape({
-      companyName: yup.string().required(i18next.t("errors.required")),
-      address: yup.string().required(i18next.t("errors.required")),
-      phone: yup.string().required(i18next.t("errors.required")),
-      startDate: yup.date().required(i18next.t("errors.required")),
-      position: yup.string().required(i18next.t("errors.required")),
-      duties: yup.string().required(i18next.t("errors.required")),
+      companyName: yup.string(),
+      address: yup.string(),
+      phone: yup.string(),
+      startDate: yup.date(),
+      position: yup.string(),
+      duties: yup.string(),
     })
   ),
   highSchool: yup.object().shape({
@@ -247,11 +232,11 @@ const workAndEducationSchema = yup.object().shape({
   }),
   higherEducation: yup.array().of(
     yup.object().shape({
-      name: yup.string().required(i18next.t("errors.required")),
-      address: yup.string().required(i18next.t("errors.required")),
-      startDate: yup.date().required(i18next.t("errors.required")),
-      endDate: yup.date().required(i18next.t("errors.required")),
-      faculty: yup.string().required(i18next.t("errors.required")),
+      name: yup.string(),
+      address: yup.string(),
+      startDate: yup.date(),
+      endDate: yup.date(),
+      faculty: yup.string(),
     })
   ),
   socialOrganizations: yup

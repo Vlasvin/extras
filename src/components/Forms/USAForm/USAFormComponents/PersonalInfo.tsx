@@ -12,7 +12,7 @@ import {
 
 import ControlledTextField from "./ControlledTextField";
 import InfoDialog from "./InfoDialog";
-import { CustomBox, SmallLabel } from "../USAFormStyles";
+import { CustomBox, InputWrapper, SmallLabel } from "../USAFormStyles";
 import { SectionTitle } from "components/Services/ServicesStyles";
 
 interface PersonalInfoProps {
@@ -85,16 +85,6 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
             control={control}
             errors={errors}
             label={t("personalInfo.patronymic")}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <ControlledTextField
-            name="personalInfo.birthDate"
-            control={control}
-            errors={errors}
-            label={t("personalInfo.birthDate")}
-            type="date"
-            inputLabelProps={{ shrink: true }}
           />
         </Grid>
         <Grid item xs={12}>
@@ -329,20 +319,22 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
         </Grid>
         <Grid item xs={12}>
           <CustomBox>
-            <ControlledTextField
-              name="personalInfo.socialMedia"
-              control={control}
-              errors={errors}
-              label={t("personalInfo.socialMedia")}
-              showInfoIcon={true}
-              showFileUpload={true}
-              onInfoIconClick={() =>
-                handleOpenDialog(
-                  t("personalInfo.socialInfoTitle"),
-                  t("personalInfo.socialInfo")
-                )
-              }
-            />
+            <InputWrapper>
+              <ControlledTextField
+                name="personalInfo.socialMedia"
+                control={control}
+                errors={errors}
+                label={t("personalInfo.socialMedia")}
+                showInfoIcon={true}
+                showFileUpload={true}
+                onInfoIconClick={() =>
+                  handleOpenDialog(
+                    t("personalInfo.socialInfoTitle"),
+                    t("personalInfo.socialInfo")
+                  )
+                }
+              />
+            </InputWrapper>
           </CustomBox>
         </Grid>
         <Grid item xs={12}>

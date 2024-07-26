@@ -23,7 +23,6 @@ const VisaForm = () => {
         surname: "",
         givenName: "",
         patronymic: "",
-        birthDate: undefined,
         photo: undefined,
         passportCopy: undefined,
         passportDetails: "",
