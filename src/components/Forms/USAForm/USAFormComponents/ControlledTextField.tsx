@@ -80,9 +80,7 @@ const ControlledTextField: React.FC<ControlledTextFieldProps> = ({
                   ref={fileInputRef}
                   style={{ display: "none" }}
                   onChange={(e) =>
-                    handleFileChange(e, (file) =>
-                      field.onChange({ text: field.value.text, file })
-                    )
+                    handleFileChange(e, (file) => field.onChange(file))
                   }
                 />
                 <Tooltip title={t("pushToUpload")}>

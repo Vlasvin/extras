@@ -9,6 +9,7 @@ import FamilyInfo from "./USAFormComponents/FamilyInfo";
 import PurposeOfTravel from "./USAFormComponents/PurposeOfTravel";
 import TravelHistory from "./USAFormComponents/TravelHistory";
 import WorkAndEducation from "./USAFormComponents/WorkAndEducation";
+
 import { Container, FormWrapper, Spacer } from "./USAFormStyles";
 
 const LOCAL_STORAGE_KEY = "visaForm";
@@ -39,7 +40,8 @@ const VisaForm = () => {
         contactNumbersLast5Years: "",
         emailAddress: "",
         emailsLast5Years: "",
-        socialMedia: [],
+        socialMedia: "",
+        socialMediaFile: undefined,
         otherMediaResources: false,
         otherMediaResourceDetails: "",
       },
@@ -96,7 +98,6 @@ const VisaForm = () => {
       });
 
       if (response.ok) {
-        console.log("Form submitted successfully");
         localStorage.removeItem(LOCAL_STORAGE_KEY);
       } else {
         console.error("Error submitting form");
@@ -106,11 +107,20 @@ const VisaForm = () => {
     }
   };
 
+  const handleSubmit = methods.handleSubmit(
+    (data) => {
+      onSubmit(data);
+    },
+    (errors) => {
+      console.error("Form validation errors:", errors);
+    }
+  );
+
   return (
     <Container>
       <FormWrapper>
         <FormProvider {...methods}>
-          <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit}>
             <PersonalInfo
               control={methods.control}
               errors={methods.formState.errors}

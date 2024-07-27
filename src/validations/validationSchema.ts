@@ -32,12 +32,9 @@ const personalInfoSchema = yup.object().shape({
     .email(i18next.t("errors.invalidEmail"))
     .required(i18next.t("errors.required")),
   emailsLast5Years: yup.string().required(i18next.t("errors.required")),
-  socialMedia: yup.array().of(
-    yup.object().shape({
-      text: yup.string().required(i18next.t("errors.required")),
-      file: yup.mixed().nullable(),
-    })
-  ),
+  socialMedia: yup.string().required(i18next.t("errors.required")),
+
+  socialMediaFile: yup.mixed().required(i18next.t("errors.required")),
   otherMediaResources: yup.boolean().required(i18next.t("errors.required")),
   otherMediaResourceDetails: yup.string().when("otherMediaResources", {
     is: true,
@@ -89,10 +86,7 @@ const familyInfoSchema = yup.object().shape({
 
 const purposeOfTravelSchema = yup.object().shape({
   travelPlans: yup.object().shape({
-    arrivalDate: yup
-      .date()
-      .typeError(i18next.t("errors.invalidDate"))
-      .required(i18next.t("errors.required")),
+    arrivalDate: yup.string().required(i18next.t("errors.required")),
     arrivalCity: yup.string().required(i18next.t("errors.required")),
     placesToVisit: yup.string().required(i18next.t("errors.required")),
   }),

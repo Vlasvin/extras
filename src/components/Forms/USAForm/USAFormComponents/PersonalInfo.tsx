@@ -12,7 +12,7 @@ import {
 
 import ControlledTextField from "./ControlledTextField";
 import InfoDialog from "./InfoDialog";
-import { CustomBox, InputWrapper, SmallLabel } from "../USAFormStyles";
+import { CustomBox, SmallLabel } from "../USAFormStyles";
 import { SectionTitle } from "components/Services/ServicesStyles";
 
 interface PersonalInfoProps {
@@ -319,24 +319,40 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
         </Grid>
         <Grid item xs={12}>
           <CustomBox>
-            <InputWrapper>
-              <ControlledTextField
-                name="personalInfo.socialMedia"
-                control={control}
-                errors={errors}
-                label={t("personalInfo.socialMedia")}
-                showInfoIcon={true}
-                showFileUpload={true}
-                onInfoIconClick={() =>
-                  handleOpenDialog(
-                    t("personalInfo.socialInfoTitle"),
-                    t("personalInfo.socialInfo")
-                  )
-                }
-              />
-            </InputWrapper>
+            <ControlledTextField
+              name="personalInfo.socialMedia"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.socialMedia")}
+              showInfoIcon={true}
+              onInfoIconClick={() =>
+                handleOpenDialog(
+                  t("personalInfo.socialInfoTitle"),
+                  t("personalInfo.socialInfo")
+                )
+              }
+            />
           </CustomBox>
         </Grid>
+        <Grid item xs={12}>
+          <CustomBox>
+            <ControlledTextField
+              name="personalInfo.socialMediaFile"
+              control={control}
+              errors={errors}
+              label={t("personalInfo.socialMediaFile")}
+              type="file"
+              inputLabelProps={{ shrink: true }}
+              onInfoIconClick={() =>
+                handleOpenDialog(
+                  t("personalInfo.socialMediaFileInfoTitle"),
+                  t("personalInfo.socialMediaFileInfoText")
+                )
+              }
+            />
+          </CustomBox>
+        </Grid>
+
         <Grid item xs={12}>
           <FormControl component="fieldset">
             <FormLabel component="legend">
