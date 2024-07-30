@@ -14,8 +14,8 @@ import {
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
-import { translationSchema } from "validations/validationSchema";
 import { getErrorMessage } from "utils/formUtils";
+import { translationSchema } from "validations/authSchema";
 
 export interface IFormInput {
   name: string;

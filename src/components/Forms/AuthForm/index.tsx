@@ -18,11 +18,11 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useSpring, animated } from "@react-spring/web";
 import { LoginFormData, RegisterFormData } from "services/formData";
-import { loginSchema, registerSchema } from "validations/validationSchema";
 import { getErrorMessage } from "utils/formUtils";
 import { useAuth } from "context/AuthContext";
 import { useLoading } from "context/LoadingContext";
 import { authFormStyles } from "./AuthFormStyles";
+import { loginSchema, registerSchema } from "validations/authSchema";
 
 type BackendError = {
   response?: {
