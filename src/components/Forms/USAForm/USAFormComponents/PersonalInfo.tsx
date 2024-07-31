@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Control, FieldErrors, useWatch } from "react-hook-form";
+import { Control, FieldErrors, useFormContext } from "react-hook-form";
 import {
   FormControl,
   FormControlLabel,
@@ -22,18 +22,16 @@ interface PersonalInfoProps {
 
 const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
   const { t } = useTranslation();
-  const passportLost = useWatch({
-    control,
-    name: "personalInfo.passportLost",
-  });
-  const otherCitizenship = useWatch({
-    control,
-    name: "personalInfo.otherCitizenship",
-  });
-  const otherMediaResources = useWatch({
-    control,
-    name: "personalInfo.otherMediaResources",
-  });
+  const { register, watch } = useFormContext(); // Use useFormContext to get register and watch functions
+  const passportLost = watch("personalInfo.passportLost", false) as boolean;
+  const otherCitizenship = watch(
+    "personalInfo.otherCitizenship",
+    false
+  ) as boolean;
+  const otherMediaResources = watch(
+    "personalInfo.otherMediaResources",
+    false
+  ) as boolean;
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogTitle, setDialogTitle] = useState("");
   const [dialogContent, setDialogContent] = useState("");
@@ -163,25 +161,25 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
             <FormLabel component="legend">
               {t("personalInfo.passportLost")}
             </FormLabel>
-            <RadioGroup row name="personalInfo.passportLost" defaultValue="no">
+            <RadioGroup
+              row
+              name="personalInfo.passportLost"
+              defaultValue="false"
+            >
               <FormControlLabel
-                value="yes"
-                control={
-                  <Radio {...control.register("personalInfo.passportLost")} />
-                }
+                value="true"
+                control={<Radio {...register("personalInfo.passportLost")} />}
                 label={<SmallLabel>{t("yes")}</SmallLabel>}
               />
               <FormControlLabel
-                value="no"
-                control={
-                  <Radio {...control.register("personalInfo.passportLost")} />
-                }
+                value="false"
+                control={<Radio {...register("personalInfo.passportLost")} />}
                 label={<SmallLabel>{t("no")}</SmallLabel>}
               />
             </RadioGroup>
           </FormControl>
         </Grid>
-        {passportLost === "yes" && (
+        {passportLost && (
           <Grid item xs={12}>
             <ControlledTextField
               name="personalInfo.passportLostNumber"
@@ -200,30 +198,26 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
             <RadioGroup
               row
               name="personalInfo.otherCitizenship"
-              defaultValue="no"
+              defaultValue="false"
             >
               <FormControlLabel
-                value="yes"
+                value="true"
                 control={
-                  <Radio
-                    {...control.register("personalInfo.otherCitizenship")}
-                  />
+                  <Radio {...register("personalInfo.otherCitizenship")} />
                 }
                 label={<SmallLabel>{t("yes")}</SmallLabel>}
               />
               <FormControlLabel
-                value="no"
+                value="false"
                 control={
-                  <Radio
-                    {...control.register("personalInfo.otherCitizenship")}
-                  />
+                  <Radio {...register("personalInfo.otherCitizenship")} />
                 }
                 label={<SmallLabel>{t("no")}</SmallLabel>}
               />
             </RadioGroup>
           </FormControl>
         </Grid>
-        {otherCitizenship === "yes" && (
+        {otherCitizenship && (
           <Grid item xs={12}>
             <ControlledTextField
               name="personalInfo.otherPassportDetails"
@@ -361,30 +355,26 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
             <RadioGroup
               row
               name="personalInfo.otherMediaResources"
-              defaultValue="no"
+              defaultValue="false"
             >
               <FormControlLabel
-                value="yes"
+                value="true"
                 control={
-                  <Radio
-                    {...control.register("personalInfo.otherMediaResources")}
-                  />
+                  <Radio {...register("personalInfo.otherMediaResources")} />
                 }
                 label={<SmallLabel>{t("yes")}</SmallLabel>}
               />
               <FormControlLabel
-                value="no"
+                value="false"
                 control={
-                  <Radio
-                    {...control.register("personalInfo.otherMediaResources")}
-                  />
+                  <Radio {...register("personalInfo.otherMediaResources")} />
                 }
                 label={<SmallLabel>{t("no")}</SmallLabel>}
               />
             </RadioGroup>
           </FormControl>
         </Grid>
-        {otherMediaResources === "yes" && (
+        {otherMediaResources && (
           <Grid item xs={12}>
             <ControlledTextField
               name="personalInfo.otherMediaResourceDetails"

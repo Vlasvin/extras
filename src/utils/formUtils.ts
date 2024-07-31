@@ -1,6 +1,9 @@
 import { FieldErrors } from "react-hook-form";
 
-export const getErrorMessage = (errors: FieldErrors, path: string) => {
+export const getErrorMessage = (
+  errors: FieldErrors,
+  path: string
+): string | undefined => {
   const keys = path.split(".");
   let error: any = errors;
 
@@ -10,5 +13,6 @@ export const getErrorMessage = (errors: FieldErrors, path: string) => {
     }
     error = error[key];
   }
-  return error?.message;
+
+  return error?.message ? String(error.message) : undefined;
 };

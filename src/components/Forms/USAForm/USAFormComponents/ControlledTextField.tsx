@@ -1,17 +1,17 @@
 import React, { useRef } from "react";
 import { Controller, Control, FieldErrors } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import InfoIcon from "@mui/icons-material/Info";
 import Tooltip from "@mui/material/Tooltip";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
+import { TextField } from "@mui/material";
 
 import { getErrorMessage } from "utils/formUtils";
 import {
-  StyledTextField,
   InputWrapper,
   InfoIconButton,
   FileInputButton,
 } from "../USAFormStyles";
-import { useTranslation } from "react-i18next";
 
 interface ControlledTextFieldProps {
   name: string;
@@ -57,13 +57,13 @@ const ControlledTextField: React.FC<ControlledTextFieldProps> = ({
         control={control}
         render={({ field }) => (
           <>
-            <StyledTextField
+            <TextField
               {...field}
               label={label}
               type={type}
               InputLabelProps={inputLabelProps}
               error={!!getErrorMessage(errors, name)}
-              helperText={(getErrorMessage(errors, name) as string) || ""}
+              helperText={getErrorMessage(errors, name) || ""}
               fullWidth
             />
             {showInfoIcon && (

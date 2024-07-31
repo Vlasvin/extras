@@ -50,18 +50,14 @@ export interface VisaFormData {
     otherRelativesInUSA: string;
   };
   purposeOfTravel: {
-    travelPlans: {
-      arrivalDate: string;
-      arrivalCity: string;
-      placesToVisit: string;
-    };
+    arrivalDate: string;
+    arrivalCity: string;
+    placesToVisit: string;
     addressInUSA: string;
-    invitingParty: {
-      name: string;
-      phone: string;
-      email: string;
-      relationship: string;
-    };
+    name: string;
+    phone: string;
+    email: string;
+    relationship: string;
     durationOfStay: string;
     tripFunding: string;
     travelPurpose: string;
