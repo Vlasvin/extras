@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Control, Controller, FieldErrors, useWatch } from "react-hook-form";
+import { Control, Controller, FieldErrors } from "react-hook-form";
 import { Typography, RadioGroup, FormControlLabel, Radio } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
@@ -8,6 +8,7 @@ import ControlledTextField from "./ControlledTextField";
 import InfoDialog from "./InfoDialog";
 import { SectionTitle } from "components/Services/ServicesStyles";
 import { SmallLabel } from "../USAFormStyles";
+
 interface WorkAndEducationProps {
   control: Control<any>;
   errors: FieldErrors<any>;
@@ -19,8 +20,8 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
 }) => {
   const { t } = useTranslation();
   const [infoDialogOpen, setInfoDialogOpen] = useState(false);
-  const [dialogTitle, setDialogTitle] = React.useState("");
-  const [dialogContent, setDialogContent] = React.useState("");
+  const [dialogTitle, setDialogTitle] = useState("");
+  const [dialogContent, setDialogContent] = useState("");
 
   const handleOpenDialog = (title: string, content: string) => {
     setDialogTitle(title);
@@ -31,19 +32,6 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
   const handleCloseDialog = () => {
     setInfoDialogOpen(false);
   };
-
-  const socialOrganizations = useWatch({
-    control,
-    name: "socialOrganizations",
-  });
-  const tribe = useWatch({
-    control,
-    name: "tribe",
-  });
-  const militaryService = useWatch({
-    control,
-    name: "militaryService",
-  });
 
   return (
     <div>
@@ -225,7 +213,7 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
         name="socialOrganizations"
         control={control}
         render={({ field }) => (
-          <RadioGroup {...field}>
+          <RadioGroup value={field.value || ""} onChange={field.onChange}>
             <FormControlLabel
               value="yes"
               control={<Radio />}
@@ -242,7 +230,7 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
       {getErrorMessage(errors, "socialOrganizations") && (
         <p>{getErrorMessage(errors, "socialOrganizations") as string}</p>
       )}
-      {socialOrganizations === "yes" && (
+      {control._formValues.socialOrganizations === "yes" && (
         <ControlledTextField
           name="socialOrganizations.details"
           control={control}
@@ -256,7 +244,7 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
         name="tribe"
         control={control}
         render={({ field }) => (
-          <RadioGroup {...field}>
+          <RadioGroup value={field.value || ""} onChange={field.onChange}>
             <FormControlLabel
               value="yes"
               control={<Radio />}
@@ -273,7 +261,7 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
       {getErrorMessage(errors, "tribe") && (
         <p>{getErrorMessage(errors, "tribe") as string}</p>
       )}
-      {tribe === "yes" && (
+      {control._formValues.tribe === "yes" && (
         <ControlledTextField
           name="tribe.details"
           control={control}
@@ -289,7 +277,7 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
         name="militaryService"
         control={control}
         render={({ field }) => (
-          <RadioGroup {...field}>
+          <RadioGroup value={field.value || ""} onChange={field.onChange}>
             <FormControlLabel
               value="yes"
               control={<Radio />}
@@ -306,7 +294,7 @@ const WorkAndEducation: React.FC<WorkAndEducationProps> = ({
       {getErrorMessage(errors, "militaryService") && (
         <p>{getErrorMessage(errors, "militaryService") as string}</p>
       )}
-      {militaryService === "yes" && (
+      {control._formValues.militaryService === "yes" && (
         <div>
           <ControlledTextField
             name="militaryService.country"
