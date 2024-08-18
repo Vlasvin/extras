@@ -343,6 +343,7 @@
     "socialMediaDetails": "Indicate ID or username",
     "socialInfoTitle": "Social media data",
     "socialInfo": "Please provide the ID or username, provide a link or a screenshot of the page. \n(ASK.FM, Dooban, Facebook, Flickr, Google +, Instagram, Linkedin, Мій простір, Pinterest, Qzone (QQ), Reddit, Sina weibo, Tencent weibo, Tumblr, Twitter, TWOO, Vine, Вконтакте (ВК), Youku, Youtube)",
+    "socialMediaFile": "Add a screenshot of the social media page",
 
     "otherMediaResources": "Are there any other media resources where you post information?",
     "otherMediaResourceDetails": "Specify the site/resource"

@@ -342,7 +342,7 @@
     "socialMediaDetails": "Вкажіть ID або ім'я користувача",
     "socialInfoTitle": "Дані соціальних мереж",
     "socialInfo": "Вкажіть ID або ім'я користувача, надайте посилання або скрін сторінки. \n(ASK.FM, Dooban, Facebook, Flickr, Google +, Instagram, Linkedin, Мій простір, Pinterest, Qzone (QQ), Reddit, Sina weibo, Tencent weibo, Tumblr, Twitter, TWOO, Vine, Вконтакте (ВК), Youku, Youtube)",
-
+    "socialMediaFile": "Додайте скрін сторінки в соц. мережі",
     "otherMediaResources": "Чи є інші медіаресурси, де ви розміщуєте інформацію?",
     "otherMediaResourceDetails": "Укажіть сайт/ресурс"
   },

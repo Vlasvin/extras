@@ -22,7 +22,7 @@ interface PersonalInfoProps {
 
 const PersonalInfo: React.FC<PersonalInfoProps> = ({ control, errors }) => {
   const { t } = useTranslation();
-  const { register, watch } = useFormContext(); // Use useFormContext to get register and watch functions
+  const { register, watch } = useFormContext();
   const passportLost = watch("personalInfo.passportLost", false) as boolean;
   const otherCitizenship = watch(
     "personalInfo.otherCitizenship",
