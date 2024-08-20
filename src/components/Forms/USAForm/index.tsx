@@ -10,7 +10,8 @@ import FamilyInfo from "./USAFormComponents/FamilyInfo";
 import PurposeOfTravel from "./USAFormComponents/PurposeOfTravel";
 import TravelHistory from "./USAFormComponents/TravelHistory";
 import WorkAndEducation from "./USAFormComponents/WorkAndEducation";
-import { Container, FormWrapper } from "./USAFormStyles";
+import { Container, FormWrapper, Spacer } from "./USAFormStyles";
+import QuestionsSection from "./USAFormComponents/QuestionSection";
 // import { validationSchema } from "validations/validationSchema";
 
 const VisaForm: React.FC = () => {
@@ -70,26 +71,34 @@ const VisaForm: React.FC = () => {
               console.log("After handleSubmit call");
             }}
           >
+            <Spacer />
             <PersonalInfo
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <FamilyInfo
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <PurposeOfTravel
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <TravelHistory
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
             <WorkAndEducation
               control={methods.control}
               errors={methods.formState.errors}
             />
+            <Spacer />
+            <QuestionsSection />
+            <Spacer />
             <Button type="submit" variant="outlined" color="primary">
               {t("send")}
             </Button>

@@ -482,6 +482,32 @@
     "militaryEndDate": "End Date"
   },
 
+  "questionSection": {
+    "sectionTitle": "For Review",
+    "warningText": "ATTENTION: EACH APPLICANT MUST READ THE QUESTIONS LISTED BELOW AND ANSWER THEM. The applicant may be refused a visa if there is an affirmative answer to one of the questions listed below. However, an affirmative answer to any of the questions listed does not mean that you will automatically be refused a visa.",
+    "sectionDescription": "Please carefully review the questions and provide an answer YES or NO.",
+    "question1": "1. Have you ever had a communicable disease of public health significance (including chancroid, gonorrhea, granuloma inguinale, infectious leprosy, lymphogranuloma venereum, infectious stage syphilis, active tuberculosis)?",
+    "question2": "2. Do you have a mental or physical disorder that poses or may pose a threat to your safety or welfare or to others?",
+    "question3": "3. Have you ever been a drug user or addict?",
+    "question4": "4. Have you ever been arrested or convicted of a crime (even if you were later pardoned, amnestied, or released on parole)?",
+    "question5": "5. Have you ever engaged in illegal drug trafficking or prostitution?",
+    "question6": "6. Have you ever been involved in or planned to engage in money laundering?",
+    "question7": "7. Have you or your spouse, son, or daughter ever engaged in or knowingly assisted in or been involved in the conspiracy to commit human trafficking in the United States or outside the United States?",
+    "question8": "8. Do you intend to enter the United States to violate export control regulations, engage in subversive or terrorist activities, or for any other unlawful purposes?",
+    "question9": "9. Do you seek to engage in or have you ever participated in terrorist activities while in the United States? Are you a member or representative of a terrorist organization?",
+    "question10": "10. Have you ever participated in the implementation of genocide policies or persecution or violent actions?",
+    "question11": "11. Have you ever engaged in extrajudicial killings, political assassinations, or other acts of violence, ordered, incited, aided, or otherwise participated in such activities?",
+    "question12": "12. Have you ever engaged in the recruitment or use of child soldiers?",
+    "question13": "13. Have you ever been, as a government official, responsible for or directly involved in particularly serious violations of religious freedom?",
+    "question14": "14. Have you ever been directly involved in enforcing population controls that involved forcing a woman to have an abortion against her will or a man/woman to undergo sterilization against his/her will?",
+    "question15": "15. Have you ever directly participated in the forced transplantation of human organs or body tissues?",
+    "question16": "16. Have you ever attempted to obtain a U.S. visa or other U.S. immigration benefit for yourself or others by fraud, misrepresentation, or other unlawful means?",
+    "question17": "17. Have you ever retained custody of a U.S. citizen child outside the U.S. against a court order granting custody to another person?",
+    "question18": "18. Have you ever voted in the U.S. in violation of U.S. law or regulation?",
+    "question19": "19. Have you ever renounced U.S. citizenship to avoid taxation?",
+    "question20": "20. Have you ever violated the terms of a U.S. visa, overstayed your U.S. visa, or been deported from the U.S.?"
+  },
+
   "feedbackForm": {
     "name": "Name",
     "feedback": "Feedback",
