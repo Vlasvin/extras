@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Spacer } from "../USAFormStyles";
+import { SectionTitle } from "components/Services/ServicesStyles";
 
 const QuestionsSection: React.FC = () => {
   const { control } = useFormContext();
@@ -39,14 +40,16 @@ const QuestionsSection: React.FC = () => {
 
   return (
     <div>
-      <Typography variant="h6">{t("questionSection.sectionTitle")}</Typography>
+      <SectionTitle>{t("questionSection.sectionTitle")}</SectionTitle>
       <Typography variant="body1" gutterBottom>
         {t("questionSection.warningText")}
       </Typography>
       <Spacer />
       {questions.map((question, index) => (
         <div key={index}>
-          <FormLabel component="legend">{question}</FormLabel>
+          <FormLabel component="legend" sx={{ marginBottom: 2 }}>
+            {question}
+          </FormLabel>
         </div>
       ))}
       <div>
