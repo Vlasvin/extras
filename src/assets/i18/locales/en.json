@@ -358,13 +358,7 @@
     "parentsInUSA": "Are your parents currently in the USA?",
     "maritalStatus": "Your marital status",
     "maritalInfoTitle": "Marital information",
-    "maritalInfoSubscribe": [
-      "- Married",
-      "- Single",
-      "- Widower",
-      "- Divorced",
-      "- Separated"
-    ],
+    "maritalInfoSubscribe": "Married, Single, Widower, Divorced, Separated",
     "spouseName": "Last name and first name of husband/wife",
     "spouseMaidenName": "Spouse's Maiden Name",
     "spouseDOB": "Spouse's Date of Birth",

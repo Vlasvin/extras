@@ -38,10 +38,6 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
     setDialogContent("");
   };
 
-  const maritalStatusOptions = t("familyInfo.maritalInfoSubscribe", {
-    returnObjects: true,
-  }) as string[];
-
   return (
     <div>
       <SectionTitle>{t("familyInfo.title")}</SectionTitle>
@@ -119,7 +115,7 @@ const FamilyInfo: React.FC<FamilyInfoProps> = ({ control, errors }) => {
               onInfoIconClick={() =>
                 handleOpenDialog(
                   t("familyInfo.maritalInfoTitle"),
-                  maritalStatusOptions.join("<br/>")
+                  t("familyInfo.maritalInfoSubscribe")
                 )
               }
             />
