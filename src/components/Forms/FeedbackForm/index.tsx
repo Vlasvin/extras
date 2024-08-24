@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 interface FeedbackFormInputs {
   name: string;
@@ -40,10 +41,29 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
     reset,
   } = useForm<FeedbackFormInputs>();
 
-  const onSubmit = (data: FeedbackFormInputs) => {
-    console.log(data);
-    reset();
-    onClose(true);
+  const apiUrl =
+    process.env.NODE_ENV === "production"
+      ? process.env.REACT_APP_API_URL_PRODUCTION
+      : process.env.REACT_APP_API_URL_LOCAL;
+
+  const onSubmit = async (data: FeedbackFormInputs) => {
+    try {
+      const response = await axios.post(`${apiUrl}/api/send-feedback`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.status >= 200 && response.status < 300) {
+        console.log("Feedback sent successfully");
+        reset();
+        onClose(true);
+      } else {
+        console.error("Failed to send feedback");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   const handleClose = () => {
