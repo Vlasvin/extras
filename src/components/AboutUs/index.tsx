@@ -91,7 +91,7 @@ const AboutUs: React.FC = () => {
       />
       <Snackbar
         open={isSnackbarOpen}
-        autoHideDuration={6000}
+        autoHideDuration={5000}
         onClose={handleSnackbarClose}
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
