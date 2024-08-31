@@ -21,13 +21,14 @@ import DownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import { ThemeContext } from "redux/ThemeContext";
 import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
+import { useAuth } from "context/AuthContext";
 import ThemeSwitch from "components/Header/HeaderComponents/ThemeSwitch";
 import LanguageSelector from "components/Header/HeaderComponents/LanguageSelector";
 import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
 
 import { DialogBtn, headerStyles } from "./HeaderStyles";
 import { useMenuItems, useVisaMenuItems } from "hooks/menuHooks";
-import { useAuth } from "context/AuthContext";
+import LogoLight from "assets/pictures/jpg/Logo_light.png";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -72,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Link to="/">
           <img
-            src="https://extras.com.ua/wp-content/themes/slick-red/images/red/logo.gif"
+            src={LogoLight}
             alt="extras.com.ua"
             style={{ height: 40, marginRight: 10 }}
           />
