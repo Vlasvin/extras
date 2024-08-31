@@ -32,6 +32,7 @@ export const AppLightTheme: Theme = createTheme({
           fontFamily: "Montserrat, sans-serif",
           fontSize: "clamp(14px,3.75vw,20px)",
           fontWeightRegular: 400,
+          color: "rgb(32, 19, 226)",
         },
       },
     },
@@ -79,7 +80,7 @@ export const AppDarkTheme: Theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: "rgb(226, 226, 226)",
+          color: "rgb(244, 229, 220)",
           fontFamily: "Montserrat, sans-serif",
           fontSize: "clamp(14px,3.75vw,20px)",
           fontWeightRegular: 400,
