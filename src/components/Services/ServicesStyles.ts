@@ -17,6 +17,8 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
   letterSpacing: ".01em",
   marginBottom: "24px",
   textAlign: "center",
+  color:
+    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
 }));
 
 export const DescriptionBox = styled(Box)(({ theme }) => ({

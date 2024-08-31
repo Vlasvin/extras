@@ -27,7 +27,10 @@ export const headerStyles = {
 };
 
 export const DialogBtn = styled(Button)(({ theme }) => ({
-  backgroundColor: "transparent",
+  backgroundColor:
+    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
+  color:
+    theme.palette.mode === "light" ? "rgb(244, 229, 220)" : "rgb(32, 19, 226)",
   fontSize: "smaller",
   borderRadius: "10px",
   padding: "2px 10px",

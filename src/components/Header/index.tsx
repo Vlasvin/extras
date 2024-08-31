@@ -66,7 +66,8 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
     setIsVisasMenuOpen(false);
   };
 
-  const textColor = themeMode === IThemeMode.DARK ? "#FFFFFF" : "inherit";
+  const textColor =
+    themeMode === IThemeMode.DARK ? "rgb(244, 229, 220)" : "rgb(32, 19, 226)";
 
   return (
     <Toolbar sx={headerStyles.toolbar}>
