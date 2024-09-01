@@ -11,6 +11,8 @@ export const VisaTitle = styled(Typography)(({ theme }) => ({
   lineHeight: 1.25,
   letterSpacing: ".01em",
   marginBottom: 48,
+  color:
+    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
   [theme.breakpoints.down("sm")]: {
     fontSize: "2rem",
     marginBottom: "24px",
@@ -31,6 +33,8 @@ export const VisaTitleList = styled(Typography)(({ theme }) => ({
   lineHeight: 1.08,
   fontWeight: 500,
   letterSpacing: ".01em",
+  color:
+    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
   [theme.breakpoints.down("sm")]: {
     fontSize: "1.5rem",
     marginBottom: "24px",
@@ -57,4 +61,8 @@ export const CountryBox = styled(Box)(({ theme }) => ({
   textAlign: "center",
   cursor: "pointer",
   marginBottom: theme.spacing(2),
+}));
+
+export const CountryTitle = styled(Typography)(({ theme }) => ({
+  color: theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "#53f941",
 }));

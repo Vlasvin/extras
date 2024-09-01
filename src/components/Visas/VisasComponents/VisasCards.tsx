@@ -1,10 +1,16 @@
-import { Typography, Grid, Button, Container } from "@mui/material";
+import { Typography, Grid, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { visasCardsStyles } from "./VisasCardsStyles";
 import { useState } from "react";
 import homeData from "services/homeData";
 
+import {
+  Title,
+  VisaButton,
+  VisaImage,
+  SvgUsa,
+  SvgCanada,
+} from "./VisasCardsStyles";
 import USAMapIcon from "assets/pictures/svg/UsaMap";
 import CanadaMapIcon from "assets/pictures/svg/CanadaMap";
 import AustraliaMapIcon from "assets/pictures/svg/AustraliaMap";
@@ -19,30 +25,26 @@ const VisasCards = () => {
     <Container style={{ padding: 0 }}>
       {visas.map((visa, index) => (
         <div key={index}>
-          <Typography variant="h1" style={visasCardsStyles.title}>
-            {t(visa.title)}
-          </Typography>
+          <Title variant="h1">{t(visa.title)}</Title>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
               <div style={{ position: "relative" }}>
-                <img
-                  src={visa.image}
-                  alt={visa.title}
-                  style={visasCardsStyles.img}
-                />
-                <div
-                  style={
-                    visa.country === "USA"
-                      ? visasCardsStyles.svgUsa
-                      : visasCardsStyles.svgCanada
-                  }
-                >
-                  {visa.country === "USA" && <USAMapIcon size={iconSize} />}
+                <VisaImage src={visa.image} alt={visa.title} />
+                <div>
+                  {visa.country === "USA" && (
+                    <SvgUsa>
+                      <USAMapIcon size={iconSize} />
+                    </SvgUsa>
+                  )}
                   {visa.country === "Canada" && (
-                    <CanadaMapIcon size={iconSize} />
+                    <SvgCanada>
+                      <CanadaMapIcon size={iconSize} />
+                    </SvgCanada>
                   )}
                   {visa.country === "Australia" && (
-                    <AustraliaMapIcon size={iconSize} />
+                    <SvgUsa>
+                      <AustraliaMapIcon size={iconSize} />
+                    </SvgUsa>
                   )}
                 </div>
               </div>
@@ -59,15 +61,11 @@ const VisasCards = () => {
                   justifyContent: "flex-end",
                 }}
               >
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  component={Link}
-                  to={`/visas/${visa.country.toLowerCase()}`}
-                  style={visasCardsStyles.button}
-                >
-                  {t(visa.details)}
-                </Button>
+                <Link to={`/visas/${visa.country.toLowerCase()}`}>
+                  <VisaButton variant="outlined" color="primary">
+                    {t(visa.details)}
+                  </VisaButton>
+                </Link>
               </div>
             </Grid>
           </Grid>

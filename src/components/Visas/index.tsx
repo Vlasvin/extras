@@ -25,6 +25,7 @@ import {
   CountryContainer,
   CountryBox,
   VisaListItem,
+  CountryTitle,
 } from "./VisasStyles";
 import VisasCards from "./VisasComponents/VisasCards";
 
@@ -123,19 +124,19 @@ const Visas: React.FC = () => {
         <animated.div style={countrySpring}>
           <CountryBox onClick={() => handleCountryClick("usa")}>
             <USAMapIcon size={iconSize} />
-            <Typography>{t("visa.countries.country1")}</Typography>
+            <CountryTitle>{t("visa.countries.country1")}</CountryTitle>
           </CountryBox>
         </animated.div>
         <animated.div style={countrySpring}>
           <CountryBox onClick={() => handleCountryClick("canada")}>
             <CanadaMapIcon size={iconSize} />
-            <Typography>{t("visa.countries.country2")}</Typography>
+            <CountryTitle>{t("visa.countries.country2")}</CountryTitle>
           </CountryBox>
         </animated.div>
         <animated.div style={countrySpring}>
           <CountryBox onClick={() => handleCountryClick("australia")}>
             <AustraliaMapIcon size={iconSize} />
-            <Typography>{t("visa.countries.country3")}</Typography>
+            <CountryTitle>{t("visa.countries.country3")}</CountryTitle>
           </CountryBox>
         </animated.div>
       </CountryContainer>
