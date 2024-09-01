@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import {
   Typography,
   CardContent,
-  Button,
   Grid,
   List,
   ListItem,
@@ -24,6 +23,7 @@ import {
   CustomBox,
   CustomTypography,
   CostsTitle,
+  VisaUsaBtn,
 } from "./VisaStyles";
 
 interface VisaProps {
@@ -188,14 +188,14 @@ const Visa: React.FC<VisaProps> = ({
         ))}
       </List>
       {pageName === "VisaUsa" && (
-        <Button
+        <VisaUsaBtn
           variant="outlined"
           color="primary"
           sx={{ mt: 2 }}
           onClick={handleApplyClick}
         >
           {t(applyButtonKey)}
-        </Button>
+        </VisaUsaBtn>
       )}
     </Container>
   );
