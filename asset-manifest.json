@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/extras/static/css/main.608d510f.css",
-    "main.js": "/extras/static/js/main.6eef49ac.js",
+    "main.js": "/extras/static/js/main.cffcf00c.js",
     "static/js/740.733f8fb0.chunk.js": "/extras/static/js/740.733f8fb0.chunk.js",
     "static/js/558.5950a3b5.chunk.js": "/extras/static/js/558.5950a3b5.chunk.js",
     "static/js/476.c8c61997.chunk.js": "/extras/static/js/476.c8c61997.chunk.js",
@@ -18,7 +18,7 @@
     "static/js/231.b34f83b3.chunk.js": "/extras/static/js/231.b34f83b3.chunk.js",
     "static/js/488.4755f87a.chunk.js": "/extras/static/js/488.4755f87a.chunk.js",
     "static/js/580.d864868a.chunk.js": "/extras/static/js/580.d864868a.chunk.js",
-    "static/js/778.69f6400d.chunk.js": "/extras/static/js/778.69f6400d.chunk.js",
+    "static/js/778.5a839d36.chunk.js": "/extras/static/js/778.5a839d36.chunk.js",
     "static/media/translate.jpg": "/extras/static/media/translate.ad8975cb1a94787af6c6.jpg",
     "static/media/mudrenok.jpg": "/extras/static/media/mudrenok.a806349da1dafc3fdcd1.jpg",
     "static/media/australia-sidney.jpg": "/extras/static/media/australia-sidney.dba2e8cbac0da3fbd950.jpg",
@@ -53,6 +53,7 @@
     "static/media/canada_toronto.jpg": "/extras/static/media/canada_toronto.1fcbf580abb9d8ba9c0e.jpg",
     "static/media/canada.svg": "/extras/static/media/canada.1ecdb0bb0d8889993e5b5e0e7a6883d7.svg",
     "static/media/usa-map.svg": "/extras/static/media/usa-map.28fceb565782e51bdfa0aa4a616cc158.svg",
+    "static/media/Logo_light.jpg": "/extras/static/media/Logo_light.88b1cb795af6b821b57f.jpg",
     "static/media/australia.svg": "/extras/static/media/australia.18ee4eff3a542edeb43c2213eb14c76d.svg",
     "static/media/viber.svg": "/extras/static/media/viber.3bb7409ee1ef76f64eccab049bd7a150.svg",
     "static/media/instagram.svg": "/extras/static/media/instagram.72634fba9e964938677e57cead11e4a9.svg",
@@ -66,7 +67,7 @@
     "static/media/ukraine.svg": "/extras/static/media/ukraine.35c769084edb271d77b105bed85c3c70.svg",
     "static/media/email.svg": "/extras/static/media/email.991aed0d9e3ac7471a85f88c880e2dea.svg",
     "main.608d510f.css.map": "/extras/static/css/main.608d510f.css.map",
-    "main.6eef49ac.js.map": "/extras/static/js/main.6eef49ac.js.map",
+    "main.cffcf00c.js.map": "/extras/static/js/main.cffcf00c.js.map",
     "740.733f8fb0.chunk.js.map": "/extras/static/js/740.733f8fb0.chunk.js.map",
     "558.5950a3b5.chunk.js.map": "/extras/static/js/558.5950a3b5.chunk.js.map",
     "476.c8c61997.chunk.js.map": "/extras/static/js/476.c8c61997.chunk.js.map",
@@ -83,10 +84,10 @@
     "231.b34f83b3.chunk.js.map": "/extras/static/js/231.b34f83b3.chunk.js.map",
     "488.4755f87a.chunk.js.map": "/extras/static/js/488.4755f87a.chunk.js.map",
     "580.d864868a.chunk.js.map": "/extras/static/js/580.d864868a.chunk.js.map",
-    "778.69f6400d.chunk.js.map": "/extras/static/js/778.69f6400d.chunk.js.map"
+    "778.5a839d36.chunk.js.map": "/extras/static/js/778.5a839d36.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.608d510f.css",
-    "static/js/main.6eef49ac.js"
+    "static/js/main.cffcf00c.js"
   ]
 }
