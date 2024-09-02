@@ -12,7 +12,7 @@ export const AppLightTheme: Theme = createTheme({
     MuiToolbar: {
       styleOverrides: {
         root: {
-          backgroundColor: "rgb(253, 255, 255)",
+          backgroundColor: "rgb(32, 19, 226)",
         },
       },
     },
@@ -32,7 +32,7 @@ export const AppLightTheme: Theme = createTheme({
           fontFamily: "Montserrat, sans-serif",
           fontSize: "clamp(14px,3.75vw,20px)",
           fontWeightRegular: 400,
-          color: "rgb(32, 19, 226)",
+          color: "rgb(244, 229, 220)",
         },
       },
     },

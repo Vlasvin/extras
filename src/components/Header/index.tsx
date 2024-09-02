@@ -20,7 +20,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import DownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import { ThemeContext } from "redux/ThemeContext";
-import { IThemeContext, IThemeMode } from "redux/ThemeContext/types";
+import { IThemeContext } from "redux/ThemeContext/types";
 import { useAuth } from "context/AuthContext";
 import ThemeSwitch from "components/Header/HeaderComponents/ThemeSwitch";
 import LanguageSelector from "components/Header/HeaderComponents/LanguageSelector";
@@ -28,7 +28,8 @@ import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
 
 import { DialogBtn, headerStyles } from "./HeaderStyles";
 import { useMenuItems, useVisaMenuItems } from "hooks/menuHooks";
-import LogoLight from "assets/pictures/jpg/Logo_light.png";
+import LogoDark from "assets/pictures/jpg/Logo_dark.png";
+import LogoLight from "assets/pictures/jpg/Logo_light.jpg";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -66,15 +67,14 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
     setIsVisasMenuOpen(false);
   };
 
-  const textColor =
-    themeMode === IThemeMode.DARK ? "rgb(244, 229, 220)" : "rgb(32, 19, 226)";
+  const logo = themeMode === "dark" ? LogoDark : LogoLight;
 
   return (
     <Toolbar sx={headerStyles.toolbar}>
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Link to="/">
           <img
-            src={LogoLight}
+            src={logo}
             alt="extras.com.ua"
             style={{ height: 40, marginRight: 10 }}
           />
@@ -101,7 +101,6 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
               }}
               sx={{
                 ...headerStyles.button,
-                color: textColor,
                 fontWeight: location.pathname === item.link ? "bold" : "normal",
               }}
             >

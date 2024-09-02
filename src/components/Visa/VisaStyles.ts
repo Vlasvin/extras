@@ -39,7 +39,7 @@ export const CenteredCard = styled(Card)(({ theme }) => ({
       ? "0px 0px 24px 0px rgba(32, 19, 226, 0.2)"
       : "none",
   border:
-    theme.palette.mode === "dark" ? "0.5px solid rgba(32, 19, 226, 1)" : "none",
+    theme.palette.mode === "dark" ? "0.5px solid rgba(83, 249, 65, 1)" : "none",
   marginBottom: 48,
 }));
 
