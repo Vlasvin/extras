@@ -6,17 +6,15 @@ export const VisaContainer = styled(Container)(({ theme }) => ({
 }));
 
 export const VisaTitle = styled(Typography)(({ theme }) => ({
+  fontFamily: "Unbounded, sans-serif",
+  color:
+    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
   fontSize: "clamp(34px, 5.55vw, 54px)",
   fontWeight: 800,
   lineHeight: 1.25,
-  letterSpacing: ".01em",
+  letterSpacing: "0.1em",
   marginBottom: 48,
-  color:
-    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "2rem",
-    marginBottom: "24px",
-  },
+  textAlign: "center",
 }));
 
 export const VisaBanner = styled("img")(({ theme }) => ({

@@ -21,10 +21,9 @@ import {
   USATitle,
   CenteredCostCard,
   CustomBox,
-  CustomTypography,
-  CostsTitle,
   VisaUsaBtn,
 } from "./VisaStyles";
+import { SectionTitle } from "components/Services/ServicesStyles";
 
 interface VisaProps {
   titleKey: string;
@@ -132,9 +131,9 @@ const Visa: React.FC<VisaProps> = ({
         </Typography>
       </CardContent>
 
-      <CustomTypography variant="h4" gutterBottom>
+      <SectionTitle variant="h4" gutterBottom>
         {t(stepsKey + "_title")}
-      </CustomTypography>
+      </SectionTitle>
       <Grid
         container
         spacing={2}
@@ -149,9 +148,9 @@ const Visa: React.FC<VisaProps> = ({
         ))}
       </Grid>
 
-      <CostsTitle variant="h4" gutterBottom sx={{ mt: 4 }}>
+      <SectionTitle variant="h4" gutterBottom sx={{ mt: 4 }}>
         {t(costTitle)}
-      </CostsTitle>
+      </SectionTitle>
       <Box
         sx={{
           display: "flex",

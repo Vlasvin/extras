@@ -1,11 +1,21 @@
+import { Typography, styled } from "@mui/material";
+
+export const Title = styled(Typography)(({ theme }) => ({
+  fontFamily: "Unbounded, sans-serif",
+  color:
+    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
+  fontSize: "clamp(34px,5.55vw,54px)",
+  fontWeight: 800,
+  lineHeight: 1.25,
+  letterSpacing: "0.1em",
+  marginBottom: 48,
+  display: "flex",
+  justifyContent: "center",
+}));
+
 export const aboutUsStyles = {
   root: { paddingRight: 0 },
-  title: {
-    fontWeight: "bold",
-    fontSize: 36,
-    marginBottom: 20,
-    display: "flex",
-  },
+
   content: {
     lineHeight: 1.6,
   },
@@ -47,15 +57,6 @@ export const aboutUsStyles = {
     margin: "16px 22px",
   },
 
-  h1: {
-    fontSize: "clamp(34px,5.55vw,54px)",
-    fontWeight: 800,
-    lineHeight: 1.25,
-    letterSpacing: ".01em",
-    marginBottom: 48,
-    display: "flex",
-    justifyContent: "center",
-  },
   li: {
     fontSize: "clamp(18px,4.375vw,20px)",
     fontFamily: "Montserrat, sans-serif",

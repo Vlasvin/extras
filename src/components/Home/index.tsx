@@ -1,9 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Typography, List, ListItem, Box } from "@mui/material";
+import { Container, Typography, List, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { SectionTitle } from "components/Translations/TranslationsStyles";
-import { HomeBtn, Intro } from "./HomeStyles";
+import { HomeBtn, Intro, ListItemTranslation } from "./HomeStyles";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -31,9 +31,9 @@ const Home: React.FC = () => {
         </SectionTitle>
         <List>
           {translationServices.map((service, index) => (
-            <ListItem key={index} sx={{ fontSize: "20px" }}>
+            <ListItemTranslation key={index} sx={{ fontSize: "20px" }}>
               • {service}
-            </ListItem>
+            </ListItemTranslation>
           ))}
         </List>
         <Link to="/translations" style={{ textDecoration: "none" }}>

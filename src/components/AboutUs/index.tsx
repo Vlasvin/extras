@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  Container,
-  Typography,
-  Button,
-  Grid,
-  Snackbar,
-  Alert,
-} from "@mui/material";
+import { Container, Button, Grid, Snackbar, Alert } from "@mui/material";
 import { useSpring } from "@react-spring/web";
 
 import HeaderSection from "./AboutUsComponents/HeaderSection";
@@ -15,6 +8,7 @@ import ServicesSection from "./AboutUsComponents/ServicesSection";
 import Sections from "./AboutUsComponents/Sections";
 import ContactsSection from "./AboutUsComponents/ContactsSection";
 import FeedbackForm from "components/Forms/FeedbackForm";
+import { SectionTitle } from "components/Services/ServicesStyles";
 
 import useServicesData from "hooks/useServicesData";
 import useIconColor from "hooks/useIconColor";
@@ -71,9 +65,7 @@ const AboutUs: React.FC = () => {
     <Container style={aboutUsStyles.root}>
       <HeaderSection />
       <ServicesSection services={services} animation={animation} />
-      <Typography variant="h2" style={aboutUsStyles.h2}>
-        {t("aboutUs.why_us")}
-      </Typography>
+      <SectionTitle>{t("aboutUs.why_us")}</SectionTitle>
       <Sections sections={sections} iconColor={iconColor} />
       <ContactsSection />
       <Grid item xs={12}>
@@ -91,7 +83,7 @@ const AboutUs: React.FC = () => {
       />
       <Snackbar
         open={isSnackbarOpen}
-        autoHideDuration={5000}
+        autoHideDuration={6000}
         onClose={handleSnackbarClose}
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >

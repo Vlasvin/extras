@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Grid, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { aboutUsStyles } from "../AboutUsStyles";
+import { Title, aboutUsStyles } from "../AboutUsStyles";
 import AboutUsImg from "assets/pictures/jpg/mudrenok.jpg";
 
 const HeaderSection = () => {
@@ -10,9 +10,7 @@ const HeaderSection = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} md={8}>
-        <Typography variant="h1" style={aboutUsStyles.h1}>
-          {t("aboutUs.title")}
-        </Typography>
+        <Title>{t("aboutUs.title")}</Title>
         <Typography
           variant="body1"
           style={{

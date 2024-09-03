@@ -2,10 +2,13 @@ import { Box, List, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 export const Title = styled(Typography)(({ theme }) => ({
+  fontFamily: "Unbounded, sans-serif",
+  color:
+    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
   fontSize: "clamp(34px, 5.55vw, 54px)",
   fontWeight: 800,
   lineHeight: 1.25,
-  letterSpacing: ".01em",
+  letterSpacing: "0.1em",
   marginBottom: "24px",
   textAlign: "center",
 }));
@@ -14,7 +17,7 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(26px, 5.55vw, 42px)",
   lineHeight: 1.08,
   fontWeight: 500,
-  letterSpacing: ".01em",
+  letterSpacing: "0.25em",
   marginBottom: "24px",
   textAlign: "center",
   color:

@@ -3,9 +3,10 @@ import { Typography, Card, Box, Divider, Button } from "@mui/material";
 
 export const USATitle = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(34px, 5.55vw, 54px)",
+  fontFamily: "Unbounded, sans-serif",
   fontWeight: 800,
   lineHeight: 1.25,
-  letterSpacing: ".01em",
+  letterSpacing: "0.1em",
   color:
     theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
   marginBottom: 48,
@@ -13,17 +14,6 @@ export const USATitle = styled(Typography)(({ theme }) => ({
     fontSize: "2rem",
     marginBottom: "24px",
   },
-}));
-
-export const CustomTypography = styled(Typography)(({ theme }) => ({
-  fontSize: "clamp(26px, 5.55vw, 42px)",
-  lineHeight: 1.08,
-  fontWeight: 500,
-  letterSpacing: ".01em",
-  color:
-    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
-  marginBottom: "24px",
-  textAlign: "center",
 }));
 
 export const CenteredCard = styled(Card)(({ theme }) => ({
@@ -41,17 +31,6 @@ export const CenteredCard = styled(Card)(({ theme }) => ({
   border:
     theme.palette.mode === "dark" ? "0.5px solid rgba(83, 249, 65, 1)" : "none",
   marginBottom: 48,
-}));
-
-export const CostsTitle = styled(Typography)(({ theme }) => ({
-  fontSize: "clamp(26px, 5.55vw, 42px)",
-  lineHeight: 1.08,
-  fontWeight: 500,
-  letterSpacing: ".01em",
-  color:
-    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
-  marginBottom: "24px",
-  textAlign: "center",
 }));
 
 export const CenteredCostCard = styled(Card)(({ theme }) => ({
