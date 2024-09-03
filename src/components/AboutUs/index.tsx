@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Button, Grid, Snackbar, Alert } from "@mui/material";
+import { Container, Grid, Snackbar, Alert } from "@mui/material";
 import { useSpring } from "@react-spring/web";
 
 import HeaderSection from "./AboutUsComponents/HeaderSection";
