@@ -6,7 +6,6 @@ import {
   ListItem,
   ListItemText,
   Grid,
-  Button,
   Box,
   Dialog,
   IconButton,
@@ -24,6 +23,7 @@ import {
   CustomList,
   CustomImage,
   Title,
+  TranslationBtn,
 } from "./TranslationsStyles";
 import TranslationsImg from "assets/pictures/jpg/translate.jpg";
 
@@ -92,9 +92,13 @@ const Translations: React.FC = () => {
           {t("translation.writtenTranslation.details")}
         </Typography>
         <Box display="flex" justifyContent="center" my={2} mb={6}>
-          <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+          <TranslationBtn
+            variant="outlined"
+            color="primary"
+            onClick={handleClickOpen}
+          >
             {t("form.calculate_title")}
-          </Button>
+          </TranslationBtn>
         </Box>
 
         <Dialog

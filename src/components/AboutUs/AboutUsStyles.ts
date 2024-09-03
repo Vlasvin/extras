@@ -1,4 +1,4 @@
-import { Typography, styled } from "@mui/material";
+import { Button, Typography, styled } from "@mui/material";
 
 export const Title = styled(Typography)(({ theme }) => ({
   fontFamily: "Unbounded, sans-serif",
@@ -11,6 +11,20 @@ export const Title = styled(Typography)(({ theme }) => ({
   marginBottom: 48,
   display: "flex",
   justifyContent: "center",
+}));
+
+export const AboutUsBtn = styled(Button)(({ theme }) => ({
+  borderRadius: "20px",
+  color:
+    theme.palette.mode === "light" ? "rgb(244, 229, 220)" : "rgb(32, 19, 226)",
+  backgroundColor:
+    theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
+  "&:hover": {
+    backgroundColor:
+      theme.palette.mode === "light"
+        ? "rgba(32, 19, 226, 0.8)"
+        : "rgba(244, 229, 220, 0.8)",
+  },
 }));
 
 export const aboutUsStyles = {

@@ -13,7 +13,7 @@ import { SectionTitle } from "components/Services/ServicesStyles";
 import useServicesData from "hooks/useServicesData";
 import useIconColor from "hooks/useIconColor";
 import { GetSections } from "services/servicesData";
-import { aboutUsStyles } from "./AboutUsStyles";
+import { AboutUsBtn, aboutUsStyles } from "./AboutUsStyles";
 
 interface Section {
   title: string;
@@ -69,13 +69,12 @@ const AboutUs: React.FC = () => {
       <Sections sections={sections} iconColor={iconColor} />
       <ContactsSection />
       <Grid item xs={12}>
-        <Button
+        <AboutUsBtn
           variant="outlined"
-          color="primary"
           onClick={() => setIsFeedbackFormOpen(true)}
         >
           {t("aboutUs.leave_review")}
-        </Button>
+        </AboutUsBtn>
       </Grid>
       <FeedbackForm
         open={isFeedbackFormOpen}
