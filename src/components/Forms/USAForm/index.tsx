@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 // import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import * as yup from "yup";
 import PersonalInfo from "./USAFormComponents/PersonalInfo";
@@ -12,6 +11,7 @@ import TravelHistory from "./USAFormComponents/TravelHistory";
 import WorkAndEducation from "./USAFormComponents/WorkAndEducation";
 import { Container, FormWrapper, Spacer } from "./USAFormStyles";
 import QuestionsSection from "./USAFormComponents/QuestionSection";
+import { FormBtn } from "../FormStyles";
 // import { validationSchema } from "validations/validationSchema";
 
 const VisaForm: React.FC = () => {
@@ -99,9 +99,9 @@ const VisaForm: React.FC = () => {
             <Spacer />
             <QuestionsSection />
             <Spacer />
-            <Button type="submit" variant="outlined" color="primary">
+            <FormBtn type="submit" variant="outlined" color="primary">
               {t("send")}
-            </Button>
+            </FormBtn>
           </form>
         </FormProvider>
       </FormWrapper>

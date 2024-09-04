@@ -2,7 +2,6 @@ import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import {
   TextField,
-  Button,
   Dialog,
   DialogContent,
   DialogTitle,
@@ -14,6 +13,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+import { FormBtn } from "../FormStyles";
 
 interface FeedbackFormInputs {
   name: string;
@@ -141,14 +141,14 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ open, onClose }) => {
               />
             </Grid>
             <Grid item xs={12}>
-              <Button
+              <FormBtn
                 type="submit"
                 variant="outlined"
                 color="primary"
                 sx={{ width: "100%", mb: 4 }}
               >
                 {t("feedbackForm.submit")}
-              </Button>
+              </FormBtn>
             </Grid>
           </Grid>
         </form>

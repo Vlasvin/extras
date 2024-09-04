@@ -5,9 +5,8 @@ import {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle,
-  Button,
 } from "@mui/material";
+import { CustomDialogTitle, FormBtn } from "components/Forms/FormStyles";
 
 interface InfoDialogProps {
   open: boolean;
@@ -26,19 +25,19 @@ const InfoDialog: React.FC<InfoDialogProps> = ({
 
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>{title}</DialogTitle>
+      <CustomDialogTitle>{title}</CustomDialogTitle>
       <DialogContent>
         <DialogContentText>{content}</DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button
+        <FormBtn
           onClick={onClose}
           variant="outlined"
           color="primary"
           sx={{ fontSize: "0.8rem", padding: "2px 10px" }}
         >
           {t("close")}
-        </Button>
+        </FormBtn>
       </DialogActions>
     </Dialog>
   );

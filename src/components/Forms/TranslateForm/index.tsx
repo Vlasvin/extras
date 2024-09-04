@@ -4,7 +4,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import {
   Container,
   TextField,
-  Button,
   Typography,
   Grid,
   Box,
@@ -16,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { getErrorMessage } from "utils/formUtils";
 import { translationSchema } from "validations/authSchema";
+import { FormBtn, UploadBtn } from "../FormStyles";
 
 export interface IFormInput {
   name: string;
@@ -163,7 +163,7 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
               />
             </Grid>
             <Grid item xs={12}>
-              <Button variant="outlined" component="label" fullWidth>
+              <UploadBtn variant="outlined" as="label" fullWidth>
                 {t("form.upload_file")}
                 <input
                   type="file"
@@ -174,7 +174,7 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
                     }
                   }}
                 />
-              </Button>
+              </UploadBtn>
               {errors.file && (
                 <Typography color="error" variant="body2">
                   {getErrorMessage(errors, "file")}
@@ -190,14 +190,14 @@ const TranslationForm: React.FC<TranslationFormProps> = ({ onClose }) => {
               </List>
             </Grid>
             <Grid item xs={12}>
-              <Button
+              <FormBtn
                 type="submit"
                 variant="outlined"
                 color="primary"
                 fullWidth
               >
                 {t("form.submit")}
-              </Button>
+              </FormBtn>
             </Grid>
           </Grid>
         </form>

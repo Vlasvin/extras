@@ -65,7 +65,9 @@ const AboutUs: React.FC = () => {
     <Container style={aboutUsStyles.root}>
       <HeaderSection />
       <ServicesSection services={services} animation={animation} />
-      <SectionTitle>{t("aboutUs.why_us")}</SectionTitle>
+      <SectionTitle sx={{ marginTop: "48px" }}>
+        {t("aboutUs.why_us")}
+      </SectionTitle>
       <Sections sections={sections} iconColor={iconColor} />
       <ContactsSection />
       <Grid item xs={12}>
