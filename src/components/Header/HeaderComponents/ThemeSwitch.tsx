@@ -5,19 +5,29 @@ import DarkModeIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import Tooltip from "@mui/material/Tooltip";
 import { useTranslation } from "react-i18next";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 import { ThemeContext } from "../../../redux/ThemeContext";
 import { IThemeContext, IThemeMode } from "../../../redux/ThemeContext/types";
 
-const StyledIconButton = styled(IconButton)(({ theme }) => ({
-  color: "rgb(244, 229, 220)",
-}));
+const StyledIconButton = styled(IconButton)<{ isMobile: boolean }>(
+  ({ theme, isMobile }) => ({
+    color:
+      theme.palette.mode === "light"
+        ? isMobile
+          ? "rgba(0, 0, 0, 0.54)"
+          : "rgb(244, 229, 220)"
+        : "rgb(244, 229, 220)",
+  })
+);
 
 const ThemeSwitch: React.FC = () => {
   const { t } = useTranslation();
   const { themeMode, switchThemeMode } = useContext(
     ThemeContext
   ) as IThemeContext;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // визначаємо, чи це мобільна версія
 
   const handleSwitchTheme = () => {
     switchThemeMode(
@@ -32,7 +42,7 @@ const ThemeSwitch: React.FC = () => {
 
   return (
     <Tooltip title={tooltipText} arrow>
-      <StyledIconButton onClick={handleSwitchTheme}>
+      <StyledIconButton onClick={handleSwitchTheme} isMobile={isMobile}>
         {themeMode === IThemeMode.DARK ? <LightModeIcon /> : <DarkModeIcon />}
       </StyledIconButton>
     </Tooltip>
