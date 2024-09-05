@@ -31,6 +31,12 @@ export const DialogBtn = styled(Button)(({ theme }) => ({
     theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
   color:
     theme.palette.mode === "light" ? "rgb(244, 229, 220)" : "rgb(32, 19, 226)",
+  "&:hover": {
+    backgroundColor:
+      theme.palette.mode === "light"
+        ? "rgba(32, 19, 226, 0.8)"
+        : "rgba(244, 229, 220, 0.8)",
+  },
   fontSize: "smaller",
   borderRadius: "10px",
   padding: "2px 10px",
