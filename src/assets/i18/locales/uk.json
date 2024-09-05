@@ -1,4 +1,9 @@
 {
+  "theme": {
+    "switch_to_light": "Перемкнути на світлу тему",
+    "switch_to_dark": "Перемкнути на темну тему"
+  },
+
   "homePage": "Головна",
   "visas": "Візи",
   "visa to usa": "Віза до США",

@@ -14,6 +14,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Tooltip,
 } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -141,13 +142,30 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           <LanguageSelector iconColor="primary" />
           <ThemeSwitch />
           {user ? (
-            <IconButton onClick={handleDialogOpen} aria-label="logout">
-              <LogoutIcon />
-            </IconButton>
+            <Tooltip title={t("auth.logout")} arrow>
+              <IconButton
+                onClick={handleDialogOpen}
+                aria-label="logout"
+                sx={{
+                  color: "rgb(244, 229, 220)",
+                }}
+              >
+                <LogoutIcon />
+              </IconButton>
+            </Tooltip>
           ) : (
-            <IconButton component={Link} to="/auth" aria-label="account">
-              <PersonIcon />
-            </IconButton>
+            <Tooltip title={t("auth.login")} arrow>
+              <IconButton
+                component={Link}
+                to="/auth"
+                aria-label="account"
+                sx={{
+                  color: "rgb(244, 229, 220)",
+                }}
+              >
+                <PersonIcon />
+              </IconButton>
+            </Tooltip>
           )}
         </Box>
       )}

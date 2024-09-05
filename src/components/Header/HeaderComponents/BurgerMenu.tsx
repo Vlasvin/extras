@@ -52,7 +52,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
   const menuItems = useMenuItems();
   const visaMenuItems = useVisaMenuItems();
   const { user, logout } = useAuth();
-  const { loading, setLoading } = useLoading(); // використовуємо useLoading
+  const { loading, setLoading } = useLoading();
 
   const toggleDrawer = (open: boolean) => () => {
     setIsOpen(open);
@@ -93,7 +93,13 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
   return (
     <>
       {isMobile && (
-        <IconButton onClick={toggleDrawer(true)} aria-label="menu">
+        <IconButton
+          onClick={toggleDrawer(true)}
+          aria-label="menu"
+          sx={{
+            color: "rgb(244, 229, 220)",
+          }}
+        >
           <MenuIcon />
         </IconButton>
       )}
