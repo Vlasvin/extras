@@ -10,7 +10,7 @@ import {
   HomeBtn,
 } from "./HomeStyles";
 import { SectionTitle } from "components/Translations/TranslationsStyles";
-import homeImg from "assets/pictures/jpg/homeImg.jpg";
+import homeImg from "assets/pictures/jpg/homeImg.png";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -31,12 +31,11 @@ const Home: React.FC = () => {
           <Intro variant="h4" gutterBottom>
             &nbsp;&nbsp;{t("homepage.intro")}
           </Intro>
-          <Intro variant="h6" gutterBottom mb={4}>
-            &nbsp;&nbsp;{t("homepage.services_intro")}
-          </Intro>
         </Box>
       </ImageTextContainer>
-
+      <Intro variant="h6" gutterBottom mb={4}>
+        &nbsp;&nbsp;{t("homepage.services_intro")}
+      </Intro>
       <Box mb={10}>
         <SectionTitle variant="h5" gutterBottom>
           {t("homepage.translation.title")}

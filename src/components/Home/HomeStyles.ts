@@ -3,6 +3,7 @@ import { styled } from "@mui/system";
 
 export const ImageTextContainer = styled(Box)(({ theme }) => ({
   display: "flex",
+  alignItems: "center",
   marginBottom: theme.spacing(4),
 }));
 
