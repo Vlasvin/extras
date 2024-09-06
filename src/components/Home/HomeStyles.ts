@@ -1,5 +1,16 @@
-import { Button, ListItem, Typography } from "@mui/material";
+import { Box, Button, ListItem, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+
+export const ImageTextContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  marginBottom: theme.spacing(4),
+}));
+
+export const HomeImage = styled("img")(({ theme }) => ({
+  width: "50%",
+  height: "auto",
+  marginRight: theme.spacing(2),
+}));
 
 export const Intro = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(20px,5.55vw,28px)",
