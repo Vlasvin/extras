@@ -4,6 +4,10 @@
     "switch_to_dark": "Перемкнути на темну тему"
   },
 
+  "languageSelector": {
+    "tooltip": "Вибір мови"
+  },
+
   "homePage": "Головна",
   "visas": "Візи",
   "visa to usa": "Віза до США",

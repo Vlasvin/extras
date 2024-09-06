@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { IconButton, Menu, MenuItem } from "@mui/material";
+import { IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
 import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 import ukraineIcon from "assets/pictures/svg/ukraine.svg";
 import russiaIcon from "assets/pictures/svg/russia.svg";
@@ -11,6 +12,7 @@ interface LanguageSelectorProps {
 }
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ iconColor }) => {
+  const { t } = useTranslation(); // Підключаємо переклади
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
 
@@ -43,15 +45,17 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ iconColor }) => {
 
   return (
     <>
-      <IconButton
-        aria-label="select language"
-        aria-controls="language-menu"
-        aria-haspopup="true"
-        onClick={handleMenuOpen}
-        color={iconColor === "primary" ? "primary" : "inherit"}
-      >
-        <img src={getIcon()} alt="Language Flag" />
-      </IconButton>
+      <Tooltip title={t("languageSelector.tooltip")} arrow>
+        <IconButton
+          aria-label="language selector"
+          aria-controls="language-menu"
+          aria-haspopup="true"
+          onClick={handleMenuOpen}
+          color={iconColor === "primary" ? "primary" : "inherit"}
+        >
+          <img src={getIcon()} alt="language flag" />
+        </IconButton>
+      </Tooltip>
       <Menu
         id="language-menu"
         anchorEl={anchorEl}
