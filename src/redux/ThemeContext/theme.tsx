@@ -4,7 +4,7 @@ export const AppLightTheme: Theme = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "rgb(244, 229, 220)",
+      default: "rgb(242, 169, 124)",
       paper: "rgb(244, 229, 220)",
     },
   },
@@ -21,7 +21,7 @@ export const AppLightTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: "GothamPro, sans-serif",
-          fontSize: "clamp(18px,4.375vw,20px)",
+          fontSize: "clamp(16px,4.375vw,20px)",
           fontWeightRegular: 400,
           letterSpacing: "0.1em",
         },
@@ -74,7 +74,7 @@ export const AppDarkTheme: Theme = createTheme({
         root: {
           color: "rgb(226, 226, 226)",
           fontFamily: "GothamPro, sans-serif",
-          fontSize: "clamp(18px,4.375vw,20px)",
+          fontSize: "clamp(16px,4.375vw,20px)",
           fontWeightRegular: 400,
           letterSpacing: "0.1em",
         },
