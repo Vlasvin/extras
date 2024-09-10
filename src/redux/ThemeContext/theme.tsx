@@ -24,6 +24,9 @@ export const AppLightTheme: Theme = createTheme({
           fontSize: "clamp(16px,4.375vw,20px)",
           fontWeightRegular: 400,
           letterSpacing: "0.1em",
+          "@media (max-width:600px)": {
+            letterSpacing: "0.01em",
+          },
         },
       },
     },
@@ -35,6 +38,9 @@ export const AppLightTheme: Theme = createTheme({
           fontWeightRegular: 400,
           letterSpacing: "0.1em",
           color: "rgb(244, 229, 220)",
+          "@media (max-width:600px)": {
+            letterSpacing: "0.01em",
+          },
         },
       },
     },
@@ -77,6 +83,9 @@ export const AppDarkTheme: Theme = createTheme({
           fontSize: "clamp(16px,4.375vw,20px)",
           fontWeightRegular: 400,
           letterSpacing: "0.1em",
+          "@media (max-width:600px)": {
+            letterSpacing: "0.01em",
+          },
         },
       },
     },
@@ -88,6 +97,9 @@ export const AppDarkTheme: Theme = createTheme({
           fontSize: "clamp(14px,3.75vw,20px)",
           fontWeightRegular: 400,
           letterSpacing: "0.1em",
+          "@media (max-width:600px)": {
+            letterSpacing: "0.01em",
+          },
         },
       },
     },

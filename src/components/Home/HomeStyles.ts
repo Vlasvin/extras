@@ -22,6 +22,9 @@ export const ListItemTranslation = styled(ListItem)(({ theme }) => ({
   fontSize: "clamp(16px,4.375vw, 20px)",
   fontFamily: "GothamPro, sans-serif",
   letterSpacing: "0.1em",
+  "@media (max-width:600px)": {
+    letterSpacing: "0.01em",
+  },
 }));
 
 export const HomeBtn = styled(Button)(({ theme }) => ({
