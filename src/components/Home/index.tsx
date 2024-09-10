@@ -33,7 +33,7 @@ const Home: React.FC = () => {
           </Intro>
         </Box>
       </ImageTextContainer>
-      <Intro variant="h6" gutterBottom mb={4}>
+      <Intro variant="h6" gutterBottom>
         &nbsp;&nbsp;{t("homepage.services_intro")}
       </Intro>
       <Box mb={10}>
