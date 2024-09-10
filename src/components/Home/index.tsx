@@ -27,7 +27,7 @@ const Home: React.FC = () => {
     <Container>
       <ImageTextContainer>
         <HomeImage src={homeImg} alt="Home" />
-        <Box sx={{ flex: 1 }}>
+        <Box sx={{ flex: 1, order: { xs: 2, md: 1 } }}>
           <Intro variant="h4" gutterBottom>
             &nbsp;&nbsp;{t("homepage.intro")}
           </Intro>

@@ -15,6 +15,9 @@ export const HomeImage = styled("img")(({ theme }) => ({
   width: "50%",
   height: "auto",
   marginRight: theme.spacing(2),
+  [theme.breakpoints.down("sm")]: {
+    marginRight: 0,
+  },
 }));
 
 export const Intro = styled(Typography)(({ theme }) => ({
@@ -29,7 +32,7 @@ export const ListItemTranslation = styled(ListItem)(({ theme }) => ({
   fontSize: "clamp(16px,4.375vw, 20px)",
   fontFamily: "GothamPro, sans-serif",
   letterSpacing: "0.1em",
-  "@media (max-width:600px)": {
+  [theme.breakpoints.down("sm")]: {
     letterSpacing: "0.01em",
   },
 }));
