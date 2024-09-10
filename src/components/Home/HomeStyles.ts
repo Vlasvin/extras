@@ -5,6 +5,10 @@ export const ImageTextContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   marginBottom: theme.spacing(4),
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    gap: "24px",
+  },
 }));
 
 export const HomeImage = styled("img")(({ theme }) => ({
@@ -17,6 +21,9 @@ export const Intro = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(20px,5.55vw,28px)",
   marginBottom: 48,
   textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: 24,
+  },
 }));
 export const ListItemTranslation = styled(ListItem)(({ theme }) => ({
   fontSize: "clamp(16px,4.375vw, 20px)",
