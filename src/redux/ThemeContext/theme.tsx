@@ -4,7 +4,7 @@ export const AppLightTheme: Theme = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "rgb(242, 169, 124)",
+      default: "rgb(244, 229, 220)",
       paper: "rgb(244, 229, 220)",
     },
   },

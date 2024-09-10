@@ -42,9 +42,7 @@ const Home: React.FC = () => {
         </SectionTitle>
         <List>
           {translationServices.map((service, index) => (
-            <ListItemTranslation key={index} sx={{ fontSize: "20px" }}>
-              • {service}
-            </ListItemTranslation>
+            <ListItemTranslation key={index}>• {service}</ListItemTranslation>
           ))}
         </List>
         <Link to="/translations" style={{ textDecoration: "none" }}>

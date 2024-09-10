@@ -19,7 +19,7 @@ export const Intro = styled(Typography)(({ theme }) => ({
   textAlign: "center",
 }));
 export const ListItemTranslation = styled(ListItem)(({ theme }) => ({
-  fontSize: "clamp(20px,5.55vw,28px)",
+  fontSize: "clamp(16px,4.375vw, 20px)",
   fontFamily: "GothamPro, sans-serif",
   letterSpacing: "0.1em",
 }));
