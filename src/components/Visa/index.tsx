@@ -13,9 +13,9 @@ import {
 import { useSprings, animated, config, useSpring } from "@react-spring/web";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-import { useAuth } from "context/AuthContext";
+// import { useAuth } from "context/AuthContext";
 import FlippingCard from "./VisaComponents/FlippingCard";
 import {
   USATitle,
