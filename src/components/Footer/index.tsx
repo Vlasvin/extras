@@ -60,18 +60,6 @@ const Footer = () => {
         flexDirection: isMobile ? "column" : "row",
       }}
     >
-      {/* {!isMobile && (
-        <Box sx={{ maxWidth: "150px" }}>
-          <Link to="/">
-            <img
-              src="https://extras.com.ua/wp-content/themes/slick-red/images/red/logo.gif"
-              alt="Company logo"
-              title="Logo"
-              style={{ height: 70, marginRight: 30 }}
-            />
-          </Link>
-        </Box>
-      )} */}
       <Box
         sx={{
           ...footerStyles.contentContainer,
@@ -116,7 +104,19 @@ const Footer = () => {
           <SocialMediaIcons />
         </Box>
         <Typography variant="body2" sx={footerStyles.developedBox}>
-          {t("developed_by")}
+          {t("developed_by")}{" "}
+          <a
+            href="https://linkedin.com/in/oleksii-vlasenko"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              fontWeight: "bold",
+            }}
+          >
+            Oleksii Vlasenko
+          </a>
         </Typography>
       </Box>
     </Box>
