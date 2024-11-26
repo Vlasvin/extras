@@ -21,7 +21,7 @@ import {
   USATitle,
   CenteredCostCard,
   CustomBox,
-  VisaUsaBtn,
+  // VisaUsaBtn,
 } from "./VisaStyles";
 import { SectionTitle } from "components/Services/ServicesStyles";
 
@@ -91,13 +91,13 @@ const Visa: React.FC<VisaProps> = ({
       </React.Fragment>
     ));
 
-  const handleApplyClick = () => {
-    if (user) {
-      navigate("/visas/usa/visa-form");
-    } else {
-      navigate("/auth");
-    }
-  };
+  // const handleApplyClick = () => {
+  //   if (user) {
+  //     navigate("/visas/usa/visa-form");
+  //   } else {
+  //     navigate("/auth");
+  //   }
+  // };
 
   return (
     <Container style={{ padding: 0 }}>
