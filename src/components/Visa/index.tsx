@@ -51,8 +51,8 @@ const Visa: React.FC<VisaProps> = ({
   const { t } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const navigate = useNavigate();
-  const { user } = useAuth();
+  // const navigate = useNavigate();
+  // const { user } = useAuth();
   const [index, setIndex] = useState(0);
 
   const [springs, api] = useSprings(images.length, (i) => ({
