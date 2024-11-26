@@ -187,14 +187,14 @@ const Visa: React.FC<VisaProps> = ({
         ))}
       </List>
       {pageName === "VisaUsa" && (
-        <VisaUsaBtn
-          variant="outlined"
-          color="primary"
-          sx={{ mt: 2 }}
-          onClick={handleApplyClick}
-        >
-          {t(applyButtonKey)}
-        </VisaUsaBtn>
+        // <VisaUsaBtn
+        //   variant="outlined"
+        //   color="primary"
+        //   sx={{ mt: 2 }}
+        //   onClick={handleApplyClick}
+        // >
+        //   {t(applyButtonKey)}
+        // </VisaUsaBtn>
       )}
     </Container>
   );
