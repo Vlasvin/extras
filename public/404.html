@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta
       http-equiv="refresh"
-      content="0; url=/extras/index.html?redirect=/extras"
     />
   </head>
   <body>
@@ -14,7 +13,7 @@
       var search = window.location.search;
       var hash = window.location.hash;
       var newUrl =
-        "/extras/index.html?redirect=" +
+        "/index.html?redirect=" +
         pathname +
         encodeURIComponent(search + hash);
       window.location.replace(newUrl);

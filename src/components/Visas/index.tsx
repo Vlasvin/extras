@@ -35,7 +35,7 @@ const Visas: React.FC = () => {
   const iconColor = useIconColor();
 
   const handleCountryClick = (country: string) => {
-    window.location.href = `/extras/visas/${country}`;
+    window.location.href = `/visas/${country}`;
   };
 
   const titleSpring = useSpring({
