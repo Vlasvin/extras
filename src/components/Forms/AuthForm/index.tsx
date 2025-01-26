@@ -35,18 +35,12 @@ type BackendError = {
 
 const AuthForm: React.FC = () => {
   const { t } = useTranslation();
-  const { login, register } = useAuth();
+  const authContext = useAuth();
   const { setLoading } = useLoading();
   const [isLogin, setIsLogin] = useState(true);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
-
-  const apiUrl =
-    process.env.NODE_ENV === "production"
-      ? process.env.REACT_APP_API_URL_PRODUCTION
-      : process.env.REACT_APP_API_URL_LOCAL;
-
   const {
     control,
     handleSubmit,
@@ -62,9 +56,25 @@ const AuthForm: React.FC = () => {
       confirmPassword: "",
     },
   });
+  const springConfig = {
+    delay: 2,
+    duration: 2,
+    from: { opacity: 0, transform: "translateY(20px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+  };
+  const animation = useSpring(springConfig);
+
+  if (!authContext) {
+    return null;
+  }
+  const { login, register } = authContext || {};
+  const apiUrl =
+    process.env.NODE_ENV === "production"
+      ? process.env.REACT_APP_API_URL_PRODUCTION
+      : process.env.REACT_APP_API_URL_LOCAL;
 
   const onSubmit = async (data: LoginFormData | RegisterFormData) => {
-    setLoading(true);
+    setLoading?.(true);
     try {
       if (isLogin) {
         const response = await axios.post(`${apiUrl}/auth/login`, data);
@@ -91,7 +101,7 @@ const AuthForm: React.FC = () => {
       }
       console.error("Error:", message);
     } finally {
-      setLoading(false);
+      setLoading?.(false);
     }
   };
 
@@ -104,15 +114,6 @@ const AuthForm: React.FC = () => {
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
-
-  const springConfig = {
-    delay: 2,
-    duration: 2,
-    from: { opacity: 0, transform: "translateY(20px)" },
-    to: { opacity: 1, transform: "translateY(0)" },
-  };
-
-  const animation = useSpring(springConfig);
 
   return (
     <animated.div style={animation}>
