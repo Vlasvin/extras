@@ -10,16 +10,16 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { ThemeContext } from "../../../redux/ThemeContext";
 import { IThemeContext, IThemeMode } from "../../../redux/ThemeContext/types";
 
-const StyledIconButton = styled(IconButton)<{ isMobile: boolean }>(
-  ({ theme, isMobile }) => ({
-    color:
-      theme.palette.mode === "light"
-        ? isMobile
-          ? "rgba(0, 0, 0, 0.54)"
-          : "rgb(244, 229, 220)"
-        : "rgb(244, 229, 220)",
-  })
-);
+const StyledIconButton = styled(IconButton, {
+  shouldForwardProp: (prop) => prop !== "ismobile", // Указываем, что проп `ismobile` не должен передаваться в DOM
+})<{ ismobile?: boolean }>(({ theme, ismobile }) => ({
+  color:
+    theme.palette.mode === "light"
+      ? ismobile
+        ? "rgba(0, 0, 0, 0.54)"
+        : "rgb(244, 229, 220)"
+      : "rgb(244, 229, 220)",
+}));
 
 const ThemeSwitch: React.FC = () => {
   const { t } = useTranslation();
@@ -42,7 +42,7 @@ const ThemeSwitch: React.FC = () => {
 
   return (
     <Tooltip title={tooltipText} arrow>
-      <StyledIconButton onClick={handleSwitchTheme} isMobile={isMobile}>
+      <StyledIconButton onClick={handleSwitchTheme} ismobile={!!isMobile}>
         {themeMode === IThemeMode.DARK ? <LightModeIcon /> : <DarkModeIcon />}
       </StyledIconButton>
     </Tooltip>
