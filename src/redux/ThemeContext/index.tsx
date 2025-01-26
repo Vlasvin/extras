@@ -50,7 +50,10 @@ export const ThemeContextProvider: React.FunctionComponent<
 
   const getThemeModeFromPref = (): IThemeMode => {
     const themeModeFromPref = localStorage.getItem("themeMode") as IThemeMode;
-    if (themeModeFromPref) {
+    if (
+      themeModeFromPref &&
+      Object.values(IThemeMode).includes(themeModeFromPref as IThemeMode)
+    ) {
       return themeModeFromPref;
     }
     return IThemeMode.SYSTEM;
@@ -67,7 +70,7 @@ export const ThemeContextProvider: React.FunctionComponent<
 
   return (
     <ThemeContext.Provider value={{ themeMode, switchThemeMode }}>
-      <ThemeProvider theme={theme}> {children}</ThemeProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );
 };
