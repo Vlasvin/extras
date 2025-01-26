@@ -59,6 +59,8 @@
     "@typescript-eslint/eslint-plugin": "5.62.0"
   },
   "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "@csstools/postcss-color-function": "^3.0.19",
     "webpack": "^5.93.0",
     "webpack-dev-server": "^5.0.4"
