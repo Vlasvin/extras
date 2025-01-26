@@ -54,7 +54,7 @@ const SocialMediaIcons = () => {
         </ListItemIcon>
       </ListItemButton>
       <ListItemButton
-        href="https://instagram.com/extra_executive_services?igshid=OGQ5ZDc2ODk2ZA=="
+        href="https://www.instagram.com/extras_ua?igsh=N2I3dXkwNDdoMmZ2&utm_source=qr"
         target="_blank"
         sx={{ padding: 0 }}
       >
