@@ -41,7 +41,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     axios.defaults.headers.common[
       "Authorization"
     ] = `Bearer ${tokenObject.access_token}`;
-    navigate("/visas/usa/visa-form");
+    navigate("/visas/usa");
   };
 
   const register = async (data: any) => {
