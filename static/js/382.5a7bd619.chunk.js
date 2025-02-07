@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[382],{9382:function(a,s,e){e.r(s);var t=e(8987),n=e(317),c=e(579);s.default=function(){return(0,c.jsx)(t.A,{titleKey:"visa_canada.title",images:n.rd,stepsKey:"visa_canada.steps",costsKey:"visa_canada.costs",costTitleKey:"visa_canada.cost_title",documentsKey:"visa_canada.documents",applyButtonKey:"visa_canada.apply_button",descriptionKey:"visa_canada.description",pageName:"VisaCanada"})}}}]);
+//# sourceMappingURL=382.5a7bd619.chunk.js.map

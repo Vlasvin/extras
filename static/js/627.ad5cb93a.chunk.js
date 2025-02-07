@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[627],{7627:function(s,a,e){e.r(a);var t=e(8987),i=e(317),u=e(579);a.default=function(){return(0,u.jsx)(t.A,{titleKey:"visa_usa.title",images:i.kW,stepsKey:"visa_usa.steps",costTitleKey:"visa_usa.cost_title",costsKey:"visa_usa.costs",documentsKey:"visa_usa.documents",applyButtonKey:"visa_usa.apply_button",descriptionKey:"visa_usa.description",pageName:"VisaUsa"})}}}]);
+//# sourceMappingURL=627.ad5cb93a.chunk.js.map
