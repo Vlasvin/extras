@@ -39,7 +39,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
   const { t } = useTranslation();
   const { themeMode } = useContext(ThemeContext) as IThemeContext;
-  const { user, logout } = useAuth();
+  const authContext = useAuth();
   const isMobile = useMediaQuery("(max-width:900px)");
   const location = useLocation();
 
@@ -55,8 +55,13 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
     handleDialogClose();
   };
 
-  const menuItems = useMenuItems();
-  const visaMenuItems = useVisaMenuItems();
+  const menuItems = useMenuItems() || [];
+  const visaMenuItems = useVisaMenuItems() || [];
+
+  if (!authContext || !themeMode) {
+    return null;
+  }
+  const { user, logout } = authContext;
 
   const handleVisasMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -83,6 +88,7 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
       </Box>
       <Box sx={headerStyles.box}>
         {!isMobile &&
+          menuItems.length &&
           menuItems.map((item, index) => (
             <Button
               id="demo-positioned-button"
@@ -125,16 +131,17 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
           }}
           onMouseLeave={handleVisasMenuClose}
         >
-          {visaMenuItems.map((menuItem) => (
-            <MenuItem
-              key={menuItem.label}
-              component={Link}
-              to={menuItem.link}
-              onClick={handleVisasMenuClose}
-            >
-              {menuItem.label}
-            </MenuItem>
-          ))}
+          {visaMenuItems.length &&
+            visaMenuItems.map((menuItem) => (
+              <MenuItem
+                key={menuItem.label}
+                component={Link}
+                to={menuItem.link}
+                onClick={handleVisasMenuClose}
+              >
+                {menuItem.label}
+              </MenuItem>
+            ))}
         </Menu>
       </Box>
       {!isMobile && (

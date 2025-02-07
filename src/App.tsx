@@ -9,7 +9,6 @@ import { Box } from "@mui/material";
 import { AppContainer, appStyles } from "AppStyles";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
-import { AuthProvider } from "context/AuthContext";
 import { LoadingProvider } from "./context/LoadingContext";
 import LoadingIndicator from "./components/LoadingIndicator";
 
@@ -32,43 +31,41 @@ const App = () => {
   return (
     <ThemeContextProvider>
       <I18nextProvider i18n={i18next}>
-        <AuthProvider>
-          <LoadingProvider>
-            <LoadingIndicator />
-            <Box sx={appStyles.boxHeader}>
-              <Header onRegisterClick={handleRegisterClick} />
-            </Box>
-            <AppContainer>
-              <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/visas" element={<VisasPage />} />
-                  <Route path="/visas/usa" element={<VisasUSAPage />} />
-                  <Route element={<ProtectedRoute />}>
-                    <Route
-                      path="/visas/usa/visa-form"
-                      element={<VisaFormPage />}
-                    />
-                  </Route>
-                  <Route path="/visas/canada" element={<VisasCanadaPage />} />
+        <LoadingProvider>
+          <LoadingIndicator />
+          <Box sx={appStyles.boxHeader}>
+            <Header onRegisterClick={handleRegisterClick} />
+          </Box>
+          <AppContainer>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/visas" element={<VisasPage />} />
+                <Route path="/visas/usa" element={<VisasUSAPage />} />
+                <Route element={<ProtectedRoute />}>
                   <Route
-                    path="/visas/australia"
-                    element={<VisasAustraliaPage />}
+                    path="/visas/usa/visa-form"
+                    element={<VisaFormPage />}
                   />
-                  <Route path="/translations" element={<TranslationsPage />} />
-                  <Route path="/services" element={<ServicesPage />} />
-                  <Route path="/about-us" element={<AboutUsPage />} />
-                  <Route element={<PublicRoute />}>
-                    <Route path="/auth" element={<AuthForm />} />
-                  </Route>
-                </Routes>
-              </Suspense>
-            </AppContainer>
-            <Box sx={appStyles.boxFooter}>
-              <Footer />
-            </Box>
-          </LoadingProvider>
-        </AuthProvider>
+                </Route>
+                <Route path="/visas/canada" element={<VisasCanadaPage />} />
+                <Route
+                  path="/visas/australia"
+                  element={<VisasAustraliaPage />}
+                />
+                <Route path="/translations" element={<TranslationsPage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/about-us" element={<AboutUsPage />} />
+                <Route element={<PublicRoute />}>
+                  <Route path="/auth" element={<AuthForm />} />
+                </Route>
+              </Routes>
+            </Suspense>
+          </AppContainer>
+          <Box sx={appStyles.boxFooter}>
+            <Footer />
+          </Box>
+        </LoadingProvider>
       </I18nextProvider>
     </ThemeContextProvider>
   );

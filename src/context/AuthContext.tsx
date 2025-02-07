@@ -2,6 +2,10 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+interface AuthProviderProps {
+  children: React.ReactNode;
+}
+
 interface AuthContextType {
   user: any;
   login: (tokenObject: { access_token: string }, user: any) => void;
@@ -11,9 +15,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
@@ -29,7 +31,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       axios
         .get(`${apiUrl}/auth/me`)
         .then((response) => setUser(response.data))
-        .catch(() => setUser(null));
+        .catch((error) => setUser(null));
     }
   }, [apiUrl]);
 
@@ -52,7 +54,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       login(response.data.token, response.data.user);
     } catch (error) {
       console.error("Registration failed", error);
-      throw error;
+      return;
     }
   };
 
@@ -73,7 +75,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
+    console.log("user is not authorized");
+    return;
   }
   return context;
 };

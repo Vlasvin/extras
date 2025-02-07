@@ -26,12 +26,14 @@
     "react-intersection-observer": "^9.10.2",
     "react-router-dom": "^6.22.3",
     "react-scripts": "^5.0.1",
+    "serve": "^14.2.4",
     "web-vitals": "^2.1.4",
     "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "start-production": "react-scripts build && serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:js": "eslint src/**/*.{ts,tsx}"
@@ -46,12 +48,17 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "last 2 versions",
+      "last 2 Android versions",
+      "last 2 iOS versions"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "last 1 Android version",
+      "last 1 iOS version"
     ]
   },
   "resolutions": {
@@ -60,6 +67,8 @@
   },
   "devDependencies": {
     "@csstools/postcss-color-function": "^3.0.19",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "webpack": "^5.93.0",
     "webpack-dev-server": "^5.0.4"
   }

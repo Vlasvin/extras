@@ -41,9 +41,7 @@ interface BurgerMenuProps {
   handleRegisterButtonClick: () => void;
 }
 
-const BurgerMenu: React.FC<BurgerMenuProps> = ({
-  handleRegisterButtonClick,
-}) => {
+const BurgerMenu: React.FC<BurgerMenuProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const { t } = useTranslation();
@@ -51,8 +49,13 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
   const theme = useTheme();
   const menuItems = useMenuItems();
   const visaMenuItems = useVisaMenuItems();
-  const { user, logout } = useAuth();
-  const { loading, setLoading } = useLoading();
+  const { loading, setLoading } = useLoading() || {};
+  const authContext = useAuth();
+
+  if (!authContext || !theme) {
+    return null;
+  }
+  const { user, logout } = authContext;
 
   const toggleDrawer = (open: boolean) => () => {
     setIsOpen(open);
@@ -62,12 +65,12 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
   const handleDialogClose = () => setOpenDialog(false);
 
   const handleLogout = () => {
-    setLoading(true);
+    setLoading?.(true);
     setTimeout(() => {
       logout();
       handleDialogClose();
       toggleDrawer(false)();
-      setLoading(false);
+      setLoading?.(false);
     }, 2000);
   };
 
@@ -250,7 +253,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={loading}
+        open={!!loading}
       >
         <CircularProgress color="inherit" />
       </Backdrop>

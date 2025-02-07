@@ -5,12 +5,18 @@ interface LoadingContextType {
   setLoading: (value: boolean) => void;
 }
 
+const defaultLoadingContext = {
+  loading: false,
+  setLoading: (value: boolean) => {},
+};
+
 const LoadingContext = createContext<LoadingContextType | undefined>(undefined);
 
 export const useLoading = () => {
   const context = useContext(LoadingContext);
   if (context === undefined) {
-    throw new Error("useLoading must be used within a LoadingProvider");
+    console.warn("useLoading used without LoadingPropvider");
+    return defaultLoadingContext;
   }
   return context;
 };
