@@ -46,12 +46,17 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "last 2 versions",
+      "last 2 Android versions",
+      "last 2 iOS versions"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "last 1 Android version",
+      "last 1 iOS version"
     ]
   },
   "resolutions": {
