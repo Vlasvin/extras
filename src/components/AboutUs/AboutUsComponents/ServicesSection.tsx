@@ -27,7 +27,6 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           style={{
             ...aboutUsStyles.section,
             margin: "10px",
-            background: "rgb(11, 15, 21);",
           }}
         >
           <animated.div style={{ ...animation }}>

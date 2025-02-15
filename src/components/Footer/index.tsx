@@ -53,6 +53,8 @@ const Footer = () => {
     },
   ];
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <Box
       sx={{
@@ -104,7 +106,7 @@ const Footer = () => {
           <SocialMediaIcons />
         </Box>
         <Typography variant="body2" sx={footerStyles.developedBox}>
-          {t("developed_by")}{" "}
+          <span>&copy; {currentYear} </span> {t("developed_by")}{" "}
           <a
             href="https://linkedin.com/in/oleksii-vlasenko"
             target="_blank"

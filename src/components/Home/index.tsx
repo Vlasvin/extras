@@ -8,9 +8,10 @@ import {
   Intro,
   ListItemTranslation,
   HomeBtn,
+  HomeImageWrap,
 } from "./HomeStyles";
 import { SectionTitle } from "components/Translations/TranslationsStyles";
-import homeImg from "assets/pictures/jpg/homeImg.png";
+import homeImg from "assets/pictures/jpg/mudrenok-hero.jpg";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +27,9 @@ const Home: React.FC = () => {
   return (
     <Container>
       <ImageTextContainer>
-        <HomeImage src={homeImg} alt="Home" />
+        <HomeImageWrap>
+          <HomeImage src={homeImg} alt="Home" />
+        </HomeImageWrap>
         <Box sx={{ flex: 1, order: { xs: 2, md: 1 } }}>
           <Intro variant="h4" gutterBottom>
             &nbsp;&nbsp;{t("homepage.intro")}

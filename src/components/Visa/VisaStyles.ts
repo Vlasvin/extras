@@ -74,8 +74,7 @@ export const CardWrap = styled(Box)(({ theme }) => ({
 
 export const VisaUsaBtn = styled(Button)(({ theme }) => ({
   borderRadius: "20px",
-  color:
-    theme.palette.mode === "light" ? "rgb(244, 229, 220)" : "rgb(32, 19, 226)",
+  color: theme.palette.mode === "light" ? "#eaeaea" : "rgb(32, 19, 226)",
   backgroundColor:
     theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
   "&:hover": {

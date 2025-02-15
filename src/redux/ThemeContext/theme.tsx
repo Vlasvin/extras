@@ -4,8 +4,8 @@ export const AppLightTheme: Theme = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "rgb(244, 229, 220)",
-      paper: "rgb(244, 229, 220)",
+      default: "#eaeaea",
+      paper: "#eaeaea",
     },
   },
   components: {
@@ -37,7 +37,7 @@ export const AppLightTheme: Theme = createTheme({
           fontSize: "clamp(14px,3.75vw,20px)",
           fontWeightRegular: 400,
           letterSpacing: "0.1em",
-          color: "rgb(244, 229, 220)",
+          color: "#eaeaea",
           "@media (max-width:600px)": {
             letterSpacing: "0.01em",
           },

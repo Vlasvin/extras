@@ -3,19 +3,41 @@ import { styled } from "@mui/system";
 
 export const ImageTextContainer = styled(Box)(({ theme }) => ({
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
-  marginBottom: theme.spacing(4),
-  [theme.breakpoints.down("sm")]: {
-    flexDirection: "column",
-    marginBottom: 0,
-    gap: "24px",
+  marginBottom: 0,
+  paddingTop: "24px",
+  gap: "24px",
+
+  [theme.breakpoints.up("md")]: {
+    flexDirection: "row",
+    gap: "16px",
+    paddingTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
+  },
+}));
+
+export const HomeImageWrap = styled("div")(({ theme }) => ({
+  display: "flex",
+  width: "100%",
+  height: "calc(100vw - 82px)",
+  borderRadius: "20px",
+  overflow: "hidden",
+  [theme.breakpoints.up("md")]: {
+    width: "43.62vw",
+    height: "43.62vw",
+  },
+  [theme.breakpoints.up("lg")]: {
+    width: "556px",
+    height: "556px",
   },
 }));
 
 export const HomeImage = styled("img")(({ theme }) => ({
-  width: "50%",
-  height: "auto",
-  marginRight: theme.spacing(2),
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  objectPosition: "center -60px",
   [theme.breakpoints.down("sm")]: {
     marginRight: 0,
   },
@@ -38,8 +60,7 @@ export const ListItemTranslation = styled(ListItem)(({ theme }) => ({
 export const HomeBtn = styled(Button)(({ theme }) => ({
   backgroundColor:
     theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
-  color:
-    theme.palette.mode === "light" ? "rgb(244, 229, 220)" : "rgb(32, 19, 226)",
+  color: theme.palette.mode === "light" ? "#eaeaea" : "rgb(32, 19, 226)",
   fontSize: "smaller",
   borderRadius: "10px",
   "&:hover": {
