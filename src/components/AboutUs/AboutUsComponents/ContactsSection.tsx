@@ -31,7 +31,7 @@ const ContactsSection = () => {
           }}
         >
           <a
-            href="tel:+380442345678"
+            href="tel:+380632715551"
             style={{ color: "#1976d2", textDecoration: "none" }}
           >
             {t("aboutUs.phone")}: +380632715551

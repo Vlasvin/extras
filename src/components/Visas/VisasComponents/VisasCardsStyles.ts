@@ -13,8 +13,7 @@ export const VisaButton = styled(Button)<ButtonProps>(({ theme }) => ({
   borderRadius: "10px",
   backgroundColor:
     theme.palette.mode === "light" ? "rgb(32, 19, 226)" : "rgb(244, 229, 220)",
-  color:
-    theme.palette.mode === "light" ? "rgb(244, 229, 220)" : "rgb(32, 19, 226)",
+  color: theme.palette.mode === "light" ? "#eaeaea" : "rgb(32, 19, 226)",
   textTransform: "none",
   "&:hover": {
     backgroundColor:
