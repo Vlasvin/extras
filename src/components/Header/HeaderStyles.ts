@@ -23,6 +23,7 @@ export const headerStyles = {
     alignItems: "center",
     padding: "0 8px",
     height: "64px",
+    color: "#eaeaea",
   },
 };
 
@@ -40,4 +41,16 @@ export const DialogBtn = styled(Button)(({ theme }) => ({
   fontSize: "smaller",
   borderRadius: "10px",
   padding: "2px 10px",
+}));
+
+export const PhoneLink = styled("a")(({ theme }) => ({
+  fontFamily: "Montserrat, sans-serif",
+  fontSize: 18,
+  fontWeight: "normal",
+  textTransform: "none",
+  position: "relative",
+  display: "flex",
+  alignItems: "center",
+  padding: "0 8px",
+  height: "64px",
 }));

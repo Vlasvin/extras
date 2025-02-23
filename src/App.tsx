@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
 import { LoadingProvider } from "./context/LoadingContext";
 import LoadingIndicator from "./components/LoadingIndicator";
+import ContactPhoneButton from "./components/ContactButton";
 
 const HomePage = React.lazy(() => import("./pages/HomePage"));
 const VisasPage = React.lazy(() => import("./pages/VisasPage"));
@@ -62,6 +63,7 @@ const App = () => {
               </Routes>
             </Suspense>
           </AppContainer>
+          <ContactPhoneButton />
           <Box sx={appStyles.boxFooter}>
             <Footer />
           </Box>
