@@ -27,7 +27,7 @@ import ThemeSwitch from "components/Header/HeaderComponents/ThemeSwitch";
 import LanguageSelector from "components/Header/HeaderComponents/LanguageSelector";
 import BurgerMenu from "components/Header/HeaderComponents/BurgerMenu";
 
-import { DialogBtn, headerStyles } from "./HeaderStyles";
+import { DialogBtn, headerStyles, PhoneLink } from "./HeaderStyles";
 import { useMenuItems, useVisaMenuItems } from "hooks/menuHooks";
 import LogoDark from "assets/pictures/jpg/Logo_dark.png";
 import LogoLight from "assets/pictures/jpg/Logo_light.jpg";
@@ -115,6 +115,18 @@ const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
               {item.label === t("visas") && <DownIcon sx={{ ml: 1 }} />}
             </Button>
           ))}
+        {!isMobile && (
+          <PhoneLink
+            href={"tel:+380632715551"}
+            color={"inherit"}
+            sx={{
+              ...headerStyles.button,
+              fontWeight: "normal",
+            }}
+          >
+            +380632715551
+          </PhoneLink>
+        )}
         <Menu
           id="demo-positioned-menu"
           aria-labelledby="demo-positioned-button"
